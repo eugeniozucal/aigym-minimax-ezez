@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extract Bearer Token</title>
+</head>
+<body>
+    <h1>Bearer Token Extraction</h1>
+    <div id="output"></div>
+    
+    <script>
+        try {
+            // Extract the token from localStorage
+            const token = JSON.parse(localStorage.getItem('sb-givgsxytkbsdrlmoxzkp-auth-token'));
+            
+            if (token) {
+                document.getElementById('output').innerHTML = `
+                    <h2>Success!</h2>
+                    <p><strong>Bearer Token:</strong> ${token.access_token || 'Not found'}</p>
+                    <p><strong>Refresh Token:</strong> ${token.refresh_token || 'Not found'}</p>
+                    <p><strong>Expires At:</strong> ${token.expires_at || 'Not found'}</p>
+                    <h3>Full Auth Data:</h3>
+                    <pre>${JSON.stringify(token, null, 2)}</pre>
+                `;
+                
+                // Also log to console
+                console.log('Bearer Token:', token.access_token);
+                console.log('Full Auth Data:', token);
+            } else {
+                document.getElementById('output').innerHTML = '<p><strong>Error:</strong> No auth token found in localStorage</p>';
+                console.log('No token found');
+            }
+        } catch (error) {
+            document.getElementById('output').innerHTML = `<p><strong>Error:</strong> ${error.message}</p>`;
+            console.error('Error extracting token:', error);
+        }
+    </script>
+</body>
+</html>

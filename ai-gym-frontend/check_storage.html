@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LocalStorage Check</title>
+</head>
+<body>
+    <h2>LocalStorage Contents:</h2>
+    <div id="storage-content"></div>
+    <h2>Session Token Analysis:</h2>
+    <div id="token-analysis"></div>
+
+    <script>
+        function checkLocalStorage() {
+            const storageDiv = document.getElementById('storage-content');
+            const analysisDiv = document.getElementById('token-analysis');
+            
+            let html = '<pre>';
+            let tokenAnalysis = '<pre>';
+            
+            // Get all localStorage entries
+            const allStorage = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                const value = localStorage.getItem(key);
+                allStorage[key] = value;
+                html += `${key}: ${value}\n`;
+            }
+            
+            // Analyze JWT tokens
+            Object.entries(allStorage).forEach(([key, value]) => {
+                if (typeof value === 'string' && value.includes('.') && value.split('.').length === 3) {
+                    try {
+                        const parts = value.split('.');
+                        const payload = JSON.parse(atob(parts[1]));
+                        
+                        tokenAnalysis += `\nJWT Token in "${key}":\n`;
+                        tokenAnalysis += `  - User ID: ${payload.sub || payload.user_id || 'Not found'}\n`;
+                        tokenAnalysis += `  - Issued at: ${payload.iat ? new Date(payload.iat * 1000).toISOString() : 'Not found'}\n`;
+                        tokenAnalysis += `  - Expires at: ${payload.exp ? new Date(payload.exp * 1000).toISOString() : 'Not found'}\n`;
+                        tokenAnalysis += `  - Current time: ${new Date().toISOString()}\n`;
+                        
+                        if (payload.exp) {
+                            const expDate = new Date(payload.exp * 1000);
+                            const currentTime = new Date();
+                            const isExpired = currentTime > expDate;
+                            const timeUntilExpiry = Math.round((expDate - currentTime) / (1000 * 60));
+                            
+                            tokenAnalysis += `  - Status: ${isExpired ? 'EXPIRED' : 'VALID'}\n`;
+                            tokenAnalysis += `  - Time until expiry: ${isExpired ? 'Already expired' : timeUntilExpiry + ' minutes'}\n`;
+                        }
+                        
+                    } catch (e) {
+                        tokenAnalysis += `Token in "${key}" looks like JWT but couldn't decode: ${e.message}\n`;
+                    }
+                }
+            });
+            
+            html += '</pre>';
+            tokenAnalysis += '</pre>';
+            
+            storageDiv.innerHTML = html;
+            analysisDiv.innerHTML = tokenAnalysis;
+            
+            if (Object.keys(allStorage).length === 0) {
+                storageDiv.innerHTML = '<p>No data found in localStorage</p>';
+            }
+        }
+        
+        // Run check when page loads
+        checkLocalStorage();
+    </script>
+</body>
+</html>
