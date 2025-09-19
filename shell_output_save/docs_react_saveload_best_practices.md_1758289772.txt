@@ -1,0 +1,1175 @@
+# React Save/Load Workflows: Industry Best Practices Guide
+
+## Executive Summary
+
+This comprehensive guide examines industry best practices for implementing save/load workflows in React applications, covering five critical areas: state management patterns, API design strategies, error handling approaches, database schema design, and URL routing patterns. The analysis reveals that modern React applications in 2025 benefit from a multi-layered approach combining client-side state management tools (Zustand, Redux Toolkit), server state libraries (TanStack Query), optimistic update patterns, and robust error handling strategies. Key findings emphasize the importance of distinguishing between client and server state, implementing defensive programming with comprehensive error boundaries, and designing URLs as first-class state management tools for enhanced user experience and shareability.
+
+## 1. Introduction
+
+Save/load workflows form the backbone of modern web applications, directly impacting user experience, data integrity, and application reliability. As React applications have evolved in complexity, the patterns and practices for managing persistent data have become increasingly sophisticated. This guide synthesizes current industry best practices based on analysis of authoritative sources from leading developers, official documentation, and real-world implementation examples.
+
+The research focuses on practical, production-ready patterns that have proven effective in 2025's React ecosystem, emphasizing modern tools like React 19's new error handling hooks, TanStack Query v5, and contemporary state management libraries. Each recommendation is supported by concrete examples and implementation guidance to ensure immediate practical application.
+
+## 2. State Management Patterns for Persistent Data
+
+### 2.1 State Architecture Hierarchy
+
+Modern React applications benefit from a clear distinction between different types of state[1]:
+
+**Client State vs Server State Separation**
+- **Client State**: UI-focused data (form inputs, modal visibility, component interactions) 
+- **Server State**: API-derived data requiring synchronization with backend systems
+- **URL State**: Application routes, filters, pagination parameters stored in URL
+
+This separation enables optimal tool selection and performance characteristics for each state type.
+
+### 2.2 Tool Selection Matrix
+
+Based on comprehensive analysis of performance benchmarks and maintainability factors[1]:
+
+#### Context API - Best for Simple Applications
+**Use Cases:**
+- Theme and preference management
+- Authentication state
+- Localization data
+- UI state isolated to specific features
+- Small to medium applications with limited complexity
+
+**Performance Characteristics:**
+- Initial render: 180ms
+- Update time: 75ms (frequent small changes)
+- Bundle size: 0KB (built-in)
+
+**Implementation Pattern:**
+```javascript
+// Split contexts by domain and update frequency
+const AuthContext = createContext();
+const ThemeContext = createContext();
+
+// Memoize context values for performance
+const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  
+  const value = useMemo(() => ({
+    user,
+    setUser,
+    login: (credentials) => setUser(credentials),
+    logout: () => setUser(null)
+  }), [user]);
+
+  return (
+    <AuthContext.Provider value={value}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+```
+
+#### Zustand - Balanced Flexibility
+**Use Cases:**
+- Medium to large applications needing structure without Redux boilerplate
+- Applications requiring modular state organization
+- Projects where bundle size optimization is critical
+- Teams seeking balance between structure and flexibility
+
+**Performance Characteristics:**
+- Initial render: 160ms
+- Update time: 35ms (frequent small changes)
+- Memory usage: +5% over baseline
+- Bundle size: ~4KB minified/gzipped
+
+**Persistence Implementation:**
+```javascript
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import { immer } from 'zustand/middleware/immer';
+
+const useAuthStore = create(
+  persist(
+    immer((set) => ({
+      user: null,
+      preferences: {},
+      
+      login: (userData) => set((state) => {
+        state.user = userData;
+      }),
+      
+      updatePreferences: (newPrefs) => set((state) => {
+        state.preferences = { ...state.preferences, ...newPrefs };
+      }),
+      
+      logout: () => set((state) => {
+        state.user = null;
+        state.preferences = {};
+      })
+    })),
+    {
+      name: 'auth-storage',
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+);
+
+// Domain-specific store pattern
+const useDocumentStore = create((set, get) => ({
+  documents: [],
+  currentDocument: null,
+  
+  saveDocument: async (doc) => {
+    set({ currentDocument: { ...doc, lastSaved: Date.now() } });
+    try {
+      await api.saveDocument(doc);
+    } catch (error) {
+      // Handle error - revert optimistic update
+      set({ currentDocument: get().documents.find(d => d.id === doc.id) });
+      throw error;
+    }
+  }
+}));
+```
+
+#### Redux Toolkit - Enterprise Scale Applications
+**Use Cases:**
+- Large applications with complex state interactions
+- Teams benefiting from strict patterns and predictability
+- Applications requiring advanced debugging with time-travel
+- Projects with complex data normalization needs
+
+**Performance Characteristics:**
+- Initial render: 210ms
+- Update time: 65ms (with modern hooks and memoized selectors)
+- Memory usage: +15% over baseline
+- Bundle size: ~15KB minified/gzipped
+
+**Modern Implementation Pattern:**
+```javascript
+// Using createSlice for reduced boilerplate
+import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+
+const documentsAdapter = createEntityAdapter({
+  selectId: (doc) => doc.id,
+  sortComparer: (a, b) => b.lastModified - a.lastModified
+});
+
+const documentsSlice = createSlice({
+  name: 'documents',
+  initialState: documentsAdapter.getInitialState({
+    saveStatus: 'idle',
+    error: null
+  }),
+  reducers: {
+    documentSaveStarted: (state, action) => {
+      state.saveStatus = 'saving';
+      documentsAdapter.updateOne(state, {
+        id: action.payload.id,
+        changes: { ...action.payload, lastModified: Date.now() }
+      });
+    },
+    documentSaveSucceeded: (state, action) => {
+      state.saveStatus = 'success';
+      documentsAdapter.updateOne(state, action.payload);
+    },
+    documentSaveFailed: (state, action) => {
+      state.saveStatus = 'error';
+      state.error = action.payload.error;
+    }
+  }
+});
+
+// Memoized selectors for performance
+import { createSelector } from '@reduxjs/toolkit';
+
+const selectDocumentsState = (state) => state.documents;
+const selectAllDocuments = createSelector(
+  [selectDocumentsState],
+  (documentsState) => documentsAdapter.getSelectors().selectAll(documentsState)
+);
+```
+
+#### TanStack Query - Server State Management
+**Use Cases:**
+- Applications with significant server interactions
+- Data requiring caching, background updates, and synchronization
+- Complex data fetching patterns with loading states and error handling
+
+**Implementation for Save/Load Workflows:**
+```javascript
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+
+// Document loading with caching
+const useDocument = (documentId) => {
+  return useQuery({
+    queryKey: ['documents', documentId],
+    queryFn: () => api.getDocument(documentId),
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    cacheTime: 10 * 60 * 1000 // 10 minutes
+  });
+};
+
+// Document saving with optimistic updates
+const useSaveDocument = () => {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationFn: (document) => api.saveDocument(document),
+    
+    onMutate: async (newDocument) => {
+      // Cancel outgoing refetches
+      await queryClient.cancelQueries({ 
+        queryKey: ['documents', newDocument.id] 
+      });
+      
+      // Snapshot previous value
+      const previousDocument = queryClient.getQueryData(['documents', newDocument.id]);
+      
+      // Optimistically update
+      queryClient.setQueryData(['documents', newDocument.id], newDocument);
+      
+      return { previousDocument };
+    },
+    
+    onError: (err, newDocument, context) => {
+      // Rollback on error
+      queryClient.setQueryData(
+        ['documents', newDocument.id], 
+        context.previousDocument
+      );
+    },
+    
+    onSettled: () => {
+      // Always refetch after error or success
+      queryClient.invalidateQueries({ queryKey: ['documents'] });
+    }
+  });
+};
+```
+
+### 2.3 Persistence Strategies
+
+**Local Storage Integration:**
+```javascript
+// Custom hook for persistent state
+const usePersistentState = (key, initialValue) => {
+  const [state, setState] = useState(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.warn(`Error loading ${key} from localStorage:`, error);
+      return initialValue;
+    }
+  });
+
+  const setPersistentState = useCallback((value) => {
+    try {
+      setState(value);
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.error(`Error saving ${key} to localStorage:`, error);
+    }
+  }, [key]);
+
+  return [state, setPersistentState];
+};
+```
+
+## 3. API Design Patterns for Save/Load Operations
+
+### 3.1 RESTful API Design Principles
+
+Modern save/load workflows benefit from well-structured RESTful APIs[3]:
+
+**Resource-Oriented URLs:**
+```
+GET    /api/documents           # List all documents
+POST   /api/documents           # Create new document
+GET    /api/documents/{id}      # Get specific document
+PATCH  /api/documents/{id}      # Update document (partial)
+PUT    /api/documents/{id}      # Replace document (complete)
+DELETE /api/documents/{id}      # Delete document
+```
+
+**API Client Architecture:**
+```javascript
+// Centralized API client with error handling
+const apiClient = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+  withCredentials: true,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
+// Response interceptor for consistent error handling
+apiClient.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      // Handle authentication errors
+      window.location.href = '/login';
+    }
+    return Promise.reject(error);
+  }
+);
+
+// Typed API functions
+const documentApi = {
+  getAll: (params) => apiClient.get('/documents', { params }),
+  getById: (id) => apiClient.get(`/documents/${id}`),
+  create: (data) => apiClient.post('/documents', data),
+  update: (id, data) => apiClient.patch(`/documents/${id}`, data),
+  delete: (id) => apiClient.delete(`/documents/${id}`)
+};
+```
+
+### 3.2 Optimistic Updates and Conflict Resolution
+
+**Concurrent Update Handling:**[8]
+```javascript
+const useOptimisticDocumentUpdate = (documentId) => {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationKey: ['documents'], // Enable scoped invalidation
+    mutationFn: (updates) => api.updateDocument(documentId, updates),
+    
+    onMutate: async (updates) => {
+      // Cancel any outgoing refetches
+      await queryClient.cancelQueries({
+        queryKey: ['documents', 'detail', documentId],
+      });
+      
+      // Optimistically update the cache
+      queryClient.setQueryData(
+        ['documents', 'detail', documentId], 
+        (prevData) => prevData ? { ...prevData, ...updates } : undefined
+      );
+    },
+    
+    onSettled: () => {
+      // Conditional invalidation for concurrent updates
+      if (queryClient.isMutating({ mutationKey: ['documents'] }) === 1) {
+        queryClient.invalidateQueries({
+          queryKey: ['documents', 'detail', documentId],
+        });
+      }
+    }
+  });
+};
+```
+
+### 3.3 Auto-Save Implementation
+
+**Debounced Auto-Save Pattern:**[9]
+```javascript
+const useAutoSave = (formData, enabled = true) => {
+  const debouncedFormData = useDebounce(formData, 1000);
+  const { mutate: saveForm, isPending: isSaving, isError, isSuccess } = useSaveFormMutation();
+  
+  useEffect(() => {
+    if (enabled && debouncedFormData) {
+      saveForm(debouncedFormData);
+    }
+  }, [debouncedFormData, enabled, saveForm]);
+  
+  return { isSaving, isError, isSuccess };
+};
+
+// Debounce hook implementation
+const useDebounce = (value, delay) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedValue(value), delay);
+    return () => clearTimeout(timer);
+  }, [value, delay]);
+
+  return debouncedValue;
+};
+
+// Usage in component
+const DocumentEditor = ({ documentId }) => {
+  const [formData, setFormData] = useState({});
+  const { isSaving, isError, isSuccess } = useAutoSave(formData);
+  
+  return (
+    <div>
+      <input 
+        value={formData.title || ''} 
+        onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
+      />
+      {isSaving && <span>Saving...</span>}
+      {isSuccess && <span>✓ Saved</span>}
+      {isError && <span>⚠ Save failed</span>}
+    </div>
+  );
+};
+```
+
+### 3.4 GraphQL vs REST Considerations
+
+**When to Choose GraphQL:**
+- Complex data relationships requiring selective fetching
+- Mobile applications needing bandwidth optimization
+- Applications with diverse client requirements
+
+**When to Choose REST:**
+- Simple CRUD operations with straightforward data models
+- Applications benefiting from HTTP caching
+- Teams with extensive REST experience and tooling
+
+## 4. Error Handling and User Feedback Strategies
+
+### 4.1 React 19 Error Handling Patterns
+
+**Modern Error Boundaries with React 19:**[2]
+```javascript
+import { Component } from 'react';
+
+class DocumentErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null, errorInfo: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    this.setState({
+      error: error,
+      errorInfo: errorInfo
+    });
+    
+    // Log to monitoring service
+    console.error('Document Error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="error-boundary">
+          <h2>Something went wrong with this document.</h2>
+          <details style={{ whiteSpace: 'pre-wrap' }}>
+            {this.state.error && this.state.error.toString()}
+            <br />
+            {this.state.errorInfo.componentStack}
+          </details>
+          <button onClick={() => this.setState({ hasError: false })}>
+            Try Again
+          </button>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+// Usage with granular boundaries
+const DocumentApp = () => (
+  <DocumentErrorBoundary>
+    <DocumentList />
+    <DocumentErrorBoundary>
+      <DocumentEditor />
+    </DocumentErrorBoundary>
+  </DocumentErrorBoundary>
+);
+```
+
+**React 19 Error Hooks:**
+```javascript
+// Using React 19's new error handling hooks
+const useErrorHandler = () => {
+  const [error, setError] = useState(null);
+  
+  useEffect(() => {
+    const handleUncaughtError = (event) => {
+      console.error('Uncaught error:', event.error);
+      setError(event.error);
+    };
+    
+    const handleCaughtError = (event) => {
+      console.error('Caught error:', event.error);
+      // Handle caught errors differently
+    };
+    
+    // React 19 global error handlers
+    window.addEventListener('error', handleUncaughtError);
+    window.addEventListener('unhandledrejection', handleCaughtError);
+    
+    return () => {
+      window.removeEventListener('error', handleUncaughtError);
+      window.removeEventListener('unhandledrejection', handleCaughtError);
+    };
+  }, []);
+  
+  return { error, clearError: () => setError(null) };
+};
+```
+
+### 4.2 Toast Notification Patterns
+
+**Modern Toast Implementation with React Hot Toast:**[4]
+```javascript
+import toast, { Toaster } from 'react-hot-toast';
+
+// Custom save operation with toast feedback
+const useSaveWithFeedback = () => {
+  const saveMutation = useMutation({
+    mutationFn: saveDocument,
+    
+    onMutate: () => {
+      return toast.loading('Saving document...');
+    },
+    
+    onSuccess: (data, variables, toastId) => {
+      toast.success('Document saved successfully!', {
+        id: toastId,
+        duration: 4000
+      });
+    },
+    
+    onError: (error, variables, toastId) => {
+      toast.error(`Save failed: ${error.message}`, {
+        id: toastId,
+        duration: 6000
+      });
+    }
+  });
+  
+  return saveMutation;
+};
+
+// App-level toast configuration
+const App = () => (
+  <div>
+    <Toaster
+      position="top-right"
+      toastOptions={{
+        duration: 4000,
+        style: {
+          background: '#363636',
+          color: '#fff',
+        },
+        success: {
+          duration: 3000,
+          theme: {
+            primary: 'green',
+            secondary: 'black',
+          },
+        },
+      }}
+    />
+    <DocumentApp />
+  </div>
+);
+```
+
+**Toast Best Practices:**[4]
+- Keep feedback close to user actions when possible
+- Use toasts for system-wide notifications, not form validation errors
+- Implement appropriate positioning for natural attention flow
+- Provide clear success, error, and loading states
+
+### 4.3 Loading States and User Feedback
+
+**Comprehensive Loading State Management:**
+```javascript
+const DocumentEditor = ({ documentId }) => {
+  const { data: document, isLoading, isError, error } = useQuery({
+    queryKey: ['documents', documentId],
+    queryFn: () => api.getDocument(documentId)
+  });
+  
+  const saveMutation = useSaveDocument();
+  
+  if (isLoading) {
+    return (
+      <div className="document-skeleton">
+        <div className="skeleton-title"></div>
+        <div className="skeleton-content"></div>
+        <div className="skeleton-actions"></div>
+      </div>
+    );
+  }
+  
+  if (isError) {
+    return (
+      <div className="error-state">
+        <h3>Failed to load document</h3>
+        <p>{error.message}</p>
+        <button onClick={() => window.location.reload()}>
+          Try Again
+        </button>
+      </div>
+    );
+  }
+  
+  return (
+    <div className="document-editor">
+      <input 
+        value={document.title}
+        disabled={saveMutation.isPending}
+      />
+      {saveMutation.isPending && (
+        <div className="saving-indicator">
+          <Spinner size="sm" /> Saving...
+        </div>
+      )}
+    </div>
+  );
+};
+```
+
+## 5. Database Schema Design for Content Management
+
+### 5.1 Content Versioning Patterns
+
+**History Table Implementation:**[6,10]
+```sql
+-- Main content table
+CREATE TABLE documents (
+    document_id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT,
+    status VARCHAR(20) DEFAULT 'draft',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- History/audit table
+CREATE TABLE document_history (
+    history_id SERIAL PRIMARY KEY,
+    document_id INT NOT NULL,
+    version INT NOT NULL,
+    title VARCHAR(255),
+    content TEXT,
+    status VARCHAR(20),
+    operation_type CHAR(1) NOT NULL, -- I=Insert, U=Update, D=Delete
+    created_by VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(document_id, version)
+);
+
+-- Trigger function for automatic versioning
+CREATE OR REPLACE FUNCTION fn_audit_document() 
+RETURNS TRIGGER AS $$
+DECLARE
+    next_version INTEGER;
+BEGIN
+    IF TG_OP = 'INSERT' THEN
+        INSERT INTO document_history(
+            document_id, version, title, content, status, 
+            operation_type, created_by
+        ) VALUES(
+            NEW.document_id, 1, NEW.title, NEW.content, NEW.status,
+            'I', current_user
+        );
+    ELSIF TG_OP = 'UPDATE' THEN
+        SELECT COALESCE(MAX(version), 0) + 1 INTO next_version
+        FROM document_history WHERE document_id = NEW.document_id;
+        
+        INSERT INTO document_history(
+            document_id, version, title, content, status,
+            operation_type, created_by
+        ) VALUES(
+            NEW.document_id, next_version, NEW.title, NEW.content, NEW.status,
+            'U', current_user
+        );
+    ELSIF TG_OP = 'DELETE' THEN
+        SELECT COALESCE(MAX(version), 0) + 1 INTO next_version
+        FROM document_history WHERE document_id = OLD.document_id;
+        
+        INSERT INTO document_history(
+            document_id, version, title, content, status,
+            operation_type, created_by
+        ) VALUES(
+            OLD.document_id, next_version, OLD.title, OLD.content, OLD.status,
+            'D', current_user
+        );
+    END IF;
+    
+    RETURN COALESCE(NEW, OLD);
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_document_history 
+    AFTER INSERT OR UPDATE OR DELETE ON documents 
+    FOR EACH ROW EXECUTE FUNCTION fn_audit_document();
+```
+
+### 5.2 Draft/Published Workflow Schema
+
+**Content State Management:**
+```sql
+-- Content table with workflow states
+CREATE TABLE content_items (
+    item_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    title VARCHAR(255) NOT NULL,
+    content_type VARCHAR(50) NOT NULL,
+    
+    -- Current published version
+    published_version_id UUID,
+    
+    -- Workflow status
+    status VARCHAR(20) NOT NULL DEFAULT 'draft',
+    -- draft, review_pending, approved, published, archived
+    
+    -- Metadata
+    created_by UUID NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT fk_published_version 
+        FOREIGN KEY (published_version_id) 
+        REFERENCES content_versions(version_id)
+);
+
+-- Version storage for all content states
+CREATE TABLE content_versions (
+    version_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    content_item_id UUID NOT NULL,
+    
+    -- Version information
+    version_number INTEGER NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    content JSONB NOT NULL,
+    metadata JSONB DEFAULT '{}',
+    
+    -- Version status
+    is_published BOOLEAN DEFAULT FALSE,
+    is_current_draft BOOLEAN DEFAULT FALSE,
+    
+    -- Audit information
+    created_by UUID NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (content_item_id) REFERENCES content_items(item_id) ON DELETE CASCADE,
+    UNIQUE(content_item_id, version_number)
+);
+
+-- Workflow transitions log
+CREATE TABLE content_workflow_log (
+    log_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    content_item_id UUID NOT NULL,
+    version_id UUID,
+    
+    from_status VARCHAR(20),
+    to_status VARCHAR(20) NOT NULL,
+    action_type VARCHAR(50) NOT NULL, -- save_draft, submit_review, approve, publish, etc.
+    
+    comments TEXT,
+    performed_by UUID NOT NULL,
+    performed_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (content_item_id) REFERENCES content_items(item_id),
+    FOREIGN KEY (version_id) REFERENCES content_versions(version_id)
+);
+```
+
+### 5.3 Schema Evolution and Migration Patterns
+
+**Version-Safe Schema Changes:**[6]
+```sql
+-- Schema version tracking
+CREATE TABLE schema_versions (
+    version_id SERIAL PRIMARY KEY,
+    version VARCHAR(50) NOT NULL,
+    applied_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    description TEXT,
+    script_name VARCHAR(255),
+    checksum VARCHAR(255)
+);
+
+-- Safe column additions
+ALTER TABLE documents ADD COLUMN tags VARCHAR(50)[] DEFAULT '{}';
+COMMENT ON COLUMN documents.tags IS 'Document categorization tags';
+
+-- Safe nullable additions before making required
+ALTER TABLE documents ADD COLUMN author_id UUID;
+-- Backfill data
+UPDATE documents SET author_id = (SELECT user_id FROM users WHERE username = 'system' LIMIT 1);
+-- Then make it required
+ALTER TABLE documents ALTER COLUMN author_id SET NOT NULL;
+```
+
+## 6. URL Routing Strategies for Edit vs View Modes
+
+### 6.1 URL State Management Patterns
+
+**URL as Primary State Manager:**[11]
+```javascript
+// Custom hook for URL-based state management
+const useUrlState = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  
+  const updateUrlState = useCallback((updates, options = {}) => {
+    const newParams = new URLSearchParams(searchParams);
+    
+    Object.entries(updates).forEach(([key, value]) => {
+      if (value === null || value === undefined || value === '') {
+        newParams.delete(key);
+      } else {
+        newParams.set(key, value);
+      }
+    });
+    
+    const newSearch = newParams.toString();
+    const currentPath = window.location.pathname;
+    
+    if (options.replace) {
+      navigate(`${currentPath}${newSearch ? `?${newSearch}` : ''}`, { replace: true });
+    } else {
+      setSearchParams(newParams);
+    }
+  }, [searchParams, setSearchParams, navigate]);
+  
+  const getUrlState = useCallback((key, defaultValue = null) => {
+    return searchParams.get(key) || defaultValue;
+  }, [searchParams]);
+  
+  return { updateUrlState, getUrlState, searchParams };
+};
+
+// Document editor with URL state
+const DocumentApp = () => {
+  const { documentId } = useParams();
+  const { updateUrlState, getUrlState } = useUrlState();
+  
+  const mode = getUrlState('mode', 'view');
+  const version = getUrlState('version');
+  
+  const switchToEdit = () => updateUrlState({ mode: 'edit' });
+  const switchToView = () => updateUrlState({ mode: 'view' });
+  const viewVersion = (versionId) => updateUrlState({ version: versionId, mode: 'view' });
+  
+  return (
+    <div>
+      {mode === 'edit' ? (
+        <DocumentEditor documentId={documentId} onSave={switchToView} />
+      ) : (
+        <DocumentViewer 
+          documentId={documentId} 
+          version={version}
+          onEdit={switchToEdit}
+        />
+      )}
+    </div>
+  );
+};
+```
+
+### 6.2 Protected Routes and Navigation Guards
+
+**React Router v6 Protected Route Pattern:**[5]
+```javascript
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
+
+// Protected routes component
+const ProtectedRoutes = () => {
+  const { user, isLoading } = useAuth();
+  const location = useLocation();
+  
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  
+  if (!user) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+  
+  return <Outlet />;
+};
+
+// Navigation guard for unsaved changes
+const useNavigationGuard = (hasUnsavedChanges) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      if (hasUnsavedChanges) {
+        e.preventDefault();
+        e.returnValue = 'You have unsaved changes. Are you sure you want to leave?';
+      }
+    };
+    
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [hasUnsavedChanges]);
+  
+  const navigateWithGuard = useCallback((to, options = {}) => {
+    if (hasUnsavedChanges) {
+      const confirmNavigation = window.confirm(
+        'You have unsaved changes. Are you sure you want to leave?'
+      );
+      if (!confirmNavigation) return;
+    }
+    navigate(to, options);
+  }, [hasUnsavedChanges, navigate]);
+  
+  return navigateWithGuard;
+};
+
+// App routing structure
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route element={<ProtectedRoutes />}>
+        <Route path="/documents" element={<DocumentList />} />
+        <Route path="/documents/:id" element={<DocumentApp />} />
+        <Route path="/documents/:id/edit" element={<DocumentEditor />} />
+        <Route path="/documents/:id/history" element={<DocumentHistory />} />
+      </Route>
+      <Route path="/" element={<Navigate to="/documents" replace />} />
+    </Routes>
+  </BrowserRouter>
+);
+```
+
+### 6.3 Deep Linking and Shareable URLs
+
+**Advanced URL Parameter Management:**[11]
+```javascript
+// Complex filter state in URL
+const useDocumentFilters = () => {
+  const { updateUrlState, getUrlState } = useUrlState();
+  
+  const filters = useMemo(() => ({
+    page: parseInt(getUrlState('page', '1')),
+    limit: parseInt(getUrlState('limit', '20')),
+    status: getUrlState('status', ''),
+    category: getUrlState('category', ''),
+    sortBy: getUrlState('sortBy', 'updated_at'),
+    order: getUrlState('order', 'desc'),
+    search: getUrlState('search', '')
+  }), [getUrlState]);
+  
+  const updateFilters = useCallback((newFilters) => {
+    // Reset page when changing filters
+    const updates = { ...newFilters };
+    if ('status' in newFilters || 'category' in newFilters || 'search' in newFilters) {
+      updates.page = 1;
+    }
+    updateUrlState(updates, { replace: true });
+  }, [updateUrlState]);
+  
+  return { filters, updateFilters };
+};
+
+// SEO-friendly document URLs
+const generateDocumentUrl = (document, mode = 'view') => {
+  const baseSlug = document.title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+  
+  const paths = {
+    view: `/documents/${document.id}/${baseSlug}`,
+    edit: `/documents/${document.id}/${baseSlug}/edit`,
+    history: `/documents/${document.id}/${baseSlug}/history`
+  };
+  
+  return paths[mode];
+};
+
+// Persistent draft URLs for sharing incomplete work
+const useDraftSharing = (documentId) => {
+  const { updateUrlState, getUrlState } = useUrlState();
+  
+  const draftId = getUrlState('draft');
+  
+  const saveDraftToUrl = useCallback(async (draftData) => {
+    // Save draft to temporary storage and get ID
+    const tempDraftId = await api.saveTempDraft(draftData);
+    updateUrlState({ draft: tempDraftId });
+    return tempDraftId;
+  }, [updateUrlState]);
+  
+  const loadDraftFromUrl = useCallback(async () => {
+    if (draftId) {
+      return await api.loadTempDraft(draftId);
+    }
+    return null;
+  }, [draftId]);
+  
+  return { draftId, saveDraftToUrl, loadDraftFromUrl };
+};
+```
+
+## 7. Integration Patterns and Best Practices
+
+### 7.1 Complete Save/Load Workflow Example
+
+```javascript
+// Comprehensive document management hook
+const useDocumentManagement = (documentId) => {
+  const queryClient = useQueryClient();
+  const { updateUrlState, getUrlState } = useUrlState();
+  const navigateWithGuard = useNavigationGuard();
+  
+  // Server state management
+  const { data: document, isLoading, isError } = useQuery({
+    queryKey: ['documents', documentId],
+    queryFn: () => api.getDocument(documentId),
+    staleTime: 5 * 60 * 1000
+  });
+  
+  // Local form state
+  const [formData, setFormData] = useState({});
+  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+  
+  // Auto-save with debounce
+  const { isSaving, isError: saveError } = useAutoSave(
+    formData,
+    hasUnsavedChanges
+  );
+  
+  // Manual save mutation
+  const saveMutation = useMutation({
+    mutationFn: (data) => api.saveDocument(documentId, data),
+    onSuccess: () => {
+      setHasUnsavedChanges(false);
+      queryClient.invalidateQueries(['documents', documentId]);
+      toast.success('Document saved successfully!');
+      updateUrlState({ mode: 'view' });
+    },
+    onError: (error) => {
+      toast.error(`Save failed: ${error.message}`);
+    }
+  });
+  
+  // Initialize form data when document loads
+  useEffect(() => {
+    if (document && !formData.id) {
+      setFormData(document);
+    }
+  }, [document, formData.id]);
+  
+  // Track unsaved changes
+  useEffect(() => {
+    if (document && formData.id) {
+      const hasChanges = JSON.stringify(document) !== JSON.stringify(formData);
+      setHasUnsavedChanges(hasChanges);
+    }
+  }, [document, formData]);
+  
+  const updateFormData = useCallback((updates) => {
+    setFormData(prev => ({ ...prev, ...updates }));
+  }, []);
+  
+  const saveDocument = useCallback(() => {
+    saveMutation.mutate(formData);
+  }, [saveMutation, formData]);
+  
+  const revertChanges = useCallback(() => {
+    setFormData(document);
+    setHasUnsavedChanges(false);
+  }, [document]);
+  
+  return {
+    document,
+    formData,
+    isLoading,
+    isError,
+    hasUnsavedChanges,
+    isSaving: isSaving || saveMutation.isPending,
+    saveError: saveError || saveMutation.isError,
+    updateFormData,
+    saveDocument,
+    revertChanges,
+    navigateWithGuard
+  };
+};
+```
+
+### 7.2 Performance Optimization Strategies
+
+**Bundle Size Optimization:**
+- Zustand: ~4KB vs Redux Toolkit: ~15KB
+- React Hot Toast: ~5KB vs alternatives
+- Code splitting for edit/view modes
+
+**Render Optimization:**
+```javascript
+// Memoized components for large lists
+const DocumentListItem = React.memo(({ document, onEdit, onDelete }) => {
+  const handleEdit = useCallback(() => onEdit(document.id), [document.id, onEdit]);
+  const handleDelete = useCallback(() => onDelete(document.id), [document.id, onDelete]);
+  
+  return (
+    <div className="document-item">
+      <h3>{document.title}</h3>
+      <button onClick={handleEdit}>Edit</button>
+      <button onClick={handleDelete}>Delete</button>
+    </div>
+  );
+});
+
+// Virtualized lists for large datasets
+import { FixedSizeList as List } from 'react-window';
+
+const DocumentList = ({ documents }) => {
+  const Row = ({ index, style }) => (
+    <div style={style}>
+      <DocumentListItem document={documents[index]} />
+    </div>
+  );
+  
+  return (
+    <List
+      height={600}
+      itemCount={documents.length}
+      itemSize={100}
+    >
+      {Row}
+    </List>
+  );
+};
+```
+
+## 8. Conclusion
+
+Modern React save/load workflows require a sophisticated understanding of state management hierarchies, API design patterns, and user experience considerations. The key to success lies in choosing appropriate tools for each type of state, implementing robust error handling, and designing URLs as first-class application state.
+
+**Critical Success Factors:**
+
+1. **State Separation**: Distinguish between client state (Zustand, Context), server state (TanStack Query), and URL state for optimal performance and user experience.
+
+2. **Defensive Programming**: Implement comprehensive error boundaries, optimistic updates with rollback strategies, and graceful degradation patterns.
+
+3. **User-Centric Design**: Prioritize immediate feedback through toast notifications, auto-save capabilities, and navigation guards for unsaved changes.
+
+4. **Scalable Architecture**: Design database schemas with versioning, audit trails, and workflow states to support complex content management requirements.
+
+5. **URL-First Thinking**: Leverage URLs for shareable application states, enabling deep linking, browser history integration, and improved SEO characteristics.
+
+The patterns outlined in this guide represent proven approaches from production applications and reflect the current state of React development best practices as of 2025. Implementing these strategies will result in robust, user-friendly applications that handle data persistence elegantly and reliably.
+
+## 9. Sources
+
+[1] [State Management in 2025: When to Use Context, Redux, Zustand, or Jotai](https://dev.to/hijazi313/state-management-in-2025-when-to-use-context-redux-zustand-or-jotai-2d2k) - High Reliability - Comprehensive comparison with performance benchmarks and implementation patterns
+
+[2] [React error handling, 2025 edition — onUncaughtError, boundaries, logging](https://javascript.plainenglish.io/react-error-handling-2025-edition-onuncaughterror-boundaries-logging-ea7a679de22a) - High Reliability - Modern React 19 error handling strategies and patterns
+
+[3] [Build a React.js CRUD App using a RESTful API 2025](https://codevoweb.com/build-a-reactjs-crud-app-using-a-restful-api/) - High Reliability - Complete implementation guide for RESTful API patterns with React Query
+
+[4] [Comparing the top React toast libraries [2025 update]](https://blog.logrocket.com/react-toast-libraries-compared-2025/) - High Reliability - Comprehensive analysis of notification libraries and user feedback strategies
+
+[5] [Creating Protected Routes With React Router V6](https://medium.com/@dennisivy/creating-protected-routes-with-react-router-v6-2c4bbaf7bc1c) - Medium Reliability - React Router v6 patterns for route protection and navigation guards
+
+[6] [Top 10 Database Schema Design Best Practices](https://www.bytebase.com/blog/top-database-schema-design-best-practices/) - High Reliability - Database design principles with practical examples including audit trails
+
+[7] [Ideas on database design for capturing audit trails](https://stackoverflow.com/questions/1051449/ideas-on-database-design-for-capturing-audit-trails) - Medium Reliability - Database versioning patterns and audit trail implementation strategies
+
+[8] [Concurrent Optimistic Updates in React Query](https://tkdodo.eu/blog/concurrent-optimistic-updates-in-react-query) - High Reliability - Advanced TanStack Query patterns for handling race conditions and concurrent updates
+
+[9] [Building a useAutoSave Hook with Debounce and React Query](https://medium.com/@darius-marlowe/smarter-forms-in-react-building-a-useautosave-hook-with-debounce-and-react-query-d4d7f9bb052e) - Medium Reliability - Auto-save implementation patterns with debouncing techniques
+
+[10] [How do I add versioning to this CMS I'm designing?](https://dba.stackexchange.com/questions/69866/how-do-i-add-versioning-to-this-cms-im-designing) - Medium Reliability - CMS-specific database versioning strategies
+
+[11] [Advanced React state management using URL parameters](https://blog.logrocket.com/advanced-react-state-management-using-url-parameters/) - High Reliability - Comprehensive guide to URL-based state management with practical examples

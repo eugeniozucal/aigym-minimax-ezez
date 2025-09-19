@@ -1,0 +1,42 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1.1s using pnpm v10.12.4
+src/components/content/ContentEditor.tsx(968,18): error TS2304: Cannot find name 'clients'.
+src/components/content/ContentEditor.tsx(970,22): error TS2304: Cannot find name 'clients'.
+src/components/content/ContentEditor.tsx(971,71): error TS2304: Cannot find name 'community'.
+src/components/content/ContentEditor.tsx(978,47): error TS2304: Cannot find name 'toggleClientAssignment'.
+src/components/content/ContentEditor.tsx(984,59): error TS2304: Cannot find name 'community'.
+src/components/content/ContentEditor.tsx(1053,15): error TS2322: Type '{ isOpen: true; onClose: () => void; client: any; contentItemId: string; onSave: () => void; }' is not assignable to type 'IntrinsicAttributes & AssignmentModalProps'.
+  Property 'client' does not exist on type 'IntrinsicAttributes & AssignmentModalProps'.
+src/components/content/ContentEditor.tsx(1053,23): error TS2304: Cannot find name 'clients'.
+src/components/content/ContentRepository.tsx(133,34): error TS2304: Cannot find name 'communityAssignments'.
+src/components/content/ContentRepository.tsx(220,16): error TS2345: Argument of type '(prev: RepositoryFilters) => { search: string; clients: any[]; status: "all"; sortBy: "updated_at"; sortOrder: "desc"; viewMode: "list" | "cards"; }' is not assignable to parameter of type 'SetStateAction<RepositoryFilters>'.
+  Type '(prev: RepositoryFilters) => { search: string; clients: any[]; status: "all"; sortBy: "updated_at"; sortOrder: "desc"; viewMode: "list" | "cards"; }' is not assignable to type '(prevState: RepositoryFilters) => RepositoryFilters'.
+    Property 'communities' is missing in type '{ search: string; clients: any[]; status: "all"; sortBy: "updated_at"; sortOrder: "desc"; viewMode: "list" | "cards"; }' but required in type 'RepositoryFilters'.
+src/components/modals/EnhancedCommunityModal.tsx(404,40): error TS2339: Property 'key_type' does not exist on type 'ApiKey'.
+src/pages/AnalyticsDashboard.tsx(71,7): error TS2304: Cannot find name 'setClients'.
+src/pages/AnalyticsDashboard.tsx(114,17): error TS2339: Property 'communityId' does not exist on type 'DashboardFilters'.
+src/pages/AnalyticsDashboard.tsx(115,51): error TS2339: Property 'communityId' does not exist on type 'DashboardFilters'.
+src/pages/AnalyticsDashboard.tsx(173,40): error TS2304: Cannot find name 'handleCommunityChange'.
+src/pages/AnalyticsDashboard.tsx(175,35): error TS2339: Property 'communityId' does not exist on type 'DashboardFilters'.
+src/pages/EnhancedCommunitiesPage.tsx(377,11): error TS2322: Type '{ community: Community; apiKeys: ApiKey[]; communities: ExtendedCommunity[]; onClose: () => void; onSave: () => void; }' is not assignable to type 'IntrinsicAttributes & CommunityModalProps'.
+  Property 'community' does not exist on type 'IntrinsicAttributes & CommunityModalProps'.
+src/pages/Tags.tsx(10,42): error TS2304: Cannot find name 'Client'.
+src/pages/Tags.tsx(73,24): error TS2304: Cannot find name 'selectedCommunity'.
+src/pages/Tags.tsx(74,47): error TS2304: Cannot find name 'selectedCommunity'.
+src/pages/Tags.tsx(78,12): error TS2552: Cannot find name 'communities'. Did you mean 'communityId'?
+src/pages/Tags.tsx(239,9): error TS2322: Type '{ isOpen: boolean; onClose: () => void; onSuccess: () => void; tag: UserTag; clients: Client[]; }' is not assignable to type 'IntrinsicAttributes & TagModalProps'.
+  Property 'clients' does not exist on type 'IntrinsicAttributes & TagModalProps'.

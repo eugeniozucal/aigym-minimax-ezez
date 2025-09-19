@@ -1,0 +1,19 @@
+📄 Extracted from page: ai-gym-platform-video-fix
+URL: https://if4yb5jxn92w.space.minimax.io/static
+
+Extracted content:
+```json
+{
+    "title": "ai-gym-platform-video-fix",
+    "url": "https://if4yb5jxn92w.space.minimax.io/static",
+    "summary": "The content displayed on the `/static` route is a 'Page Not Found' error message, indicating that the requested resource does not exist. The page explicitly states, 'The page you're looking for doesn't exist.' It also credits 'MiniMax Agent' for its creation.",
+    "key_points": [
+        "The page displays a 'Page Not Found' error.",
+        "The content at the `/static` route is not available.",
+        "The error message explicitly states 'The page you're looking for doesn't exist.'",
+        "The page was created by 'MiniMax Agent'."
+    ],
+    "relevant_links": [],
+    "file_name": "static_route_content_summary.json"
+}
+```

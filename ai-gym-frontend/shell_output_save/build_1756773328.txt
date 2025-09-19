@@ -1,0 +1,151 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild, msw.                                       │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1.3s using pnpm v10.12.4
+src/components/RightSidebar.tsx:99:13 - error TS2322: Type 'LegacyBlock' is not assignable to type 'TextBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"text"'.
+
+99             block={legacyBlock}
+               ~~~~~
+
+  src/components/BlockEditors/TextEditor.tsx:17:3
+    17   block: TextBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & TextEditorProps'
+
+src/components/RightSidebar.tsx:108:13 - error TS2322: Type 'LegacyBlock' is not assignable to type 'ImageBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"image"'.
+
+108             block={legacyBlock}
+                ~~~~~
+
+  src/components/BlockEditors/ImageEditor.tsx:24:3
+    24   block: ImageBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & ImageEditorProps'
+
+src/components/RightSidebar.tsx:117:13 - error TS2322: Type 'LegacyBlock' is not assignable to type 'VideoBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"video"'.
+
+117             block={legacyBlock}
+                ~~~~~
+
+  src/components/BlockEditors/VideoEditor.tsx:24:3
+    24   block: VideoBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & VideoEditorProps'
+
+src/components/RightSidebar.tsx:126:13 - error TS2322: Type 'LegacyBlock' is not assignable to type 'DocumentBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"document"'.
+
+126             block={legacyBlock}
+                ~~~~~
+
+  src/components/BlockEditors/DocumentEditor.tsx:17:3
+    17   block: DocumentBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & DocumentEditorProps'
+
+src/components/RightSidebar.tsx:135:13 - error TS2322: Type 'LegacyBlock' is not assignable to type 'PDFBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"pdf"'.
+
+135             block={legacyBlock}
+                ~~~~~
+
+  src/components/BlockEditors/PDFEditor.tsx:19:3
+    19   block: PDFBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & PDFEditorProps'
+
+src/components/RightSidebar.tsx:144:13 - error TS2322: Type 'LegacyBlock' is not assignable to type 'PromptsBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"prompts"'.
+
+144             block={legacyBlock}
+                ~~~~~
+
+  src/components/BlockEditors/PromptsEditor.tsx:28:3
+    28   block: PromptsBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & PromptsEditorProps'
+
+src/components/RightSidebar.tsx:153:13 - error TS2322: Type 'LegacyBlock' is not assignable to type 'AutomationBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"automation"'.
+
+153             block={legacyBlock}
+                ~~~~~
+
+  src/components/BlockEditors/AutomationEditor.tsx:39:3
+    39   block: AutomationBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & AutomationEditorProps'
+
+src/components/RightSidebar.tsx:162:13 - error TS2322: Type 'LegacyBlock' is not assignable to type 'QuizBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"quiz"'.
+
+162             block={legacyBlock}
+                ~~~~~
+
+  src/components/BlockEditors/QuizEditor.tsx:41:3
+    41   block: QuizBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & QuizEditorProps'
+
+src/components/RightSidebar.tsx:171:13 - error TS2322: Type 'LegacyBlock' is not assignable to type 'AccordionBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"accordion"'.
+
+171             block={legacyBlock}
+                ~~~~~
+
+  src/components/BlockEditors/AccordionEditor.tsx:29:3
+    29   block: AccordionBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & AccordionEditorProps'
+
+src/components/RightSidebar.tsx:180:13 - error TS2322: Type 'LegacyBlock' is not assignable to type 'UserSubmissionBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"user-submission"'.
+
+180             block={legacyBlock}
+                ~~~~~
+
+  src/components/BlockEditors/UserSubmissionEditor.tsx:38:3
+    38   block: UserSubmissionBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & UserSubmissionEditorProps'
+
+src/components/RightSidebar.tsx:189:13 - error TS2322: Type 'LegacyBlock' is not assignable to type 'AIAgentBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"ai-agent"'.
+
+189             block={legacyBlock}
+                ~~~~~
+
+  src/components/BlockEditors/AIAgentEditor.tsx:34:3
+    34   block: AIAgentBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & AIAgentEditorProps'
+
+
+Found 11 errors.
+

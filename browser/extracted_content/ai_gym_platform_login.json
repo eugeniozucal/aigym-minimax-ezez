@@ -1,0 +1,21 @@
+📄 Extracted from page: ai-gym-platform-video-fix
+URL: https://if4yb5jxn92w.space.minimax.io/login
+
+Extracted content:
+```json
+{
+    "title": "ai-gym-platform-video-fix",
+    "url": "https://if4yb5jxn92w.space.minimax.io/login",
+    "summary": "This page serves as a login portal named \"AI GYM - Training Zone Access Portal.\" It presents a standard authentication interface with fields for 'Email Address' and 'Password,' along with a 'Sign In' button. The page is minimalistic, with no additional features like registration links, forgotten password options, or explicit demo/test account credentials mentioned.",
+    "key_points": [
+        "The page is a login portal for 'AI GYM - Training Zone Access Portal'.",
+        "It requires users to input an 'Email Address' and 'Password' to sign in.",
+        "There are no visible links or options for user registration.",
+        "There are no visible links or options for password recovery (e.g., 'Forgot Password?').",
+        "No demo credentials or test account information is provided on the page.",
+        "The page includes a footer indicating it was 'Created by MiniMax Agent'."
+    ],
+    "relevant_links": [],
+    "file_name": "ai_gym_platform_login.json"
+}
+```

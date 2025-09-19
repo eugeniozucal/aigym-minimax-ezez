@@ -1,0 +1,155 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+Done in 1.2s using pnpm v10.12.4
+src/pages/PageBuilderDashboard.tsx:410:19 - error TS1128: Declaration or statement expected.
+
+410                   </div>
+                      ~~
+
+src/pages/PageBuilderDashboard.tsx:415:17 - error TS1128: Declaration or statement expected.
+
+415                 </div>
+                    ~~
+
+src/pages/PageBuilderDashboard.tsx:417:22 - error TS1005: ',' expected.
+
+417                 {item.tags && item.tags.length > 0 && (
+                         ~
+
+src/pages/PageBuilderDashboard.tsx:431:15 - error TS1128: Declaration or statement expected.
+
+431               </div>
+                  ~~
+
+src/pages/PageBuilderDashboard.tsx:432:13 - error TS1109: Expression expected.
+
+432             ))}
+                ~
+
+src/pages/PageBuilderDashboard.tsx:432:14 - error TS1128: Declaration or statement expected.
+
+432             ))}
+                 ~
+
+src/pages/PageBuilderDashboard.tsx:432:15 - error TS1128: Declaration or statement expected.
+
+432             ))}
+                  ~
+
+src/pages/PageBuilderDashboard.tsx:433:11 - error TS1128: Declaration or statement expected.
+
+433           </div>
+              ~~
+
+src/pages/PageBuilderDashboard.tsx:434:9 - error TS1109: Expression expected.
+
+434         )}
+            ~
+
+src/pages/PageBuilderDashboard.tsx:434:10 - error TS1128: Declaration or statement expected.
+
+434         )}
+             ~
+
+src/pages/PageBuilderDashboard.tsx:435:7 - error TS1128: Declaration or statement expected.
+
+435       </div>
+          ~~
+
+src/pages/PageBuilderDashboard.tsx:436:5 - error TS1109: Expression expected.
+
+436     </Layout>
+        ~~
+
+src/pages/PageBuilderDashboard.tsx:437:3 - error TS1109: Expression expected.
+
+437   )
+      ~
+
+src/pages/PageBuilderDashboard.tsx:438:1 - error TS1128: Declaration or statement expected.
+
+438 }
+    ~
+
+src/pages/PageBuilderEditor.tsx:638:23 - error TS1128: Declaration or statement expected.
+
+638                       </div>
+                          ~~
+
+src/pages/PageBuilderEditor.tsx:639:21 - error TS1109: Expression expected.
+
+639                     </div>
+                        ~~
+
+src/pages/PageBuilderEditor.tsx:640:19 - error TS1109: Expression expected.
+
+640                   )
+                      ~
+
+src/pages/PageBuilderEditor.tsx:641:17 - error TS1128: Declaration or statement expected.
+
+641                 })}
+                    ~
+
+src/pages/PageBuilderEditor.tsx:641:18 - error TS1128: Declaration or statement expected.
+
+641                 })}
+                     ~
+
+src/pages/PageBuilderEditor.tsx:641:19 - error TS1128: Declaration or statement expected.
+
+641                 })}
+                      ~
+
+src/pages/PageBuilderEditor.tsx:642:15 - error TS1128: Declaration or statement expected.
+
+642               </div>
+                  ~~
+
+src/pages/PageBuilderEditor.tsx:643:13 - error TS1109: Expression expected.
+
+643             </div>
+                ~~
+
+src/pages/PageBuilderEditor.tsx:644:11 - error TS1109: Expression expected.
+
+644           )}
+              ~
+
+src/pages/PageBuilderEditor.tsx:644:12 - error TS1128: Declaration or statement expected.
+
+644           )}
+               ~
+
+src/pages/PageBuilderEditor.tsx:858:9 - error TS1128: Declaration or statement expected.
+
+858         </div>
+            ~~
+
+src/pages/PageBuilderEditor.tsx:859:7 - error TS1109: Expression expected.
+
+859       </div>
+          ~~
+
+src/pages/PageBuilderEditor.tsx:860:5 - error TS1109: Expression expected.
+
+860     </Layout>
+        ~~
+
+src/pages/PageBuilderEditor.tsx:861:3 - error TS1109: Expression expected.
+
+861   )
+      ~
+
+src/pages/PageBuilderEditor.tsx:862:1 - error TS1128: Declaration or statement expected.
+
+862 }
+    ~
+
+
+Found 29 errors.
+

@@ -1,0 +1,23 @@
+📄 Extracted from page: 404 - Page Not Found
+URL: https://if4yb5jxn92w.space.minimax.io/robots.txt
+
+Extracted content:
+```json
+{
+    "title": "404 - Page Not Found",
+    "url": "https://if4yb5jxn92w.space.minimax.io/robots.txt",
+    "summary": "This page displays a standard '404 - Page Not Found' error message, indicating that the requested resource could not be found or has been moved. It provides a brief explanation and a link to go back to the previous page.",
+    "key_points": [
+        "The page title and heading indicate a '404 - Page Not Found' error.",
+        "The main text states: 'The page you're looking for doesn't exist or has been moved.'",
+        "A 'Go Back' link is provided to navigate to the previous page."
+    ],
+    "relevant_links": [
+        {
+            "text": "Go Back",
+            "url": "javascript:history.back()"
+        }
+    ],
+    "file_name": "404_page_not_found_content.json"
+}
+```

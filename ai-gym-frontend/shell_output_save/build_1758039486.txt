@@ -1,0 +1,95 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1s using pnpm v10.12.4
+src/components/modals/EnhancedCommunityModal.tsx:404:40 - error TS2339: Property 'key_type' does not exist on type 'ApiKey'.
+
+404                       {key.name} ({key.key_type})
+                                           ~~~~~~~~
+
+src/pages/AnalyticsDashboard.tsx:71:7 - error TS2552: Cannot find name 'setClients'. Did you mean 'fetchClients'?
+
+71       setClients(data || [])
+         ~~~~~~~~~~
+
+  src/pages/AnalyticsDashboard.tsx:62:9
+    62   const fetchClients = async () => {
+               ~~~~~~~~~~~~
+    'fetchClients' is declared here.
+
+src/pages/AnalyticsDashboard.tsx:114:17 - error TS2339: Property 'communityId' does not exist on type 'DashboardFilters'.
+
+114     if (filters.communityId === 'all') return 'All Communities'
+                    ~~~~~~~~~~~
+
+src/pages/AnalyticsDashboard.tsx:115:51 - error TS2339: Property 'communityId' does not exist on type 'DashboardFilters'.
+
+115     return communities.find(c => c.id === filters.communityId)?.name || 'Unknown Community'
+                                                      ~~~~~~~~~~~
+
+src/pages/AnalyticsDashboard.tsx:173:40 - error TS2304: Cannot find name 'handleCommunityChange'.
+
+173                         onClick={() => handleCommunityChange(community.id)}
+                                           ~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/AnalyticsDashboard.tsx:175:35 - error TS2339: Property 'communityId' does not exist on type 'DashboardFilters'.
+
+175                           filters.communityId === community.id ? 'bg-blue-50 text-blue-700' : 'text-gray-700'
+                                      ~~~~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:377:11 - error TS2322: Type '{ community: Community; apiKeys: ApiKey[]; communities: ExtendedCommunity[]; onClose: () => void; onSave: () => void; }' is not assignable to type 'IntrinsicAttributes & CommunityModalProps'.
+  Property 'community' does not exist on type 'IntrinsicAttributes & CommunityModalProps'.
+
+377           community={editingCommunity}
+              ~~~~~~~~~
+
+src/pages/Tags.tsx:73:24 - error TS2304: Cannot find name 'selectedCommunity'.
+
+73   const filteredTags = selectedCommunity
+                          ~~~~~~~~~~~~~~~~~
+
+src/pages/Tags.tsx:74:47 - error TS2304: Cannot find name 'selectedCommunity'.
+
+74     ? tags.filter(tag => tag.community_id === selectedCommunity)
+                                                 ~~~~~~~~~~~~~~~~~
+
+src/pages/Tags.tsx:144:66 - error TS2552: Cannot find name 'communityName'. Did you mean 'community'?
+
+144               const community = communities.find(c => c.name === communityName)
+                                                                     ~~~~~~~~~~~~~
+
+  src/pages/Tags.tsx:144:21
+    144               const community = communities.find(c => c.name === communityName)
+                            ~~~~~~~~~
+    'community' is declared here.
+
+src/pages/Tags.tsx:149:24 - error TS2304: Cannot find name 'client'.
+
+149                       {client && (
+                           ~~~~~~
+
+src/pages/Tags.tsx:152:53 - error TS2304: Cannot find name 'client'.
+
+152                           style={{ backgroundColor: client.brand_color + '20' }}
+                                                        ~~~~~~
+
+src/pages/Tags.tsx:156:45 - error TS2304: Cannot find name 'client'.
+
+156                             style={{ color: client.brand_color }}
+                                                ~~~~~~
+
+
+Found 13 errors.
+

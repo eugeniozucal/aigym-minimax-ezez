@@ -1,0 +1,214 @@
+
+> react_repo@0.0.0 build:prod
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && BUILD_MODE=prod vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild, msw.                                       │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1.2s using pnpm v10.12.4
+src/components/page-builder/BlockWrapper.tsx:107:12 - error TS2322: Type '{ block: Block; } & Omit<T, "block">' is not assignable to type 'IntrinsicAttributes & T'.
+  Type '{ block: Block; } & Omit<T, "block">' is not assignable to type 'T'.
+    '{ block: Block; } & Omit<T, "block">' is assignable to the constraint of type 'T', but 'T' could be instantiated with a different subtype of constraint '{ block: Block; }'.
+
+107           <Component block={block} {...(componentProps as Omit<T, 'block'>)} />
+               ~~~~~~~~~
+
+src/hooks/usePageBuilder.ts:213:45 - error TS2345: Argument of type '{ order_index: number; unlock_conditions: {}; page_config: {}; created_by: string; title: string; description?: string; is_locked?: boolean; status?: "draft" | "published" | "archived"; }' is not assignable to parameter of type 'Omit<Page, "id" | "created_at" | "updated_at">'.
+  Property 'status' is optional in type '{ order_index: number; unlock_conditions: {}; page_config: {}; created_by: string; title: string; description?: string; is_locked?: boolean; status?: "archived" | "draft" | "published"; }' but required in type 'Omit<Page, "id" | "created_at" | "updated_at">'.
+
+213       const newPage = await pagesApi.create({
+                                                ~
+214         ...pageData,
+    ~~~~~~~~~~~~~~~~~~~~
+... 
+219         created_by: user?.id || ''
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+220       })
+    ~~~~~~~
+
+src/test/mocks/server.ts:129:42 - error TS2339: Property 'method' does not exist on type '{ request: Request; requestId: string; }'.
+
+129   console.warn('Unhandled request:', req.method, req.url)
+                                             ~~~~~~
+
+src/test/mocks/server.ts:129:54 - error TS2339: Property 'url' does not exist on type '{ request: Request; requestId: string; }'.
+
+129   console.warn('Unhandled request:', req.method, req.url)
+                                                         ~~~
+
+src/test/setup.ts:21:10 - error TS2304: Cannot find name 'vi'.
+
+21   value: vi.fn().mockImplementation(query => ({
+            ~~
+
+src/test/setup.ts:25:18 - error TS2304: Cannot find name 'vi'.
+
+25     addListener: vi.fn(), // deprecated
+                    ~~
+
+src/test/setup.ts:26:21 - error TS2304: Cannot find name 'vi'.
+
+26     removeListener: vi.fn(), // deprecated
+                       ~~
+
+src/test/setup.ts:27:23 - error TS2304: Cannot find name 'vi'.
+
+27     addEventListener: vi.fn(),
+                         ~~
+
+src/test/setup.ts:28:26 - error TS2304: Cannot find name 'vi'.
+
+28     removeEventListener: vi.fn(),
+                            ~~
+
+src/test/setup.ts:29:20 - error TS2304: Cannot find name 'vi'.
+
+29     dispatchEvent: vi.fn(),
+                      ~~
+
+src/test/setup.ts:34:25 - error TS2304: Cannot find name 'vi'.
+
+34 global.ResizeObserver = vi.fn().mockImplementation(() => ({
+                           ~~
+
+src/test/setup.ts:35:12 - error TS2304: Cannot find name 'vi'.
+
+35   observe: vi.fn(),
+              ~~
+
+src/test/setup.ts:36:14 - error TS2304: Cannot find name 'vi'.
+
+36   unobserve: vi.fn(),
+                ~~
+
+src/test/setup.ts:37:15 - error TS2304: Cannot find name 'vi'.
+
+37   disconnect: vi.fn(),
+                 ~~
+
+src/test/setup.ts:41:31 - error TS2304: Cannot find name 'vi'.
+
+41 global.IntersectionObserver = vi.fn().mockImplementation(() => ({
+                                 ~~
+
+src/test/setup.ts:42:12 - error TS2304: Cannot find name 'vi'.
+
+42   observe: vi.fn(),
+              ~~
+
+src/test/setup.ts:43:14 - error TS2304: Cannot find name 'vi'.
+
+43   unobserve: vi.fn(),
+                ~~
+
+src/test/setup.ts:44:15 - error TS2304: Cannot find name 'vi'.
+
+44   disconnect: vi.fn(),
+                 ~~
+
+src/test/utils.ts:144:18 - error TS2304: Cannot find name 'vi'.
+
+144   global.fetch = vi.fn().mockResolvedValue({
+                     ~~
+
+src/test/utils.ts:156:18 - error TS2304: Cannot find name 'vi'.
+
+156   global.fetch = vi.fn().mockRejectedValue(error)
+                     ~~
+
+src/test/utils.ts:186:14 - error TS2304: Cannot find name 'vi'.
+
+186     getUser: vi.fn().mockResolvedValue({
+                 ~~
+
+src/test/utils.ts:190:14 - error TS2304: Cannot find name 'vi'.
+
+190     signOut: vi.fn().mockResolvedValue({ error: null })
+                 ~~
+
+src/test/utils.ts:192:9 - error TS2304: Cannot find name 'vi'.
+
+192   from: vi.fn(() => ({
+            ~~
+
+src/test/utils.ts:193:13 - error TS2304: Cannot find name 'vi'.
+
+193     select: vi.fn().mockReturnThis(),
+                ~~
+
+src/test/utils.ts:194:13 - error TS2304: Cannot find name 'vi'.
+
+194     insert: vi.fn().mockReturnThis(),
+                ~~
+
+src/test/utils.ts:195:13 - error TS2304: Cannot find name 'vi'.
+
+195     update: vi.fn().mockReturnThis(),
+                ~~
+
+src/test/utils.ts:196:13 - error TS2304: Cannot find name 'vi'.
+
+196     delete: vi.fn().mockReturnThis(),
+                ~~
+
+src/test/utils.ts:197:9 - error TS2304: Cannot find name 'vi'.
+
+197     eq: vi.fn().mockReturnThis(),
+            ~~
+
+src/test/utils.ts:198:12 - error TS2304: Cannot find name 'vi'.
+
+198     order: vi.fn().mockReturnThis(),
+               ~~
+
+src/test/utils.ts:199:13 - error TS2304: Cannot find name 'vi'.
+
+199     single: vi.fn().mockResolvedValue({ data: null, error: null }),
+                ~~
+
+src/test/utils.ts:200:11 - error TS2304: Cannot find name 'vi'.
+
+200     then: vi.fn().mockResolvedValue({ data: [], error: null })
+              ~~
+
+src/test/utils.ts:203:13 - error TS2304: Cannot find name 'vi'.
+
+203     invoke: vi.fn().mockResolvedValue({ data: null, error: null })
+                ~~
+
+src/test/utils.ts:206:11 - error TS2304: Cannot find name 'vi'.
+
+206     from: vi.fn(() => ({
+              ~~
+
+src/test/utils.ts:207:15 - error TS2304: Cannot find name 'vi'.
+
+207       upload: vi.fn().mockResolvedValue({ data: null, error: null }),
+                  ~~
+
+src/test/utils.ts:208:17 - error TS2304: Cannot find name 'vi'.
+
+208       download: vi.fn().mockResolvedValue({ data: null, error: null }),
+                    ~~
+
+src/test/utils.ts:209:15 - error TS2304: Cannot find name 'vi'.
+
+209       remove: vi.fn().mockResolvedValue({ data: null, error: null })
+                  ~~
+
+src/test/utils.ts:223:3 - error TS2304: Cannot find name 'fireEvent'.
+
+223   fireEvent.click(blockElement)
+      ~~~~~~~~~
+
+
+Found 37 errors.
+

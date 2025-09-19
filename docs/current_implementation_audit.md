@@ -1,0 +1,723 @@
+# AI Gym Frontend Save/Load Implementation - Technical Audit Report
+
+## Executive Summary
+
+This technical audit reveals significant architectural flaws and implementation issues in the AI Gym frontend's save/load system. Critical findings include inconsistent state management, fragile API integration patterns, poor error handling, and architectural coupling that creates numerous failure points. The implementation exhibits characteristics of rapid prototyping without proper architectural planning, resulting in technical debt that impacts reliability, maintainability, and user experience.
+
+## 1. Introduction
+
+This audit examines the save/load implementation across three main components:
+- **PageBuilder.tsx**: Central component managing page building functionality and save operations
+- **EnhancedWodsRepository.tsx**: Repository management with thumbnail navigation and bulk operations
+- **CenterCanvas.tsx**: Canvas interface with save button implementation and user feedback
+
+The analysis focuses on identifying architectural flaws, failure points, state management issues, API integration problems, and routing complications that affect system reliability and user experience.
+
+## 2. Component Architecture Overview
+
+### 2.1 Component Relationships
+```
+PageBuilder (Root)
+├── CenterCanvas (Save Implementation)
+├── EnhancedWodsRepository (Data Management)
+├── RepositoryPopup (Content Selection)
+├── RightBlockEditor (Block Configuration)
+└── Various UI Components
+```
+
+### 2.2 Data Flow Patterns
+The system follows a fragmented data flow where:
+- State is scattered across multiple components without centralized management
+- API calls are made directly from components without abstraction
+- No consistent error handling or loading state management
+- URL state and component state frequently become desynchronized
+
+## 3. Critical Architectural Flaws
+
+### 3.1 State Management Chaos
+
+**Issue**: The application lacks a centralized state management solution, leading to state scattered across multiple components with no single source of truth.
+
+**Evidence from PageBuilder.tsx:**
+```typescript
+// State scattered throughout the component with no structure
+const [pageData, setPageData] = useState<PageData>({...})
+const [currentPageId, setCurrentPageId] = useState('page-1')
+const [selectedBlock, setSelectedBlock] = useState<Block | null>(null)
+const [activeLeftMenu, setActiveLeftMenu] = useState<string | null>(null)
+const [showRightPanel, setShowRightPanel] = useState(false)
+const [repositoryPopup, setRepositoryPopup] = useState<{...}>({...})
+const [loading, setLoading] = useState(isEditing)
+const [saving, setSaving] = useState(false)
+const [error, setError] = useState<string | null>(null)
+const [successMessage, setSuccessMessage] = useState<string | null>(null)
+```
+
+**Problems:**
+- 9+ separate state variables in a single component
+- No state normalization or proper data relationships
+- State updates can trigger cascading re-renders
+- Difficult to debug and maintain state consistency
+
+### 3.2 URL Parameter Dependency Hell
+
+**Issue**: Critical business logic depends on URL parameters with insufficient validation and error handling.
+
+**Evidence:**
+```typescript
+const [searchParams] = useSearchParams()
+const id = searchParams.get('id')
+const isEditing = Boolean(id)
+const targetRepository = (searchParams.get('repo') as RepositoryType) || 'wods'
+```
+
+**Problems:**
+- No validation of URL parameters
+- Silent fallbacks can mask errors
+- State initialization depends on URL parsing
+- Missing error boundaries for invalid URL states
+
+### 3.3 API Integration Anti-Patterns
+
+**Issue**: Direct Supabase function invocation from components creates tight coupling and inconsistent error handling.
+
+**Evidence from savePageData function:**
+```typescript
+const { data, error } = await supabase.functions.invoke(url, {
+  body: requestBody
+})
+
+if (error) {
+  throw new Error(error.message || `Failed to ${isEditing ? 'update' : 'create'} ${config.name}`)
+}
+```
+
+**Problems:**
+- No API abstraction layer
+- Inconsistent error handling patterns
+- Mixed error handling strategies (throw vs setState)
+- No request deduplication or caching
+- Hard-coded API endpoint construction
+
+## 4. PageBuilder.tsx Deep Analysis
+
+### 4.1 Save/Load Logic Failures
+
+#### 4.1.1 Loading Implementation Issues
+
+**Critical Flaw**: The `loadPageData` function has multiple failure points and inconsistent data handling:
+
+```typescript
+const loadPageData = async (pageId: string) => {
+  try {
+    setLoading(true)
+    
+    // ISSUE: Different logic paths for different repository types
+    if (targetRepository === 'wods' || targetRepository === 'blocks') {
+      const url = `${config.api}?id=${pageId}`
+      const { data, error } = await supabase.functions.invoke(url, {
+        method: 'GET',  // ISSUE: Inconsistent with default POST
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      
+      // ISSUE: Complex nested data extraction with fallbacks
+      const rawData = data?.data || data
+      const itemData = Array.isArray(rawData) ? rawData[0] : rawData
+      
+      // ISSUE: Silent data transformation without validation
+      const loadedPageData = {
+        id: itemData.id,
+        title: itemData.title || `Sample ${config.name}`,
+        description: itemData.description || `A sample ${config.name} for testing`,
+        // ... more transformation
+      }
+    } else {
+      // ISSUE: Completely different logic path for programs
+      setPageData({...})
+    }
+  } catch (err) {
+    setError(`Failed to load ${config.name}`)  // ISSUE: Generic error message
+  } finally {
+    setLoading(false)
+  }
+}
+```
+
+**Identified Problems:**
+1. **Inconsistent API calling patterns** between repository types
+2. **Complex data structure assumptions** without validation
+3. **Silent fallbacks** that hide data corruption
+4. **Generic error handling** that doesn't help users understand issues
+5. **Multiple data transformation layers** increase complexity
+
+#### 4.1.2 Save Implementation Issues
+
+**Critical Flaw**: The `savePageData` function has branching complexity and inconsistent error handling:
+
+```typescript
+const savePageData = async () => {
+  try {
+    setSaving(true)
+    setError(null)
+    setSuccessMessage(null)
+    
+    // ISSUE: Authentication check inline without proper error boundaries
+    const { data: { session } } = await supabase.auth.getSession()
+    const userId = session?.user?.id
+    
+    if (!userId) {
+      throw new Error('User not authenticated. Please log in and try again.')
+    }
+    
+    if (targetRepository === 'wods') {
+      // ISSUE: Duplicated save logic for each repository type
+      const url = isEditing ? `wods-api?id=${id}` : 'wods-api'
+      const method = isEditing ? 'PUT' : 'POST'
+      
+      // ISSUE: Hardcoded difficulty mapping
+      const difficultyMap = {
+        1: 'beginner',
+        2: 'beginner',
+        3: 'intermediate',
+        4: 'advanced',
+        5: 'advanced'
+      }
+      
+      const requestBody = {
+        title: pageData.title,
+        description: pageData.description,
+        // ... massive object construction
+      }
+      
+      const { data, error } = await supabase.functions.invoke(url, {
+        body: requestBody
+      })
+      
+      // ISSUE: Navigation logic mixed with save logic
+      if (!isEditing && data?.data?.id) {
+        navigate(`/page-builder?repo=wods&id=${data.data.id}`)
+      }
+    } else if (targetRepository === 'blocks') {
+      // ISSUE: Completely duplicated logic with slight variations
+    } else {
+      // ISSUE: Fake success for programs
+      setSuccessMessage('Programs save functionality coming soon!')
+    }
+  } catch (err) {
+    const errorMessage = err instanceof Error ? err.message : `Failed to save ${config.name}`
+    setError(errorMessage)
+  } finally {
+    setSaving(false)
+  }
+}
+```
+
+**Identified Problems:**
+1. **Massive function complexity** with multiple branching paths
+2. **Duplicated logic** for different repository types
+3. **Mixed concerns** (authentication, validation, save, navigation)
+4. **Hardcoded data transformations** without configuration
+5. **Inconsistent error handling** between success and failure cases
+
+### 4.2 State Synchronization Issues
+
+**Issue**: Multiple state variables can become inconsistent, leading to UI bugs and data corruption.
+
+**Evidence:**
+```typescript
+// State updates scattered throughout the component
+const handleContentSelect = (contentItem: any) => {
+  if (selectedBlock && showRightPanel) {
+    // Update existing block
+    const updatedBlock: Block = {
+      ...selectedBlock,
+      data: {
+        ...selectedBlock.data,
+        selectedContent: contentItem
+      }
+    }
+    handleBlockUpdate(updatedBlock)
+  } else {
+    // Create new block
+    const newBlock: Block = {...}
+    addBlockToCurrentPage(newBlock)
+    setSelectedBlock(newBlock)  // ISSUE: State dependency
+    setShowRightPanel(true)     // ISSUE: UI state coupled with data
+  }
+  setRepositoryPopup({ type: '', isOpen: false })
+}
+```
+
+**Problems:**
+- UI state changes coupled with data state changes
+- No validation of state transitions
+- Race conditions possible between async operations
+- State dependencies not explicitly managed
+
+## 5. EnhancedWodsRepository.tsx Deep Analysis
+
+### 5.1 Thumbnail Click Handler Issues
+
+**Critical Flaw**: The thumbnail click navigation has complex state dependencies and potential race conditions.
+
+```typescript
+const handleWodClick = useCallback((wodId: string) => {
+  navigate(`/page-builder?repo=wods&id=${wodId}`)
+}, [navigate])
+```
+
+**Issues:**
+1. **Direct navigation without state cleanup** - current component state not properly cleaned up
+2. **No loading states** during navigation
+3. **URL construction without validation** of wodId parameter
+4. **No error handling** if navigation fails
+
+### 5.2 Data Fetching Race Conditions
+
+**Critical Flaw**: The `fetchData` function has race condition protection that is inadequate:
+
+```typescript
+const fetchData = useCallback(async () => {
+  if (!mountedRef.current) return
+  
+  const currentFilterKey = filterKey
+  
+  // ISSUE: Simple string comparison doesn't prevent all race conditions
+  if (lastFetchRef.current === currentFilterKey) {
+    return
+  }
+  
+  try {
+    setLoading(true)
+    setError(null)
+    lastFetchRef.current = currentFilterKey
+    
+    // ISSUE: Complex query building without proper validation
+    let query = supabase
+      .from('wods')
+      .select('*')
+    
+    // ISSUE: Multiple conditional query modifications
+    if (filters.folderId !== null) {
+      query = query.eq('folder_id', filters.folderId)
+    } else {
+      query = query.is('folder_id', null)
+    }
+    
+    // More query modifications...
+    
+    const { data: wodsData, error: wodsError } = await query
+    
+    if (!mountedRef.current) return  // ISSUE: Late check after async operation
+    
+    // ISSUE: Additional async operations without race condition protection
+    if (filters.communities.length > 0) {
+      const { data: assignments, error: assignError } = await supabase
+        .from('wod_community_assignments')
+        .select('wod_id')
+        .in('community_id', filters.communities)
+    }
+    
+  } catch (error) {
+    // Error handling
+  } finally {
+    if (mountedRef.current) {
+      setLoading(false)
+    }
+  }
+}, [filterKey, ...])  // ISSUE: Massive dependency array
+```
+
+**Identified Problems:**
+1. **Race condition protection is insufficient** - multiple async operations not properly coordinated
+2. **Complex dependency array** in useCallback leads to excessive re-renders
+3. **Late mount checks** after async operations may miss component unmounting
+4. **Query building complexity** increases likelihood of SQL injection or query errors
+5. **No request cancellation** for ongoing requests when new ones are triggered
+
+### 5.3 Bulk Operations State Management
+
+**Issue**: Bulk operations have complex state interactions with potential for data corruption:
+
+```typescript
+const handleBulkMove = useCallback(async (folderId: string) => {
+  try {
+    const targetFolderId = folderId === 'root' ? null : folderId
+    await bulkOperation('move', Array.from(selectedItems), targetFolderId)
+    handleClearSelection()  // ISSUE: State cleared before verifying success
+    fetchData()             // ISSUE: Immediate refetch without waiting
+  } catch (error) {
+    console.error('Error moving items:', error)
+    // ISSUE: No state rollback on failure
+  }
+}, [bulkOperation, selectedItems, handleClearSelection, fetchData])
+```
+
+**Problems:**
+1. **Optimistic updates without rollback** mechanism
+2. **State cleared before operation verification**
+3. **No loading states** during bulk operations
+4. **Error handling doesn't restore previous state**
+
+## 6. CenterCanvas.tsx Analysis
+
+### 6.1 Save Button Implementation Issues
+
+**Issue**: The save button implementation has inconsistent state management and error display:
+
+```typescript
+<button
+  onClick={onSave}
+  disabled={saving}
+  className={`...`}
+>
+  {saving ? (
+    <LoadingSpinner size="sm" />
+  ) : (
+    <>
+      <RepositoryIcon className="h-4 w-4" />
+      <Save className="h-4 w-4" />
+    </>
+  )}
+  <span className="text-sm">
+    {saving ? 'Saving...' : `Save ${config.name.slice(0, -1)}`}
+  </span>
+</button>
+```
+
+**Problems:**
+1. **No feedback for save success/failure** beyond basic messages
+2. **Button disabled state only based on saving** - doesn't consider data validity
+3. **No confirmation for destructive operations** when overwriting existing data
+4. **Save state not coordinated** with overall application state
+
+### 6.2 Error Message Display Issues
+
+```typescript
+{error && (
+  <div className="bg-red-50 border-l-4 border-red-400 p-4 mx-6 mt-4 rounded-r-lg">
+    <div className="flex items-center justify-between">
+      <div className="flex items-center">
+        <AlertCircle className="h-5 w-5 text-red-400 mr-3" />
+        <div>
+          <p className="text-sm font-medium text-red-800">Save Failed</p>
+          <p className="text-sm text-red-700">{error}</p>
+        </div>
+      </div>
+      {onClearError && (
+        <button onClick={onClearError} className="...">
+          <X className="h-4 w-4" />
+        </button>
+      )}
+    </div>
+  </div>
+)}
+```
+
+**Issues:**
+1. **Generic error messages** don't provide actionable guidance
+2. **Error state persists** until manually cleared
+3. **No error categorization** or different handling for different error types
+4. **Error messages not localized** or user-friendly
+
+## 7. Database API Integration Issues
+
+### 7.1 Supabase Function Invocation Patterns
+
+**Critical Flaw**: Direct Supabase function calls create tight coupling and inconsistent error handling:
+
+**Evidence from multiple components:**
+```typescript
+// Pattern 1: Different error handling
+const { data, error } = await supabase.functions.invoke('wods-api', {
+  body: requestBody
+})
+if (error) {
+  throw new Error(error.message || 'Failed to save')
+}
+
+// Pattern 2: Different error handling
+const { data, error } = await supabase.functions.invoke('content-repository-manager', {
+  body: { ... }
+})
+if (error) {
+  console.error('Error fetching content:', error)
+  throw new Error('Failed to load content from repository')
+}
+
+// Pattern 3: Yet another pattern
+const { data: wodsData, error: wodsError } = await query
+if (wodsError) {
+  console.error('Error fetching WODs:', wodsError)
+  setError('Failed to load WODs')
+  setWods([])
+  return
+}
+```
+
+**Identified Problems:**
+1. **Three different error handling patterns** across the codebase
+2. **No consistent API response structure** assumptions
+3. **No retry logic** for failed requests
+4. **No request timeout handling**
+5. **No caching or request deduplication**
+
+### 7.2 Data Transformation Inconsistencies
+
+**Issue**: Data received from APIs is transformed inconsistently with potential for data corruption:
+
+```typescript
+// From PageBuilder.tsx - complex nested extraction
+const rawData = data?.data || data
+const itemData = Array.isArray(rawData) ? rawData[0] : rawData
+
+// From RepositoryPopup.tsx - different pattern
+const transformedVideos: ContentItem[] = (data || []).map(item => {
+  const videoData = Array.isArray(item.videos) ? item.videos[0] : item.videos
+  // ...
+})
+```
+
+**Problems:**
+1. **Inconsistent data structure assumptions** across components
+2. **Silent data coercion** without validation
+3. **No schema validation** for API responses
+4. **Fallback values** may mask data corruption issues
+
+## 8. State Management Architecture Issues
+
+### 8.1 Missing Centralized State
+
+**Critical Issue**: The application lacks a centralized state management solution, leading to:
+
+1. **State duplication** across components
+2. **Inconsistent state updates** between parent and child components
+3. **Complex prop drilling** for state sharing
+4. **No single source of truth** for application data
+
+### 8.2 Effect Dependency Issues
+
+**Evidence from EnhancedWodsRepository.tsx:**
+```typescript
+// Massive dependency array prone to excessive re-renders
+const fetchData = useCallback(async () => {
+  // ... complex logic
+}, [filterKey, filters.search, filters.communities, filters.status, 
+    filters.difficulty, filters.sortBy, filters.sortOrder, 
+    filters.showFavorites, filters.folderId])
+```
+
+**Problems:**
+1. **Excessive re-renders** due to large dependency arrays
+2. **useCallback dependencies** not properly managed
+3. **Effect chains** that can cause infinite loops
+4. **No effect cleanup** for ongoing operations
+
+## 9. URL Routing and Navigation Issues
+
+### 9.1 URL Parameter Management
+
+**Critical Flaw**: URL parameters are used as primary state without proper validation:
+
+```typescript
+// From PageBuilder.tsx
+const [searchParams] = useSearchParams()
+const id = searchParams.get('id')
+const isEditing = Boolean(id)
+const targetRepository = (searchParams.get('repo') as RepositoryType) || 'wods'
+```
+
+**Issues:**
+1. **No URL parameter validation** - invalid IDs silently handled
+2. **Type coercion without verification** - `as RepositoryType` could be invalid
+3. **Silent fallbacks** mask configuration errors
+4. **URL state not synchronized** with component state
+
+### 9.2 Navigation State Management
+
+**Issue**: Navigation doesn't properly manage application state:
+
+```typescript
+// From EnhancedWodsRepository.tsx
+const handleWodClick = useCallback((wodId: string) => {
+  navigate(`/page-builder?repo=wods&id=${wodId}`)
+}, [navigate])
+```
+
+**Problems:**
+1. **No state cleanup** before navigation
+2. **No loading states** during navigation
+3. **No error handling** for invalid navigation targets
+4. **Browser history not properly managed**
+
+## 10. Security and Validation Issues
+
+### 10.1 Input Validation Gaps
+
+**Critical Issue**: User inputs are not properly validated before processing:
+
+```typescript
+// From PageBuilder.tsx - no validation
+const requestBody = {
+  title: pageData.title,           // No validation
+  description: pageData.description, // No validation
+  // ...
+}
+```
+
+**Security Risks:**
+1. **No input sanitization** for database operations
+2. **No length limits** on user inputs
+3. **No type validation** for complex objects
+4. **Potential for data injection** through unvalidated inputs
+
+### 10.2 Authentication State Issues
+
+**Issue**: Authentication checks are performed inline without proper error handling:
+
+```typescript
+const { data: { session } } = await supabase.auth.getSession()
+const userId = session?.user?.id
+
+if (!userId) {
+  throw new Error('User not authenticated. Please log in and try again.')
+}
+```
+
+**Problems:**
+1. **Authentication state not cached** or managed centrally
+2. **No automatic retry** for expired sessions
+3. **Error messages expose system internals**
+4. **No graceful degradation** for authentication failures
+
+## 11. Performance Issues
+
+### 11.1 Unnecessary Re-renders
+
+**Issue**: Component re-renders are not optimized, leading to performance degradation:
+
+```typescript
+// Large dependency arrays cause excessive re-renders
+const filterKey = useMemo(() => {
+  return JSON.stringify({
+    search: filters.search,
+    communities: filters.communities.sort(),
+    status: filters.status,
+    difficulty: filters.difficulty,
+    sortBy: filters.sortBy,
+    sortOrder: filters.sortOrder,
+    showFavorites: filters.showFavorites,
+    folderId: filters.folderId
+  })
+}, [filters.search, filters.communities, filters.status, 
+    filters.difficulty, filters.sortBy, filters.sortOrder, 
+    filters.showFavorites, filters.folderId])
+```
+
+**Performance Problems:**
+1. **JSON.stringify in useMemo** is expensive for complex objects
+2. **Array sorting in dependency calculation** causes unnecessary recalculations
+3. **No component memoization** for expensive child components
+4. **Large dependency arrays** in useCallback/useMemo
+
+### 11.2 API Request Optimization Issues
+
+**Issue**: API requests are not optimized for performance:
+
+1. **No request deduplication** - same requests can be made simultaneously
+2. **No caching mechanism** for frequently accessed data
+3. **No pagination** for large datasets
+4. **No request timeout** handling
+5. **No offline state management**
+
+## 12. Testing and Maintainability Issues
+
+### 12.1 Code Complexity
+
+**Issue**: Functions have high cyclomatic complexity making them difficult to test and maintain:
+
+- `savePageData` function: **15+ conditional branches**
+- `loadPageData` function: **10+ conditional branches**
+- `fetchData` function: **12+ conditional branches**
+
+### 12.2 Tight Coupling
+
+**Issue**: Components are tightly coupled to specific implementations:
+
+1. **Direct Supabase dependencies** throughout components
+2. **Hard-coded API endpoints** and request structures
+3. **Tight coupling to URL parameter structure**
+4. **Component state directly coupled** to external APIs
+
+## 13. Immediate Risk Assessment
+
+### 13.1 High-Risk Failure Points
+
+1. **Data Loss Risk**: Optimistic state updates without rollback mechanisms
+2. **Race Condition Risk**: Multiple async operations without proper coordination
+3. **Authentication Bypass Risk**: Inline authentication checks without proper validation
+4. **Data Corruption Risk**: Silent data transformation with inadequate validation
+5. **Performance Degradation Risk**: Excessive re-renders and inefficient API patterns
+
+### 13.2 User Experience Issues
+
+1. **Inconsistent Loading States**: Users may not understand when operations are in progress
+2. **Poor Error Feedback**: Generic error messages don't help users resolve issues
+3. **Lost Work Risk**: No auto-save or draft recovery mechanisms
+4. **Navigation Confusion**: URL state and UI state can become desynchronized
+
+## 14. Recommendations
+
+### 14.1 Immediate Actions (Critical)
+
+1. **Implement Centralized State Management**: Use Redux Toolkit or Zustand for consistent state management
+2. **Add Request Abstraction Layer**: Create API service layer with consistent error handling
+3. **Implement Proper Input Validation**: Add schema validation for all user inputs and API responses
+4. **Fix Race Condition Issues**: Implement proper request cancellation and coordination
+5. **Add Comprehensive Error Boundaries**: Implement error boundaries with user-friendly error messages
+
+### 14.2 Medium-term Improvements
+
+1. **Refactor Component Architecture**: Break down large components into focused, single-responsibility components
+2. **Implement Auto-save Functionality**: Add periodic auto-save with conflict resolution
+3. **Add Loading and Error States**: Consistent loading and error state management across all components
+4. **Implement Request Caching**: Add appropriate caching strategies for frequently accessed data
+5. **Add Comprehensive Testing**: Unit and integration tests for critical save/load functionality
+
+### 14.3 Long-term Architecture Changes
+
+1. **Implement Offline Support**: Add service worker and offline state management
+2. **Add Real-time Collaboration**: Implement conflict resolution for concurrent editing
+3. **Performance Optimization**: Implement virtual scrolling, code splitting, and other performance optimizations
+4. **Accessibility Improvements**: Add proper ARIA labels, keyboard navigation, and screen reader support
+
+## 15. Conclusion
+
+The AI Gym frontend save/load implementation exhibits significant architectural flaws that pose immediate risks to data integrity, user experience, and system reliability. The code demonstrates characteristics of rapid prototyping without proper architectural planning, resulting in technical debt that will become increasingly difficult to manage as the system scales.
+
+The most critical issues requiring immediate attention are:
+1. **State management chaos** leading to data inconsistency
+2. **Race condition vulnerabilities** in data fetching and updates
+3. **Inconsistent error handling** causing poor user experience
+4. **Tight coupling** making the system difficult to test and maintain
+5. **Security vulnerabilities** in input validation and authentication
+
+Without immediate intervention, these issues will lead to:
+- **Data loss incidents** affecting user trust
+- **Performance degradation** as the system scales
+- **Development velocity reduction** due to technical debt
+- **Increased bug reports** and support overhead
+
+The recommended approach is to implement a phased refactoring strategy, starting with the most critical issues (centralized state management and API abstraction) and gradually improving the overall architecture while maintaining feature functionality.
+
+## Sources
+
+[1] PageBuilder.tsx - Primary component source code analysis
+[2] EnhancedWodsRepository.tsx - Repository management component analysis  
+[3] CenterCanvas.tsx - Canvas interface component analysis
+[4] pageBuilder.ts - Type definitions analysis
+[5] supabase.ts - Database integration configuration analysis
+[6] RepositoryPopup.tsx - Content selection component analysis
+[7] RightBlockEditor.tsx - Block editor component analysis

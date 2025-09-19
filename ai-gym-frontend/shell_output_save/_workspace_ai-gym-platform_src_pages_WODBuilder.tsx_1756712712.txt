@@ -1,0 +1,152 @@
+              <Save className="h-4 w-4 mr-2" />
+            )}
+            Save
+          </Button>
+        </div>
+      </div>
+
+      {/* Persistent Icon Navigation Rail */}
+      {!previewMode && (
+        <PersistentIconNavigationRail
+          onBlockAdd={handleAddBlock}
+          onPageCreate={handlePageCreate}
+          onPageSelect={handlePageSelect}
+          pages={structure.pages.map(page => ({
+            id: page.id,
+            title: page.title,
+            blocks: page.blocks?.length || 0
+          }))}
+          currentPageId={currentPage?.id}
+          structure={parent}
+          onSave={() => handleSave(false)}
+          onPreview={handlePreviewToggle}
+          isPreviewMode={previewMode}
+        />
+      )}
+
+      <div className="flex-1 flex overflow-hidden ml-16">{/* Add margin for icon rail */}
+
+        {/* Main Content Area */}
+        <div className={cn(
+          'flex-1 overflow-auto',
+          previewMode && 'bg-white',
+          !previewMode && showRightSidebar && 'mr-96'
+        )}>
+          <div className={cn('min-h-full', getViewModeClasses())}>
+            <DndContext
+              sensors={sensors}
+              onDragStart={handleDragStart}
+              onDragEnd={handleDragEnd}
+            >
+              <div className={cn(
+                'min-h-full',
+                previewMode ? 'bg-white' : 'bg-gray-50 p-8'
+              )}>
+                {currentPage ? (
+                  <div className={cn(
+                    'bg-white rounded-lg shadow-sm',
+                    previewMode ? 'min-h-screen' : 'min-h-[600px] p-6'
+                  )}>
+                    {/* Page Content */}
+                    {currentPage.blocks && currentPage.blocks.length > 0 ? (
+                      <SortableContext 
+                        items={currentPage.blocks.map(b => b.id)}
+                        strategy={verticalListSortingStrategy}
+                      >
+                        <div className="space-y-4">
+                          {currentPage.blocks.map((block) => (
+                            <div
+                              key={block.id}
+                              className={cn(
+                                'group relative',
+                                !previewMode && 'border border-transparent hover:border-gray-300 rounded-lg transition-colors',
+                                selectedBlock?.id === block.id && !previewMode && 'border-blue-500 bg-blue-50/50'
+                              )}
+                              onClick={() => !previewMode && handleBlockSelect(block)}
+                            >
+                              {/* Block Controls (Admin View Only) */}
+                              {!previewMode && (
+                                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                                  <div className="flex items-center space-x-1 bg-white border border-gray-200 rounded-lg shadow-sm p-1">
+                                    <Button
+                                      variant="ghost"
+                                      size="sm"
+                                      onClick={(e) => {
+                                        e.stopPropagation()
+                                        handleBlockEdit(block)
+                                      }}
+                                      className="h-6 w-6 p-0"
+                                    >
+                                      <Edit3 className="h-3 w-3" />
+                                    </Button>
+                                    <Button
+                                      variant="ghost"
+                                      size="sm"
+                                      onClick={(e) => {
+                                        e.stopPropagation()
+                                        handleBlockDelete(block.id)
+                                      }}
+                                      className="h-6 w-6 p-0 text-red-600 hover:text-red-700"
+                                    >
+                                      <Trash2 className="h-3 w-3" />
+                                    </Button>
+                                  </div>
+                                </div>
+                              )}
+                              
+                              <BlockRenderer
+                                block={block}
+                                isEditing={!previewMode && selectedBlock?.id === block.id}
+                                isSelected={selectedBlock?.id === block.id}
+                                onContentChange={(blockId, content) => handleBlockContentChange(blockId, content)}
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </SortableContext>
+                    ) : (
+                      <div className="flex items-center justify-center py-20">
+                        <div className="text-center">
+                          <Layers className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                          <h3 className="text-lg font-medium text-gray-900 mb-2">
+                            Start building your {type === 'wods' ? 'WOD' : 'block'}
+                          </h3>
+                          <p className="text-gray-500 mb-6">
+                            Add blocks from the left panel to create engaging content
+                          </p>
+                          <p className="text-sm text-gray-400 mt-2">
+                            Use the left sidebar to add blocks and manage content
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center py-20">
+                    <div className="text-center">
+                      <FileText className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                      <h3 className="text-lg font-medium text-gray-900 mb-2">
+                        No page selected
+                      </h3>
+                      <p className="text-gray-500">
+                        Select a page from the pages panel to start editing
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </DndContext>
+          </div>
+        </div>
+
+        {/* Right Contextual Sidebar */}
+        {!previewMode && showRightSidebar && selectedBlock && (
+          <TrainingZoneRightSidebar
+            block={selectedBlock}
+            onBlockUpdate={handleBlockUpdate}
+            onClose={() => setShowRightSidebar(false)}
+          />
+        )}
+      </div>
+
+      {/* Delete Confirmation Dialog */}

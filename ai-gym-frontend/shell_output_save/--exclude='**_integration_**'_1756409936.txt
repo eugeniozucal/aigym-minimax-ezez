@@ -1,0 +1,184 @@
+
+> react_repo@0.0.0 test
+> vitest --run --exclude=**/integration/**
+
+
+ RUN  v3.2.4 /workspace/ai-gym-platform
+
+
+ Test Files 0 passed (6)
+      Tests 0 passed (0)
+   Start at 19:38:45
+   Duration 4.20s
+
+ Test Files 0 passed (6)
+      Tests 0 passed (0)
+   Start at 19:38:45
+   Duration 5.17s
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+
+ Test Files 0 passed (6)
+      Tests 0 passed (0)
+   Start at 19:38:45
+   Duration 6.07s
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+
+ Test Files 0 passed (6)
+      Tests 0 passed (0)
+   Start at 19:38:45
+   Duration 6.17s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+
+ Test Files 0 passed (6)
+      Tests 0 passed (0)
+   Start at 19:38:45
+   Duration 6.38s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+
+ Test Files 0 passed (6)
+      Tests 0 passed (0)
+   Start at 19:38:45
+   Duration 7.27s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+
+ Test Files 0 passed (6)
+      Tests 0 passed (0)
+   Start at 19:38:45
+   Duration 8.19s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts 0/13
+
+ Test Files 0 passed (6)
+      Tests 0 passed (13)
+   Start at 19:38:45
+   Duration 8.39s
+ ✓ src/lib/__tests__/page-builder-types.test.ts (13 tests) 77ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 0/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 1 passed (6)
+      Tests 13 passed (23)
+   Start at 19:38:45
+   Duration 8.67s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 1/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+
+ Test Files 1 passed (6)
+      Tests 14 passed (34)
+   Start at 19:38:45
+   Duration 8.98s
+ ✓ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx (10 tests) 397ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 10/11
+
+ Test Files 2 passed (6)
+      Tests 33 passed (55)
+   Start at 19:38:45
+   Duration 9.08s
+ ✓ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx (11 tests) 494ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+
+ Test Files 3 passed (6)
+      Tests 34 passed (55)
+   Start at 19:38:45
+   Duration 9.28s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 1/12
+
+ Test Files 3 passed (6)
+      Tests 35 passed (55)
+   Start at 19:38:45
+   Duration 9.78s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 4/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 3/12
+
+ Test Files 3 passed (6)
+      Tests 41 passed (55)
+   Start at 19:38:45
+   Duration 9.88s
+ ✓ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx (9 tests) 898ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 5/12
+
+ Test Files 4 passed (6)
+      Tests 48 passed (55)
+   Start at 19:38:45
+   Duration 9.98s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 6/12
+
+ Test Files 4 passed (6)
+      Tests 49 passed (55)
+   Start at 19:38:45
+   Duration 10.08s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 8/12
+
+ Test Files 4 passed (6)
+      Tests 51 passed (55)
+   Start at 19:38:45
+   Duration 10.28s
+ ✓ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx (12 tests) 1208ms
+   ✓ QuizBlock > renders quiz question and options  302ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 1/10
+
+ Test Files 5 passed (6)
+      Tests 56 passed (65)
+   Start at 19:38:45
+   Duration 10.48s
+ ✓ src/components/page-builder/__tests__/BlockRenderer.test.tsx (10 tests) 197ms
+
+ Test Files  6 passed (6)
+      Tests  65 passed (65)
+   Start at  19:38:45
+   Duration  10.59s (transform 2.23s, setup 11.14s, collect 5.28s, tests 3.27s, environment 11.32s, prepare 5.90s)
+

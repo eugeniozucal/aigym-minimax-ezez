@@ -1,0 +1,18 @@
+📄 Extracted from page: 404 - Page Not Found
+URL: https://if4yb5jxn92w.space.minimax.io/robots.txt
+
+Extracted content:
+```json
+{
+    "title": "404 - Page Not Found",
+    "url": "https://if4yb5jxn92w.space.minimax.io/robots.txt",
+    "summary": "The page at the specified URL returns a '404 - Page Not Found' error, indicating that the 'robots.txt' file does not exist or could not be found on the server at this location. Therefore, no robots.txt content, disallowed paths, or site structure information could be extracted.",
+    "key_points": [
+        "The page content is a 404 'Page Not Found' error.",
+        "No robots.txt content was found or displayed.",
+        "The requested resource (robots.txt) is not available at the given URL."
+    ],
+    "relevant_links": [],
+    "file_name": "404_robots_txt_not_found.json"
+}
+```

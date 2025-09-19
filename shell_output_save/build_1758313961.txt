@@ -1,0 +1,346 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +582
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 582, reused 0, downloaded 0, added 0
+Progress: resolved 582, reused 189, downloaded 0, added 0
+Progress: resolved 582, reused 582, downloaded 0, added 18
+Progress: resolved 582, reused 582, downloaded 0, added 458
+Progress: resolved 582, reused 582, downloaded 0, added 582, done
+
+dependencies:
++ @hookform/resolvers 3.10.0
++ @monaco-editor/react 4.7.0
++ @radix-ui/react-accordion 1.2.4
++ @radix-ui/react-alert-dialog 1.1.7
++ @radix-ui/react-aspect-ratio 1.1.3
++ @radix-ui/react-avatar 1.1.4
++ @radix-ui/react-checkbox 1.1.5
++ @radix-ui/react-collapsible 1.1.4
++ @radix-ui/react-context-menu 2.2.7
++ @radix-ui/react-dialog 1.1.7
++ @radix-ui/react-dropdown-menu 2.1.7
++ @radix-ui/react-hover-card 1.1.7
++ @radix-ui/react-label 2.1.3
++ @radix-ui/react-menubar 1.1.7
++ @radix-ui/react-navigation-menu 1.2.6
++ @radix-ui/react-popover 1.1.7
++ @radix-ui/react-progress 1.1.3
++ @radix-ui/react-radio-group 1.2.4
++ @radix-ui/react-scroll-area 1.2.4
++ @radix-ui/react-select 2.1.7
++ @radix-ui/react-separator 1.1.3
++ @radix-ui/react-slider 1.2.4
++ @radix-ui/react-slot 1.2.0
++ @radix-ui/react-switch 1.1.4
++ @radix-ui/react-tabs 1.1.4
++ @radix-ui/react-toast 1.2.7
++ @radix-ui/react-toggle 1.1.3
++ @radix-ui/react-toggle-group 1.1.3
++ @radix-ui/react-tooltip 1.2.0
++ @supabase/supabase-js 2.56.0
++ @tanstack/react-query 5.89.0
++ @tanstack/react-query-devtools 5.89.0
++ class-variance-authority 0.7.1
++ clsx 2.1.1
++ cmdk 1.0.0
++ date-fns 3.6.0
++ embla-carousel-react 8.6.0
++ immer 10.1.3
++ input-otp 1.4.2
++ lucide-react 0.364.0
++ next-themes 0.4.6
++ quill 2.0.3
++ react 18.3.1
++ react-day-picker 8.10.1
++ react-dom 18.3.1
++ react-hook-form 7.55.0
++ react-quill 2.0.0
++ react-resizable-panels 2.1.7
++ react-router-dom 6.30.0
++ recharts 2.15.2
++ sonner 1.7.4
++ tailwind-merge 2.6.0
++ tailwindcss-animate 1.0.7
++ vaul 1.1.2
++ zod 3.24.2
++ zustand 5.0.8
+
+devDependencies:
++ @eslint/js 9.24.0
++ @testing-library/jest-dom 6.8.0
++ @testing-library/react 16.3.0
++ @types/node 22.14.1
++ @types/react 18.3.20
++ @types/react-dom 18.3.6
++ @types/react-router-dom 5.3.3
++ @vitejs/plugin-react 4.3.4
++ autoprefixer 10.4.20
++ eslint 9.24.0
++ eslint-plugin-react-hooks 5.2.0
++ eslint-plugin-react-refresh 0.4.19
++ globals 15.15.0
++ jsdom 27.0.0
++ postcss 8.4.49
++ tailwindcss 3.4.16
++ typescript 5.6.3
++ typescript-eslint 8.29.1
++ vite 6.2.6
++ vite-plugin-source-identifier 1.1.2
++ vitest 3.2.4
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 7.7s using pnpm v10.12.4
+src/__tests__/api.test.ts:389:25 - error TS2339: Property 'title' does not exist on type '{ success: boolean; data?: ContentItem; error?: string; }'.
+
+389       expect(results[0].title).toBe('Updated WOD 1')
+                            ~~~~~
+
+src/__tests__/api.test.ts:390:25 - error TS2339: Property 'title' does not exist on type '{ success: boolean; data?: ContentItem; error?: string; }'.
+
+390       expect(results[1].title).toBe('Updated WOD 2')
+                            ~~~~~
+
+src/__tests__/integration.test.ts:72:7 - error TS2353: Object literal may only specify known properties, and 'description' does not exist in type 'Partial<Block>'.
+
+72       description: '3 sets of 15 reps',
+         ~~~~~~~~~~~
+
+src/__tests__/integration.test.ts:77:26 - error TS2339: Property 'description' does not exist on type 'Block'.
+
+77     expect(updatedBlock?.description).toBe('3 sets of 15 reps')
+                            ~~~~~~~~~~~
+
+src/__tests__/integration.test.ts:297:33 - error TS2339: Property 'title' does not exist on type 'Block'.
+
+297     expect(store.selectedBlock?.title).toBe('Push-ups')
+                                    ~~~~~
+
+src/__tests__/integration.test.ts:301:7 - error TS2353: Object literal may only specify known properties, and 'description' does not exist in type 'Partial<Block>'.
+
+301       description: '4 sets of 10 reps',
+          ~~~~~~~~~~~
+
+src/__tests__/stores.test.ts:110:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: any[]; order: number; }[]; settings: { communities: any[]; tags: any[]; people: any[]; difficulty: number; estimatedDuration: number; autoSaveEnabled: boolean; }; }' is not assignable to parameter of type 'PageData'.
+  The types of 'settings.difficulty' are incompatible between these types.
+    Type 'number' is not assignable to type '1 | 2 | 5 | 3 | 4'.
+
+110     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/__tests__/stores.test.ts:111:30 - error TS2345: Argument of type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is not assignable to parameter of type 'Block'.
+  Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is missing the following properties from type 'Block': data, pageId
+
+111     store.addBlock('page-1', mockBlock)
+                                 ~~~~~~~~~
+
+src/__tests__/stores.test.ts:149:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  Types of property 'pages' are incompatible.
+    Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }[]' is not assignable to type 'Page[]'.
+      Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }' is not assignable to type 'Page'.
+        Types of property 'blocks' are incompatible.
+          Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }[]' is not assignable to type 'Block[]'.
+            Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is missing the following properties from type 'Block': data, pageId
+
+149     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/__tests__/stores.test.ts:150:46 - error TS2353: Object literal may only specify known properties, and 'title' does not exist in type 'Partial<Block>'.
+
+150     store.updateBlock('page-1', 'block-1', { title: 'Updated Title' })
+                                                 ~~~~~
+
+src/__tests__/stores.test.ts:153:26 - error TS2339: Property 'title' does not exist on type 'Block'.
+
+153     expect(updatedBlock?.title).toBe('Updated Title')
+                             ~~~~~
+
+src/__tests__/stores.test.ts:184:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  Types of property 'pages' are incompatible.
+    Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; }[]; order: number; }[]' is not assignable to type 'Page[]'.
+      Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; }[]; order: number; }' is not assignable to type 'Page'.
+        Types of property 'blocks' are incompatible.
+          Type '{ id: string; type: string; title: string; content: string; order: number; }[]' is not assignable to type 'Block[]'.
+            Type '{ id: string; type: string; title: string; content: string; order: number; }' is missing the following properties from type 'Block': data, pageId
+
+184     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/__tests__/stores.test.ts:220:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  Types of property 'pages' are incompatible.
+    Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; }[]; order: number; }[]' is not assignable to type 'Page[]'.
+      Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; }[]; order: number; }' is not assignable to type 'Page'.
+        Types of property 'blocks' are incompatible.
+          Type '{ id: string; type: string; title: string; content: string; order: number; }[]' is not assignable to type 'Block[]'.
+            Type '{ id: string; type: string; title: string; content: string; order: number; }' is missing the following properties from type 'Block': data, pageId
+
+220     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/__tests__/stores.test.ts:243:28 - error TS2345: Argument of type '{ id: string; type: string; title: string; description: string; content: { reps: number; }; order: number; }' is not assignable to parameter of type 'Block'.
+  Type '{ id: string; type: string; title: string; description: string; content: { reps: number; }; order: number; }' is missing the following properties from type 'Block': data, pageId
+
+243     store.setSelectedBlock(testBlock)
+                               ~~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:199:11 - error TS2322: Type '{ activeMenu: string; onMenuToggle: (menu: string) => void; repositoryType: RepositoryType; }' is not assignable to type 'IntrinsicAttributes & FixedLeftRailProps'.
+  Property 'repositoryType' does not exist on type 'IntrinsicAttributes & FixedLeftRailProps'.
+
+199           repositoryType={repositoryType}
+              ~~~~~~~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:204:11 - error TS2322: Type '{ activeMenu: string; onClose: () => void; repositoryType: RepositoryType; }' is not assignable to type 'IntrinsicAttributes & DeployedLeftMenuProps'.
+  Property 'activeMenu' does not exist on type 'IntrinsicAttributes & DeployedLeftMenuProps'.
+
+204           activeMenu={activeLeftMenu}
+              ~~~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:212:13 - error TS2322: Type '{ pageData: PageData; selectedBlock: Block; onBlockSelect: (block: Block) => void; onSave: () => Promise<void>; isAutoSaving: boolean; error: string; successMessage: string; config: { ...; } | ... 8 more ... | { ...; }; }' is not assignable to type 'IntrinsicAttributes & CenterCanvasProps'.
+  Property 'pageData' does not exist on type 'IntrinsicAttributes & CenterCanvasProps'.
+
+212             pageData={pageData}
+                ~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:226:13 - error TS2322: Type '{ selectedBlock: Block; onClose: () => void; pageData: PageData; }' is not assignable to type 'IntrinsicAttributes & RightBlockEditorProps'.
+  Property 'selectedBlock' does not exist on type 'IntrinsicAttributes & RightBlockEditorProps'.
+
+226             selectedBlock={selectedBlock}
+                ~~~~~~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:235:13 - error TS2322: Type '{ type: string; onClose: () => void; repositoryType: RepositoryType; }' is not assignable to type 'IntrinsicAttributes & RepositoryPopupProps'.
+  Property 'type' does not exist on type 'IntrinsicAttributes & RepositoryPopupProps'.
+
+235             type={repositoryPopup.type}
+                ~~~~
+
+src/components/shared/NewPageBuilder.tsx:243:12 - error TS2739: Type '{ pageData: PageData; onClose: () => void; }' is missing the following properties from type 'PreviewModalProps': currentPageId, isOpen
+
+243           <PreviewModal
+               ~~~~~~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderCanvas.tsx:93:68 - error TS2339: Property 'title' does not exist on type 'Block'.
+
+93                   <h3 className="font-medium text-gray-900">{block.title}</h3>
+                                                                      ~~~~~
+
+src/components/shared/PageBuilder/PageBuilderCanvas.tsx:98:24 - error TS2339: Property 'description' does not exist on type 'Block'.
+
+98                 {block.description && (
+                          ~~~~~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderCanvas.tsx:99:68 - error TS2339: Property 'description' does not exist on type 'Block'.
+
+99                   <p className="text-sm text-gray-600 mb-2">{block.description}</p>
+                                                                      ~~~~~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderCanvas.tsx:101:24 - error TS2339: Property 'content' does not exist on type 'Block'.
+
+101                 {block.content && (
+                           ~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderCanvas.tsx:103:35 - error TS2339: Property 'content' does not exist on type 'Block'.
+
+103                     {typeof block.content === 'string'
+                                      ~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderCanvas.tsx:104:31 - error TS2339: Property 'content' does not exist on type 'Block'.
+
+104                       ? block.content
+                                  ~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderCanvas.tsx:105:46 - error TS2339: Property 'content' does not exist on type 'Block'.
+
+105                       : JSON.stringify(block.content, null, 2)
+                                                 ~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderModals.tsx:40:35 - error TS2345: Argument of type '{ id: string; type: string; title: any; description: any; content: any; order: number; }' is not assignable to parameter of type 'Block'.
+  Type '{ id: string; type: string; title: any; description: any; content: any; order: number; }' is missing the following properties from type 'Block': data, pageId
+
+40           addBlock(currentPageId, block)
+                                     ~~~~~
+
+src/components/shared/PageBuilder/PageBuilderRightPanel.tsx:81:34 - error TS2339: Property 'title' does not exist on type 'Block'.
+
+81             value={selectedBlock.title || ''}
+                                    ~~~~~
+
+src/components/shared/PageBuilder/PageBuilderRightPanel.tsx:93:34 - error TS2339: Property 'description' does not exist on type 'Block'.
+
+93             value={selectedBlock.description || ''}
+                                    ~~~~~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderRightPanel.tsx:107:36 - error TS2339: Property 'content' does not exist on type 'Block'.
+
+107               typeof selectedBlock.content === 'string'
+                                       ~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderRightPanel.tsx:108:33 - error TS2339: Property 'content' does not exist on type 'Block'.
+
+108                 ? selectedBlock.content
+                                    ~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderRightPanel.tsx:109:48 - error TS2339: Property 'content' does not exist on type 'Block'.
+
+109                 : JSON.stringify(selectedBlock.content, null, 2)
+                                                   ~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderRightPanel.tsx:133:38 - error TS2339: Property 'duration' does not exist on type 'Block'.
+
+133                 value={selectedBlock.duration || ''}
+                                         ~~~~~~~~
+
+src/components/shared/PageBuilder/PageBuilderRightPanel.tsx:144:38 - error TS2339: Property 'difficulty' does not exist on type 'Block'.
+
+144                 value={selectedBlock.difficulty || 'beginner'}
+                                         ~~~~~~~~~~
+
+src/lib/api/contentApi.ts:199:15 - error TS2353: Object literal may only specify known properties, and 'signal' does not exist in type 'FunctionInvokeOptions'.
+
+199               signal: abortController.signal
+                  ~~~~~~
+
+src/lib/api/contentApi.ts:209:26 - error TS2339: Property 'status' does not exist on type 'FunctionsResponse<any>'.
+  Property 'status' does not exist on type 'FunctionsResponseFailure'.
+
+209                 response.status,
+                             ~~~~~~
+
+src/lib/api/contentApi.ts:322:7 - error TS2322: Type '{ id?: string; version?: number; title?: string; content?: Record<string, any>; description?: string; status?: "archived" | "draft" | "published"; created_at?: string; tags?: string[]; thumbnail_url?: string; ... 8 more ...; updated_by?: string; }' is not assignable to type 'ContentItem'.
+  Property 'id' is optional in type '{ id?: string; version?: number; title?: string; content?: Record<string, any>; description?: string; status?: "archived" | "draft" | "published"; created_at?: string; tags?: string[]; thumbnail_url?: string; ... 8 more ...; updated_by?: string; }' but required in type 'ContentItem'.
+
+322       return result
+          ~~~~~~
+
+src/lib/api/contentApi.ts:369:7 - error TS2322: Type '{ id?: string; version?: number; title?: string; content?: Record<string, any>; description?: string; status?: "archived" | "draft" | "published"; created_at?: string; tags?: string[]; thumbnail_url?: string; ... 8 more ...; updated_by?: string; }[]' is not assignable to type 'ContentItem[]'.
+  Type '{ id?: string; version?: number; title?: string; content?: Record<string, any>; description?: string; status?: "archived" | "draft" | "published"; created_at?: string; tags?: string[]; thumbnail_url?: string; ... 8 more ...; updated_by?: string; }' is not assignable to type 'ContentItem'.
+    Property 'id' is optional in type '{ id?: string; version?: number; title?: string; content?: Record<string, any>; description?: string; status?: "archived" | "draft" | "published"; created_at?: string; tags?: string[]; thumbnail_url?: string; ... 8 more ...; updated_by?: string; }' but required in type 'ContentItem'.
+
+369       return result
+          ~~~~~~
+
+src/lib/api/contentApi.ts:409:7 - error TS2322: Type '{ id?: string; version?: number; title?: string; content?: Record<string, any>; description?: string; status?: "archived" | "draft" | "published"; created_at?: string; tags?: string[]; thumbnail_url?: string; ... 8 more ...; updated_by?: string; }' is not assignable to type 'ContentItem'.
+  Property 'id' is optional in type '{ id?: string; version?: number; title?: string; content?: Record<string, any>; description?: string; status?: "archived" | "draft" | "published"; created_at?: string; tags?: string[]; thumbnail_url?: string; ... 8 more ...; updated_by?: string; }' but required in type 'ContentItem'.
+
+409       return result
+          ~~~~~~
+
+src/lib/api/contentApi.ts:438:7 - error TS2322: Type '{ id?: string; version?: number; title?: string; content?: Record<string, any>; description?: string; status?: "archived" | "draft" | "published"; created_at?: string; tags?: string[]; thumbnail_url?: string; ... 8 more ...; updated_by?: string; }' is not assignable to type 'ContentItem'.
+  Property 'id' is optional in type '{ id?: string; version?: number; title?: string; content?: Record<string, any>; description?: string; status?: "archived" | "draft" | "published"; created_at?: string; tags?: string[]; thumbnail_url?: string; ... 8 more ...; updated_by?: string; }' but required in type 'ContentItem'.
+
+438       return result
+          ~~~~~~
+
+
+Found 41 errors.
+

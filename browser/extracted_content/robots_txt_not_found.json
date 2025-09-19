@@ -1,0 +1,20 @@
+📄 Extracted from page: 404 - Page Not Found
+URL: https://zxo7sh7kkhjz.space.minimax.io/robots.txt
+
+Extracted content:
+```json
+{
+    "title": "404 - Page Not Found",
+    "url": "https://zxo7sh7kkhjz.space.minimax.io/robots.txt",
+    "summary": "The requested URL 'https://zxo7sh7kkhjz.space.minimax.io/robots.txt' returned a 404 'Page Not Found' error. Consequently, no robots.txt content was available for extraction, meaning no paths, API endpoints, or directories could be referenced from the file.",
+    "key_points": [
+        "The page returned a 404 status, indicating the robots.txt file was not found.",
+        "There is no robots.txt content to extract or analyze.",
+        "No paths, API endpoints, or directories are referenced because the file is absent."
+    ],
+    "relevant_links": [
+        "javascript:history.back()"
+    ],
+    "file_name": "robots_txt_not_found.json"
+}
+```

@@ -1,0 +1,32 @@
+📄 Extracted from page: AI Gym Page Builder Engine
+URL: https://zng55lmloisz.space.minimax.io/content/videos
+
+Extracted content:
+```json
+{
+    "title": "AI Gym Page Builder Engine",
+    "url": "https://zng55lmloisz.space.minimax.io/content/videos",
+    "summary": "The page displays a video management interface specifically for 'Educational videos with transcriptions' within the AI Gym platform. It lists existing video content, indicates the total number of items, and provides a clear 'Create New' button for adding new videos. Each listed video shows its title, current status (e.g., 'Draft'), a creation/modification date, and in one case, a brief description and the creator. There's also a visible option to remove individual video entries.",
+    "key_points": [
+        "Dedicated section for 'Videos' with the description 'Educational videos with transcriptions'.",
+        "Displays the total count of video items (e.g., '2 items').",
+        "Prominent 'Create New' button to add new video content.",
+        "Lists existing videos with their titles (e.g., 'A', 'Test YouTube Video').",
+        "Shows the current status of each video (e.g., 'Draft').",
+        "Displays a timestamp/date associated with each video (e.g., 'Aug 28, 2025', 'Aug 25, 2025').",
+        "Provides a descriptive text area for videos (e.g., 'This is a test video to verify the video creation functionality...').",
+        "Indicates the creator of a video (e.g., 'Created by MiniMax Agent').",
+        "Includes an 'x' icon next to each video, suggesting a functionality to delete or remove the video entry.",
+        "General navigation links are present: Dashboard, Clients, Users, Tags, Page Builder, Content."
+    ],
+    "relevant_links": [
+        "/dashboard",
+        "/clients",
+        "/users",
+        "/tags",
+        "/page-builder",
+        "/content"
+    ],
+    "file_name": "ai_gym_video_management.json"
+}
+```

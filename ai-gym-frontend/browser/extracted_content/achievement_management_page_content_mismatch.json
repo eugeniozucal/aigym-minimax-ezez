@@ -1,0 +1,37 @@
+📄 Extracted from page: ai-gym-platform
+URL: https://0hculur9h77p.space.minimax.io/admin/achievements
+
+Extracted content:
+```json
+{
+  "title": "ai-gym-platform",
+  "url": "https://0hculur9h77p.space.minimax.io/admin/achievements",
+  "summary": "This page, despite its URL and a navigation link pointing to 'Achievements', displays the 'Content Management' section of the AI GYM platform. It provides an interface to manage various training content such as videos, AI agents, and learning materials. The main component is a table listing 'Content Items' with details like Content name (including an ID snippet), Type, Status (Published/Draft), Created, and Updated dates. Options for adding new content and filtering existing content by different types (e.g., Videos, AI Agents, Documents) are also present. A comprehensive sidebar navigation for the admin panel is visible, showing links to other areas like Dashboard, Users, Clients, Videos, AI Agents, WODs, Analytics, and Achievements.",
+  "key_points": [
+    "The page's URL (`/admin/achievements`) and a sidebar navigation link indicate it should be an 'Achievements' management page, but the displayed content is titled 'Content Management'.",
+    "The 'Content Management' section is described as managing 'training content, videos, AI agents, and learning materials'.",
+    "A set of buttons/filters allows users to 'Add Content' or view content by 'All Types', 'Videos', 'Documents', 'AI Agents', 'Prompts', and 'Automations'.",
+    "A table titled 'Content Items (10)' lists ten content entries with the following columns: 'Content' (displaying name and a truncated ID), 'Type' (e.g., automation, prompt, document, video, ai agent), 'Status' (Published or Draft), 'Created' date, 'Updated' date, and an empty 'Actions' column.",
+    "Examples of content items in the table include 'Auto Test', 'Assessment Agent', 'HOLA QUE TAL' (video), 'dLocal' (AI agent), and 'Test Document for WYSIWYG Editor'.",
+    "A left-hand sidebar navigation for 'AI GYM Training Zone' includes links to Dashboard, Users, Clients, Content, Videos, AI Agents, WODs, Analytics, Achievements, Activities, Uploads, System, and Settings.",
+    "User information 'Admin User ez@aiworkify.com' is displayed.",
+    "A 'View notifications' link is present near the user info."
+  ],
+  "relevant_links": [
+    "/admin",
+    "/admin/users",
+    "/admin/clients",
+    "/admin/content",
+    "/admin/videos",
+    "/admin/ai-agents",
+    "/admin/wods",
+    "/admin/analytics",
+    "/admin/achievements",
+    "/admin/activities",
+    "/admin/uploads",
+    "/admin/system",
+    "/admin/settings"
+  ],
+  "file_name": "achievement_management_page_content_mismatch.json"
+}
+```

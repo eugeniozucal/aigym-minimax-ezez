@@ -1,0 +1,444 @@
+{
+  "_source_id": 61,
+  "sources": {
+    "Supabase Enterprise Architecture Analysis": {
+      "https://supabase.com/docs/guides/database/postgres/row-level-security": {
+        "id": 1,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+        "title": "Row Level Security - Supabase Docs",
+        "info": "Comprehensive documentation on Supabase Row Level Security (RLS) implementation, best practices, performance optimization, and enterprise patterns including authentication integration and policy management"
+      },
+      "https://medium.com/@lakshaykapoor08/building-role-based-access-control-rbac-with-supabase-row-level-security-c82eb1865dfd": {
+        "id": 2,
+        "publisher": "Medium",
+        "url": "https://medium.com/@lakshaykapoor08/building-role-based-access-control-rbac-with-supabase-row-level-security-c82eb1865dfd",
+        "title": "Building Role-Based Access Control (RBAC) with Supabase Row Level Security",
+        "info": "Detailed implementation guide for Role-Based Access Control (RBAC) using Supabase RLS with practical examples and patterns for enterprise applications"
+      },
+      "https://supabase.com/docs/guides/troubleshooting/rls-performance-and-best-practices-Z5Jjwv": {
+        "id": 3,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/troubleshooting/rls-performance-and-best-practices-Z5Jjwv",
+        "title": "RLS Performance and Best Practices",
+        "info": "Advanced RLS performance optimization techniques with benchmarks and best practices for enterprise-scale applications"
+      },
+      "https://uibakery.io/blog/supabase-security": {
+        "id": 4,
+        "publisher": "UI Bakery",
+        "url": "https://uibakery.io/blog/supabase-security",
+        "title": "Supabase Security: What Enterprise Teams Need to Know",
+        "info": "Comprehensive enterprise security analysis covering access control, data encryption, compliance features, and security considerations for enterprise teams"
+      },
+      "https://supabase.com/blog/supabase-soc2-hipaa": {
+        "id": 5,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/blog/supabase-soc2-hipaa",
+        "title": "Supabase is now HIPAA and SOC2 Type 2 compliant",
+        "info": "Official announcement and detailed information about Supabase's SOC2 Type 2 and HIPAA compliance certifications, including implementation details and enterprise requirements"
+      },
+      "https://supabase.com/docs/guides/security/soc-2-compliance": {
+        "id": 6,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/security/soc-2-compliance",
+        "title": "SOC 2 Compliance and Supabase",
+        "info": "Detailed SOC2 Type 2 compliance documentation including shared responsibility model, audit processes, and enterprise security controls"
+      },
+      "https://supabase.com/blog/new-observability-features-in-supabase": {
+        "id": 7,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/blog/new-observability-features-in-supabase",
+        "title": "New Observability Features in Supabase",
+        "info": "New observability features including OpenTelemetry support, advanced logging, monitoring capabilities, and AI-powered debugging tools for enterprise applications"
+      },
+      "https://supabase.com/docs/guides/telemetry/metrics": {
+        "id": 8,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/telemetry/metrics",
+        "title": "Metrics - Supabase Docs",
+        "info": "Comprehensive metrics and monitoring capabilities including Prometheus integration, Grafana dashboards, and custom monitoring setup for enterprise observability"
+      },
+      "https://supabase.com/docs/guides/realtime/benchmarks": {
+        "id": 9,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/realtime/benchmarks",
+        "title": "Benchmarks - Realtime",
+        "info": "Detailed performance benchmarks for Realtime features including Broadcast, Presence, and Postgres Changes with scalability recommendations for enterprise use"
+      },
+      "https://medium.com/@firmanbrilian/best-practices-for-securing-and-scaling-supabase-for-production-data-workloads-4394aba9e868": {
+        "id": 10,
+        "publisher": "Medium",
+        "url": "https://medium.com/@firmanbrilian/best-practices-for-securing-and-scaling-supabase-for-production-data-workloads-4394aba9e868",
+        "title": "Best Practices for Securing and Scaling Supabase for Production Data Workloads",
+        "info": "Production-ready best practices for securing and scaling Supabase including database optimization, API security, real-time controls, and enterprise deployment patterns"
+      },
+      "https://supabase.com/solutions/enterprise": {
+        "id": 21,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/solutions/enterprise",
+        "title": "Supabase for Enterprise",
+        "info": "Comprehensive Supabase Enterprise solutions overview including scalability features, security certifications, global support, and customer success metrics"
+      },
+      "https://supabase.com/docs/guides/telemetry/logs": {
+        "id": 22,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/telemetry/logs",
+        "title": "Logging - Supabase Docs",
+        "info": "Detailed logging capabilities including Logs Explorer, product-specific logging interfaces, SQL-based querying, and enterprise monitoring features"
+      },
+      "https://supabase.com/docs/guides/telemetry/reports": {
+        "id": 23,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/telemetry/reports",
+        "title": "Reports - Supabase Docs",
+        "info": "Comprehensive reports and analytics capabilities with monitoring dashboards, performance metrics, and observability features across all Supabase services"
+      },
+      "https://supabase.com/pricing": {
+        "id": 24,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/pricing",
+        "title": "Pricing & Fees",
+        "info": "Complete pricing structure, plans, enterprise considerations, and cost optimization strategies for Supabase deployment"
+      },
+      "https://dev.to/adityabhuyan/best-practices-for-postgresql-database-design-to-ensure-performance-scalability-and-efficiency-3j4n": {
+        "id": 25,
+        "publisher": "Dev.to",
+        "url": "https://dev.to/adityabhuyan/best-practices-for-postgresql-database-design-to-ensure-performance-scalability-and-efficiency-3j4n",
+        "title": "Best Practices for PostgreSQL Database Design",
+        "info": "PostgreSQL enterprise database design best practices covering normalization, indexing, partitioning, constraints, query optimization, and connection pooling for performance and scalability"
+      }
+    },
+    "World-Class Software Development Practices Guide": {
+      "https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design": {
+        "id": 11,
+        "publisher": "DigitalOcean",
+        "url": "https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design",
+        "title": "SOLID Design Principles Explained: Building Better Software",
+        "info": "Comprehensive explanation of all 5 SOLID principles with practical PHP examples, implementation strategies, and enterprise application benefits for maintainable, extensible software"
+      },
+      "https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice": {
+        "id": 12,
+        "publisher": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice",
+        "title": "Designing a DDD-oriented microservice - .NET",
+        "info": "Detailed Microsoft guidance on Domain-Driven Design patterns, bounded contexts, aggregate patterns, and layered architecture principles for enterprise microservices"
+      },
+      "https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/": {
+        "id": 13,
+        "publisher": "SmartBear",
+        "url": "https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/",
+        "title": "Best Practices for Peer Code Review",
+        "info": "Research-backed best practices for code review processes including optimal review sizes (200-400 LOC), inspection rates, defect discovery rates, and systematic review methodologies"
+      },
+      "https://www.atlassian.com/devops/devops-tools/cicd-tools": {
+        "id": 14,
+        "publisher": "Atlassian",
+        "url": "https://www.atlassian.com/devops/devops-tools/cicd-tools",
+        "title": "5 Best CI/CD Tools Every DevOps Needs [2024]",
+        "info": "Comprehensive guide to DevOps and CI/CD tools including Bitbucket, Bamboo, and Jenkins with implementation strategies, challenges, and enterprise adoption best practices"
+      },
+      "https://microsoft.github.io/code-with-engineering-playbook/automated-testing/e2e-testing/": {
+        "id": 15,
+        "publisher": "Microsoft Engineering",
+        "url": "https://microsoft.github.io/code-with-engineering-playbook/automated-testing/e2e-testing/",
+        "title": "E2E Testing - Engineering Fundamentals Playbook",
+        "info": "Microsoft's engineering best practices for end-to-end testing including testing pyramid concepts, design blocks, metrics, frameworks like Gauge, Robot Framework, and Azure DevOps integration"
+      },
+      "https://vfunction.com/blog/enterprise-software-architecture-patterns/": {
+        "id": 16,
+        "publisher": "vFunction",
+        "url": "https://vfunction.com/blog/enterprise-software-architecture-patterns/",
+        "title": "Enterprise Software Architecture Patterns: The Complete Guide",
+        "info": "Comprehensive analysis of enterprise software architecture patterns including Layered, Microservices, Event-driven, SOA, Hexagonal, and CQRS with comparative analysis, performance considerations, and implementation guidance"
+      },
+      "https://www.linkedin.com/pulse/security-first-development-enterprise-devsecops-naveesha-lakshan-ykzue": {
+        "id": 17,
+        "publisher": "LinkedIn",
+        "url": "https://www.linkedin.com/pulse/security-first-development-enterprise-devsecops-naveesha-lakshan-ykzue",
+        "title": "Security-First Development: The Enterprise DevSecOps Advantage",
+        "info": "Detailed 11-stage Security-First Pipeline for DevSecOps including threat modeling, secure coding standards (OWASP, CERT), SAST, DAST, SCA, and continuous monitoring practices"
+      },
+      "https://www.atlassian.com/work-management/knowledge-sharing/documentation/standards": {
+        "id": 18,
+        "publisher": "Atlassian",
+        "url": "https://www.atlassian.com/work-management/knowledge-sharing/documentation/standards",
+        "title": "The Importance of Documentation Standards",
+        "info": "Documentation standards and knowledge management best practices including centralized repositories, team collaboration strategies, and tools like Confluence for enterprise software teams"
+      },
+      "https://redwerk.com/blog/scalable-software-architecture/": {
+        "id": 19,
+        "publisher": "Redwerk",
+        "url": "https://redwerk.com/blog/scalable-software-architecture/",
+        "title": "10 Key Principles for Building Scalable Software Architecture",
+        "info": "10 key principles for building scalable software architecture including modularity, loose coupling, stateless design, fault tolerance, performance optimization, and cloud-native practices"
+      },
+      "https://www.bunnyshell.com/blog/best-practices-for-end-to-end-testing-in-2025/": {
+        "id": 20,
+        "publisher": "Bunnyshell",
+        "url": "https://www.bunnyshell.com/blog/best-practices-for-end-to-end-testing-in-2025/",
+        "title": "Best Practices for End-to-End Testing in 2025",
+        "info": "Enterprise testing strategies for 2025 including testing pyramid concepts, E2E testing best practices, shift-left approaches, ephemeral environments, and team collaboration methodologies"
+      }
+    },
+    "AI GYM Enterprise Authentication Architecture": {
+      "https://supabase.com/docs/guides/auth": {
+        "id": 26,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/auth",
+        "title": "Supabase Authentication Documentation",
+        "info": "Comprehensive authentication system documentation including JWT handling, RLS policies, and best practices for enterprise implementations"
+      },
+      "https://supabase.com/docs/guides/auth/row-level-security": {
+        "id": 27,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/auth/row-level-security",
+        "title": "Row Level Security (RLS) Performance Guide",
+        "info": "Advanced RLS optimization techniques showing up to 99.99% performance improvements for enterprise-scale applications"
+      },
+      "https://supabase.com/docs/guides/auth/multi-factor-authentication": {
+        "id": 28,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/auth/multi-factor-authentication",
+        "title": "Multi-Factor Authentication Implementation",
+        "info": "Enterprise MFA implementation patterns including TOTP, backup codes, and authentication assurance levels"
+      },
+      "https://supabase.com/docs/guides/platform/logs": {
+        "id": 29,
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/platform/logs",
+        "title": "Security Audit Logging and Monitoring",
+        "info": "Comprehensive logging and monitoring capabilities for enterprise security compliance including SOC2 Type 2 and HIPAA requirements"
+      }
+    },
+    "AI GYM Authentication & Authorization System Analysis": {
+      "file:///workspace/emergency_investigation/login_failure_analysis.md": {
+        "id": 30,
+        "publisher": "AI GYM Development Team",
+        "url": "file:///workspace/emergency_investigation/login_failure_analysis.md",
+        "title": "Emergency Login System Failure Investigation",
+        "info": "Comprehensive analysis of authentication system issues including admin-only access model, session persistence problems, and access control failures. Documents user ID 6dd37147-d828-4b40-ae6f-9ebde5a2b1bc authentication patterns."
+      },
+      "file:///workspace/ai-gym-frontend/src/contexts/AuthContext.tsx": {
+        "id": 31,
+        "publisher": "AI GYM Frontend Codebase",
+        "url": "file:///workspace/ai-gym-frontend/src/contexts/AuthContext.tsx",
+        "title": "Authentication Context Implementation",
+        "info": "Core authentication state management with user session handling, admin privilege checking, 5-second loading timeout, and optimized admin data fetching. Implements AuthContextType interface with signIn/signOut methods."
+      },
+      "file:///workspace/ai-gym-frontend/src/components/ProtectedRoute.tsx": {
+        "id": 32,
+        "publisher": "AI GYM Frontend Codebase",
+        "url": "file:///workspace/ai-gym-frontend/src/components/ProtectedRoute.tsx",
+        "title": "Protected Route Access Control Component",
+        "info": "Route-level access control with requireAdmin prop, automatic login redirects, 10-second loading timeout, and access denied page rendering. Critical component enforcing admin-only access model."
+      },
+      "file:///workspace/ai-gym-frontend/src/components/shared/PageBuilder.tsx": {
+        "id": 33,
+        "publisher": "AI GYM Frontend Codebase",
+        "url": "file:///workspace/ai-gym-frontend/src/components/shared/PageBuilder.tsx",
+        "title": "Page Builder Save Functionality Implementation",
+        "info": "Save operation implementation for WODs and BLOCKS repositories with user session management, service role fallback, error handling, and authentication header configuration. Line 262-524 contains save logic."
+      },
+      "file:///workspace/supabase/functions/wods-api/index.ts": {
+        "id": 34,
+        "publisher": "AI GYM Backend Supabase Functions",
+        "url": "file:///workspace/supabase/functions/wods-api/index.ts",
+        "title": "WODs API Authentication Implementation",
+        "info": "WODs API with optional user authentication pattern, service role fallback for database operations, and token verification flow. Demonstrates backend authentication flexibility with defaultAdminUuid fallback."
+      },
+      "file:///workspace/migrations/003_create_rls_policies.sql": {
+        "id": 35,
+        "publisher": "AI GYM Database Schema",
+        "url": "file:///workspace/migrations/003_create_rls_policies.sql",
+        "title": "Row Level Security Policies Implementation",
+        "info": "Comprehensive RLS policies with helper functions for current_user_id(), current_user_org(), and is_super_admin(). Defines content access, admin permissions, and organization-based security controls."
+      },
+      "file:///workspace/supabase/tables/admins.sql": {
+        "id": 36,
+        "publisher": "AI GYM Database Schema",
+        "url": "file:///workspace/supabase/tables/admins.sql",
+        "title": "Admin Table Structure Definition",
+        "info": "Admin table schema with UUID primary key, email, password_hash, and role constraints for super_admin, manager, and specialist roles. Core table for admin privilege management."
+      },
+      "file:///workspace/authentication_test_report.md": {
+        "id": 37,
+        "publisher": "AI GYM Testing Reports",
+        "url": "file:///workspace/authentication_test_report.md",
+        "title": "Authentication System Testing Results",
+        "info": "Successful authentication testing with user cgcagngj@minimax.com, session management verification, role-based access control validation, and token extraction challenges. Documents 23-hour auto-refresh interval."
+      }
+    },
+    "React Save/Load Workflows Best Practices": {
+      "https://dev.to/hijazi313/state-management-in-2025-when-to-use-context-redux-zustand-or-jotai-2d2k": {
+        "id": 38,
+        "publisher": "Dev.to",
+        "url": "https://dev.to/hijazi313/state-management-in-2025-when-to-use-context-redux-zustand-or-jotai-2d2k",
+        "title": "State Management in 2025: When to Use Context, Redux, Zustand, or Jotai",
+        "info": "Comprehensive comparison of React state management solutions with performance benchmarks, persistence strategies, and best practices for Redux Toolkit, Zustand, Context API, and Jotai"
+      },
+      "https://javascript.plainenglish.io/react-error-handling-2025-edition-onuncaughterror-boundaries-logging-ea7a679de22a": {
+        "id": 39,
+        "publisher": "JavaScript in Plain English",
+        "url": "https://javascript.plainenglish.io/react-error-handling-2025-edition-onuncaughterror-boundaries-logging-ea7a679de22a",
+        "title": "React error handling, 2025 edition — onUncaughtError, boundaries, logging",
+        "info": "Modern React 19 error handling strategies including new onUncaughtError and onCaughtError hooks, error boundaries best practices, and logging optimization"
+      },
+      "https://codevoweb.com/build-a-reactjs-crud-app-using-a-restful-api/": {
+        "id": 40,
+        "publisher": "CodevoWeb",
+        "url": "https://codevoweb.com/build-a-reactjs-crud-app-using-a-restful-api/",
+        "title": "Build a React.js CRUD App using a RESTful API 2025",
+        "info": "Complete guide for implementing CRUD operations with React Query, Axios, React Hook Form, and Zod validation including save/load workflow patterns"
+      },
+      "https://blog.logrocket.com/react-toast-libraries-compared-2025/": {
+        "id": 41,
+        "publisher": "LogRocket Blog",
+        "url": "https://blog.logrocket.com/react-toast-libraries-compared-2025/",
+        "title": "Comparing the top React toast libraries [2025 update]",
+        "info": "Detailed comparison of React toast notification libraries including React Hot Toast, Sonner, NotiStack, and React-Toastify with implementation patterns and user feedback strategies"
+      },
+      "https://medium.com/@dennisivy/creating-protected-routes-with-react-router-v6-2c4bbaf7bc1c": {
+        "id": 42,
+        "publisher": "Medium",
+        "url": "https://medium.com/@dennisivy/creating-protected-routes-with-react-router-v6-2c4bbaf7bc1c",
+        "title": "Creating Protected Routes With React Router V6",
+        "info": "React Router v6 patterns for protected routes, navigation guards, and route protection using Outlet and Navigate components"
+      },
+      "https://www.bytebase.com/blog/top-database-schema-design-best-practices/": {
+        "id": 43,
+        "publisher": "Bytebase",
+        "url": "https://www.bytebase.com/blog/top-database-schema-design-best-practices/",
+        "title": "Top 10 Database Schema Design Best Practices",
+        "info": "Comprehensive database schema design practices including normalization, constraints, indexing, audit trails, and schema evolution strategies with PostgreSQL examples"
+      },
+      "https://stackoverflow.com/questions/1051449/ideas-on-database-design-for-capturing-audit-trails": {
+        "id": 44,
+        "publisher": "Stack Overflow",
+        "url": "https://stackoverflow.com/questions/1051449/ideas-on-database-design-for-capturing-audit-trails",
+        "title": "Ideas on database design for capturing audit trails",
+        "info": "Advanced database audit trail patterns including insert-only databases, temporal tables, change data capture, and event sourcing approaches"
+      }
+    },
+    "Page Builder Architecture Research": {
+      "https://grapesjs.com/docs/": {
+        "id": 45,
+        "publisher": "GrapesJS Documentation",
+        "url": "https://grapesjs.com/docs/",
+        "title": "GrapesJS Introduction and Architecture Overview",
+        "info": "Comprehensive documentation of GrapesJS modules, architecture overview, and multi-purpose Web Builder Framework design patterns"
+      },
+      "https://developers.webflow.com/webflow-cloud/storing-data/overview": {
+        "id": 46,
+        "publisher": "Webflow Developers",
+        "url": "https://developers.webflow.com/webflow-cloud/storing-data/overview",
+        "title": "Webflow Cloud Data Storage Overview",
+        "info": "Detailed information about Webflow Cloud's data storage architecture, bindings system, and persistence mechanisms using SQLite, Key Value Store, and Object Storage"
+      },
+      "https://craft.js.org/docs/overview": {
+        "id": 47,
+        "publisher": "Craft.js Documentation",
+        "url": "https://craft.js.org/docs/overview",
+        "title": "Craft.js Overview and Architecture",
+        "info": "Comprehensive guide to Craft.js React framework architecture, core concepts, useNode hook, and user component implementation patterns"
+      },
+      "https://craft.js.org/docs/concepts/user-components": {
+        "id": 48,
+        "publisher": "Craft.js Documentation",
+        "url": "https://craft.js.org/docs/concepts/user-components",
+        "title": "Craft.js User Components Concepts",
+        "info": "Detailed explanation of Craft.js user components, static craft properties, connectors, and component editing mechanisms"
+      },
+      "https://www.sanity.io/learn/course/page-building/create-page-builder-schema-types": {
+        "id": 49,
+        "publisher": "Sanity.io",
+        "url": "https://www.sanity.io/learn/course/page-building/create-page-builder-schema-types",
+        "title": "Create Page Builder Schema Types",
+        "info": "Comprehensive guide to implementing page builder schema types with Sanity CMS, including block-based content modeling and hierarchical data structures"
+      },
+      "https://www.builder.io/c/docs/visual-editor": {
+        "id": 50,
+        "publisher": "Builder.io Documentation",
+        "url": "https://www.builder.io/c/docs/visual-editor",
+        "title": "Builder.io Visual Editor Architecture",
+        "info": "Overview of Builder.io's visual editor interface and core functionalities, including drag-and-drop experience and AI capabilities"
+      },
+      "https://whoisryosuke.com/blog/2020/drag-and-drop-builder-using-react": {
+        "id": 51,
+        "publisher": "Ryosuke's Blog",
+        "url": "https://whoisryosuke.com/blog/2020/drag-and-drop-builder-using-react",
+        "title": "Drag and Drop Component Builder using React",
+        "info": "Detailed implementation guide for building drag-and-drop component builders using React, including state management patterns and dynamic rendering"
+      },
+      "https://github.com/GrapesJS/grapesjs": {
+        "id": 52,
+        "publisher": "GrapesJS GitHub",
+        "url": "https://github.com/GrapesJS/grapesjs",
+        "title": "GrapesJS - Free and Open Source Web Builder Framework",
+        "info": "GitHub repository with architectural details, modules overview, and implementation specifics for GrapesJS web builder framework"
+      },
+      "https://github.com/prevwong/craft.js": {
+        "id": 53,
+        "publisher": "Craft.js GitHub",
+        "url": "https://github.com/prevwong/craft.js",
+        "title": "Craft.js - React Framework for Building Extensible Page Editors",
+        "info": "Comprehensive GitHub repository showcasing Craft.js React framework architecture, modular building blocks, and extensible page editor implementation"
+      },
+      "https://github.com/BuilderIO/builder": {
+        "id": 54,
+        "publisher": "Builder.io GitHub",
+        "url": "https://github.com/BuilderIO/builder",
+        "title": "Builder.io - Visual Development Platform",
+        "info": "Builder.io platform repository with visual development tools, framework integrations, and code generation capabilities"
+      },
+      "https://github.com/plasmicapp/plasmic": {
+        "id": 55,
+        "publisher": "Plasmic GitHub",
+        "url": "https://github.com/plasmicapp/plasmic",
+        "title": "Plasmic - Visual Builder for React",
+        "info": "Comprehensive analysis of Plasmic visual builder architecture, React integration approach, and code generation strategies"
+      },
+      "https://ersin-akinci.medium.com/evaluating-builder-vs-plasmic-two-no-code-tools-for-building-websites-d8ddd92bf13e": {
+        "id": 56,
+        "publisher": "Medium",
+        "url": "https://ersin-akinci.medium.com/evaluating-builder-vs-plasmic-two-no-code-tools-for-building-websites-d8ddd92bf13e",
+        "title": "Evaluating Builder vs. Plasmic: Two No-Code Tools Comparison",
+        "info": "Comparative analysis of Builder.io and Plasmic architectural differences, focusing on CMS integration, code export, and API capabilities"
+      },
+      "https://fluffyandflakey.blog/2022/12/06/access-all-block-attributes-structurally-with-the-gutenberg-block-editor/": {
+        "id": 57,
+        "publisher": "FluffyAndFlakey Blog",
+        "url": "https://fluffyandflakey.blog/2022/12/06/access-all-block-attributes-structurally-with-the-gutenberg-block-editor/",
+        "title": "Access All Block Attributes Structurally with Gutenberg",
+        "info": "Detailed explanation of Gutenberg block serialization using HTML comments, attribute sourcing patterns, and static fallback rendering mechanisms"
+      },
+      "https://ckeditor.com/blog/lessons-learned-from-creating-a-rich-text-editor-with-real-time-collaboration/": {
+        "id": 58,
+        "publisher": "CKEditor Blog",
+        "url": "https://ckeditor.com/blog/lessons-learned-from-creating-a-rich-text-editor-with-real-time-collaboration/",
+        "title": "Lessons Learned from Creating a Rich-Text Editor with Real-Time Collaboration",
+        "info": "Comprehensive analysis of CKEditor 5 collaborative editing architecture, operational transformation implementation for tree-based data structures"
+      },
+      "https://flotiq.com/blog/structuring-content-in-a-headless-cms-a-practical-guide/": {
+        "id": 59,
+        "publisher": "Flotiq Blog",
+        "url": "https://flotiq.com/blog/structuring-content-in-a-headless-cms-a-practical-guide/",
+        "title": "Structuring Content in a Headless CMS: A Practical Guide",
+        "info": "Practical guide to headless CMS content structuring patterns, including raw data, visual model, and hybrid approaches for page builders"
+      },
+      "https://www.tiny.cloud/blog/real-time-collaboration-ot-vs-crdt/": {
+        "id": 60,
+        "publisher": "TinyMCE Blog",
+        "url": "https://www.tiny.cloud/blog/real-time-collaboration-ot-vs-crdt/",
+        "title": "Building Real-Time Collaboration Applications: OT vs CRDT",
+        "info": "Detailed comparison between Operational Transformation and CRDT approaches for real-time collaboration in rich text editors and page builders"
+      },
+      "https://www.figma.com/blog/how-figmas-multiplayer-technology-works/": {
+        "id": 61,
+        "publisher": "Figma Blog",
+        "url": "https://www.figma.com/blog/how-figmas-multiplayer-technology-works/",
+        "title": "How Figma's Multiplayer Technology Works",
+        "info": "Technical analysis of Figma's multiplayer architecture using CRDT-inspired systems for real-time collaborative design editing"
+      }
+    }
+  }
+}

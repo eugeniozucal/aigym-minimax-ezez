@@ -1,0 +1,158 @@
+
+> react_repo@0.0.0 test:run /workspace/ai-gym-platform
+> vitest run src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx
+
+
+ RUN  v3.2.4 /workspace/ai-gym-platform
+
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:23:42
+   Duration 1.50s
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:23:42
+   Duration 7.70s
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:23:42
+   Duration 8.61s
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:23:42
+   Duration 9.70s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:23:42
+   Duration 10.00s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:23:42
+   Duration 10.60s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:23:42
+   Duration 11.70s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:23:42
+   Duration 12.70s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:23:42
+   Duration 13.61s
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+
+ Test Files 0 passed (1)
+      Tests 0 passed (11)
+   Start at 19:23:42
+   Duration 13.91s
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 1/11
+
+ Test Files 0 passed (1)
+      Tests 1 passed (11)
+   Start at 19:23:42
+   Duration 14.51s
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 1/11
+
+ Test Files 0 passed (1)
+      Tests 1 passed (11)
+   Start at 19:23:42
+   Duration 14.61s
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 4/11
+
+ Test Files 0 passed (1)
+      Tests 4 passed (11)
+   Start at 19:23:42
+   Duration 14.71s
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom styles from block.style
+Warning: Unsupported style property background-color. Did you mean backgroundColor?
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+Warning: Unsupported style property font-size. Did you mean fontSize?
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 7/11
+
+ Test Files 0 passed (1)
+      Tests 7 passed (11)
+   Start at 19:23:42
+   Duration 15.01s
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx (11 tests | 1 failed) 1105ms
+   ✓ SectionHeaderBlock > renders with default content  401ms
+   ✓ SectionHeaderBlock > renders h1 for level 1 header 196ms
+   ✓ SectionHeaderBlock > renders h2 for level 2 header 99ms
+   ✓ SectionHeaderBlock > renders h6 for level 6 header 6ms
+   ✓ SectionHeaderBlock > renders without subtitle when not provided 3ms
+   ✓ SectionHeaderBlock > applies custom className through BlockWrapper 90ms
+   ✓ SectionHeaderBlock > handles click when onSelect is provided 8ms
+   ✓ SectionHeaderBlock > shows selected state through BlockWrapper 3ms
+   ✓ SectionHeaderBlock > handles missing content gracefully 91ms
+   ✓ SectionHeaderBlock > does not render when block is not visible 2ms
+   × SectionHeaderBlock > applies custom styles from block.style 200ms
+     → expect(element).toHaveAttribute("style") // element.hasAttribute("style")
+
+Expected the element to have attribute:
+  style
+Received:
+  null
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom styles from block.style
+Error: expect(element).toHaveAttribute("style") // element.hasAttribute("style")
+
+Expected the element to have attribute:
+  style
+Received:
+  null
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx:134:23
+    132|     // The styles should be applied to the BlockWrapper container
+    133|     // Note: Happy-DOM might handle CSS property names differently
+    134|     expect(container).toHaveAttribute('style')
+       |                       ^
+    135|   })
+    136| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 passed (11)
+   Start at  19:23:41
+   Duration  15.59s (transform 1.20s, setup 2.99s, collect 909ms, tests 1.10s, environment 2.01s, prepare 1.40s)
+
+ ELIFECYCLE  Command failed with exit code 1.

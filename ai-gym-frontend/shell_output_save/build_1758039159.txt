@@ -1,0 +1,201 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1s using pnpm v10.12.4
+src/components/content/ContentEditor.tsx:455:30 - error TS2552: Cannot find name 'communityIds'. Did you mean 'communities'?
+
+455       setAssignedCommunities(communityIds);
+                                 ~~~~~~~~~~~~
+
+  src/components/content/ContentEditor.tsx:331:10
+    331   const [communities, setCommunities] = useState<Community[]>([])
+                 ~~~~~~~~~~~
+    'communities' is declared here.
+
+src/components/content/ContentEditor.tsx:463:30 - error TS2304: Cannot find name 'communityIds'.
+
+463         assignedCommunities: communityIds
+                                 ~~~~~~~~~~~~
+
+src/components/content/ContentEditor.tsx:537:11 - error TS2304: Cannot find name 'assignedClients'.
+
+537       if (assignedClients.length > 0) {
+              ~~~~~~~~~~~~~~~
+
+src/components/content/ContentEditor.tsx:538:29 - error TS2304: Cannot find name 'assignedClients'.
+
+538         const assignments = assignedClients.map(clientId => ({
+                                ~~~~~~~~~~~~~~~
+
+src/components/content/ContentEditor.tsx:554:14 - error TS2304: Cannot find name 'assignedClients'.
+
+554   }, [admin, assignedClients]);
+                 ~~~~~~~~~~~~~~~
+
+src/components/content/ContentEditor.tsx:650:9 - error TS2353: Object literal may only specify known properties, and 'assignedClients' does not exist in type '{ title: string; description: string; status: "draft" | "published"; thumbnailUrl: string; assignedCommunities: string[]; }'.
+
+650         assignedClients: [...assignedClients]
+            ~~~~~~~~~~~~~~~
+
+src/components/content/ContentEditor.tsx:650:30 - error TS2304: Cannot find name 'assignedClients'.
+
+650         assignedClients: [...assignedClients]
+                                 ~~~~~~~~~~~~~~~
+
+src/components/content/ContentEditor.tsx:668:96 - error TS2304: Cannot find name 'assignedClients'.
+
+668   }, [admin, id, itemTitle, itemDescription, contentType, status, thumbnailUrl, onSaveContent, assignedClients, isEdit, navigate]);
+                                                                                                   ~~~~~~~~~~~~~~~
+
+src/components/content/ContentEditor.tsx:968:18 - error TS2304: Cannot find name 'clients'.
+
+968                 {clients.length > 0 ? (
+                     ~~~~~~~
+
+src/components/content/ContentEditor.tsx:970:22 - error TS2304: Cannot find name 'clients'.
+
+970                     {clients.map((client) => {
+                         ~~~~~~~
+
+src/components/content/ContentEditor.tsx:971:71 - error TS2304: Cannot find name 'community'.
+
+971                       const isAssigned = assignedCommunities.includes(community.id)
+                                                                          ~~~~~~~~~
+
+src/components/content/ContentEditor.tsx:978:47 - error TS2304: Cannot find name 'toggleClientAssignment'.
+
+978                               onChange={() => toggleClientAssignment(client.id)}
+                                                  ~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/content/ContentEditor.tsx:984:59 - error TS2304: Cannot find name 'community'.
+
+984                                 style={{ backgroundColor: community.brand_color }}
+                                                              ~~~~~~~~~
+
+src/components/content/ContentEditor.tsx:1053:15 - error TS2322: Type '{ isOpen: true; onClose: () => void; client: any; contentItemId: string; onSave: () => void; }' is not assignable to type 'IntrinsicAttributes & AssignmentModalProps'.
+  Property 'client' does not exist on type 'IntrinsicAttributes & AssignmentModalProps'.
+
+1053               client={clients.find(c => c.id === activeAssignmentModal)!}
+                   ~~~~~~
+
+src/components/content/ContentEditor.tsx:1053:23 - error TS2304: Cannot find name 'clients'.
+
+1053               client={clients.find(c => c.id === activeAssignmentModal)!}
+                           ~~~~~~~
+
+src/components/content/ContentRepository.tsx:133:34 - error TS2304: Cannot find name 'communityAssignments'.
+
+133           const communityCount = communityAssignments.data?.filter(a => a.content_item_id === id).length || 0
+                                     ~~~~~~~~~~~~~~~~~~~~
+
+src/components/content/ContentRepository.tsx:220:16 - error TS2345: Argument of type '(prev: RepositoryFilters) => { search: string; clients: any[]; status: "all"; sortBy: "updated_at"; sortOrder: "desc"; viewMode: "list" | "cards"; }' is not assignable to parameter of type 'SetStateAction<RepositoryFilters>'.
+  Type '(prev: RepositoryFilters) => { search: string; clients: any[]; status: "all"; sortBy: "updated_at"; sortOrder: "desc"; viewMode: "list" | "cards"; }' is not assignable to type '(prevState: RepositoryFilters) => RepositoryFilters'.
+    Property 'communities' is missing in type '{ search: string; clients: any[]; status: "all"; sortBy: "updated_at"; sortOrder: "desc"; viewMode: "list" | "cards"; }' but required in type 'RepositoryFilters'.
+
+220     setFilters(prev => ({
+                   ~~~~~~~~~~
+221       search: '',
+    ~~~~~~~~~~~~~~~~~
+... 
+226       viewMode: prev.viewMode // Preserve view mode
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+227     }))
+    ~~~~~~
+
+  src/components/content/ContentRepository.tsx:10:3
+    10   communities: string[]
+         ~~~~~~~~~~~
+    'communities' is declared here.
+
+src/components/modals/EnhancedCommunityModal.tsx:404:40 - error TS2339: Property 'key_type' does not exist on type 'ApiKey'.
+
+404                       {key.name} ({key.key_type})
+                                           ~~~~~~~~
+
+src/pages/AnalyticsDashboard.tsx:71:7 - error TS2304: Cannot find name 'setClients'.
+
+71       setClients(data || [])
+         ~~~~~~~~~~
+
+src/pages/AnalyticsDashboard.tsx:114:17 - error TS2339: Property 'communityId' does not exist on type 'DashboardFilters'.
+
+114     if (filters.communityId === 'all') return 'All Communities'
+                    ~~~~~~~~~~~
+
+src/pages/AnalyticsDashboard.tsx:115:51 - error TS2339: Property 'communityId' does not exist on type 'DashboardFilters'.
+
+115     return communities.find(c => c.id === filters.communityId)?.name || 'Unknown Community'
+                                                      ~~~~~~~~~~~
+
+src/pages/AnalyticsDashboard.tsx:173:40 - error TS2304: Cannot find name 'handleCommunityChange'.
+
+173                         onClick={() => handleCommunityChange(community.id)}
+                                           ~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/AnalyticsDashboard.tsx:175:35 - error TS2339: Property 'communityId' does not exist on type 'DashboardFilters'.
+
+175                           filters.communityId === community.id ? 'bg-blue-50 text-blue-700' : 'text-gray-700'
+                                      ~~~~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:377:11 - error TS2322: Type '{ community: Community; apiKeys: ApiKey[]; communities: ExtendedCommunity[]; onClose: () => void; onSave: () => void; }' is not assignable to type 'IntrinsicAttributes & CommunityModalProps'.
+  Property 'community' does not exist on type 'IntrinsicAttributes & CommunityModalProps'.
+
+377           community={editingCommunity}
+              ~~~~~~~~~
+
+src/pages/Tags.tsx:10:42 - error TS2304: Cannot find name 'Client'.
+
+10   const [clients, setClients] = useState<Client[]>([])
+                                            ~~~~~~
+
+src/pages/Tags.tsx:73:24 - error TS2304: Cannot find name 'selectedCommunity'.
+
+73   const filteredTags = selectedCommunity
+                          ~~~~~~~~~~~~~~~~~
+
+src/pages/Tags.tsx:74:47 - error TS2304: Cannot find name 'selectedCommunity'.
+
+74     ? tags.filter(tag => tag.community_id === selectedCommunity)
+                                                 ~~~~~~~~~~~~~~~~~
+
+src/pages/Tags.tsx:78:12 - error TS2552: Cannot find name 'communities'. Did you mean 'communityId'?
+
+78     return communities.find(c => c.id === communityId)?.name || 'Unknown Community'
+              ~~~~~~~~~~~
+
+  src/pages/Tags.tsx:77:29
+    77   const getCommunityName = (communityId: string) => {
+                                   ~~~~~~~~~~~~~~~~~~~
+    'communityId' is declared here.
+
+src/pages/Tags.tsx:86:12 - error TS2304: Cannot find name 'clientName'.
+
+86     groups[clientName].push(tag)
+              ~~~~~~~~~~
+
+src/pages/Tags.tsx:212:16 - error TS2304: Cannot find name 'selectedCommunity'.
+
+212               {selectedCommunity ? 'No tags found for this community' : 'No tags yet'}
+                   ~~~~~~~~~~~~~~~~~
+
+src/pages/Tags.tsx:239:9 - error TS2322: Type '{ isOpen: boolean; onClose: () => void; onSuccess: () => void; tag: UserTag; clients: Client[]; }' is not assignable to type 'IntrinsicAttributes & TagModalProps'.
+  Property 'clients' does not exist on type 'IntrinsicAttributes & TagModalProps'.
+
+239         clients={clients}
+            ~~~~~~~
+
+
+Found 31 errors.
+

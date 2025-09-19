@@ -1,0 +1,155 @@
+
+> react_repo@0.0.0 build /workspace/ai-gym-platform
+> pnpm install --prefer-offline && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Recreating /workspace/ai-gym-platform/node_modules
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +451
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 451, reused 0, downloaded 0, added 0
+Progress: resolved 451, reused 123, downloaded 0, added 0
+Progress: resolved 451, reused 425, downloaded 3, added 4
+Progress: resolved 451, reused 425, downloaded 21, added 84
+Progress: resolved 451, reused 425, downloaded 25, added 242
+Progress: resolved 451, reused 425, downloaded 26, added 450
+Progress: resolved 451, reused 425, downloaded 26, added 451, done
+
+dependencies:
++ @headlessui/react 2.2.8
++ @heroicons/react 2.2.0
++ @hookform/resolvers 3.10.0
++ @radix-ui/react-accordion 1.2.4
++ @radix-ui/react-alert-dialog 1.1.7
++ @radix-ui/react-aspect-ratio 1.1.3
++ @radix-ui/react-avatar 1.1.4
++ @radix-ui/react-checkbox 1.1.5
++ @radix-ui/react-collapsible 1.1.4
++ @radix-ui/react-context-menu 2.2.7
++ @radix-ui/react-dialog 1.1.7
++ @radix-ui/react-dropdown-menu 2.1.7
++ @radix-ui/react-hover-card 1.1.7
++ @radix-ui/react-label 2.1.3
++ @radix-ui/react-menubar 1.1.7
++ @radix-ui/react-navigation-menu 1.2.6
++ @radix-ui/react-popover 1.1.7
++ @radix-ui/react-progress 1.1.3
++ @radix-ui/react-radio-group 1.2.4
++ @radix-ui/react-scroll-area 1.2.4
++ @radix-ui/react-select 2.1.7
++ @radix-ui/react-separator 1.1.3
++ @radix-ui/react-slider 1.2.4
++ @radix-ui/react-slot 1.2.0
++ @radix-ui/react-switch 1.1.4
++ @radix-ui/react-tabs 1.1.4
++ @radix-ui/react-toast 1.2.7
++ @radix-ui/react-toggle 1.1.3
++ @radix-ui/react-toggle-group 1.1.3
++ @radix-ui/react-tooltip 1.2.0
++ @supabase/supabase-js 2.57.4
++ class-variance-authority 0.7.1
++ clsx 2.1.1
++ cmdk 1.0.0
++ date-fns 3.6.0
++ embla-carousel-react 8.6.0
++ framer-motion 12.23.12
++ input-otp 1.4.2
++ lucide-react 0.364.0
++ next-themes 0.4.6
++ react 18.3.1
++ react-circular-progressbar 2.2.0
++ react-day-picker 8.10.1
++ react-dom 18.3.1
++ react-hook-form 7.55.0
++ react-resizable-panels 2.1.7
++ react-router-dom 6.30.0
++ recharts 2.15.2
++ sonner 1.7.4
++ tailwind-merge 2.6.0
++ tailwindcss-animate 1.0.7
++ vaul 1.1.2
++ zod 3.24.2
+
+devDependencies:
++ @eslint/js 9.24.0
++ @types/node 22.14.1
++ @types/react 18.3.20
++ @types/react-dom 18.3.6
++ @types/react-router-dom 5.3.3
++ @vitejs/plugin-react 4.3.4
++ autoprefixer 10.4.20
++ eslint 9.24.0
++ eslint-plugin-react-hooks 5.2.0
++ eslint-plugin-react-refresh 0.4.19
++ globals 15.15.0
++ postcss 8.4.49
++ tailwindcss 3.4.16
++ typescript 5.6.3
++ typescript-eslint 8.29.1
++ vite 6.2.6
++ vite-plugin-source-identifier 1.1.2
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 10.7s using pnpm v10.12.4
+src/App.tsx:15:26 - error TS2307: Cannot find module './pages/Learning/LearningPath' or its corresponding type declarations.
+
+15 import LearningPath from './pages/Learning/LearningPath'
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/App.tsx:16:26 - error TS2307: Cannot find module './pages/Programs/ProgramsList' or its corresponding type declarations.
+
+16 import ProgramsList from './pages/Programs/ProgramsList'
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/App.tsx:17:28 - error TS2307: Cannot find module './pages/Programs/ProgramDetails' or its corresponding type declarations.
+
+17 import ProgramDetails from './pages/Programs/ProgramDetails'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/App.tsx:20:28 - error TS2307: Cannot find module './pages/Admin/AdminDashboard' or its corresponding type declarations.
+
+20 import AdminDashboard from './pages/Admin/AdminDashboard'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/App.tsx:21:31 - error TS2307: Cannot find module './pages/Admin/ProgramManagement' or its corresponding type declarations.
+
+21 import ProgramManagement from './pages/Admin/ProgramManagement'
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/App.tsx:22:28 - error TS2307: Cannot find module './pages/Admin/UserManagement' or its corresponding type declarations.
+
+22 import UserManagement from './pages/Admin/UserManagement'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/App.tsx:23:31 - error TS2307: Cannot find module './pages/Admin/AnalyticsOverview' or its corresponding type declarations.
+
+23 import AnalyticsOverview from './pages/Admin/AnalyticsOverview'
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/App.tsx:24:35 - error TS2307: Cannot find module './pages/Admin/AchievementManagement' or its corresponding type declarations.
+
+24 import AchievementManagement from './pages/Admin/AchievementManagement'
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/Achievements/AchievementGallery.tsx:376:21 - error TS2322: Type '{ children: any; variant: "secondary"; size: "sm"; className: string; style: { backgroundColor: string; color: string; }; }' is not assignable to type 'IntrinsicAttributes & BadgeProps'.
+  Property 'style' does not exist on type 'IntrinsicAttributes & BadgeProps'.
+
+376                     style={{
+                        ~~~~~
+
+src/pages/Progress/UserProgressDashboard.tsx:11:3 - error TS2305: Module '"@heroicons/react/24/outline"' has no exported member 'TrendingUpIcon'.
+
+11   TrendingUpIcon,
+     ~~~~~~~~~~~~~~
+
+
+Found 10 errors.
+
+ ELIFECYCLE  Command failed with exit code 2.

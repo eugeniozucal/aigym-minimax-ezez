@@ -1,0 +1,23 @@
+📄 Extracted from page: AI Gym Admin Portal
+URL: https://pcogzc3tn7u5.space.minimax.io/admin/achievements
+
+Extracted content:
+```json
+{
+  "title": "AI Gym Admin Portal",
+  "url": "https://pcogzc3tn7u5.space.minimax.io/admin/achievements",
+  "summary": "The AI Gym Admin Portal's Achievement Management page is fully dedicated to managing achievement-related content and functionality. It provides tools for viewing, categorizing, and potentially creating various achievements, badges, milestones, and gamification rewards. The page clearly demonstrates robust achievement management features and does not display any content related to general content management.",
+  "key_points": [
+    "The page is explicitly titled 'Achievement Management' and described as managing 'achievement badges, milestones, and gamification rewards'.",
+    "It features a 'Create Achievement' button, indicating direct functionality for adding new achievements.",
+    "Achievement tiers/categories (Bronze, Silver, Gold, Platinum, Diamond) are displayed, along with a filter option for these types.",
+    "A comprehensive table lists 38 different achievements, detailing their names, types (e.g., Completion, Streak, Mastery, Social, Special), points (placeholder 'pts'), status ('Active'), creation date, and an 'Actions' column (implying edit/delete options).",
+    "Examples of achievements include 'First Steps', 'Learning Streak', 'WOD Warrior', 'Perfect Score', 'Community Member', and 'Pioneer', all directly related to user progress and engagement.",
+    "The content entirely focuses on managing achievements and their attributes, confirming it shows achievement-related functionality and not incorrect content management."
+  ],
+  "relevant_links": [
+    "/admin/achievements"
+  ],
+  "file_name": "ai_gym_achievement_management.json"
+}
+```

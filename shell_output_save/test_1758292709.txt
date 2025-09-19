@@ -1,0 +1,116 @@
+
+> react_repo@0.0.0 test /workspace/ai-gym-frontend
+> node --test src/test/*.mjs
+
+✅ API Client validation tests complete!
+▶ API Client Validation
+  ✔ contentApi object should be defined (0.3439ms)
+  ✔ API configuration should be valid (0.222953ms)
+  ✔ Error types should be properly structured (0.246568ms)
+  ✔ Request deduplication logic should work (0.177361ms)
+  ✔ Content item validation schema should be comprehensive (0.11879ms)
+▶ API Client Validation (3.072872ms)
+
+✅ Save/Load Architecture E2E tests complete!
+▶ Save/Load Architecture E2E Tests
+  ✔ should load existing content successfully (0.700761ms)
+  ✔ should handle content updates and mark as dirty (0.188191ms)
+  ✔ should save content and clear dirty flag (0.21937ms)
+  ✔ should perform auto-save when content is dirty (0.243785ms)
+  ✖ should skip auto-save when content is not dirty (1.393523ms)
+    AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+    
+    true !== false
+    
+        at TestContext.<anonymous> (file:///workspace/ai-gym-frontend/src/test/e2e-workflow.test.mjs:207:12)
+        at async Test.run (node:internal/test_runner/test:632:9)
+        at async Suite.processPendingSubtests (node:internal/test_runner/test:374:7) {
+      generatedMessage: true,
+      code: 'ERR_ASSERTION',
+      actual: true,
+      expected: false,
+      operator: 'strictEqual'
+    }
+
+  ✖ should handle complete workflow: load -> edit -> auto-save -> manual save (0.256054ms)
+    AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+    
+    true !== false
+    
+        at TestContext.<anonymous> (file:///workspace/ai-gym-frontend/src/test/e2e-workflow.test.mjs:220:12)
+        at async Test.run (node:internal/test_runner/test:632:9)
+        at async Suite.processPendingSubtests (node:internal/test_runner/test:374:7) {
+      generatedMessage: true,
+      code: 'ERR_ASSERTION',
+      actual: true,
+      expected: false,
+      operator: 'strictEqual'
+    }
+
+  ✔ should handle error scenarios gracefully (0.348343ms)
+  ✔ should validate session management (0.303587ms)
+  ✔ should validate content structure requirements (0.191472ms)
+▶ Save/Load Architecture E2E Tests (6.577919ms)
+
+✅ Test environment verification complete!
+▶ Test Environment Verification
+  ✔ basic arithmetic works (0.434961ms)
+  ✔ string operations work (0.095599ms)
+  ✔ arrays work correctly (0.098712ms)
+  ✔ objects work correctly (0.191616ms)
+  ✔ promises work correctly (0.101711ms)
+▶ Test Environment Verification (2.836056ms)
+
+✅ Content Store validation tests complete!
+▶ Content Store Validation
+  ✔ initial state structure should be valid (0.389329ms)
+  ✔ content item structure should be comprehensive (0.215294ms)
+  ✔ page data structure should be valid (0.124325ms)
+  ✔ block structure should be valid (0.108295ms)
+  ✔ session management should work correctly (0.149727ms)
+  ✔ auto-save configuration should be reasonable (0.09063ms)
+▶ Content Store Validation (3.120725ms)
+
+ℹ tests 25
+ℹ suites 4
+ℹ pass 23
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 464.807056
+
+✖ failing tests:
+
+test at file:/workspace/ai-gym-frontend/src/test/e2e-workflow.test.mjs:202:3
+✖ should skip auto-save when content is not dirty (1.393523ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/ai-gym-frontend/src/test/e2e-workflow.test.mjs:207:12)
+      at async Test.run (node:internal/test_runner/test:632:9)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:374:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual'
+  }
+
+test at file:/workspace/ai-gym-frontend/src/test/e2e-workflow.test.mjs:216:3
+✖ should handle complete workflow: load -> edit -> auto-save -> manual save (0.256054ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/ai-gym-frontend/src/test/e2e-workflow.test.mjs:220:12)
+      at async Test.run (node:internal/test_runner/test:632:9)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:374:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual'
+  }
+ ELIFECYCLE  Test failed. See above for more details.

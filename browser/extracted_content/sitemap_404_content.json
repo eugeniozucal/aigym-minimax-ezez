@@ -1,0 +1,21 @@
+📄 Extracted from page: 404 - Page Not Found
+URL: https://if4yb5jxn92w.space.minimax.io/sitemap.xml
+
+Extracted content:
+```json
+{
+    "title": "404 - Page Not Found",
+    "url": "https://if4yb5jxn92w.space.minimax.io/sitemap.xml",
+    "summary": "The page at the specified URL, intended to display the sitemap.xml content, returns a 404 'Page Not Found' error. This indicates that the sitemap.xml file does not exist or cannot be accessed at this location.",
+    "key_points": [
+        "The page displays a '404' error code.",
+        "The main message is 'Page Not Found'.",
+        "An explanation states: 'The page you're looking for doesn't exist or has been moved.'",
+        "A 'Go Back' link is provided."
+    ],
+    "relevant_links": [
+        "javascript:history.back()"
+    ],
+    "file_name": "sitemap_404_content.json"
+}
+```

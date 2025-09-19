@@ -1,0 +1,18 @@
+📄 Extracted from page: 404 - Page Not Found
+URL: https://if4yb5jxn92w.space.minimax.io/sitemap.xml
+
+Extracted content:
+```json
+{
+    "title": "404 - Page Not Found",
+    "url": "https://if4yb5jxn92w.space.minimax.io/sitemap.xml",
+    "summary": "The page is a 404 'Page Not Found' error, indicating that the requested URL does not exist or has been moved. Consequently, there is no response from an API health endpoint available on this page. The content explicitly states that the page could not be found.",
+    "key_points": [
+        "The page displayed is a '404 - Page Not Found' error.",
+        "The requested URL ('sitemap.xml') does not exist or has been moved.",
+        "No information regarding an API health endpoint response can be extracted from this error page."
+    ],
+    "relevant_links": [],
+    "file_name": "404_page_not_found.json"
+}
+```

@@ -1,0 +1,407 @@
+
+> react_repo@0.0.0 test
+> vitest --run
+
+
+ RUN  v3.2.4 /workspace/ai-gym-platform
+
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:35:07
+   Duration 4.37s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:35:07
+   Duration 5.27s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:35:07
+   Duration 6.36s
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:35:07
+   Duration 6.86s
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:35:07
+   Duration 7.07s
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:35:07
+   Duration 7.27s
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:35:07
+   Duration 7.46s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:35:07
+   Duration 8.06s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:35:07
+   Duration 8.36s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:35:07
+   Duration 9.36s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts 0/13
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (13)
+   Start at 19:35:07
+   Duration 10.28s
+ ✓ src/lib/__tests__/page-builder-types.test.ts (13 tests) 8ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 0/12
+
+ Test Files 1 passed (8)
+      Tests 13 passed (25)
+   Start at 19:35:07
+   Duration 10.38s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 1/12
+
+ Test Files 1 passed (8)
+      Tests 14 passed (25)
+   Start at 19:35:07
+   Duration 10.67s
+ ✓ src/test/integration/supabase-edge-functions.test.ts (12 tests) 277ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 passed (8)
+      Tests 25 passed (25)
+   Start at 19:35:07
+   Duration 10.86s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 0/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 passed (8)
+      Tests 25 passed (55)
+   Start at 19:35:07
+   Duration 11.16s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 1/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 passed (8)
+      Tests 26 passed (55)
+   Start at 19:35:07
+   Duration 11.27s
+ ✓ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx (10 tests) 497ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 6/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 3 passed (8)
+      Tests 41 passed (67)
+   Start at 19:35:07
+   Duration 11.47s
+ ✓ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx (11 tests) 695ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 1/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 passed (8)
+      Tests 47 passed (67)
+   Start at 19:35:07
+   Duration 11.57s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 2/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 passed (8)
+      Tests 48 passed (67)
+   Start at 19:35:07
+   Duration 11.77s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 3/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 passed (8)
+      Tests 49 passed (67)
+   Start at 19:35:07
+   Duration 12.28s
+ ✓ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx (9 tests) 1003ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 4/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 passed (8)
+      Tests 57 passed (67)
+   Start at 19:35:07
+   Duration 12.46s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 7/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 passed (8)
+      Tests 60 passed (67)
+   Start at 19:35:07
+   Duration 12.66s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 8/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 passed (8)
+      Tests 61 passed (67)
+   Start at 19:35:07
+   Duration 12.76s
+ ✓ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx (12 tests) 1397ms
+   ✓ QuizBlock > renders quiz question and options  400ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 0/10
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 6 passed (8)
+      Tests 65 passed (77)
+   Start at 19:35:07
+   Duration 12.86s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 1/10
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 6 passed (8)
+      Tests 66 passed (77)
+   Start at 19:35:07
+   Duration 13.06s
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx (10 tests | 1 failed) 124ms
+   ✓ BlockRenderer > renders section header block correctly 23ms
+   ✓ BlockRenderer > renders rich text block correctly 4ms
+   ✓ BlockRenderer > renders placeholder for unimplemented block types 72ms
+   ✓ BlockRenderer > renders placeholder for document block type 3ms
+   ✓ BlockRenderer > renders placeholder for prompt block type 3ms
+   ✓ BlockRenderer > renders placeholder for user_submission block type 2ms
+   × BlockRenderer > handles unknown block types gracefully 6ms
+     → Unable to find an element with the text: Unknown Block Type:. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-red-300 rounded-lg p-8 text-center bg-red-50"
+    >
+      <div
+        class="text-red-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-red-600 text-sm font-medium"
+      >
+        Unknown Block Type: 
+        unknown_type
+      </p>
+      <p
+        class="text-red-500 text-xs mt-1"
+      >
+        This block type is not supported
+      </p>
+    </div>
+  </div>
+</body>
+   ✓ BlockRenderer > passes through props correctly to block components 3ms
+   ✓ BlockRenderer > handles missing content gracefully 2ms
+   ✓ BlockRenderer > does not render when block is not visible 2ms
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/integration/page-builder-editor.test.tsx [ src/test/integration/page-builder-editor.test.tsx ]
+Error: Failed to resolve import "../../../pages/PageBuilderEditor" from "src/test/integration/page-builder-editor.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /workspace/ai-gym-platform/src/test/integration/page-builder-editor.test.tsx:4:0
+  40 |  const __vi_import_1__ = await import("@testing-library/react");
+  41 |  const __vi_import_2__ = await import("@testing-library/user-event");
+  42 |  const __vi_import_3__ = await import("../../../pages/PageBuilderEditor");
+     |                                       ^
+  43 |  
+  44 |  import { describe, it, expect, beforeEach, vi } from "vitest";
+ ❯ TransformPluginContext._formatLog node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:47897:41
+ ❯ TransformPluginContext.error node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:47894:16
+ ❯ normalizeUrl node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:46027:23
+ ❯ node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:46146:37
+ ❯ TransformPluginContext.transform node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:46073:7
+ ❯ EnvironmentPluginContainer.transform node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:47692:18
+ ❯ loadAndTransform node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:41327:27
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > handles unknown block types gracefully
+TestingLibraryElementError: Unable to find an element with the text: Unknown Block Type:. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-red-300 rounded-lg p-8 text-center bg-red-50"
+    >
+      <div
+        class="text-red-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-red-600 text-sm font-medium"
+      >
+        Unknown Block Type: 
+        unknown_type
+      </p>
+      <p
+        class="text-red-500 text-xs mt-1"
+      >
+        This block type is not supported
+      </p>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx:79:19
+     77|     render(<BlockRenderer block={block} />)
+     78|     
+     79|     expect(screen.getByText('Unknown Block Type:')).toBeInTheDocument()
+       |                   ^
+     80|     expect(screen.getByText('unknown_type')).toBeInTheDocument()
+     81|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed | 6 passed (8)
+      Tests  1 failed | 76 passed (77)
+   Start at  19:35:07
+   Duration  13.19s (transform 3.23s, setup 21.45s, collect 7.90s, tests 4.00s, environment 22.60s, prepare 9.41s)
+

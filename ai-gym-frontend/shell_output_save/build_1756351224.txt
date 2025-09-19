@@ -1,0 +1,27 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1.4s using pnpm v10.12.4
+vite v6.2.6 building for production...
+transforming (1) src/main.tsxtransforming (4) node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/reatransforming (6) node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/reatransforming (17) node_modules/.pnpm/react-router-dom@6.30.0_react-dom@18.3transforming (29) src/components/ErrorBoundary.tsxtransforming (42) node_modules/.pnpm/@remix-run+router@1.23.0/node_modules/transforming (48) node_modules/.pnpm/scheduler@0.23.2/node_modules/scheduletransforming (58) node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modtransforming (73) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/nodetransforming (82) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/nodetransforming (182) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/nodtransforming (262) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/nodtransforming (342) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/nodtransforming (442) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/nodtransforming (513) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/nodtransforming (613) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/nodtransforming (722) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/nodtransforming (841) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/nodtransforming (962) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/nodtransforming (1021) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/notransforming (1041) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/notransforming (1153) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/notransforming (1293) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/notransforming (1413) node_modules/.pnpm/lucide-react@0.364.0_react@18.3.1/notransforming (1518) node_modules/.pnpm/recharts@2.15.2_react-dom@18.3.1_reatransforming (1521) node_modules/.pnpm/recharts@2.15.2_react-dom@18.3.1_reatransforming (1538) node_modules/.pnpm/recharts@2.15.2_react-dom@18.3.1_reatransforming (1557) node_modules/.pnpm/recharts@2.15.2_react-dom@18.3.1_reatransforming (1581) node_modules/.pnpm/date-fns@3.6.0/node_modules/date-fnstransforming (1701) node_modules/.pnpm/date-fns@3.6.0/node_modules/date-fnstransforming (1803) node_modules/.pnpm/date-fns@3.6.0/node_modules/date-fnstransforming (1835) node_modules/.pnpm/recharts@2.15.2_react-dom@18.3.1_reatransforming (1858) node_modules/.pnpm/recharts@2.15.2_react-dom@18.3.1_reatransforming (1888) node_modules/.pnpm/@supabase+supabase-js@2.56.0/node_motransforming (1907) node_modules/.pnpm/d3-scale@4.0.2/node_modules/d3-scaletransforming (1934) node_modules/.pnpm/date-fns@3.6.0/node_modules/date-fnstransforming (1980) node_modules/.pnpm/@supabase+postgrest-js@1.21.3/node_mtransforming (2015) node_modules/.pnpm/d3-shape@3.2.0/node_modules/d3-shapetransforming (2066) node_modules/.pnpm/d3-scale@4.0.2/node_modules/d3-scaletransforming (2108) node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/_transforming (2149) node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/_transforming (2224) node_modules/.pnpm/d3-array@3.2.4/node_modules/d3-arraytransforming (2298) node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/_transforming (2392) node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/_transforming (2489) node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/p✓ 2522 modules transformed.
+rendering chunks (1)...computing gzip size (0)...computing gzip size (1)...computing gzip size (2)...computing gzip size (3)...dist/index.html                     0.35 kB │ gzip:   0.25 kB
+dist/assets/index-CLWAfAb2.css     58.47 kB │ gzip:   9.69 kB
+dist/assets/index-tuBZ3CYb.js   1,868.83 kB │ gzip: 380.47 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 13.85s

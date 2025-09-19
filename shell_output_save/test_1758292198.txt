@@ -1,0 +1,77 @@
+
+> react_repo@0.0.0 test /workspace/ai-gym-frontend
+> vitest run
+
+
+ RUN  v3.2.4 /workspace/ai-gym-frontend
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+Vitest caught 4 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+TypeError: Cannot read properties of undefined (reading 'get')
+ ❯ Object.<anonymous> ../../tmp/ai-gym-frontend/.pnpm/webidl-conversions@8.0.0/node_modules/webidl-conversions/lib/index.js:325:94
+ ❯ Module._compile node:internal/modules/cjs/loader:1356:14
+ ❯ Object.Module._extensions..js node:internal/modules/cjs/loader:1414:10
+ ❯ Module.load node:internal/modules/cjs/loader:1197:32
+ ❯ Function.Module._load node:internal/modules/cjs/loader:1013:12
+ ❯ Module.require node:internal/modules/cjs/loader:1225:19
+ ❯ require node:internal/modules/helpers:177:18
+ ❯ Object.<anonymous> ../../tmp/ai-gym-frontend/.pnpm/whatwg-url@15.1.0/node_modules/whatwg-url/lib/URL.js:3:21
+ ❯ Module._compile node:internal/modules/cjs/loader:1356:14
+ ❯ Object.Module._extensions..js node:internal/modules/cjs/loader:1414:10
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+TypeError: Cannot read properties of undefined (reading 'get')
+ ❯ Object.<anonymous> ../../tmp/ai-gym-frontend/.pnpm/webidl-conversions@8.0.0/node_modules/webidl-conversions/lib/index.js:325:94
+ ❯ Module._compile node:internal/modules/cjs/loader:1356:14
+ ❯ Object.Module._extensions..js node:internal/modules/cjs/loader:1414:10
+ ❯ Module.load node:internal/modules/cjs/loader:1197:32
+ ❯ Function.Module._load node:internal/modules/cjs/loader:1013:12
+ ❯ Module.require node:internal/modules/cjs/loader:1225:19
+ ❯ require node:internal/modules/helpers:177:18
+ ❯ Object.<anonymous> ../../tmp/ai-gym-frontend/.pnpm/whatwg-url@15.1.0/node_modules/whatwg-url/lib/URL.js:3:21
+ ❯ Module._compile node:internal/modules/cjs/loader:1356:14
+ ❯ Object.Module._extensions..js node:internal/modules/cjs/loader:1414:10
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+TypeError: Cannot read properties of undefined (reading 'get')
+ ❯ Object.<anonymous> ../../tmp/ai-gym-frontend/.pnpm/webidl-conversions@8.0.0/node_modules/webidl-conversions/lib/index.js:325:94
+ ❯ Module._compile node:internal/modules/cjs/loader:1356:14
+ ❯ Object.Module._extensions..js node:internal/modules/cjs/loader:1414:10
+ ❯ Module.load node:internal/modules/cjs/loader:1197:32
+ ❯ Function.Module._load node:internal/modules/cjs/loader:1013:12
+ ❯ Module.require node:internal/modules/cjs/loader:1225:19
+ ❯ require node:internal/modules/helpers:177:18
+ ❯ Object.<anonymous> ../../tmp/ai-gym-frontend/.pnpm/whatwg-url@15.1.0/node_modules/whatwg-url/lib/URL.js:3:21
+ ❯ Module._compile node:internal/modules/cjs/loader:1356:14
+ ❯ Object.Module._extensions..js node:internal/modules/cjs/loader:1414:10
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+TypeError: Cannot read properties of undefined (reading 'get')
+ ❯ Object.<anonymous> ../../tmp/ai-gym-frontend/.pnpm/webidl-conversions@8.0.0/node_modules/webidl-conversions/lib/index.js:325:94
+ ❯ Module._compile node:internal/modules/cjs/loader:1356:14
+ ❯ Object.Module._extensions..js node:internal/modules/cjs/loader:1414:10
+ ❯ Module.load node:internal/modules/cjs/loader:1197:32
+ ❯ Function.Module._load node:internal/modules/cjs/loader:1013:12
+ ❯ Module.require node:internal/modules/cjs/loader:1225:19
+ ❯ require node:internal/modules/helpers:177:18
+ ❯ Object.<anonymous> ../../tmp/ai-gym-frontend/.pnpm/whatwg-url@15.1.0/node_modules/whatwg-url/lib/URL.js:3:21
+ ❯ Module._compile node:internal/modules/cjs/loader:1356:14
+ ❯ Object.Module._extensions..js node:internal/modules/cjs/loader:1414:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files   (4)
+      Tests  no tests
+     Errors  4 errors
+   Start at  14:29:46
+   Duration  6.17s (transform 96ms, setup 0ms, collect 0ms, tests 0ms, environment 0ms, prepare 0ms)
+
+ ELIFECYCLE  Test failed. See above for more details.

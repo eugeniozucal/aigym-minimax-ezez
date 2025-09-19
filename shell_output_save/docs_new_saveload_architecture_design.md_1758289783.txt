@@ -1,0 +1,100 @@
+# AI Gym Save/Load Architecture Design - Technical Specifications
+
+## Executive Summary
+
+This document presents a comprehensive redesign of the AI Gym application's save/load architecture, addressing critical flaws identified in the current implementation. The new architecture employs modern React patterns including Zustand for client state management, TanStack Query for server state, a robust API abstraction layer, and component-based design principles. Key innovations include optimistic updates with automatic rollback, debounced auto-save functionality, type-safe data validation, and comprehensive error handling with user-friendly feedback systems.
+
+## 1. Current Problems Summary
+
+The audit revealed severe architectural issues:
+- **State Management Chaos**: 9+ scattered state variables with no single source of truth
+- **URL Parameter Dependency Hell**: No validation, silent fallbacks masking errors  
+- **API Integration Anti-Patterns**: Direct Supabase calls with inconsistent error handling
+- **Component Architecture Issues**: Tight coupling, mixed concerns in components
+- **Performance Problems**: Unnecessary re-renders, race conditions in data fetching
+- **Security Gaps**: No input validation, inline authentication checks
+
+## 2. New Database Schema Design
+
+### 2.1 Core Entity Relationships
+
+```sql
+-- Users table (managed by Supabase Auth)
+CREATE TABLE users (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email VARCHAR(255) UNIQUE NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Workspaces for multi-tenancy
+CREATE TABLE workspaces (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name VARCHAR(255) NOT NULL,
+    owner_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT workspace_name_length CHECK (char_length(name) >= 1 AND char_length(name) <= 255)
+);
+
+-- Repository types with proper enumeration
+CREATE TYPE repository_type AS ENUM ('wods', 'blocks', 'programs');
+CREATE TYPE content_status AS ENUM ('draft', 'published', 'archived');
+CREATE TYPE operation_type AS ENUM ('create', 'update', 'delete', 'restore');
+
+-- Content items (replaces separate wods/blocks/programs tables)
+CREATE TABLE content_items (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
+    repository_type repository_type NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    content JSONB NOT NULL DEFAULT '{}',
+    metadata JSONB NOT NULL DEFAULT '{}',
+    status content_status DEFAULT 'draft',
+    folder_id UUID REFERENCES folders(id) ON DELETE SET NULL,
+    created_by UUID NOT NULL REFERENCES users(id),
+    updated_by UUID NOT NULL REFERENCES users(id),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    version INTEGER DEFAULT 1,
+    
+    -- Constraints
+    CONSTRAINT content_title_length CHECK (char_length(title) >= 1 AND char_length(title) <= 255),
+    CONSTRAINT content_description_length CHECK (char_length(description) <= 5000),
+    CONSTRAINT content_version_positive CHECK (version > 0)
+);
+
+-- Folders for organization
+CREATE TABLE folders (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
+    repository_type repository_type NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    parent_id UUID REFERENCES folders(id) ON DELETE CASCADE,
+    created_by UUID NOT NULL REFERENCES users(id),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT folder_name_length CHECK (char_length(name) >= 1 AND char_length(name) <= 255),
+    CONSTRAINT folder_no_self_reference CHECK (id != parent_id)
+);
+
+-- Content history for versioning and audit
+CREATE TABLE content_history (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    content_id UUID NOT NULL REFERENCES content_items(id) ON DELETE CASCADE,
+    version INTEGER NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    content JSONB NOT NULL,
+    metadata JSONB NOT NULL DEFAULT '{}',
+    status content_status NOT NULL,
+    operation_type operation_type NOT NULL,
+    created_by UUID NOT NULL REFERENCES users(id),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    
+    UNIQUE(content_id, version)
+);
+
+-- Auto-save snapshots for recovery

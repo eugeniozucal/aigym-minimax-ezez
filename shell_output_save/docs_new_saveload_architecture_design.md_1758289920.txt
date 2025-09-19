@@ -1,0 +1,184 @@
+## 2. New Database Schema Design
+
+### 2.1 Core Entity Relationships
+
+```sql
+-- Users table (managed by Supabase Auth)
+CREATE TABLE users (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email VARCHAR(255) UNIQUE NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Workspaces for multi-tenancy
+CREATE TABLE workspaces (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name VARCHAR(255) NOT NULL,
+    owner_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT workspace_name_length CHECK (char_length(name) >= 1 AND char_length(name) <= 255)
+);
+
+-- Repository types with proper enumeration
+CREATE TYPE repository_type AS ENUM ('wods', 'blocks', 'programs');
+CREATE TYPE content_status AS ENUM ('draft', 'published', 'archived');
+CREATE TYPE operation_type AS ENUM ('create', 'update', 'delete', 'restore');
+
+-- Content items (replaces separate wods/blocks/programs tables)
+CREATE TABLE content_items (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
+    repository_type repository_type NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    content JSONB NOT NULL DEFAULT '{}',
+    metadata JSONB NOT NULL DEFAULT '{}',
+    status content_status DEFAULT 'draft',
+    folder_id UUID REFERENCES folders(id) ON DELETE SET NULL,
+    created_by UUID NOT NULL REFERENCES users(id),
+    updated_by UUID NOT NULL REFERENCES users(id),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    version INTEGER DEFAULT 1,
+    
+    -- Constraints
+    CONSTRAINT content_title_length CHECK (char_length(title) >= 1 AND char_length(title) <= 255),
+    CONSTRAINT content_description_length CHECK (char_length(description) <= 5000),
+    CONSTRAINT content_version_positive CHECK (version > 0)
+);
+
+-- Folders for organization
+CREATE TABLE folders (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
+    repository_type repository_type NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    parent_id UUID REFERENCES folders(id) ON DELETE CASCADE,
+    created_by UUID NOT NULL REFERENCES users(id),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT folder_name_length CHECK (char_length(name) >= 1 AND char_length(name) <= 255),
+    CONSTRAINT folder_no_self_reference CHECK (id != parent_id)
+);
+
+-- Content history for versioning and audit
+CREATE TABLE content_history (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    content_id UUID NOT NULL REFERENCES content_items(id) ON DELETE CASCADE,
+    version INTEGER NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    content JSONB NOT NULL,
+    metadata JSONB NOT NULL DEFAULT '{}',
+    status content_status NOT NULL,
+    operation_type operation_type NOT NULL,
+    created_by UUID NOT NULL REFERENCES users(id),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    
+    UNIQUE(content_id, version)
+);
+
+-- Auto-save snapshots for recovery
+CREATE TABLE auto_save_snapshots (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    content_id UUID NOT NULL REFERENCES content_items(id) ON DELETE CASCADE,
+    session_id VARCHAR(255) NOT NULL,
+    snapshot_data JSONB NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    
+    -- Keep only last 10 snapshots per session
+    CONSTRAINT auto_save_session_limit CHECK (
+        (SELECT COUNT(*) FROM auto_save_snapshots WHERE content_id = NEW.content_id AND session_id = NEW.session_id) <= 10
+    )
+);
+```
+
+### 2.2 Indexing Strategy
+
+```sql
+-- Performance indexes
+CREATE INDEX idx_content_items_workspace_repo ON content_items(workspace_id, repository_type);
+CREATE INDEX idx_content_items_folder ON content_items(folder_id) WHERE folder_id IS NOT NULL;
+CREATE INDEX idx_content_items_created_by ON content_items(created_by);
+CREATE INDEX idx_content_items_updated_at ON content_items(updated_at DESC);
+CREATE INDEX idx_content_items_status ON content_items(status);
+
+-- Full-text search
+CREATE INDEX idx_content_items_search ON content_items USING GIN(
+    to_tsvector('english', title || ' ' || COALESCE(description, ''))
+);
+
+-- History indexes
+CREATE INDEX idx_content_history_content_version ON content_history(content_id, version DESC);
+CREATE INDEX idx_content_history_created_at ON content_history(created_at DESC);
+
+-- Folder hierarchy queries
+CREATE INDEX idx_folders_parent ON folders(parent_id) WHERE parent_id IS NOT NULL;
+CREATE INDEX idx_folders_workspace_repo ON folders(workspace_id, repository_type);
+
+-- Auto-save cleanup
+CREATE INDEX idx_auto_save_created_at ON auto_save_snapshots(created_at);
+```
+
+### 2.3 Database Triggers and Functions
+
+```sql
+-- Auto-increment version trigger
+CREATE OR REPLACE FUNCTION fn_increment_version()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF TG_OP = 'UPDATE' AND OLD.content != NEW.content THEN
+        NEW.version = OLD.version + 1;
+        NEW.updated_at = CURRENT_TIMESTAMP;
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER tr_increment_version
+    BEFORE UPDATE ON content_items
+    FOR EACH ROW
+    EXECUTE FUNCTION fn_increment_version();
+
+-- History tracking trigger
+CREATE OR REPLACE FUNCTION fn_track_content_history()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF TG_OP = 'INSERT' THEN
+        INSERT INTO content_history(
+            content_id, version, title, description, content, metadata, 
+            status, operation_type, created_by
+        ) VALUES (
+            NEW.id, NEW.version, NEW.title, NEW.description, NEW.content, 
+            NEW.metadata, NEW.status, 'create', NEW.created_by
+        );
+    ELSIF TG_OP = 'UPDATE' AND OLD.content != NEW.content THEN
+        INSERT INTO content_history(
+            content_id, version, title, description, content, metadata, 
+            status, operation_type, created_by
+        ) VALUES (
+            NEW.id, NEW.version, NEW.title, NEW.description, NEW.content, 
+            NEW.metadata, NEW.status, 'update', NEW.updated_by
+        );
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER tr_track_content_history
+    AFTER INSERT OR UPDATE ON content_items
+    FOR EACH ROW
+    EXECUTE FUNCTION fn_track_content_history();
+
+-- Auto-save cleanup function
+CREATE OR REPLACE FUNCTION fn_cleanup_auto_save()
+RETURNS void AS $$
+BEGIN
+    -- Delete auto-save snapshots older than 24 hours
+    DELETE FROM auto_save_snapshots 
+    WHERE created_at < CURRENT_TIMESTAMP - INTERVAL '24 hours';
+    
+    -- Keep only the latest 10 snapshots per content item per session

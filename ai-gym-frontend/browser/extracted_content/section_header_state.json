@@ -1,0 +1,22 @@
+📄 Extracted from page: 
+URL: http://localhost:5173/demo/section-header
+
+Extracted content:
+```json
+{
+  "title": "Simple Section Header Test",
+  "url": "http://localhost:5173/demo/section-header",
+  "summary": "This page demonstrates a Section Header component with direct click-to-edit functionality. The current state of the component shows an edited title and subtitle, which are dynamically updated and reflected in a live JSON preview on the page. The editing experience is designed to be seamless, with auto-save and responsive text areas.",
+  "key_points": [
+    "The Section Header component's title value is currently 'Sample Section TitleNew Edited Title'.",
+    "The Section Header component's subtitle value is currently 'New Edited Subtitle'.",
+    "A live JSON preview of the component's data is provided, reflecting the current state:\n```json\n{\n  \"level\": 2,\n  \"title\": \"Sample Section TitleNew Edited Title\",\n  \"subtitle\": \"New Edited Subtitle\",\n  \"fontFamily\": \"Roboto, sans-serif\",\n  \"fontSize\": 16,\n  \"bold\": false,\n  \"italic\": false,\n  \"underline\": false,\n  \"textColor\": \"#000000\",\n  \"highlightColor\": \"#ffff00\",\n  \"textAlign\": \"left\",\n  \"lineSpacing\": \"1\"\n}\n```",
+    "The component supports direct click-to-edit for both the title and subtitle.",
+    "Changes made to the text are automatically saved as the user types.",
+    "The subtitle input automatically resizes with content.",
+    "Visual feedback (blue focus ring, background change) is provided during editing."
+  ],
+  "relevant_links": [],
+  "file_name": "section_header_state.json"
+}
+```

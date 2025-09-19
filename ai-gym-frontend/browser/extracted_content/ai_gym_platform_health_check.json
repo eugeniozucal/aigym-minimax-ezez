@@ -1,0 +1,19 @@
+📄 Extracted from page: ai-gym-platform
+URL: https://zxo7sh7kkhjz.space.minimax.io/api/health
+
+Extracted content:
+```json
+{
+    "title": "ai-gym-platform",
+    "url": "https://zxo7sh7kkhjz.space.minimax.io/api/health",
+    "summary": "The page, identified as 'ai-gym-platform' and accessed via an '/api/health' endpoint, currently displays only a 'Loading...' message. No specific health check data, API status information, or technical details about the application's health or status are present in the provided content. It appears to be an empty or perpetually loading health check endpoint.",
+    "key_points": [
+        "The page title is 'ai-gym-platform'.",
+        "The content explicitly states 'Loading...'.",
+        "No health check data, API status, or technical details are visible on the page.",
+        "The page was 'Created by MiniMax Agent'."
+    ],
+    "relevant_links": [],
+    "file_name": "ai_gym_platform_health_check.json"
+}
+```

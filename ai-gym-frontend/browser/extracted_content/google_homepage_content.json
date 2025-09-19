@@ -1,0 +1,37 @@
+📄 Extracted from page: Google
+URL: https://www.google.com/?zx=1756357043931&no_sw_cr=1
+
+Extracted content:
+```json
+{
+    "title": "Google",
+    "url": "https://www.google.com/?zx=1756357043931&no_sw_cr=1",
+    "summary": "The page displays the Google search homepage. It features navigation links to various Google services (About, Store, Gmail, Images, Sign in) at the top. A central search interface is implied by the presence of multiple 'I'm Feeling...' button variants. There's a prominent promotional banner for 'Google Pixel 10, designed for Google AI'. The page also includes sections for AI Mode feedback, various settings related to search, and footer links covering company information, privacy policies, and terms of service.",
+    "key_points": [
+        "Primary Google search interface with 'I'm Feeling...' options.",
+        "Promotional advertisement for Google Pixel 10.",
+        "Links to Google's main services and corporate information.",
+        "Feedback mechanisms for 'AI Mode' and predictions.",
+        "Extensive footer links for legal, business, and search-related settings."
+    ],
+    "relevant_links": [
+        "https://about.google/?fg=1&utm_source=google-US&utm_medium=referral&utm_campaign=hp-header",
+        "https://store.google.com/US?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=en-US",
+        "https://mail.google.com/mail/&ogbl",
+        "https://www.google.com/imghp?hl=en&ogbl",
+        "https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/&ec=futura_exp_og_so_72776762_e",
+        "https://www.google.com/intl/en_us/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1",
+        "https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1",
+        "https://google.com/search/howsearchworks/?fg=1",
+        "https://ai.google/societal-impact/?utm_source=googlehpfooter&utm_medium=housepromos&utm_campaign=bottom-footer",
+        "https://policies.google.com/privacy?hl=en&fg=1",
+        "https://policies.google.com/terms?hl=en&fg=1",
+        "https://www.google.com/preferences?hl=en&fg=1",
+        "https://www.google.com/advanced_search?hl=en&fg=1",
+        "https://www.google.com/history/privacyadvisor/search/unauth?utm_source=googlemenu&fg=1&cctld=com",
+        "https://www.google.com/history/optout?hl=en&fg=1",
+        "https://support.google.com/websearch/?p=ws_results_help&hl=en&fg=1"
+    ],
+    "file_name": "google_homepage_content.json"
+}
+```
