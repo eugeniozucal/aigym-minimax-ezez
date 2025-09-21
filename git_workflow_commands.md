@@ -8,7 +8,7 @@ cd /workspace
 git config --global --add safe.directory /workspace
 git config user.name "eugeniozucal"
 git config user.email "eugeniozucal@example.com"
-git remote set-url origin https://eugeniozucal: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@github.com/eugeniozucal/aigym-minimax-ezez.git
+git remote set-url origin https://eugeniozucal:YOUR_GITHUB_TOKEN@github.com/eugeniozucal/aigym-minimax-ezez.git
 ```
 
 ### Step 2: For EACH commit (preserves history)
@@ -40,7 +40,7 @@ git init
 git branch -m main
 git config user.name "eugeniozucal"
 git config user.email "eugeniozucal@example.com"
-git remote add origin https://eugeniozucal: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@github.com/eugeniozucal/aigym-minimax-ezez.git
+git remote add origin https://eugeniozucal:YOUR_GITHUB_TOKEN@github.com/eugeniozucal/aigym-minimax-ezez.git
 git add .
 git commit -m "Your commit message here"
 git pull --rebase origin main

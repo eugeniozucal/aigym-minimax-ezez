@@ -7,7 +7,7 @@
 ### **STEP 1: Copy this entire block and paste it as one command**
 
 ```bash
-cd /workspace && git config --global --add safe.directory /workspace && git config user.name "eugeniozucal" && git config user.email "eugeniozucal@example.com" && git remote set-url origin https://eugeniozucal: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@github.com/eugeniozucal/aigym-minimax-ezez.git && git add .
+cd /workspace && git config --global --add safe.directory /workspace && git config user.name "eugeniozucal" && git config user.email "eugeniozucal@example.com" && git remote set-url origin https://eugeniozucal:YOUR_GITHUB_TOKEN@github.com/eugeniozucal/aigym-minimax-ezez.git && git add .
 ```
 
 **What this does:** Sets up everything correctly (you don't need to understand it)
@@ -45,7 +45,7 @@ git pull --rebase origin main && git push origin main
 
 1. **Setup Command** (copy exactly):
 ```
-cd /workspace && git config --global --add safe.directory /workspace && git config user.name "eugeniozucal" && git config user.email "eugeniozucal@example.com" && git remote set-url origin https://eugeniozucal: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@github.com/eugeniozucal/aigym-minimax-ezez.git && git add .
+cd /workspace && git config --global --add safe.directory /workspace && git config user.name "eugeniozucal" && git config user.email "eugeniozucal@example.com" && git remote set-url origin https://eugeniozucal:YOUR_GITHUB_TOKEN@github.com/eugeniozucal/aigym-minimax-ezez.git && git add .
 ```
 
 2. **Commit with your message** (change the message part):
