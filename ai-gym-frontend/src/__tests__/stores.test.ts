@@ -92,7 +92,7 @@ describe('Content Store', () => {
         communities: [],
         tags: [],
         people: [],
-        difficulty: 1,
+        difficulty: 1 as 1 | 2 | 3 | 4 | 5,
         estimatedDuration: 30,
         autoSaveEnabled: true
       }
@@ -104,7 +104,9 @@ describe('Content Store', () => {
       title: 'Test Block',
       description: 'Test description',
       content: 'Test content',
-      order: 0
+      order: 0,
+      pageId: 'page-1',
+      data: { content: 'Test content' }
     }
 
     store.setPageData(mockPageData)
@@ -132,7 +134,9 @@ describe('Content Store', () => {
           title: 'Original Title',
           description: 'Original description',
           content: 'Original content',
-          order: 0
+          order: 0,
+          pageId: 'page-1',
+          data: { content: 'Original content' }
         }], 
         order: 0 
       }],
@@ -140,7 +144,7 @@ describe('Content Store', () => {
         communities: [],
         tags: [],
         people: [],
-        difficulty: 1,
+        difficulty: 1 as 1 | 2 | 3 | 4 | 5,
         estimatedDuration: 30,
         autoSaveEnabled: true
       }
@@ -175,7 +179,7 @@ describe('Content Store', () => {
         communities: [],
         tags: [],
         people: [],
-        difficulty: 1,
+        difficulty: 1 as 1 | 2 | 3 | 4 | 5,
         estimatedDuration: 30,
         autoSaveEnabled: true
       }
@@ -211,7 +215,7 @@ describe('Content Store', () => {
         communities: [],
         tags: [],
         people: [],
-        difficulty: 1,
+        difficulty: 1 as 1 | 2 | 3 | 4 | 5,
         estimatedDuration: 30,
         autoSaveEnabled: true
       }

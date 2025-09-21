@@ -247,80 +247,463 @@ export function BlockRenderer({
         )
         
       case 'ai-agent':
+        const agentContent = block.data.selectedContent
+        
+        if (isPreview && agentContent?.ai_agent?.system_prompt) {
+          // In preview mode, show agent interface
+          return (
+            <div className="space-y-4">
+              <div className="text-center border-b border-gray-200 pb-4">
+                <h3 className="text-lg font-semibold">{agentContent.ai_agent.agent_name || agentContent.title}</h3>
+                {agentContent.ai_agent.short_description && (
+                  <p className="text-gray-600 mt-2">{agentContent.ai_agent.short_description}</p>
+                )}
+              </div>
+              
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                    AI
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-medium text-gray-900 mb-2">AI Agent Ready</h4>
+                    <p className="text-sm text-gray-600 mb-3">
+                      This AI agent is configured and ready to assist. In a real training environment, 
+                      you would be able to interact with it directly.
+                    </p>
+                    <div className="bg-white rounded-lg p-3 border border-gray-200">
+                      <p className="text-xs text-gray-500 mb-2">System Prompt Preview:</p>
+                      <p className="text-sm text-gray-700 line-clamp-3">
+                        {agentContent.ai_agent.system_prompt.substring(0, 200)}
+                        {agentContent.ai_agent.system_prompt.length > 200 ? '...' : ''}
+                      </p>
+                    </div>
+                    {agentContent.ai_agent.test_conversations && agentContent.ai_agent.test_conversations.length > 0 && (
+                      <div className="mt-3">
+                        <p className="text-xs text-gray-500 mb-2">
+                          {agentContent.ai_agent.test_conversations.length} test conversation(s) available
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        }
+        
+        // Editor mode or no agent selected
         return (
           <div className="bg-blue-50 rounded-lg p-8 text-center">
             <div className="text-4xl mb-2">🤖</div>
             <p className="font-medium">
-              {block.data.selectedContent?.name || 'AI Agent Block'}
+              {agentContent?.ai_agent?.agent_name || agentContent?.title || 'AI Agent Block'}
             </p>
             <p className="text-sm text-gray-600 mt-1">
-              {block.data.selectedContent?.description || 'Select an AI agent from repository'}
+              {agentContent?.ai_agent?.short_description || agentContent?.description || 'Select an AI agent from repository'}
             </p>
+            {agentContent?.ai_agent?.test_conversations && (
+              <p className="text-xs text-gray-500 mt-1">
+                {agentContent.ai_agent.test_conversations.length} test conversation(s)
+              </p>
+            )}
           </div>
         )
         
       case 'document':
+        const documentContent = block.data.selectedContent
+        
+        // Check multiple possible data structure paths for document content
+        const getDocumentContent = () => {
+          if (!documentContent) return null
+          
+          // Try different possible paths for document content
+          return (
+            documentContent.document?.content_html ||  // Original expected path
+            documentContent.content_html ||            // Direct content_html
+            documentContent.content ||                 // Plain content field
+            documentContent.text ||                    // Plain text field
+            documentContent.description ||             // Description as content
+            documentContent.document?.content ||       // Nested content
+            documentContent.document?.text ||          // Nested text
+            null
+          )
+        }
+        
+        const documentHtmlContent = getDocumentContent()
+        
+        if (isPreview && documentHtmlContent) {
+          // In preview mode, show actual document content
+          return (
+            <div className="space-y-4">
+              <div className="text-center border-b border-gray-200 pb-4">
+                <h3 className="text-lg font-semibold">{documentContent?.title || 'Document'}</h3>
+                {documentContent?.description && (
+                  <p className="text-gray-600 mt-2">{documentContent.description}</p>
+                )}
+                {documentContent?.document?.word_count && (
+                  <p className="text-sm text-gray-500 mt-1">
+                    {documentContent.document.word_count} words • {documentContent.document.reading_time_minutes} min read
+                  </p>
+                )}
+              </div>
+              <div className="prose max-w-none">
+                {/* Handle both HTML content and plain text */}
+                {documentHtmlContent.includes('<') ? (
+                  <div dangerouslySetInnerHTML={{ __html: documentHtmlContent }} />
+                ) : (
+                  <div className="whitespace-pre-wrap">{documentHtmlContent}</div>
+                )}
+              </div>
+            </div>
+          )
+        }
+        
+        // Editor mode or no document selected
         return (
           <div className="bg-green-50 rounded-lg p-8 text-center">
             <div className="text-4xl mb-2">📚</div>
             <p className="font-medium">
-              {block.data.selectedContent?.title || 'Document Block'}
+              {documentContent?.title || 'Document Block'}
             </p>
             <p className="text-sm text-gray-600 mt-1">
-              {block.data.selectedContent?.description || 'Select a document from repository'}
+              {documentContent?.description || 'Select a document from repository'}
             </p>
+            {documentContent?.document?.word_count && (
+              <p className="text-xs text-gray-500 mt-1">
+                {documentContent.document.word_count} words • {documentContent.document.reading_time_minutes} min read
+              </p>
+            )}
+          </div>
+        )
+        
+        // Editor mode or no document selected
+        return (
+          <div className="bg-green-50 rounded-lg p-8 text-center">
+            <div className="text-4xl mb-2">📚</div>
+            <p className="font-medium">
+              {documentContent?.title || 'Document Block'}
+            </p>
+            <p className="text-sm text-gray-600 mt-1">
+              {documentContent?.description || 'Select a document from repository'}
+            </p>
+            {documentContent?.document?.word_count && (
+              <p className="text-xs text-gray-500 mt-1">
+                {documentContent.document.word_count} words • {documentContent.document.reading_time_minutes} min read
+              </p>
+            )}
           </div>
         )
         
       case 'image':
+        const imageContent = block.data.selectedContent
+        
+        if (isPreview && imageContent?.image?.image_url) {
+          // In preview mode, show actual image
+          return (
+            <div className="space-y-4">
+              <div className="text-center">
+                <h3 className="text-lg font-semibold">{imageContent.title}</h3>
+                {imageContent.description && (
+                  <p className="text-gray-600 mt-2">{imageContent.description}</p>
+                )}
+              </div>
+              <div className="flex justify-center">
+                <img 
+                  src={imageContent.image.image_url}
+                  alt={imageContent.image.alt_text || imageContent.title}
+                  className="max-w-full h-auto rounded-lg shadow-md"
+                  style={{
+                    maxHeight: imageContent.image.height && imageContent.image.height > 600 ? '600px' : 'auto'
+                  }}
+                  onError={(e) => {
+                    // Fallback to placeholder if image fails to load
+                    e.currentTarget.style.display = 'none'
+                    const fallback = e.currentTarget.nextElementSibling as HTMLElement
+                    if (fallback) fallback.style.display = 'block'
+                  }}
+                />
+                <div className="bg-gray-100 rounded-lg p-8 text-center" style={{ display: 'none' }}>
+                  <div className="text-4xl mb-2">🖼️</div>
+                  <p className="text-gray-600">Failed to load image</p>
+                </div>
+              </div>
+              {imageContent.image.alt_text && (
+                <p className="text-sm text-gray-500 text-center italic">{imageContent.image.alt_text}</p>
+              )}
+              {(imageContent.image.width || imageContent.image.height || imageContent.image.file_size) && (
+                <div className="text-xs text-gray-400 text-center space-x-4">
+                  {imageContent.image.width && imageContent.image.height && (
+                    <span>{imageContent.image.width} × {imageContent.image.height}px</span>
+                  )}
+                  {imageContent.image.file_size && (
+                    <span>{Math.round(imageContent.image.file_size / 1024)} KB</span>
+                  )}
+                </div>
+              )}
+            </div>
+          )
+        }
+        
+        // Editor mode or no image selected
         return (
           <div className="bg-purple-50 rounded-lg p-8 text-center">
             <div className="text-4xl mb-2">🖼️</div>
             <p className="font-medium">
-              {block.data.selectedContent?.title || 'Image Block'}
+              {imageContent?.title || 'Image Block'}
             </p>
             <p className="text-sm text-gray-600 mt-1">
-              {block.data.selectedContent?.description || 'Select an image from repository'}
+              {imageContent?.description || 'Select an image from repository'}
             </p>
+            {imageContent?.image && (
+              <div className="text-xs text-gray-500 mt-1 space-x-4">
+                {imageContent.image.width && imageContent.image.height && (
+                  <span>{imageContent.image.width} × {imageContent.image.height}px</span>
+                )}
+                {imageContent.image.file_size && (
+                  <span>{Math.round(imageContent.image.file_size / 1024)} KB</span>
+                )}
+              </div>
+            )}
           </div>
         )
         
       case 'pdf':
+        const pdfContent = block.data.selectedContent
+        
+        if (isPreview && pdfContent?.pdf?.pdf_url) {
+          // In preview mode, show embedded PDF viewer
+          return (
+            <div className="space-y-4">
+              <div className="text-center border-b border-gray-200 pb-4">
+                <h3 className="text-lg font-semibold">{pdfContent.title}</h3>
+                {pdfContent.description && (
+                  <p className="text-gray-600 mt-2">{pdfContent.description}</p>
+                )}
+                <div className="flex justify-center items-center space-x-4 text-sm text-gray-500 mt-2">
+                  {pdfContent.pdf.page_count && (
+                    <span>{pdfContent.pdf.page_count} pages</span>
+                  )}
+                  {pdfContent.pdf.file_size && (
+                    <span>{Math.round(pdfContent.pdf.file_size / (1024 * 1024))} MB</span>
+                  )}
+                  <a 
+                    href={pdfContent.pdf.pdf_url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 underline"
+                  >
+                    Open in new tab
+                  </a>
+                </div>
+              </div>
+              <div className="w-full">
+                <iframe
+                  src={`${pdfContent.pdf.pdf_url}#toolbar=1&navpanes=1&scrollbar=1`}
+                  className="w-full h-96 border border-gray-300 rounded-lg"
+                  title={pdfContent.title}
+                  onError={() => {
+                    // If iframe fails, show fallback
+                    console.log('PDF iframe failed to load')
+                  }}
+                />
+              </div>
+            </div>
+          )
+        }
+        
+        // Editor mode or no PDF selected
         return (
           <div className="bg-red-50 rounded-lg p-8 text-center">
             <div className="text-4xl mb-2">📄</div>
             <p className="font-medium">
-              {block.data.selectedContent?.title || 'PDF Block'}
+              {pdfContent?.title || 'PDF Block'}
             </p>
             <p className="text-sm text-gray-600 mt-1">
-              {block.data.selectedContent?.description || 'Select a PDF from repository'}
+              {pdfContent?.description || 'Select a PDF from repository'}
             </p>
+            {pdfContent?.pdf && (
+              <div className="text-xs text-gray-500 mt-1 space-x-4">
+                {pdfContent.pdf.page_count && (
+                  <span>{pdfContent.pdf.page_count} pages</span>
+                )}
+                {pdfContent.pdf.file_size && (
+                  <span>{Math.round(pdfContent.pdf.file_size / (1024 * 1024))} MB</span>
+                )}
+              </div>
+            )}
           </div>
         )
         
       case 'prompts':
+        const promptContent = block.data.selectedContent
+        
+        if (isPreview && promptContent?.prompt?.prompt_text) {
+          // In preview mode, show actual prompt content
+          return (
+            <div className="space-y-4">
+              <div className="text-center border-b border-gray-200 pb-4">
+                <h3 className="text-lg font-semibold">{promptContent.title}</h3>
+                {promptContent.description && (
+                  <p className="text-gray-600 mt-2">{promptContent.description}</p>
+                )}
+                <div className="flex justify-center items-center space-x-4 text-sm text-gray-500 mt-2">
+                  {promptContent.prompt.prompt_category && (
+                    <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">
+                      {promptContent.prompt.prompt_category}
+                    </span>
+                  )}
+                  {promptContent.prompt.usage_count > 0 && (
+                    <span>Used {promptContent.prompt.usage_count} times</span>
+                  )}
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-white text-xl">
+                    💭
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-medium text-gray-900 mb-3">Prompt Template</h4>
+                    <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                      <pre className="whitespace-pre-wrap text-sm text-gray-700 font-mono leading-relaxed">
+                        {promptContent.prompt.prompt_text}
+                      </pre>
+                    </div>
+                    <div className="mt-3 flex justify-between items-center">
+                      <p className="text-xs text-gray-500">
+                        {promptContent.prompt.prompt_text.length} characters
+                      </p>
+                      <button className="px-3 py-1 bg-yellow-500 text-white text-xs rounded hover:bg-yellow-600 transition-colors">
+                        Copy Prompt
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        }
+        
+        // Editor mode or no prompt selected
         return (
           <div className="bg-yellow-50 rounded-lg p-8 text-center">
             <div className="text-4xl mb-2">💭</div>
             <p className="font-medium">
-              {block.data.selectedContent?.title || 'Prompts Block'}
+              {promptContent?.title || 'Prompts Block'}
             </p>
             <p className="text-sm text-gray-600 mt-1">
-              {block.data.selectedContent?.description || 'Select prompts from repository'}
+              {promptContent?.description || 'Select prompts from repository'}
             </p>
+            {promptContent?.prompt && (
+              <div className="text-xs text-gray-500 mt-1 space-x-4">
+                {promptContent.prompt.prompt_category && (
+                  <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">
+                    {promptContent.prompt.prompt_category}
+                  </span>
+                )}
+                {promptContent.prompt.usage_count > 0 && (
+                  <span>Used {promptContent.prompt.usage_count} times</span>
+                )}
+              </div>
+            )}
           </div>
         )
         
       case 'automation':
+        const automationContent = block.data.selectedContent
+        
+        if (isPreview && automationContent?.automation?.automation_url) {
+          // In preview mode, show automation details and interface
+          return (
+            <div className="space-y-4">
+              <div className="text-center border-b border-gray-200 pb-4">
+                <h3 className="text-lg font-semibold">{automationContent.title}</h3>
+                {automationContent.description && (
+                  <p className="text-gray-600 mt-2">{automationContent.description}</p>
+                )}
+              </div>
+              
+              <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl">
+                    ⚡
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-medium text-gray-900 mb-3">Automation Workflow</h4>
+                    
+                    {automationContent.automation.tool_description && (
+                      <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+                        <h5 className="font-medium text-sm text-gray-900 mb-2">Description</h5>
+                        <p className="text-sm text-gray-600">{automationContent.automation.tool_description}</p>
+                      </div>
+                    )}
+                    
+                    {automationContent.automation.required_tools && automationContent.automation.required_tools.length > 0 && (
+                      <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+                        <h5 className="font-medium text-sm text-gray-900 mb-2">Required Tools</h5>
+                        <div className="flex flex-wrap gap-2">
+                          {automationContent.automation.required_tools.map((tool: string, index: number) => (
+                            <span key={index} className="px-2 py-1 bg-orange-100 text-orange-800 rounded text-xs">
+                              {tool}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {automationContent.automation.setup_instructions && (
+                      <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+                        <h5 className="font-medium text-sm text-gray-900 mb-2">Setup Instructions</h5>
+                        <div className="text-sm text-gray-600 whitespace-pre-wrap">
+                          {automationContent.automation.setup_instructions}
+                        </div>
+                      </div>
+                    )}
+                    
+                    <div className="flex justify-between items-center">
+                      <p className="text-xs text-gray-500">
+                        Automation ready to deploy
+                      </p>
+                      <a 
+                        href={automationContent.automation.automation_url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-orange-500 text-white text-sm rounded hover:bg-orange-600 transition-colors"
+                      >
+                        Open Automation
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        }
+        
+        // Editor mode or no automation selected
         return (
           <div className="bg-orange-50 rounded-lg p-8 text-center">
             <div className="text-4xl mb-2">⚡</div>
             <p className="font-medium">
-              {block.data.selectedContent?.title || 'Automation Block'}
+              {automationContent?.title || 'Automation Block'}
             </p>
             <p className="text-sm text-gray-600 mt-1">
-              {block.data.selectedContent?.description || 'Select automation from repository'}
+              {automationContent?.description || 'Select automation from repository'}
             </p>
+            {automationContent?.automation?.required_tools && automationContent.automation.required_tools.length > 0 && (
+              <div className="text-xs text-gray-500 mt-2">
+                <p>Required tools:</p>
+                <div className="flex justify-center flex-wrap gap-1 mt-1">
+                  {automationContent.automation.required_tools.map((tool: string, index: number) => (
+                    <span key={index} className="px-2 py-1 bg-orange-100 text-orange-800 rounded">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )
         

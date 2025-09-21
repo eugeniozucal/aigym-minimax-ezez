@@ -196,36 +196,82 @@ export function PageBuilder() {
         <FixedLeftRail 
           activeMenu={activeLeftMenu}
           onMenuToggle={setActiveLeftMenu}
-          repositoryType={repositoryType}
         />
 
         {/* Deployed Left Menu */}
         <DeployedLeftMenu
-          activeMenu={activeLeftMenu}
+          menuType={activeLeftMenu || ''}
+          onBlockAdd={(blockType) => {
+            // Handle adding block
+            if (pageData && pageData.pages && pageData.pages.length > 0) {
+              const currentPage = pageData.pages[0]
+              const block = {
+                id: `block-${Date.now()}`,
+                type: blockType,
+                data: {},
+                order: currentPage.blocks.length,
+                pageId: currentPage.id
+              }
+              const updatedPages = pageData.pages.map(page => 
+                page.id === currentPage.id 
+                  ? { ...page, blocks: [...page.blocks, block] }
+                  : page
+              )
+              setPageData({
+                ...pageData,
+                pages: updatedPages
+              })
+            }
+          }}
           onClose={() => setActiveLeftMenu(null)}
-          repositoryType={repositoryType}
+          wodData={pageData}
+          onWodDataUpdate={setPageData}
         />
 
         {/* Center Canvas */}
         <div className="flex-1 flex flex-col">
           <CenterCanvas
-            pageData={pageData}
+            wodData={pageData}
+            currentPageId={pageData?.pages?.[0]?.id || 'page-1'}
+            onPageChange={() => {}}
             selectedBlock={selectedBlock}
             onBlockSelect={setSelectedBlock}
+            onBlockReorder={() => {}}
+            onBackToRepository={() => {}}
             onSave={handleSave}
-            isAutoSaving={isAutoSaving}
+            saving={isAutoSaving}
+            targetRepository={repositoryType === 'documents' ? 'wods' : repositoryType as 'wods' | 'blocks' | 'programs'}
             error={error}
+            onClearError={clearMessages}
             successMessage={successMessage}
-            config={config}
+            onClearSuccess={clearMessages}
+            onPreview={() => setShowPreview(true)}
           />
         </div>
 
         {/* Right Panel */}
-        {showRightPanel && (
+        {showRightPanel && selectedBlock && (
           <RightBlockEditor
-            selectedBlock={selectedBlock}
+            block={selectedBlock}
+            onBlockUpdate={(updatedBlock) => {
+              // Update the block in pageData
+              if (pageData && pageData.pages) {
+                const updatedPages = pageData.pages.map(page => ({
+                  ...page,
+                  blocks: page.blocks.map(block => 
+                    block.id === updatedBlock.id ? updatedBlock : block
+                  )
+                }))
+                setPageData({
+                  ...pageData,
+                  pages: updatedPages
+                })
+              }
+            }}
             onClose={() => setShowRightPanel(false)}
-            pageData={pageData}
+            onOpenRepository={(contentType) => {
+              setRepositoryPopup({ type: contentType, isOpen: true })
+            }}
           />
         )}
 
