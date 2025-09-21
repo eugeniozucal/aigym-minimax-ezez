@@ -1,0 +1,169 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +582
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 582, reused 0, downloaded 0, added 0
+Progress: resolved 582, reused 97, downloaded 0, added 0
+Progress: resolved 582, reused 568, downloaded 0, added 0
+Progress: resolved 582, reused 582, downloaded 0, added 352
+Progress: resolved 582, reused 582, downloaded 0, added 582, done
+
+dependencies:
++ @hookform/resolvers 3.10.0
++ @monaco-editor/react 4.7.0
++ @radix-ui/react-accordion 1.2.4
++ @radix-ui/react-alert-dialog 1.1.7
++ @radix-ui/react-aspect-ratio 1.1.3
++ @radix-ui/react-avatar 1.1.4
++ @radix-ui/react-checkbox 1.1.5
++ @radix-ui/react-collapsible 1.1.4
++ @radix-ui/react-context-menu 2.2.7
++ @radix-ui/react-dialog 1.1.7
++ @radix-ui/react-dropdown-menu 2.1.7
++ @radix-ui/react-hover-card 1.1.7
++ @radix-ui/react-label 2.1.3
++ @radix-ui/react-menubar 1.1.7
++ @radix-ui/react-navigation-menu 1.2.6
++ @radix-ui/react-popover 1.1.7
++ @radix-ui/react-progress 1.1.3
++ @radix-ui/react-radio-group 1.2.4
++ @radix-ui/react-scroll-area 1.2.4
++ @radix-ui/react-select 2.1.7
++ @radix-ui/react-separator 1.1.3
++ @radix-ui/react-slider 1.2.4
++ @radix-ui/react-slot 1.2.0
++ @radix-ui/react-switch 1.1.4
++ @radix-ui/react-tabs 1.1.4
++ @radix-ui/react-toast 1.2.7
++ @radix-ui/react-toggle 1.1.3
++ @radix-ui/react-toggle-group 1.1.3
++ @radix-ui/react-tooltip 1.2.0
++ @supabase/supabase-js 2.56.0
++ @tanstack/react-query 5.89.0
++ @tanstack/react-query-devtools 5.89.0
++ class-variance-authority 0.7.1
++ clsx 2.1.1
++ cmdk 1.0.0
++ date-fns 3.6.0
++ embla-carousel-react 8.6.0
++ immer 10.1.3
++ input-otp 1.4.2
++ lucide-react 0.364.0
++ next-themes 0.4.6
++ quill 2.0.3
++ react 18.3.1
++ react-day-picker 8.10.1
++ react-dom 18.3.1
++ react-hook-form 7.55.0
++ react-quill 2.0.0
++ react-resizable-panels 2.1.7
++ react-router-dom 6.30.0
++ recharts 2.15.2
++ sonner 1.7.4
++ tailwind-merge 2.6.0
++ tailwindcss-animate 1.0.7
++ vaul 1.1.2
++ zod 3.24.2
++ zustand 5.0.8
+
+devDependencies:
++ @eslint/js 9.24.0
++ @testing-library/jest-dom 6.8.0
++ @testing-library/react 16.3.0
++ @types/node 22.14.1
++ @types/react 18.3.20
++ @types/react-dom 18.3.6
++ @types/react-router-dom 5.3.3
++ @vitejs/plugin-react 4.3.4
++ autoprefixer 10.4.20
++ eslint 9.24.0
++ eslint-plugin-react-hooks 5.2.0
++ eslint-plugin-react-refresh 0.4.19
++ globals 15.15.0
++ jsdom 27.0.0
++ postcss 8.4.49
++ tailwindcss 3.4.16
++ typescript 5.6.3
++ typescript-eslint 8.29.1
++ vite 6.2.6
++ vite-plugin-source-identifier 1.1.2
++ vitest 3.2.4
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 7.6s using pnpm v10.12.4
+src/__tests__/stores.test.ts:110:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: any[]; order: number; }[]; settings: { communities: any[]; tags: any[]; people: any[]; difficulty: number; estimatedDuration: number; autoSaveEnabled: boolean; }; }' is not assignable to parameter of type 'PageData'.
+  The types of 'settings.difficulty' are incompatible between these types.
+    Type 'number' is not assignable to type '1 | 2 | 5 | 3 | 4'.
+
+110     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/__tests__/stores.test.ts:111:30 - error TS2345: Argument of type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is not assignable to parameter of type 'Block'.
+  Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is missing the following properties from type 'Block': data, pageId
+
+111     store.addBlock('page-1', mockBlock)
+                                 ~~~~~~~~~
+
+src/__tests__/stores.test.ts:149:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  Types of property 'pages' are incompatible.
+    Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }[]' is not assignable to type 'Page[]'.
+      Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }' is not assignable to type 'Page'.
+        Types of property 'blocks' are incompatible.
+          Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }[]' is not assignable to type 'Block[]'.
+            Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is missing the following properties from type 'Block': data, pageId
+
+149     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/__tests__/stores.test.ts:184:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; pageId: string; data: {}; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  The types of 'settings.difficulty' are incompatible between these types.
+    Type 'number' is not assignable to type '1 | 2 | 5 | 3 | 4'.
+
+184     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/__tests__/stores.test.ts:220:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; pageId: string; data: {}; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  The types of 'settings.difficulty' are incompatible between these types.
+    Type 'number' is not assignable to type '1 | 2 | 5 | 3 | 4'.
+
+220     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:199:11 - error TS2322: Type '{ activeMenu: string; onMenuToggle: (menu: string) => void; repositoryType: RepositoryType; }' is not assignable to type 'IntrinsicAttributes & FixedLeftRailProps'.
+  Property 'repositoryType' does not exist on type 'IntrinsicAttributes & FixedLeftRailProps'.
+
+199           repositoryType={repositoryType}
+              ~~~~~~~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:204:11 - error TS2322: Type '{ activeMenu: string; onClose: () => void; repositoryType: RepositoryType; }' is not assignable to type 'IntrinsicAttributes & DeployedLeftMenuProps'.
+  Property 'activeMenu' does not exist on type 'IntrinsicAttributes & DeployedLeftMenuProps'.
+
+204           activeMenu={activeLeftMenu}
+              ~~~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:212:13 - error TS2322: Type '{ pageData: PageData; selectedBlock: Block; onBlockSelect: (block: Block) => void; onSave: () => Promise<void>; isAutoSaving: boolean; error: string; successMessage: string; config: { ...; } | ... 8 more ... | { ...; }; }' is not assignable to type 'IntrinsicAttributes & CenterCanvasProps'.
+  Property 'pageData' does not exist on type 'IntrinsicAttributes & CenterCanvasProps'.
+
+212             pageData={pageData}
+                ~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:226:13 - error TS2322: Type '{ selectedBlock: Block; onClose: () => void; pageData: PageData; }' is not assignable to type 'IntrinsicAttributes & RightBlockEditorProps'.
+  Property 'selectedBlock' does not exist on type 'IntrinsicAttributes & RightBlockEditorProps'.
+
+226             selectedBlock={selectedBlock}
+                ~~~~~~~~~~~~~
+
+
+Found 9 errors.
+

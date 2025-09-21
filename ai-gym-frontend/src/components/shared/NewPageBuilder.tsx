@@ -232,15 +232,43 @@ export function PageBuilder() {
         {/* Repository Popup */}
         {repositoryPopup.isOpen && (
           <RepositoryPopup
-            type={repositoryPopup.type}
+            contentType={repositoryPopup.type}
+            onContentSelect={(item) => {
+              // Add selected item as a block
+              if (pageData && pageData.pages && pageData.pages.length > 0) {
+                const currentPage = pageData.pages[0] // Use first page for now
+                const block = {
+                  id: `block-${Date.now()}`,
+                  type: repositoryPopup.type,
+                  title: item.title,
+                  description: item.description,
+                  content: item.content || item,
+                  order: currentPage.blocks.length,
+                  pageId: currentPage.id,
+                  data: item.content || item
+                }
+                // Add block to current page
+                const updatedPages = pageData.pages.map(page => 
+                  page.id === currentPage.id 
+                    ? { ...page, blocks: [...page.blocks, block] }
+                    : page
+                )
+                setPageData({
+                  ...pageData,
+                  pages: updatedPages
+                })
+              }
+              setRepositoryPopup({ type: '', isOpen: false })
+            }}
             onClose={() => setRepositoryPopup({ type: '', isOpen: false })}
-            repositoryType={repositoryType}
           />
         )}
 
         {/* Preview Modal */}
         {showPreview && (
           <PreviewModal
+            currentPageId={pageData?.id || 'page-1'}
+            isOpen={showPreview}
             pageData={pageData}
             onClose={() => setShowPreview(false)}
           />

@@ -37,14 +37,19 @@ export function FixedLeftRail({ activeMenu, onMenuToggle }: FixedLeftRailProps) 
   return (
     <div className="w-16 bg-gray-900 flex flex-col items-center py-4 z-50">
       <div className="flex flex-col space-y-4">
-        {menuItems.map((item) => {
+        {menuItems.map((item, index) => {
           const Icon = item.icon
           const isActive = activeMenu === item.id
           
           return (
             <button
               key={item.id}
-              onClick={() => onMenuToggle(item.id)}
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                console.log('FixedLeftRail button clicked - Index:', index, 'ID:', item.id, 'Title:', item.title)
+                onMenuToggle(item.id)
+              }}
               className={`
                 p-3 rounded-lg transition-all duration-200 group relative
                 ${

@@ -1,0 +1,103 @@
+
+> react_repo@0.0.0 build:prod /workspace/ai-gym-frontend
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && BUILD_MODE=prod vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1.4s using pnpm v10.12.4
+src/__tests__/stores.test.ts:110:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: any[]; order: number; }[]; settings: { communities: any[]; tags: any[]; people: any[]; difficulty: number; estimatedDuration: number; autoSaveEnabled: boolean; }; }' is not assignable to parameter of type 'PageData'.
+  The types of 'settings.difficulty' are incompatible between these types.
+    Type 'number' is not assignable to type '1 | 2 | 5 | 3 | 4'.
+
+110     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/__tests__/stores.test.ts:111:30 - error TS2345: Argument of type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is not assignable to parameter of type 'Block'.
+  Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is missing the following properties from type 'Block': data, pageId
+
+111     store.addBlock('page-1', mockBlock)
+                                 ~~~~~~~~~
+
+src/__tests__/stores.test.ts:149:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  Types of property 'pages' are incompatible.
+    Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }[]' is not assignable to type 'Page[]'.
+      Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }' is not assignable to type 'Page'.
+        Types of property 'blocks' are incompatible.
+          Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }[]' is not assignable to type 'Block[]'.
+            Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is missing the following properties from type 'Block': data, pageId
+
+149     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/__tests__/stores.test.ts:184:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; pageId: string; data: {}; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  The types of 'settings.difficulty' are incompatible between these types.
+    Type 'number' is not assignable to type '1 | 2 | 5 | 3 | 4'.
+
+184     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/__tests__/stores.test.ts:220:23 - error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; pageId: string; data: {}; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  The types of 'settings.difficulty' are incompatible between these types.
+    Type 'number' is not assignable to type '1 | 2 | 5 | 3 | 4'.
+
+220     store.setPageData(mockPageData)
+                          ~~~~~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:199:11 - error TS2322: Type '{ activeMenu: string; onMenuToggle: (menu: string) => void; repositoryType: RepositoryType; }' is not assignable to type 'IntrinsicAttributes & FixedLeftRailProps'.
+  Property 'repositoryType' does not exist on type 'IntrinsicAttributes & FixedLeftRailProps'.
+
+199           repositoryType={repositoryType}
+              ~~~~~~~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:204:11 - error TS2322: Type '{ activeMenu: string; onClose: () => void; repositoryType: RepositoryType; }' is not assignable to type 'IntrinsicAttributes & DeployedLeftMenuProps'.
+  Property 'activeMenu' does not exist on type 'IntrinsicAttributes & DeployedLeftMenuProps'.
+
+204           activeMenu={activeLeftMenu}
+              ~~~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:212:13 - error TS2322: Type '{ pageData: PageData; selectedBlock: Block; onBlockSelect: (block: Block) => void; onSave: () => Promise<void>; isAutoSaving: boolean; error: string; successMessage: string; config: { ...; } | ... 8 more ... | { ...; }; }' is not assignable to type 'IntrinsicAttributes & CenterCanvasProps'.
+  Property 'pageData' does not exist on type 'IntrinsicAttributes & CenterCanvasProps'.
+
+212             pageData={pageData}
+                ~~~~~~~~
+
+src/components/shared/NewPageBuilder.tsx:226:13 - error TS2322: Type '{ selectedBlock: Block; onClose: () => void; pageData: PageData; }' is not assignable to type 'IntrinsicAttributes & RightBlockEditorProps'.
+  Property 'selectedBlock' does not exist on type 'IntrinsicAttributes & RightBlockEditorProps'.
+
+226             selectedBlock={selectedBlock}
+                ~~~~~~~~~~~~~
+
+src/components/training-zone/components/RepositoryPopup.tsx:429:44 - error TS2339: Property 'ai_agent' does not exist on type 'ContentItem'.
+
+429     if (contentType === 'ai-agent' && item.ai_agent) {
+                                               ~~~~~~~~
+
+src/components/training-zone/components/RepositoryPopup.tsx:430:33 - error TS2339: Property 'ai_agent' does not exist on type 'ContentItem'.
+
+430       const matchesAgent = item.ai_agent.agent_name?.toLowerCase().includes(searchLower) ||
+                                    ~~~~~~~~
+
+src/components/training-zone/components/RepositoryPopup.tsx:431:32 - error TS2339: Property 'ai_agent' does not exist on type 'ContentItem'.
+
+431                           item.ai_agent.short_description?.toLowerCase().includes(searchLower) ||
+                                   ~~~~~~~~
+
+src/components/training-zone/components/RepositoryPopup.tsx:432:32 - error TS2339: Property 'ai_agent' does not exist on type 'ContentItem'.
+
+432                           item.ai_agent.system_prompt?.toLowerCase().includes(searchLower)
+                                   ~~~~~~~~
+
+
+Found 13 errors.
+
+ ELIFECYCLE  Command failed with exit code 2.
+bash: vite: command not found

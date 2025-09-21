@@ -35,7 +35,9 @@ export const PageBuilderModals: React.FC = () => {
             title: item.title,
             description: item.description,
             content: item.content || item,
-            order: 0
+            order: 0,
+            pageId: currentPageId,
+            data: item.content || item
           }
           addBlock(currentPageId, block)
         }

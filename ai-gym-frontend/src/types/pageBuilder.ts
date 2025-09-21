@@ -4,6 +4,13 @@ export interface Block {
   data: any
   order: number
   pageId: string
+  // Content properties
+  title?: string
+  description?: string
+  content?: any
+  // Exercise-specific properties
+  duration?: number
+  difficulty?: 'beginner' | 'intermediate' | 'advanced'
 }
 
 export interface Page {

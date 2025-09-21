@@ -166,8 +166,8 @@ describe('Content Store', () => {
         id: 'page-1', 
         title: 'Page 1', 
         blocks: [
-          { id: 'block-1', type: 'text', title: 'Block 1', content: '', order: 0 },
-          { id: 'block-2', type: 'text', title: 'Block 2', content: '', order: 1 }
+          { id: 'block-1', type: 'text', title: 'Block 1', content: '', order: 0, pageId: 'page-1', data: {} },
+          { id: 'block-2', type: 'text', title: 'Block 2', content: '', order: 1, pageId: 'page-1', data: {} }
         ], 
         order: 0 
       }],
@@ -201,9 +201,9 @@ describe('Content Store', () => {
         id: 'page-1', 
         title: 'Page 1', 
         blocks: [
-          { id: 'block-1', type: 'text', title: 'Block 1', content: '', order: 0 },
-          { id: 'block-2', type: 'text', title: 'Block 2', content: '', order: 1 },
-          { id: 'block-3', type: 'text', title: 'Block 3', content: '', order: 2 }
+          { id: 'block-1', type: 'text', title: 'Block 1', content: '', order: 0, pageId: 'page-1', data: {} },
+          { id: 'block-2', type: 'text', title: 'Block 2', content: '', order: 1, pageId: 'page-1', data: {} },
+          { id: 'block-3', type: 'text', title: 'Block 3', content: '', order: 2, pageId: 'page-1', data: {} }
         ], 
         order: 0 
       }],
@@ -236,7 +236,9 @@ describe('Content Store', () => {
       title: 'Test Exercise',
       description: 'Test description',
       content: { reps: 10 },
-      order: 0
+      order: 0,
+      pageId: 'page-1',
+      data: { reps: 10 }
     }
 
     // Select block

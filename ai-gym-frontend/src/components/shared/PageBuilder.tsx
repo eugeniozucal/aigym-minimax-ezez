@@ -375,15 +375,21 @@ export function PageBuilder() {
   }
 
   const handleLeftMenuToggle = (menuId: string) => {
-    setActiveLeftMenu(activeLeftMenu === menuId ? null : menuId)
+    console.log('Menu toggle called with:', menuId, 'Current activeLeftMenu:', activeLeftMenu)
+    const newActiveMenu = activeLeftMenu === menuId ? null : menuId
+    console.log('Setting activeLeftMenu to:', newActiveMenu)
+    setActiveLeftMenu(newActiveMenu)
   }
 
   const handleBlockAdd = (blockType: string) => {
-    if (['video', 'ai-agent', 'document', 'prompts', 'automation', 'image', 'pdf'].includes(blockType)) {
+    console.log('handleBlockAdd called with blockType:', blockType)
+    if (['video', 'ai-agent', 'document', 'prompt', 'automation', 'image', 'pdf'].includes(blockType)) {
       // CONTENT blocks - open repository popup
+      console.log('Opening repository popup for content block:', blockType)
       setRepositoryPopup({ type: blockType, isOpen: true })
     } else {
       // ELEMENTS blocks - add directly to canvas
+      console.log('Adding element block to canvas:', blockType)
       const newBlock: Block = {
         id: `block-${Date.now()}`,
         type: blockType,
@@ -563,13 +569,16 @@ export function PageBuilder() {
       
       {/* Deployed Left Menu */}
       {activeLeftMenu && (
-        <DeployedLeftMenu
-          menuType={activeLeftMenu}
-          onBlockAdd={handleBlockAdd}
-          onClose={() => setActiveLeftMenu(null)}
-          wodData={pageData} // Keep the same prop name for compatibility
-          onWodDataUpdate={setPageData}
-        />
+        <>
+          {console.log('Rendering DeployedLeftMenu with menuType:', activeLeftMenu)}
+          <DeployedLeftMenu
+            menuType={activeLeftMenu}
+            onBlockAdd={handleBlockAdd}
+            onClose={() => setActiveLeftMenu(null)}
+            wodData={pageData} // Keep the same prop name for compatibility
+            onWodDataUpdate={setPageData}
+          />
+        </>
       )}
       
       {/* Center Canvas */}

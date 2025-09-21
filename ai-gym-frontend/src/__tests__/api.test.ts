@@ -386,8 +386,10 @@ describe('Content API Client', () => {
       const results = await contentApi.batchUpdate(updates)
       
       expect(results).toHaveLength(2)
-      expect(results[0].title).toBe('Updated WOD 1')
-      expect(results[1].title).toBe('Updated WOD 2')
+      expect(results[0].success).toBe(true)
+      expect(results[0].data?.title).toBe('Updated WOD 1')
+      expect(results[1].success).toBe(true)
+      expect(results[1].data?.title).toBe('Updated WOD 2')
     })
 
     it('should handle partial failures in batch operations', async () => {

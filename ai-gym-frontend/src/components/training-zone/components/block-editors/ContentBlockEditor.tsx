@@ -31,6 +31,7 @@ export function ContentBlockEditor({ block, onUpdate, onOpenRepository }: Conten
       case 'video': return '🎥'
       case 'ai-agent': return '🤖'
       case 'document': return '📚'
+      case 'prompt': return '💭'
       case 'prompts': return '💭'
       case 'automation': return '⚡'
       case 'image': return '🖼️'
