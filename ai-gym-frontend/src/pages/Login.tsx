@@ -129,7 +129,7 @@ export function Login() {
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-xs text-gray-600 font-medium mb-1">Demo Credentials:</p>
             <p className="text-xs text-gray-500">Email: ez@aiworkify.com</p>
-            <p className="text-xs text-gray-500">Password: 12345678</p>
+            <p className="text-xs text-gray-500">Password: EzU8264!</p>
           </div>
         </div>
       </div>

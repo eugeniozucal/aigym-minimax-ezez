@@ -60,7 +60,13 @@ describe('Save/Load Integration Tests', () => {
         reps: 10,
         restTime: 60
       },
-      order: 0
+      order: 0,
+      pageId: 'page-1',
+      data: {
+        sets: 3,
+        reps: 10,
+        restTime: 60
+      }
     }
 
     store.addBlock('page-1', testBlock as any)
@@ -96,9 +102,9 @@ describe('Save/Load Integration Tests', () => {
         id: 'page-1',
         title: 'Main Workout',
         blocks: [
-          { id: 'block-1', type: 'exercise', title: 'Exercise 1', order: 0 },
-          { id: 'block-2', type: 'exercise', title: 'Exercise 2', order: 1 },
-          { id: 'block-3', type: 'exercise', title: 'Exercise 3', order: 2 }
+          { id: 'block-1', type: 'exercise', title: 'Exercise 1', order: 0, pageId: 'page-1', data: {} },
+          { id: 'block-2', type: 'exercise', title: 'Exercise 2', order: 1, pageId: 'page-1', data: {} },
+          { id: 'block-3', type: 'exercise', title: 'Exercise 3', order: 2, pageId: 'page-1', data: {} }
         ],
         order: 0
       }],
@@ -127,7 +133,9 @@ describe('Save/Load Integration Tests', () => {
       title: 'Test Exercise',
       description: 'Test description',
       content: { reps: 10 },
-      order: 0
+      order: 0,
+      pageId: 'page-1',
+      data: { reps: 10 }
     }
 
     // Select block

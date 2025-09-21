@@ -30,6 +30,54 @@ interface ContentItem {
     auto_title?: string
     auto_description?: string
   }
+  // Document-specific fields when joined
+  document?: {
+    id: string
+    content_html: string
+    content_json?: any
+    word_count?: number
+    reading_time_minutes?: number
+  }
+  // Prompt-specific fields when joined
+  prompt?: {
+    id: string
+    prompt_text: string
+    prompt_category?: string
+    usage_count?: number
+    last_copied_at?: string
+  }
+  // Automation-specific fields when joined
+  automation?: {
+    id: string
+    automation_url: string
+    required_tools?: string[]
+    tool_description?: string
+    setup_instructions?: string
+  }
+  // AI Agent-specific fields when joined
+  ai_agent?: {
+    id: string
+    agent_name: string
+    short_description?: string
+    system_prompt?: string
+  }
+  // Image-specific fields when joined
+  image?: {
+    id: string
+    image_url: string
+    alt_text?: string
+    width?: number
+    height?: number
+    file_size?: number
+  }
+  // PDF-specific fields when joined
+  pdf?: {
+    id: string
+    pdf_url: string
+    file_size?: number
+    page_count?: number
+    thumbnail_url?: string
+  }
 }
 
 export function RepositoryPopup({ contentType, onContentSelect, onClose }: RepositoryPopupProps) {
@@ -38,7 +86,7 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
   const [error, setError] = useState<string | null>(null)
   const [searchTerm, setSearchTerm] = useState('')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
-  const [showPublishedOnly, setShowPublishedOnly] = useState(true)
+  const [showPublishedOnly, setShowPublishedOnly] = useState(false)
   
   useEffect(() => {
     loadContent()
@@ -78,6 +126,8 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
     setLoading(true)
     setError(null)
     try {
+      let transformedContent: ContentItem[] = []
+      
       if (contentType === 'video') {
         // Fetch videos with content_items data
         let query = supabase
@@ -120,7 +170,7 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
         }
         
         // Transform the data and generate thumbnails
-        const transformedVideos: ContentItem[] = (data || []).map(item => {
+        transformedContent = (data || []).map(item => {
           const videoData = Array.isArray(item.videos) ? item.videos[0] : item.videos
           const thumbnailUrl = item.thumbnail_url || generateVideoThumbnail(videoData)
           
@@ -131,10 +181,305 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
             description: item.description || videoData?.auto_description || 'No description available'
           }
         })
+      
+      } else if (contentType === 'document') {
+        // Fetch documents with content_items data
+        let query = supabase
+          .from('content_items')
+          .select(`
+            id,
+            title,
+            description,
+            thumbnail_url,
+            content_type,
+            status,
+            created_by,
+            created_at,
+            updated_at,
+            documents (
+              id,
+              content_html,
+              content_json,
+              word_count,
+              reading_time_minutes
+            )
+          `)
+          .eq('content_type', 'document')
+          .order('updated_at', { ascending: false })
+          .limit(50)
         
-        setContent(transformedVideos)
+        // Conditionally add published filter
+        if (showPublishedOnly) {
+          query = query.eq('status', 'published')
+        }
+        
+        const { data, error } = await query
+        
+        if (error) {
+          console.error('Error fetching documents:', error)
+          throw new Error('Failed to load documents from database')
+        }
+        
+        // Transform the data
+        transformedContent = (data || []).map(item => {
+          const documentData = Array.isArray(item.documents) ? item.documents[0] : item.documents
+          
+          return {
+            ...item,
+            document: documentData,
+            description: item.description || `${documentData?.word_count || 0} words, ${documentData?.reading_time_minutes || 0} min read` || 'No description available'
+          }
+        })
+      
+      } else if (contentType === 'prompt') {
+        // Fetch prompts with content_items data
+        let query = supabase
+          .from('content_items')
+          .select(`
+            id,
+            title,
+            description,
+            thumbnail_url,
+            content_type,
+            status,
+            created_by,
+            created_at,
+            updated_at,
+            prompts (
+              id,
+              prompt_text,
+              prompt_category,
+              usage_count,
+              last_copied_at
+            )
+          `)
+          .eq('content_type', 'prompt')
+          .order('updated_at', { ascending: false })
+          .limit(50)
+        
+        // Conditionally add published filter
+        if (showPublishedOnly) {
+          query = query.eq('status', 'published')
+        }
+        
+        const { data, error } = await query
+        
+        if (error) {
+          console.error('Error fetching prompts:', error)
+          throw new Error('Failed to load prompts from database')
+        }
+        
+        // Transform the data
+        transformedContent = (data || []).map(item => {
+          const promptData = Array.isArray(item.prompts) ? item.prompts[0] : item.prompts
+          
+          return {
+            ...item,
+            prompt: promptData,
+            description: item.description || `${promptData?.prompt_category || 'General'} prompt (used ${promptData?.usage_count || 0} times)` || 'No description available'
+          }
+        })
+      
+      } else if (contentType === 'automation') {
+        // Fetch automations with content_items data
+        let query = supabase
+          .from('content_items')
+          .select(`
+            id,
+            title,
+            description,
+            thumbnail_url,
+            content_type,
+            status,
+            created_by,
+            created_at,
+            updated_at,
+            automations (
+              id,
+              automation_url,
+              required_tools,
+              tool_description,
+              setup_instructions
+            )
+          `)
+          .eq('content_type', 'automation')
+          .order('updated_at', { ascending: false })
+          .limit(50)
+        
+        // Conditionally add published filter
+        if (showPublishedOnly) {
+          query = query.eq('status', 'published')
+        }
+        
+        const { data, error } = await query
+        
+        if (error) {
+          console.error('Error fetching automations:', error)
+          throw new Error('Failed to load automations from database')
+        }
+        
+        // Transform the data
+        transformedContent = (data || []).map(item => {
+          const automationData = Array.isArray(item.automations) ? item.automations[0] : item.automations
+          
+          return {
+            ...item,
+            automation: automationData,
+            description: item.description || automationData?.tool_description || 'No description available'
+          }
+        })
+      
+      } else if (contentType === 'ai-agent') {
+        // Fetch AI agents with content_items data
+        let query = supabase
+          .from('content_items')
+          .select(`
+            id,
+            title,
+            description,
+            thumbnail_url,
+            content_type,
+            status,
+            created_by,
+            created_at,
+            updated_at,
+            ai_agents (
+              id,
+              agent_name,
+              short_description,
+              system_prompt
+            )
+          `)
+          .eq('content_type', 'ai_agent')
+          .order('updated_at', { ascending: false })
+          .limit(50)
+        
+        // Conditionally add published filter
+        if (showPublishedOnly) {
+          query = query.eq('status', 'published')
+        }
+        
+        const { data, error } = await query
+        
+        if (error) {
+          console.error('Error fetching AI agents:', error)
+          throw new Error('Failed to load AI agents from database')
+        }
+        
+        // Transform the data
+        transformedContent = (data || []).map(item => {
+          const agentData = Array.isArray(item.ai_agents) ? item.ai_agents[0] : item.ai_agents
+          
+          return {
+            ...item,
+            ai_agent: agentData,
+            description: item.description || agentData?.short_description || 'No description available'
+          }
+        })
+      
+      } else if (contentType === 'image') {
+        // Fetch images with content_items data
+        let query = supabase
+          .from('content_items')
+          .select(`
+            id,
+            title,
+            description,
+            thumbnail_url,
+            content_type,
+            status,
+            created_by,
+            created_at,
+            updated_at,
+            images (
+              id,
+              image_url,
+              alt_text,
+              width,
+              height,
+              file_size
+            )
+          `)
+          .eq('content_type', 'image')
+          .order('updated_at', { ascending: false })
+          .limit(50)
+        
+        // Conditionally add published filter
+        if (showPublishedOnly) {
+          query = query.eq('status', 'published')
+        }
+        
+        const { data, error } = await query
+        
+        if (error) {
+          console.error('Error fetching images:', error)
+          throw new Error('Failed to load images from database')
+        }
+        
+        // Transform the data
+        transformedContent = (data || []).map(item => {
+          const imageData = Array.isArray(item.images) ? item.images[0] : item.images
+          
+          return {
+            ...item,
+            image: imageData,
+            thumbnail_url: item.thumbnail_url || imageData?.image_url,
+            description: item.description || `Image - ${imageData?.width && imageData?.height ? `${imageData.width}x${imageData.height}` : 'Unknown size'}` || 'No description available'
+          }
+        })
+      
+      } else if (contentType === 'pdf') {
+        // Fetch PDFs with content_items data
+        let query = supabase
+          .from('content_items')
+          .select(`
+            id,
+            title,
+            description,
+            thumbnail_url,
+            content_type,
+            status,
+            created_by,
+            created_at,
+            updated_at,
+            pdfs (
+              id,
+              pdf_url,
+              file_size,
+              page_count,
+              thumbnail_url
+            )
+          `)
+          .eq('content_type', 'pdf')
+          .order('updated_at', { ascending: false })
+          .limit(50)
+        
+        // Conditionally add published filter
+        if (showPublishedOnly) {
+          query = query.eq('status', 'published')
+        }
+        
+        const { data, error } = await query
+        
+        if (error) {
+          console.error('Error fetching PDFs:', error)
+          throw new Error('Failed to load PDFs from database')
+        }
+        
+        // Transform the data
+        transformedContent = (data || []).map(item => {
+          const pdfData = Array.isArray(item.pdfs) ? item.pdfs[0] : item.pdfs
+          
+          return {
+            ...item,
+            pdf: pdfData,
+            thumbnail_url: item.thumbnail_url || pdfData?.thumbnail_url,
+            description: item.description || `PDF - ${pdfData?.page_count ? `${pdfData.page_count} pages` : 'Unknown pages'}${pdfData?.file_size ? `, ${Math.round(pdfData.file_size / 1024)} KB` : ''}` || 'No description available'
+          }
+        })
+      
       } else {
-        // For other content types, use the existing content repository manager
+        // For other content types (pdf, etc.), fall back to the edge function
         const { data, error } = await supabase.functions.invoke('content-repository-manager', {
           body: {
             action: 'list',
@@ -153,8 +498,10 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
           throw new Error('Failed to load content from repository')
         }
         
-        setContent(data?.data?.items || [])
+        transformedContent = data?.data?.items || []
       }
+      
+      setContent(transformedContent)
     } catch (error) {
       console.error('Failed to load content:', error)
       setError(error instanceof Error ? error.message : 'Failed to load content')
@@ -182,6 +529,52 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
       return matchesBasic || matchesVideo
     }
     
+    // For documents, also search in document-specific fields
+    if (contentType === 'document' && item.document) {
+      const matchesDocument = item.document.content_html?.toLowerCase().includes(searchLower)
+      return matchesBasic || matchesDocument
+    }
+    
+    // For prompts, also search in prompt-specific fields
+    if (contentType === 'prompt' && item.prompt) {
+      const matchesPrompt = item.prompt.prompt_text?.toLowerCase().includes(searchLower) ||
+                           item.prompt.prompt_category?.toLowerCase().includes(searchLower)
+      return matchesBasic || matchesPrompt
+    }
+    
+    // For automations, also search in automation-specific fields
+    if (contentType === 'automation' && item.automation) {
+      const matchesAutomation = item.automation.tool_description?.toLowerCase().includes(searchLower) ||
+                               item.automation.setup_instructions?.toLowerCase().includes(searchLower) ||
+                               item.automation.required_tools?.some(tool => tool.toLowerCase().includes(searchLower))
+      return matchesBasic || matchesAutomation
+    }
+    
+    // For AI agents, also search in agent-specific fields
+    if (contentType === 'ai-agent' && item.ai_agent) {
+      const matchesAgent = item.ai_agent.agent_name?.toLowerCase().includes(searchLower) ||
+                          item.ai_agent.short_description?.toLowerCase().includes(searchLower) ||
+                          item.ai_agent.system_prompt?.toLowerCase().includes(searchLower)
+      return matchesBasic || matchesAgent
+    }
+    
+    // For images, also search in image-specific fields
+    if (contentType === 'image' && item.image) {
+      const dimensions = item.image.width && item.image.height ? `${item.image.width}x${item.image.height}` : ''
+      const matchesImage = item.image.alt_text?.toLowerCase().includes(searchLower) ||
+                          dimensions.toLowerCase().includes(searchLower)
+      return matchesBasic || matchesImage
+    }
+    
+    // For PDFs, also search in PDF-specific fields
+    if (contentType === 'pdf' && item.pdf) {
+      const pageInfo = item.pdf.page_count ? `${item.pdf.page_count} pages` : ''
+      const sizeInfo = item.pdf.file_size ? `${Math.round(item.pdf.file_size / 1024)} KB` : ''
+      const matchesPdf = pageInfo.toLowerCase().includes(searchLower) ||
+                        sizeInfo.toLowerCase().includes(searchLower)
+      return matchesBasic || matchesPdf
+    }
+    
     return matchesBasic
   })
   
@@ -190,6 +583,7 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
       case 'video': return '🎥'
       case 'ai-agent': return '🤖'
       case 'document': return '📚'
+      case 'prompt': return '💭'
       case 'prompts': return '💭'
       case 'automation': return '⚡'
       case 'image': return '🖼️'
@@ -201,6 +595,7 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
   const getContentTypeLabel = (type: string) => {
     switch (type) {
       case 'ai-agent': return 'AI Agents'
+      case 'prompt': return 'Prompts'
       default: return type.charAt(0).toUpperCase() + type.slice(1) + 's'
     }
   }
@@ -359,6 +754,21 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
                             {formatDuration(item.video.duration_seconds)}
                           </div>
                         )}
+                        {contentType === 'document' && item.document?.reading_time_minutes && (
+                          <div className="absolute bottom-2 right-2 bg-blue-600 bg-opacity-75 text-white text-xs px-2 py-1 rounded">
+                            {item.document.reading_time_minutes} min read
+                          </div>
+                        )}
+                        {contentType === 'prompt' && item.prompt?.usage_count !== undefined && (
+                          <div className="absolute bottom-2 right-2 bg-green-600 bg-opacity-75 text-white text-xs px-2 py-1 rounded">
+                            Used {item.prompt.usage_count}x
+                          </div>
+                        )}
+                        {contentType === 'automation' && item.automation?.required_tools && item.automation.required_tools.length > 0 && (
+                          <div className="absolute bottom-2 right-2 bg-purple-600 bg-opacity-75 text-white text-xs px-2 py-1 rounded">
+                            {item.automation.required_tools.length} tools
+                          </div>
+                        )}
                       </div>
                       <h3 className="font-medium text-gray-900 mb-1">{item.title}</h3>
                       <p className="text-sm text-gray-600 line-clamp-2">{item.description}</p>
@@ -402,6 +812,21 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
                         {contentType === 'video' && item.video?.duration_seconds && (
                           <div className="absolute bottom-0 right-0 bg-black bg-opacity-75 text-white text-xs px-1 py-0.5 rounded">
                             {formatDuration(item.video.duration_seconds)}
+                          </div>
+                        )}
+                        {contentType === 'document' && item.document?.reading_time_minutes && (
+                          <div className="absolute bottom-0 right-0 bg-blue-600 bg-opacity-75 text-white text-xs px-1 py-0.5 rounded">
+                            {item.document.reading_time_minutes}m
+                          </div>
+                        )}
+                        {contentType === 'prompt' && item.prompt?.usage_count !== undefined && (
+                          <div className="absolute bottom-0 right-0 bg-green-600 bg-opacity-75 text-white text-xs px-1 py-0.5 rounded">
+                            {item.prompt.usage_count}x
+                          </div>
+                        )}
+                        {contentType === 'automation' && item.automation?.required_tools && item.automation.required_tools.length > 0 && (
+                          <div className="absolute bottom-0 right-0 bg-purple-600 bg-opacity-75 text-white text-xs px-1 py-0.5 rounded">
+                            {item.automation.required_tools.length}
                           </div>
                         )}
                       </div>

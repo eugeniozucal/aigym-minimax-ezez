@@ -33,7 +33,7 @@ export function DeployedLeftMenu({
     { type: 'video', label: 'Video', icon: Video },
     { type: 'ai-agent', label: 'AI Agent', icon: Bot },
     { type: 'document', label: 'Document', icon: File },
-    { type: 'prompts', label: 'Prompts', icon: FileText },
+    { type: 'prompt', label: 'Prompts', icon: FileText },
     { type: 'automation', label: 'Automation', icon: FileText },
     { type: 'image', label: 'Image', icon: Image },
     { type: 'pdf', label: 'PDF', icon: FileImage }
