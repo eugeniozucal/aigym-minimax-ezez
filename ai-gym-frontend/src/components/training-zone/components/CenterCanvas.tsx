@@ -13,6 +13,7 @@ interface CenterCanvasProps {
   selectedBlock: Block | null
   onBlockSelect: (block: Block) => void
   onBlockReorder: (blockId: string, direction: 'up' | 'down') => void
+  onBlockDelete?: (blockId: string) => void
   onBackToRepository: () => void
   onSave: () => void
   saving: boolean
@@ -32,6 +33,7 @@ export function CenterCanvas({
   selectedBlock,
   onBlockSelect,
   onBlockReorder,
+  onBlockDelete,
   onBackToRepository,
   onSave,
   saving,
@@ -275,6 +277,7 @@ export function CenterCanvas({
                   onSelect={() => onBlockSelect(block)}
                   onMoveUp={() => onBlockReorder(block.id, 'up')}
                   onMoveDown={() => onBlockReorder(block.id, 'down')}
+                  onDelete={onBlockDelete ? () => onBlockDelete(block.id) : undefined}
                 />
               ))}
             </div>

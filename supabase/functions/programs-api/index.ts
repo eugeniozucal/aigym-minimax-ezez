@@ -1,407 +1,304 @@
-Deno.serve(async (req) => {
-    const corsHeaders = {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE, PATCH',
-        'Access-Control-Max-Age': '86400',
-        'Access-Control-Allow-Credentials': 'false'
-    };
+import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
-    if (req.method === 'OPTIONS') {
-        return new Response(null, { status: 200, headers: corsHeaders });
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE, PATCH',
+  'Access-Control-Max-Age': '86400',
+  'Access-Control-Allow-Credentials': 'false'
+}
+
+interface ProgramData {
+  id?: string
+  title: string
+  description?: string
+  status: 'draft' | 'published' | 'archived'
+  difficulty_level: 'beginner' | 'intermediate' | 'advanced'
+  estimated_duration_weeks: number
+  program_type: 'strength' | 'cardio' | 'weight-loss' | 'muscle-gain' | 'endurance' | 'flexibility'
+  tags: string[]
+  sections: any[]
+  settings: any
+  thumbnail_url?: string
+  created_by?: string
+}
+
+serve(async (req) => {
+  // Handle CORS preflight requests
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { status: 200, headers: corsHeaders })
+  }
+
+  try {
+    // Initialize Supabase client
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+    const supabase = createClient(supabaseUrl, supabaseKey)
+
+    // Get user from JWT token
+    const authHeader = req.headers.get('Authorization')
+    if (!authHeader) {
+      throw new Error('Authorization header missing')
     }
 
-    try {
-        const url = new URL(req.url);
-        const method = req.method;
-        const pathParts = url.pathname.split('/').filter(Boolean);
-        const programId = pathParts[pathParts.length - 1];
-        
-        const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-        const supabaseUrl = Deno.env.get('SUPABASE_URL');
-
-        if (!serviceRoleKey || !supabaseUrl) {
-            throw new Error('Supabase configuration missing');
-        }
-
-        // Get user from auth header
-        const authHeader = req.headers.get('authorization');
-        let userId = null;
-        
-        // For public GET requests (listing programs), allow unauthenticated access
-        if (method === 'GET' && authHeader) {
-            try {
-                const token = authHeader.replace('Bearer ', '');
-                const userResponse = await fetch(`${supabaseUrl}/auth/v1/user`, {
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'apikey': serviceRoleKey
-                    }
-                });
-                if (userResponse.ok) {
-                    const userData = await userResponse.json();
-                    userId = userData.id;
-                }
-            } catch (error) {
-                console.log('Failed to decode user, continuing with public access');
-            }
-        } else if (method !== 'GET') {
-            // For POST/PUT/DELETE operations, require authentication
-            if (!authHeader) {
-                throw new Error('Authentication required');
-            }
-            
-            const token = authHeader.replace('Bearer ', '');
-            const userResponse = await fetch(`${supabaseUrl}/auth/v1/user`, {
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                    'apikey': serviceRoleKey
-                }
-            });
-            
-            if (!userResponse.ok) {
-                throw new Error('Invalid token');
-            }
-            
-            const userData = await userResponse.json();
-            userId = userData.id;
-        }
-
-        // Get current client (for multi-tenancy)
-        const clientId = req.headers.get('x-client-id') || null;
-
-        switch (method) {
-            case 'GET':
-                if (programId && programId !== 'programs-api') {
-                    // Get specific program with detailed information
-                    const selectFields = `
-                        *,
-                        program_course_assignments(
-                            *,
-                            courses(
-                                id,
-                                title,
-                                description,
-                                thumbnail_url,
-                                difficulty_level,
-                                estimated_duration_minutes,
-                                status
-                            )
-                        ),
-                        program_enrollments(
-                            id,
-                            user_id,
-                            status,
-                            progress_percentage,
-                            enrolled_at,
-                            completed_at
-                        )
-                    `;
-                    
-                    const response = await fetch(`${supabaseUrl}/rest/v1/programs?id=eq.${programId}&select=${selectFields}`, {
-                        headers: {
-                            'Authorization': `Bearer ${serviceRoleKey}`,
-                            'apikey': serviceRoleKey,
-                            'Content-Type': 'application/json'
-                        }
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error('Failed to fetch program');
-                    }
-                    
-                    const programs = await response.json();
-                    if (programs.length === 0) {
-                        throw new Error('Program not found');
-                    }
-                    
-                    const program = programs[0];
-                    
-                    // Calculate enrollment statistics
-                    const enrollmentStats = {
-                        totalEnrollments: program.program_enrollments.length,
-                        activeEnrollments: program.program_enrollments.filter(e => e.status === 'active').length,
-                        completedEnrollments: program.program_enrollments.filter(e => e.status === 'completed').length,
-                        averageProgress: program.program_enrollments.length > 0 
-                            ? program.program_enrollments.reduce((sum, e) => sum + e.progress_percentage, 0) / program.program_enrollments.length
-                            : 0
-                    };
-                    
-                    // Sort courses by order_index
-                    program.program_course_assignments.sort((a, b) => a.order_index - b.order_index);
-                    
-                    return new Response(JSON.stringify({ 
-                        data: {
-                            ...program,
-                            enrollmentStats
-                        }
-                    }), {
-                        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-                    });
-                } else {
-                    // List programs with filtering and pagination
-                    const searchParams = new URLSearchParams(url.search);
-                    const status = searchParams.get('status');
-                    const programType = searchParams.get('type');
-                    const difficulty = searchParams.get('difficulty');
-                    const category = searchParams.get('category');
-                    const search = searchParams.get('search');
-                    const limit = parseInt(searchParams.get('limit') || '50');
-                    const offset = parseInt(searchParams.get('offset') || '0');
-                    const includeStats = searchParams.get('include_stats') === 'true';
-                    
-                    let query = `select=*${includeStats ? ',program_enrollments(count)' : ''}&limit=${limit}&offset=${offset}&order=updated_at.desc`;
-                    
-                    // Add filters
-                    const filters = [];
-                    if (status && status !== 'all') {
-                        filters.push(`status=eq.${status}`);
-                    }
-                    if (programType && programType !== 'all') {
-                        filters.push(`program_type=eq.${programType}`);
-                    }
-                    if (difficulty && difficulty !== 'all') {
-                        filters.push(`difficulty_level=eq.${difficulty}`);
-                    }
-                    if (category && category !== 'all') {
-                        filters.push(`category=eq.${category}`);
-                    }
-                    if (clientId) {
-                        filters.push(`client_id=eq.${clientId}`);
-                    }
-                    
-                    if (filters.length > 0) {
-                        query += `&${filters.join('&')}`;
-                    }
-                    
-                    // Add search filter if provided
-                    if (search) {
-                        query += `&or=(title.ilike.%${search}%,description.ilike.%${search}%)`;
-                    }
-                    
-                    const response = await fetch(`${supabaseUrl}/rest/v1/programs?${query}`, {
-                        headers: {
-                            'Authorization': `Bearer ${serviceRoleKey}`,
-                            'apikey': serviceRoleKey,
-                            'Content-Type': 'application/json'
-                        }
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error('Failed to fetch programs');
-                    }
-                    
-                    const programs = await response.json();
-                    
-                    // Get total count for pagination
-                    let totalCount = null;
-                    if (searchParams.get('count') === 'true') {
-                        const countQuery = query.replace(/select=[^&]*/, 'select=*').replace(/limit=\d+/, '').replace(/offset=\d+/, '') + '&count=exact&head=true';
-                        const countResponse = await fetch(`${supabaseUrl}/rest/v1/programs?${countQuery}`, {
-                            headers: {
-                                'Authorization': `Bearer ${serviceRoleKey}`,
-                                'apikey': serviceRoleKey
-                            }
-                        });
-                        
-                        if (countResponse.ok) {
-                            const contentRange = countResponse.headers.get('content-range');
-                            if (contentRange) {
-                                totalCount = parseInt(contentRange.split('/')[1] || '0');
-                            }
-                        }
-                    }
-                    
-                    return new Response(JSON.stringify({ 
-                        data: programs,
-                        pagination: {
-                            limit,
-                            offset,
-                            total: totalCount
-                        }
-                    }), {
-                        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-                    });
-                }
-
-            case 'POST':
-                if (!userId) {
-                    throw new Error('Authentication required for creating programs');
-                }
-                
-                const createData = await req.json();
-                const newProgram = {
-                    ...createData,
-                    created_by: userId,
-                    client_id: clientId,
-                    created_at: new Date().toISOString(),
-                    updated_at: new Date().toISOString()
-                };
-                
-                const createResponse = await fetch(`${supabaseUrl}/rest/v1/programs`, {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${serviceRoleKey}`,
-                        'apikey': serviceRoleKey,
-                        'Content-Type': 'application/json',
-                        'Prefer': 'return=representation'
-                    },
-                    body: JSON.stringify(newProgram)
-                });
-                
-                if (!createResponse.ok) {
-                    const errorText = await createResponse.text();
-                    throw new Error(`Failed to create program: ${errorText}`);
-                }
-                
-                const createdProgram = await createResponse.json();
-                
-                // If course sequence is provided, create course assignments
-                if (createData.courses && createData.courses.length > 0) {
-                    const courseAssignments = createData.courses.map((course, index) => ({
-                        program_id: createdProgram[0].id,
-                        course_id: course.id || course.course_id,
-                        order_index: index,
-                        is_required: course.is_required !== false,
-                        assigned_by: userId,
-                        completion_criteria: course.completion_criteria || {},
-                        minimum_score: course.minimum_score || null
-                    }));
-                    
-                    await fetch(`${supabaseUrl}/rest/v1/program_course_assignments`, {
-                        method: 'POST',
-                        headers: {
-                            'Authorization': `Bearer ${serviceRoleKey}`,
-                            'apikey': serviceRoleKey,
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(courseAssignments)
-                    });
-                }
-                
-                return new Response(JSON.stringify({ data: createdProgram[0] }), {
-                    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-                });
-
-            case 'PUT':
-                if (!programId || programId === 'programs-api') {
-                    throw new Error('Program ID required for update');
-                }
-                
-                if (!userId) {
-                    throw new Error('Authentication required for updating programs');
-                }
-                
-                const updateData = await req.json();
-                const programUpdate = {
-                    ...updateData,
-                    updated_at: new Date().toISOString()
-                };
-                
-                // Remove courses field if present (handled separately)
-                delete programUpdate.courses;
-                
-                const updateResponse = await fetch(`${supabaseUrl}/rest/v1/programs?id=eq.${programId}`, {
-                    method: 'PATCH',
-                    headers: {
-                        'Authorization': `Bearer ${serviceRoleKey}`,
-                        'apikey': serviceRoleKey,
-                        'Content-Type': 'application/json',
-                        'Prefer': 'return=representation'
-                    },
-                    body: JSON.stringify(programUpdate)
-                });
-                
-                if (!updateResponse.ok) {
-                    const errorText = await updateResponse.text();
-                    throw new Error(`Failed to update program: ${errorText}`);
-                }
-                
-                const updatedProgram = await updateResponse.json();
-                
-                // Handle course assignments update if provided
-                if (updateData.courses) {
-                    // Delete existing assignments
-                    await fetch(`${supabaseUrl}/rest/v1/program_course_assignments?program_id=eq.${programId}`, {
-                        method: 'DELETE',
-                        headers: {
-                            'Authorization': `Bearer ${serviceRoleKey}`,
-                            'apikey': serviceRoleKey
-                        }
-                    });
-                    
-                    // Create new assignments
-                    if (updateData.courses.length > 0) {
-                        const courseAssignments = updateData.courses.map((course, index) => ({
-                            program_id: programId,
-                            course_id: course.id || course.course_id,
-                            order_index: index,
-                            is_required: course.is_required !== false,
-                            assigned_by: userId,
-                            completion_criteria: course.completion_criteria || {},
-                            minimum_score: course.minimum_score || null
-                        }));
-                        
-                        await fetch(`${supabaseUrl}/rest/v1/program_course_assignments`, {
-                            method: 'POST',
-                            headers: {
-                                'Authorization': `Bearer ${serviceRoleKey}`,
-                                'apikey': serviceRoleKey,
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(courseAssignments)
-                        });
-                    }
-                }
-                
-                return new Response(JSON.stringify({ data: updatedProgram[0] }), {
-                    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-                });
-
-            case 'DELETE':
-                if (!programId || programId === 'programs-api') {
-                    throw new Error('Program ID required for deletion');
-                }
-                
-                if (!userId) {
-                    throw new Error('Authentication required for deleting programs');
-                }
-                
-                const deleteResponse = await fetch(`${supabaseUrl}/rest/v1/programs?id=eq.${programId}`, {
-                    method: 'DELETE',
-                    headers: {
-                        'Authorization': `Bearer ${serviceRoleKey}`,
-                        'apikey': serviceRoleKey,
-                        'Content-Type': 'application/json'
-                    }
-                });
-                
-                if (!deleteResponse.ok) {
-                    const errorText = await deleteResponse.text();
-                    throw new Error(`Failed to delete program: ${errorText}`);
-                }
-                
-                return new Response(JSON.stringify({ data: { success: true } }), {
-                    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-                });
-
-            default:
-                throw new Error('Method not allowed');
-        }
-
-    } catch (error) {
-        console.error('Programs API error:', error);
-
-        const errorResponse = {
-            error: {
-                code: 'PROGRAMS_API_ERROR',
-                message: error.message
-            }
-        };
-
-        return new Response(JSON.stringify(errorResponse), {
-            status: 500,
-            headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-        });
+    const token = authHeader.replace('Bearer ', '')
+    const { data: { user }, error: authError } = await supabase.auth.getUser(token)
+    
+    if (authError || !user) {
+      throw new Error('Invalid authentication token')
     }
-});
+
+    const url = new URL(req.url)
+    const id = url.searchParams.get('id')
+    const method = req.method
+
+    console.log(`Programs API: ${method} request, ID: ${id}, User: ${user.id}`)
+
+    switch (method) {
+      case 'GET': {
+        if (id) {
+          // Get specific program
+          const { data, error } = await supabase
+            .from('training_programs')
+            .select('*')
+            .eq('id', id)
+            .single()
+
+          if (error) {
+            console.error('Error fetching program:', error)
+            throw new Error(`Failed to fetch program: ${error.message}`)
+          }
+
+          if (!data) {
+            return new Response(
+              JSON.stringify({ error: { message: 'Program not found' } }),
+              { status: 404, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+            )
+          }
+
+          return new Response(
+            JSON.stringify({ data }),
+            { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          )
+        } else {
+          // Get all programs for user
+          let query = supabase
+            .from('training_programs')
+            .select('*')
+            .order('updated_at', { ascending: false })
+
+          // For non-admin users, only show their own programs and published programs
+          const { data: adminCheck } = await supabase
+            .from('admins')
+            .select('email')
+            .eq('email', user.email)
+            .single()
+
+          if (!adminCheck) {
+            query = query.or(`created_by.eq.${user.id},status.eq.published`)
+          }
+
+          const { data, error } = await query
+
+          if (error) {
+            console.error('Error fetching programs:', error)
+            throw new Error(`Failed to fetch programs: ${error.message}`)
+          }
+
+          return new Response(
+            JSON.stringify({ data: data || [] }),
+            { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          )
+        }
+      }
+
+      case 'POST': {
+        // Create new program
+        const requestData: ProgramData = await req.json()
+        
+        console.log('Creating program with data:', requestData)
+
+        const programData = {
+          title: requestData.title,
+          description: requestData.description || '',
+          status: requestData.status || 'draft',
+          difficulty_level: requestData.difficulty_level || 'beginner',
+          estimated_duration_weeks: requestData.estimated_duration_weeks || 8,
+          program_type: requestData.program_type || 'strength',
+          tags: requestData.tags || [],
+          sections: requestData.sections || [],
+          settings: requestData.settings || {},
+          thumbnail_url: requestData.thumbnail_url || null,
+          created_by: user.id
+        }
+
+        const { data, error } = await supabase
+          .from('training_programs')
+          .insert(programData)
+          .select()
+          .single()
+
+        if (error) {
+          console.error('Error creating program:', error)
+          throw new Error(`Failed to create program: ${error.message}`)
+        }
+
+        console.log('Program created successfully:', data.id)
+
+        return new Response(
+          JSON.stringify({ data }),
+          { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        )
+      }
+
+      case 'PUT': {
+        // Update existing program
+        if (!id) {
+          return new Response(
+            JSON.stringify({ error: { message: 'Program ID is required for updates' } }),
+            { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          )
+        }
+
+        const requestData: ProgramData = await req.json()
+        
+        console.log('Updating program with data:', requestData)
+
+        const programData = {
+          title: requestData.title,
+          description: requestData.description,
+          status: requestData.status,
+          difficulty_level: requestData.difficulty_level,
+          estimated_duration_weeks: requestData.estimated_duration_weeks,
+          program_type: requestData.program_type,
+          tags: requestData.tags,
+          sections: requestData.sections,
+          settings: requestData.settings,
+          thumbnail_url: requestData.thumbnail_url
+        }
+
+        // Check if user owns the program or is admin
+        const { data: existingProgram } = await supabase
+          .from('training_programs')
+          .select('created_by')
+          .eq('id', id)
+          .single()
+
+        if (!existingProgram) {
+          return new Response(
+            JSON.stringify({ error: { message: 'Program not found' } }),
+            { status: 404, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          )
+        }
+
+        const { data: adminCheck } = await supabase
+          .from('admins')
+          .select('email')
+          .eq('email', user.email)
+          .single()
+
+        if (existingProgram.created_by !== user.id && !adminCheck) {
+          return new Response(
+            JSON.stringify({ error: { message: 'Unauthorized to update this program' } }),
+            { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          )
+        }
+
+        const { data, error } = await supabase
+          .from('training_programs')
+          .update(programData)
+          .eq('id', id)
+          .select()
+          .single()
+
+        if (error) {
+          console.error('Error updating program:', error)
+          throw new Error(`Failed to update program: ${error.message}`)
+        }
+
+        console.log('Program updated successfully:', data.id)
+
+        return new Response(
+          JSON.stringify({ data }),
+          { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        )
+      }
+
+      case 'DELETE': {
+        // Delete program
+        if (!id) {
+          return new Response(
+            JSON.stringify({ error: { message: 'Program ID is required for deletion' } }),
+            { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          )
+        }
+
+        // Check if user owns the program or is admin
+        const { data: existingProgram } = await supabase
+          .from('training_programs')
+          .select('created_by')
+          .eq('id', id)
+          .single()
+
+        if (!existingProgram) {
+          return new Response(
+            JSON.stringify({ error: { message: 'Program not found' } }),
+            { status: 404, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          )
+        }
+
+        const { data: adminCheck } = await supabase
+          .from('admins')
+          .select('email')
+          .eq('email', user.email)
+          .single()
+
+        if (existingProgram.created_by !== user.id && !adminCheck) {
+          return new Response(
+            JSON.stringify({ error: { message: 'Unauthorized to delete this program' } }),
+            { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          )
+        }
+
+        const { error } = await supabase
+          .from('training_programs')
+          .delete()
+          .eq('id', id)
+
+        if (error) {
+          console.error('Error deleting program:', error)
+          throw new Error(`Failed to delete program: ${error.message}`)
+        }
+
+        console.log('Program deleted successfully:', id)
+
+        return new Response(
+          JSON.stringify({ message: 'Program deleted successfully' }),
+          { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        )
+      }
+
+      default: {
+        return new Response(
+          JSON.stringify({ error: { message: 'Method not allowed' } }),
+          { status: 405, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        )
+      }
+    }
+  } catch (error) {
+    console.error('Programs API Error:', error)
+    
+    const errorResponse = {
+      error: {
+        code: 'PROGRAMS_API_ERROR',
+        message: error.message || 'Internal server error'
+      }
+    }
+
+    return new Response(JSON.stringify(errorResponse), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    })
+  }
+})

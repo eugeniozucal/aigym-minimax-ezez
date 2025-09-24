@@ -22,6 +22,7 @@ import BlocksRepository from './components/training-zone/EnhancedBlocksRepositor
 import ProgramsRepository from './components/training-zone/ProgramsRepository'
 import WODEditor from './components/training-zone/WODEditor'
 import PageBuilder from './components/shared/PageBuilder'
+import ProgramBuilder from './components/training-zone/ProgramBuilder'
 
 // Content Management
 import ContentManagement from './pages/content/ContentManagement'
@@ -128,6 +129,13 @@ function App() {
             <Route path="/page-builder" element={
               <ProtectedRoute requireAuth>
                 <PageBuilder />
+              </ProtectedRoute>
+            } />
+            
+            {/* Program Builder - Allow authenticated users */}
+            <Route path="/program-builder" element={
+              <ProtectedRoute requireAuth>
+                <ProgramBuilder />
               </ProtectedRoute>
             } />
             
