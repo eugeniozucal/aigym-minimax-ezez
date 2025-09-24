@@ -1,0 +1,1034 @@
+src/components/training-zone/components/BlockRenderer.tsx:1:8 - error TS1259: Module '"/workspace/ai-gym-frontend/node_modules/.pnpm/@types+react@18.3.20/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+1 import React from 'react'
+         ~~~~~
+
+  node_modules/.pnpm/@types+react@18.3.20/node_modules/@types/react/index.d.ts:46:1
+    46 export = React;
+       ~~~~~~~~~~~~~~~
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+src/components/training-zone/components/BlockRenderer.tsx:3:23 - error TS2307: Cannot find module '@/types/pageBuilder' or its corresponding type declarations.
+
+3 import { Block } from '@/types/pageBuilder'
+                        ~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:31:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+31           <div className="text-center">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:32:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+ 32             <h2 className={`font-bold ${
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 33               block.data.level === 'h1' ? 'text-3xl' :
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+ 37               block.data.level === 'h5' ? 'text-base' : 'text-sm'
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 38             }`}>
+    ~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:46:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+46           <div className="prose max-w-none">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:47:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+47             <p>{block.data.content || 'Enter your text here...'}</p>
+               ~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:53:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+53           <div>
+             ~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:54:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+54             <ul className="list-disc list-inside space-y-1">
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:56:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+56                 <li key={index} className="text-gray-700">{item}</li>
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:64:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+64           <div className="flex justify-center py-4">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:65:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+65             <div className="w-24 h-px bg-gray-300"></div>
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:71:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+71           <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-700">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:72:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+72             <p>"{block.data.text || 'Quote text'}"</p>
+               ~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:74:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+74               <cite className="block mt-2 text-sm text-gray-500">— {block.data.author}</cite>
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:81:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+81           <div className="border border-gray-200 rounded-lg p-4">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:82:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+82             <h3 className="font-semibold mb-2">{block.data.title || 'Quiz Title'}</h3>
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:83:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+83             <p className="text-gray-600 text-sm">
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:91:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+91           <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:92:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+92             <div className="text-gray-400 text-4xl mb-2">📷</div>
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:93:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+93             <p className="text-gray-600">Image upload block</p>
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:95:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+95               <p className="text-sm text-gray-500 mt-2">{block.data.caption}</p>
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:114:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+114                 <div className="aspect-video">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:115:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+115                   <iframe
+                      ~~~~~~~
+116                     src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+121                     loading="lazy"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+122                   />
+    ~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:130:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+130                 <div className="aspect-video">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:131:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+131                   <iframe
+                      ~~~~~~~
+132                     src={`https://player.vimeo.com/video/${videoId}?h=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+137                     loading="lazy"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+138                   />
+    ~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:146:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+146                 <div className="aspect-video">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:147:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+147                   <video
+                      ~~~~~~
+148                     controls
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+151                     poster={videoContent.video.thumbnail_url}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+152                   >
+    ~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:153:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+153                     <source src={videoUrl} type={`video/${videoUrl.split('.').pop()}`} />
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:162:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+162               <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:163:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+163                 <div className="text-center">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:164:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+164                   <div className="text-4xl mb-2">🎥</div>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:165:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+165                   <p className="text-gray-600">Video format not supported for preview</p>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:166:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+166                   <a
+                      ~~
+167                     href={videoUrl}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+170                     className="text-blue-600 hover:text-blue-800 underline text-sm mt-2 block"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+171                   >
+    ~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:180:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+180             <div className="space-y-4">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:181:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+181               <div className="text-center">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:182:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+182                 <h3 className="text-lg font-semibold">{videoContent.title}</h3>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:184:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+184                   <p className="text-gray-600 mt-2">{videoContent.description}</p>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:187:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+187                   <p className="text-sm text-gray-500 mt-1">
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:215:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+215           <div className="bg-gray-100 rounded-lg p-8 text-center">
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:216:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+216             <div className="text-4xl mb-2">🎥</div>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:217:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+217             <p className="font-medium">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:220:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+220             <p className="text-sm text-gray-600 mt-1">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:224:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+224               <p className="text-xs text-gray-500 mt-1 capitalize">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:229:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+229               <p className="text-xs text-gray-500">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:234:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+234               <div className="mt-4">
+                  ~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:235:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+235                 <img
+                    ~~~~
+236                   src={thumbnailUrl}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+242                   }}
+    ~~~~~~~~~~~~~~~~~~~~
+243                 />
+    ~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:255:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+255             <div className="space-y-4">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:256:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+256               <div className="text-center border-b border-gray-200 pb-4">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:257:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+257                 <h3 className="text-lg font-semibold">{agentContent.ai_agent.agent_name || agentContent.title}</h3>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:259:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+259                   <p className="text-gray-600 mt-2">{agentContent.ai_agent.short_description}</p>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:263:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+263               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:264:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+264                 <div className="flex items-start space-x-4">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:265:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+265                   <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:268:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+268                   <div className="flex-1">
+                      ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:269:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+269                     <h4 className="font-medium text-gray-900 mb-2">AI Agent Ready</h4>
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:270:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+270                     <p className="text-sm text-gray-600 mb-3">
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:274:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+274                     <div className="bg-white rounded-lg p-3 border border-gray-200">
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:275:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+275                       <p className="text-xs text-gray-500 mb-2">System Prompt Preview:</p>
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:276:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+276                       <p className="text-sm text-gray-700 line-clamp-3">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:282:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+282                       <div className="mt-3">
+                          ~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:283:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+283                         <p className="text-xs text-gray-500 mb-2">
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:297:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+297           <div className="bg-blue-50 rounded-lg p-8 text-center">
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:298:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+298             <div className="text-4xl mb-2">🤖</div>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:299:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+299             <p className="font-medium">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:302:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+302             <p className="text-sm text-gray-600 mt-1">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:306:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+306               <p className="text-xs text-gray-500 mt-1">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:345:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+345             <div className="space-y-4">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:346:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+346               <div className="text-center border-b border-gray-200 pb-4">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:347:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+347                 <h3 className="text-lg font-semibold">{documentContent?.title || 'Document'}</h3>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:349:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+349                   <p className="text-gray-600 mt-2">{documentContent.description}</p>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:352:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+352                   <p className="text-sm text-gray-500 mt-1">
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:357:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+357               <div className="prose max-w-none">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:360:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+360                   <div dangerouslySetInnerHTML={{ __html: documentHtmlContent }} />
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:362:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+362                   <div className="whitespace-pre-wrap">{documentHtmlContent}</div>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:371:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+371           <div className="bg-green-50 rounded-lg p-8 text-center">
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:372:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+372             <div className="text-4xl mb-2">📚</div>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:373:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+373             <p className="font-medium">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:376:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+376             <p className="text-sm text-gray-600 mt-1">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:380:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+380               <p className="text-xs text-gray-500 mt-1">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:389:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+389           <div className="bg-green-50 rounded-lg p-8 text-center">
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:390:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+390             <div className="text-4xl mb-2">📚</div>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:391:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+391             <p className="font-medium">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:394:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+394             <p className="text-sm text-gray-600 mt-1">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:398:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+398               <p className="text-xs text-gray-500 mt-1">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:411:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+411             <div className="space-y-4">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:412:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+412               <div className="text-center">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:413:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+413                 <h3 className="text-lg font-semibold">{imageContent.title}</h3>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:415:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+415                   <p className="text-gray-600 mt-2">{imageContent.description}</p>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:418:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+418               <div className="flex justify-center">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:419:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+419                 <img
+                    ~~~~
+420                   src={imageContent.image.image_url}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+431                   }}
+    ~~~~~~~~~~~~~~~~~~~~
+432                 />
+    ~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:433:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+433                 <div className="bg-gray-100 rounded-lg p-8 text-center" style={{ display: 'none' }}>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:434:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+434                   <div className="text-4xl mb-2">🖼️</div>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:435:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+435                   <p className="text-gray-600">Failed to load image</p>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:439:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+439                 <p className="text-sm text-gray-500 text-center italic">{imageContent.image.alt_text}</p>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:442:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+442                 <div className="text-xs text-gray-400 text-center space-x-4">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:444:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+444                     <span>{imageContent.image.width} × {imageContent.image.height}px</span>
+                        ~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:447:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+447                     <span>{Math.round(imageContent.image.file_size / 1024)} KB</span>
+                        ~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:457:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+457           <div className="bg-purple-50 rounded-lg p-8 text-center">
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:458:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+458             <div className="text-4xl mb-2">🖼️</div>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:459:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+459             <p className="font-medium">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:462:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+462             <p className="text-sm text-gray-600 mt-1">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:466:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+466               <div className="text-xs text-gray-500 mt-1 space-x-4">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:468:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+468                   <span>{imageContent.image.width} × {imageContent.image.height}px</span>
+                      ~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:471:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+471                   <span>{Math.round(imageContent.image.file_size / 1024)} KB</span>
+                      ~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:484:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+484             <div className="space-y-4">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:485:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+485               <div className="text-center border-b border-gray-200 pb-4">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:486:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+486                 <h3 className="text-lg font-semibold">{pdfContent.title}</h3>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:488:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+488                   <p className="text-gray-600 mt-2">{pdfContent.description}</p>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:490:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+490                 <div className="flex justify-center items-center space-x-4 text-sm text-gray-500 mt-2">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:492:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+492                     <span>{pdfContent.pdf.page_count} pages</span>
+                        ~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:495:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+495                     <span>{Math.round(pdfContent.pdf.file_size / (1024 * 1024))} MB</span>
+                        ~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:497:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+497                   <a
+                      ~~
+498                     href={pdfContent.pdf.pdf_url}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+501                     className="text-blue-600 hover:text-blue-800 underline"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+502                   >
+    ~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:507:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+507               <div className="w-full">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:508:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+508                 <iframe
+                    ~~~~~~~
+509                   src={`${pdfContent.pdf.pdf_url}#toolbar=1&navpanes=1&scrollbar=1`}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+515                   }}
+    ~~~~~~~~~~~~~~~~~~~~
+516                 />
+    ~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:524:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+524           <div className="bg-red-50 rounded-lg p-8 text-center">
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:525:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+525             <div className="text-4xl mb-2">📄</div>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:526:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+526             <p className="font-medium">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:529:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+529             <p className="text-sm text-gray-600 mt-1">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:533:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+533               <div className="text-xs text-gray-500 mt-1 space-x-4">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:535:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+535                   <span>{pdfContent.pdf.page_count} pages</span>
+                      ~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:538:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+538                   <span>{Math.round(pdfContent.pdf.file_size / (1024 * 1024))} MB</span>
+                      ~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:551:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+551             <div className="space-y-4">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:552:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+552               <div className="text-center border-b border-gray-200 pb-4">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:553:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+553                 <h3 className="text-lg font-semibold">{promptContent.title}</h3>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:555:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+555                   <p className="text-gray-600 mt-2">{promptContent.description}</p>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:557:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+557                 <div className="flex justify-center items-center space-x-4 text-sm text-gray-500 mt-2">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:559:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+559                     <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:564:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+564                     <span>Used {promptContent.prompt.usage_count} times</span>
+                        ~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:569:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+569               <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-6">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:570:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+570                 <div className="flex items-start space-x-4">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:571:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+571                   <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-white text-xl">
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:574:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+574                   <div className="flex-1">
+                      ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:575:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+575                     <h4 className="font-medium text-gray-900 mb-3">Prompt Template</h4>
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:576:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+576                     <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:577:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+577                       <pre className="whitespace-pre-wrap text-sm text-gray-700 font-mono leading-relaxed">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:581:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+581                     <div className="mt-3 flex justify-between items-center">
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:582:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+582                       <p className="text-xs text-gray-500">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:585:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+585                       <button className="px-3 py-1 bg-yellow-500 text-white text-xs rounded hover:bg-yellow-600 transition-colors">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:598:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+598           <div className="bg-yellow-50 rounded-lg p-8 text-center">
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:599:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+599             <div className="text-4xl mb-2">💭</div>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:600:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+600             <p className="font-medium">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:603:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+603             <p className="text-sm text-gray-600 mt-1">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:607:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+607               <div className="text-xs text-gray-500 mt-1 space-x-4">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:609:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+609                   <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:614:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+614                   <span>Used {promptContent.prompt.usage_count} times</span>
+                      ~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:627:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+627             <div className="space-y-4">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:628:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+628               <div className="text-center border-b border-gray-200 pb-4">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:629:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+629                 <h3 className="text-lg font-semibold">{automationContent.title}</h3>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:631:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+631                   <p className="text-gray-600 mt-2">{automationContent.description}</p>
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:635:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+635               <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-6">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:636:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+636                 <div className="flex items-start space-x-4">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:637:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+637                   <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl">
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:640:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+640                   <div className="flex-1">
+                      ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:641:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+641                     <h4 className="font-medium text-gray-900 mb-3">Automation Workflow</h4>
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:644:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+644                       <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:645:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+645                         <h5 className="font-medium text-sm text-gray-900 mb-2">Description</h5>
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:646:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+646                         <p className="text-sm text-gray-600">{automationContent.automation.tool_description}</p>
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:651:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+651                       <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:652:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+652                         <h5 className="font-medium text-sm text-gray-900 mb-2">Required Tools</h5>
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:653:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+653                         <div className="flex flex-wrap gap-2">
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:655:29 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+655                             <span key={index} className="px-2 py-1 bg-orange-100 text-orange-800 rounded text-xs">
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:664:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+664                       <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:665:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+665                         <h5 className="font-medium text-sm text-gray-900 mb-2">Setup Instructions</h5>
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:666:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+666                         <div className="text-sm text-gray-600 whitespace-pre-wrap">
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:672:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+672                     <div className="flex justify-between items-center">
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:673:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+673                       <p className="text-xs text-gray-500">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:676:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+676                       <a
+                          ~~
+677                         href={automationContent.automation.automation_url}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+680                         className="px-4 py-2 bg-orange-500 text-white text-sm rounded hover:bg-orange-600 transition-colors"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+681                       >
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:694:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+694           <div className="bg-orange-50 rounded-lg p-8 text-center">
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:695:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+695             <div className="text-4xl mb-2">⚡</div>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:696:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+696             <p className="font-medium">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:699:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+699             <p className="text-sm text-gray-600 mt-1">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:703:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+703               <div className="text-xs text-gray-500 mt-2">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:704:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+704                 <p>Required tools:</p>
+                    ~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:705:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+705                 <div className="flex justify-center flex-wrap gap-1 mt-1">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:707:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+707                     <span key={index} className="px-2 py-1 bg-orange-100 text-orange-800 rounded">
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:719:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+719           <div className="text-center text-gray-400">
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:720:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+720             <div className="text-4xl mb-2">🔧</div>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:721:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+721             <p>Unknown block type: {block.type}</p>
+                ~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:730:7 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+730       <div className="bg-white rounded-lg">
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:737:5 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+737     <div
+        ~~~~
+738       className={`
+    ~~~~~~~~~~~~~~~~~~
+... 
+746       onClick={onSelect}
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+747     >
+    ~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:749:7 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+749       <div className="absolute -top-3 left-4 px-2 py-1 bg-white border border-gray-200 rounded text-xs font-medium text-gray-600 capitalize">
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:754:7 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+754       <div className="absolute -top-2 -right-2 flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity">
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:755:9 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+755         <button
+            ~~~~~~~
+756           onClick={(e) => {
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+762           title="Move up"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~
+763         >
+    ~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:764:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+764           <ChevronUp className="w-3 h-3" />
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:767:9 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+767         <button
+            ~~~~~~~
+768           onClick={(e) => {
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+774           title="Move down"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+775         >
+    ~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:776:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+776           <ChevronDown className="w-3 h-3" />
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/training-zone/components/BlockRenderer.tsx:781:7 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+781       <div className="p-6 min-h-[120px]">
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Found 187 errors in the same file, starting at: src/components/training-zone/components/BlockRenderer.tsx:1
+

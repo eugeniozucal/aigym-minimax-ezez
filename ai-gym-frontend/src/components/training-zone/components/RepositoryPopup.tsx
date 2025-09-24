@@ -78,6 +78,27 @@ interface ContentItem {
     page_count?: number
     thumbnail_url?: string
   }
+  // WOD-specific fields when joined
+  wod?: {
+    id: string
+    duration_minutes?: number
+    difficulty_level?: string
+    target_muscle_groups?: string[]
+    equipment_needed?: string[]
+    instructions?: string
+    notes?: string
+  }
+  // BLOCK-specific fields when joined
+  block?: {
+    id: string
+    block_type?: string
+    duration_minutes?: number
+    intensity_level?: string
+    target_area?: string
+    instructions?: string
+    rest_periods?: number
+    repetitions?: number
+  }
 }
 
 export function RepositoryPopup({ contentType, onContentSelect, onClose }: RepositoryPopupProps) {
@@ -478,8 +499,97 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
           }
         })
       
+      } else if (contentType === 'WODs' || contentType === 'wods') {
+        // WORKING PATTERN: Copy from EnhancedWodsRepository.tsx - direct wods table query
+        let query = supabase
+          .from('wods')
+          .select('*')
+
+        // Apply status filter (matching working pattern)
+        if (showPublishedOnly) {
+          query = query.eq('status', 'published')
+        }
+
+        // Apply ordering (matching working pattern)
+        query = query.order('updated_at', { ascending: false })
+        query = query.limit(50)
+
+        const { data, error } = await query
+        
+        if (error) {
+          console.error('Error fetching WODs (working pattern):', error)
+          throw new Error('Failed to load WODs from database')
+        }
+        
+        // Transform the data to match RepositoryPopup interface
+        transformedContent = (data || []).map(wod => ({
+          id: wod.id,
+          title: wod.title,
+          description: wod.description || `${wod.estimated_duration_minutes || 0} min • ${wod.difficulty_level || 'Unknown'} difficulty`,
+          thumbnail_url: wod.thumbnail_url,
+          content_type: 'wod',
+          status: wod.status,
+          created_by: wod.created_by,
+          created_at: wod.created_at,
+          updated_at: wod.updated_at,
+          wod: {
+            id: wod.id,
+            duration_minutes: wod.estimated_duration_minutes,
+            difficulty_level: wod.difficulty_level,
+            target_muscle_groups: wod.tags || [],
+            equipment_needed: [],
+            instructions: wod.description,
+            notes: ''
+          }
+        }))
+      
+      } else if (contentType === 'BLOCKS' || contentType === 'blocks') {
+        // FIXED: Query workout_blocks table where real blocks are stored
+        let query = supabase
+          .from('workout_blocks')
+          .select('*')
+
+        // Apply status filter
+        if (showPublishedOnly) {
+          query = query.eq('status', 'published')
+        }
+
+        // Apply ordering
+        query = query.order('updated_at', { ascending: false })
+        query = query.limit(50)
+
+        const { data, error } = await query
+        
+        if (error) {
+          console.error('Error fetching BLOCKS from workout_blocks table:', error)
+          throw new Error('Failed to load BLOCKS from database')
+        }
+        
+        // Transform the data to match RepositoryPopup interface
+        transformedContent = (data || []).map(block => ({
+          id: block.id,
+          title: block.title,
+          description: block.description || `${block.estimated_duration_minutes || 0} min • ${block.difficulty_level || 'Unknown'} difficulty`,
+          thumbnail_url: block.thumbnail_url,
+          content_type: 'block',
+          status: block.status,
+          created_by: block.created_by,
+          created_at: block.created_at,
+          updated_at: block.updated_at,
+          block: {
+            id: block.id,
+            block_type: 'Training',
+            duration_minutes: block.estimated_duration_minutes,
+            intensity_level: block.difficulty_level,
+            target_area: '',
+            instructions: block.description,
+            rest_periods: 0,
+            repetitions: 0
+          }
+        }))
+      
       } else {
-        // For other content types (pdf, etc.), fall back to the edge function
+        // For other content types, fall back to the edge function
         const { data, error } = await supabase.functions.invoke('content-repository-manager', {
           body: {
             action: 'list',
@@ -575,6 +685,25 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
       return matchesBasic || matchesPdf
     }
     
+    // For WODs, also search in WOD-specific fields
+    if ((contentType === 'WODs' || contentType === 'wods') && item.wod) {
+      const matchesWod = item.wod.difficulty_level?.toLowerCase().includes(searchLower) ||
+                        item.wod.target_muscle_groups?.some(group => group.toLowerCase().includes(searchLower)) ||
+                        item.wod.equipment_needed?.some(equipment => equipment.toLowerCase().includes(searchLower)) ||
+                        item.wod.instructions?.toLowerCase().includes(searchLower) ||
+                        item.wod.notes?.toLowerCase().includes(searchLower)
+      return matchesBasic || matchesWod
+    }
+    
+    // For BLOCKS, also search in BLOCK-specific fields
+    if ((contentType === 'BLOCKS' || contentType === 'blocks') && item.block) {
+      const matchesBlock = item.block.block_type?.toLowerCase().includes(searchLower) ||
+                          item.block.intensity_level?.toLowerCase().includes(searchLower) ||
+                          item.block.target_area?.toLowerCase().includes(searchLower) ||
+                          item.block.instructions?.toLowerCase().includes(searchLower)
+      return matchesBasic || matchesBlock
+    }
+    
     return matchesBasic
   })
   
@@ -588,6 +717,10 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
       case 'automation': return '⚡'
       case 'image': return '🖼️'
       case 'pdf': return '📄'
+      case 'WODs':
+      case 'wods': return '💪'
+      case 'BLOCKS':
+      case 'blocks': return '🏗️'
       default: return '📁'
     }
   }
@@ -596,6 +729,10 @@ export function RepositoryPopup({ contentType, onContentSelect, onClose }: Repos
     switch (type) {
       case 'ai-agent': return 'AI Agents'
       case 'prompt': return 'Prompts'
+      case 'WODs':
+      case 'wods': return 'WODs'
+      case 'BLOCKS':
+      case 'blocks': return 'BLOCKS'
       default: return type.charAt(0).toUpperCase() + type.slice(1) + 's'
     }
   }

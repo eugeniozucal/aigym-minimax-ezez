@@ -1,0 +1,36 @@
+
+  
+   ID                                   | NAME                           | SLUG                           | STATUS | VERSION | UPDATED_AT (UTC)    
+  --------------------------------------|--------------------------------|--------------------------------|--------|---------|---------------------
+   8770baec-79dc-4488-97d1-181db4fe37a8 | setup-admin                    | setup-admin                    | ACTIVE | 13      | 2025-08-28 13:20:04 
+   51aa7766-b6ba-4739-a582-dcc41ff48d0a | ai-chat                        | ai-chat                        | ACTIVE | 16      | 2025-08-28 13:20:04 
+   2c886e32-660a-4f92-a4b2-c4e784f9fe7c | analytics-dashboard            | analytics-dashboard            | ACTIVE | 16      | 2025-08-28 13:20:04 
+   9edcbe47-94b0-4ccb-93eb-065c8616df99 | bulk-upload-users              | bulk-upload-users              | ACTIVE | 13      | 2025-08-28 13:20:04 
+   d4caca22-aa3e-47ec-9fdc-ba3d7236ad9b | track-user-activity            | track-user-activity            | ACTIVE | 13      | 2025-08-28 13:20:04 
+   be415e83-096c-46ef-a5ea-9d5208a78b0f | create-client-template         | create-client-template         | ACTIVE | 13      | 2025-08-28 13:20:04 
+   0c167696-2537-48e9-844e-9071cd51e77b | clone-client-template          | clone-client-template          | ACTIVE | 13      | 2025-08-28 13:20:04 
+   b5b1646e-57bb-497f-8fc5-e9c0c4fe7e4d | client-management              | client-management              | ACTIVE | 13      | 2025-08-28 13:20:04 
+   05693251-6817-4f5c-8d7b-544ada26d981 | create-admin-user              | create-admin-user              | ACTIVE | 45      | 2025-09-13 01:54:45 
+   07d5611b-d027-4923-ba6c-903c5cccbd01 | process-csv-upload             | process-csv-upload             | ACTIVE | 13      | 2025-08-28 13:20:04 
+   8f8ea53f-2dd0-485d-9373-5d2d6bce5273 | manage-user-tags               | manage-user-tags               | ACTIVE | 13      | 2025-08-28 13:20:04 
+   3b16d5b6-380c-4704-8aae-986e83da4a02 | simple-chat                    | simple-chat                    | ACTIVE | 13      | 2025-08-28 13:20:04 
+   8406ab40-82d7-4781-b666-a8be4775f041 | conversation-history           | conversation-history           | ACTIVE | 13      | 2025-08-28 13:20:04 
+   b88c5e91-1ac1-436e-add9-b18ccd580854 | page-builder-bulk-create       | page-builder-bulk-create       | ACTIVE | 7       | 2025-08-28 18:42:13 
+   c0129e3a-c167-4f12-a88d-6b98646f9b7b | track-user-progress            | track-user-progress            | ACTIVE | 7       | 2025-08-28 18:42:17 
+   5e33d145-1be8-4f5a-abad-f1968b4296e1 | automated-content-generator    | automated-content-generator    | ACTIVE | 7       | 2025-08-28 18:42:20 
+   18581ef2-558b-4bab-949f-ac5124e7708f | page-structure-manager         | page-structure-manager         | ACTIVE | 7       | 2025-08-28 18:42:29 
+   1b7da790-ab39-445e-b99c-6d84de1d2240 | enhanced-file-upload           | enhanced-file-upload           | ACTIVE | 7       | 2025-08-29 02:42:30 
+   08384393-4d43-4c5a-be41-c2d4e9f61c1e | content-repository-manager     | content-repository-manager     | ACTIVE | 7       | 2025-08-29 02:42:32 
+   e492e984-8347-45fb-a476-61d1346148a5 | page-builder-content-generator | page-builder-content-generator | ACTIVE | 7       | 2025-08-29 02:42:33 
+   00ad83eb-ab56-4fc2-b27f-6569bae3f225 | update-user-password           | update-user-password           | ACTIVE | 4       | 2025-09-10 00:25:58 
+   fef361d1-0a35-4c94-be27-640803c81552 | configure-jwt-expiry           | configure-jwt-expiry           | ACTIVE | 2       | 2025-09-12 00:09:40 
+   111ffec4-ae21-468e-afd0-c675f9915f9e | set-jwt-expiry                 | set-jwt-expiry                 | ACTIVE | 3       | 2025-09-12 00:12:51 
+   a8340dd3-e4f8-49e8-b7fe-d8b35e032cd8 | session-validator              | session-validator              | ACTIVE | 2       | 2025-09-12 00:20:54 
+   a8baa706-798f-4a45-8526-e302a9cea68b | missions-api                   | missions-api                   | ACTIVE | 1       | 2025-09-13 01:29:28 
+   69e03a13-8a18-4f87-86d8-b40f45e1f36d | courses-api                    | courses-api                    | ACTIVE | 1       | 2025-09-13 01:29:29 
+   62331dc8-585c-4446-99f8-dd16d1023848 | course-enrollment-api          | course-enrollment-api          | ACTIVE | 1       | 2025-09-13 01:29:30 
+   f541a4b9-e84d-407d-a8af-01cd62baebb1 | progress-tracking-api          | progress-tracking-api          | ACTIVE | 1       | 2025-09-13 01:29:31 
+   f9d3d5a5-9c60-4f19-9ee1-8dad48eb227a | learning-path-api              | learning-path-api              | ACTIVE | 1       | 2025-09-13 01:29:33 
+
+A new version of Supabase CLI is available: v2.40.7 (currently installed v2.33.2)
+We recommend updating regularly for new features and bug fixes: https://supabase.com/docs/guides/cli/getting-started#updating-the-supabase-cli

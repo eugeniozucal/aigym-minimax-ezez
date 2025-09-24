@@ -1,0 +1,88 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild, msw.                                       │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1.2s using pnpm v10.12.4
+src/components/page-builder/ContextualEditingPanel.tsx:18:32 - error TS2307: Cannot find module './editors/DocumentEditor' or its corresponding type declarations.
+
+18 import { DocumentEditor } from './editors/DocumentEditor'
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/ContextualEditingPanel.tsx:19:30 - error TS2307: Cannot find module './editors/PromptEditor' or its corresponding type declarations.
+
+19 import { PromptEditor } from './editors/PromptEditor'
+                                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/ContextualEditingPanel.tsx:20:34 - error TS2307: Cannot find module './editors/AutomationEditor' or its corresponding type declarations.
+
+20 import { AutomationEditor } from './editors/AutomationEditor'
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/ContextualEditingPanel.tsx:21:28 - error TS2307: Cannot find module './editors/QuizEditor' or its corresponding type declarations.
+
+21 import { QuizEditor } from './editors/QuizEditor'
+                              ~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/ContextualEditingPanel.tsx:24:33 - error TS2307: Cannot find module './editors/AccordionEditor' or its corresponding type declarations.
+
+24 import { AccordionEditor } from './editors/AccordionEditor'
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/ContextualEditingPanel.tsx:25:38 - error TS2307: Cannot find module './editors/UserSubmissionEditor' or its corresponding type declarations.
+
+25 import { UserSubmissionEditor } from './editors/UserSubmissionEditor'
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/editors/ListEditor.tsx:96:23 - error TS2322: Type '{ checked: boolean; readOnly: true; className: string; }' is not assignable to type 'IntrinsicAttributes & Omit<CheckboxProps & RefAttributes<HTMLButtonElement>, "ref"> & RefAttributes<...>'.
+  Property 'readOnly' does not exist on type 'IntrinsicAttributes & Omit<CheckboxProps & RefAttributes<HTMLButtonElement>, "ref"> & RefAttributes<...>'.
+
+96                       readOnly
+                         ~~~~~~~~
+
+src/components/page-builder/editors/ListEditor.tsx:117:23 - error TS2322: Type '{ checked: boolean; readOnly: true; className: string; }' is not assignable to type 'IntrinsicAttributes & Omit<CheckboxProps & RefAttributes<HTMLButtonElement>, "ref"> & RefAttributes<...>'.
+  Property 'readOnly' does not exist on type 'IntrinsicAttributes & Omit<CheckboxProps & RefAttributes<HTMLButtonElement>, "ref"> & RefAttributes<...>'.
+
+117                       readOnly
+                          ~~~~~~~~
+
+src/pages/RefactoredMissionBuilder.tsx:305:9 - error TS2353: Object literal may only specify known properties, and 'order_index' does not exist in type '{ title: string; description?: string; is_locked?: boolean; status?: "archived" | "draft" | "published"; }'.
+
+305         order_index: pageNumber - 1,
+            ~~~~~~~~~~~
+
+src/pages/RefactoredMissionBuilder.tsx:313:24 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'Page'.
+
+313         navigateToPage(newPage.id)
+                           ~~~~~~~~~~
+
+src/pages/RefactoredMissionBuilder.tsx:323:20 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'Page'.
+
+323     navigateToPage(pageId)
+                       ~~~~~~
+
+src/pages/RefactoredMissionBuilder.tsx:627:33 - error TS2322: Type '{ block: Block; isPreviewMode: boolean; isSelected: boolean; onContentChange: (blockId: string, content: Record<string, any>) => Promise<void>; onEdit: () => void; }' is not assignable to type 'IntrinsicAttributes & BlockRendererProps'.
+  Property 'isPreviewMode' does not exist on type 'IntrinsicAttributes & BlockRendererProps'.
+
+627                                 isPreviewMode={previewMode}
+                                    ~~~~~~~~~~~~~
+
+src/pages/RefactoredMissionBuilder.tsx:677:9 - error TS2322: Type '{ isOpen: boolean; onClose: () => void; onConfirm: () => Promise<void>; title: string; description: string; confirmText: string; confirmVariant: string; }' is not assignable to type 'IntrinsicAttributes & ConfirmDialogProps'.
+  Property 'description' does not exist on type 'IntrinsicAttributes & ConfirmDialogProps'.
+
+677         description="Are you sure you want to delete this block? This action cannot be undone."
+            ~~~~~~~~~~~
+
+
+Found 13 errors.
+

@@ -1,0 +1,30 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 1.2s using pnpm v10.12.4
+src/components/page-builder/BlockRenderer.tsx(85,43): error TS2322: Type '{ onProgress: (progress: number) => void; block: Block; isSelected: boolean; isEditing: boolean; onSelect: () => void; onEdit: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & VideoBlockProps'.
+  Property 'onProgress' does not exist on type 'IntrinsicAttributes & VideoBlockProps'.
+src/components/page-builder/BlockRenderer.tsx(97,48): error TS2322: Type '{ userContext: Record<string, any>; block: Block; isSelected: boolean; isEditing: boolean; onSelect: () => void; onEdit: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & AutomationBlockProps & { isSelected?: boolean; isEditing?: boolean; onSelect?: () => void; onEdit?: () => void; className?: string; } & RefAttributes<...>'.
+  Property 'userContext' does not exist on type 'IntrinsicAttributes & AutomationBlockProps & { isSelected?: boolean; isEditing?: boolean; onSelect?: () => void; onEdit?: () => void; className?: string; } & RefAttributes<...>'.
+src/components/page-builder/BlockWrapper.tsx(107,12): error TS2322: Type '{ block: Block; } & Omit<T, "block">' is not assignable to type 'IntrinsicAttributes & T'.
+  Type '{ block: Block; } & Omit<T, "block">' is not assignable to type 'T'.
+    '{ block: Block; } & Omit<T, "block">' is assignable to the constraint of type 'T', but 'T' could be instantiated with a different subtype of constraint '{ block: Block; }'.
+src/components/page-builder/blocks/AutomationsContentBlock.tsx(4,22): error TS2724: '"@/lib/page-builder-types"' has no exported member named 'AutomationsContent'. Did you mean 'AutomationContent'?
+src/components/page-builder/blocks/UserSubmissionBlock.tsx(198,25): error TS2367: This comparison appears to be unintentional because the types '"file"' and '"multiple"' have no overlap.
+src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx(23,3): error TS2322: Type '"automations_content"' is not assignable to type 'BlockType'.
+src/hooks/usePageBuilder.ts(213,45): error TS2345: Argument of type '{ order_index: number; unlock_conditions: {}; page_config: {}; created_by: string; title: string; description?: string; is_locked?: boolean; status?: "draft" | "published" | "archived"; }' is not assignable to parameter of type 'Omit<Page, "id" | "created_at" | "updated_at">'.
+  Property 'status' is optional in type '{ order_index: number; unlock_conditions: {}; page_config: {}; created_by: string; title: string; description?: string; is_locked?: boolean; status?: "archived" | "draft" | "published"; }' but required in type 'Omit<Page, "id" | "created_at" | "updated_at">'.
+src/lib/__tests__/page-builder-types.test.ts(15,3): error TS2724: '"../page-builder-types"' has no exported member named 'AutomationsContent'. Did you mean 'AutomationContent'?
+src/lib/__tests__/page-builder-types.test.ts(32,9): error TS2322: Type '"automations_content"' is not assignable to type 'BlockType'.
+src/pages/RichTextDemo.tsx(152,19): error TS2322: Type '(blockId: string, content: Record<string, any>) => void' is not assignable to type '(content: RichTextContent) => void'.
+  Target signature provides too few arguments. Expected 2 or more, but got 1.
+src/test/integration/page-builder-editor.test.tsx(4,31): error TS2307: Cannot find module '@/pages/PageBuilderEditor' or its corresponding type declarations.
+src/test/mocks/server.ts(129,42): error TS2339: Property 'method' does not exist on type '{ request: Request; requestId: string; }'.
+src/test/mocks/server.ts(129,54): error TS2339: Property 'url' does not exist on type '{ request: Request; requestId: string; }'.
+src/test/setup.ts(21,10): error TS2304: Cannot find name 'vi'.
+src/test/setup.ts(25,18): error TS2304: Cannot find name 'vi'.
+src/test/setup.ts(26,21): error TS2304: Cannot find name 'vi'.

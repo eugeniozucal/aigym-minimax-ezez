@@ -182,13 +182,22 @@ export function Dashboard() {
               Monitor and manage your training content across all modules
             </p>
           </div>
-          <Link
-            to="/page-builder"
-            className="inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-all"
-          >
-            <Plus className="-ml-1 mr-2 h-4 w-4" />
-            Create Page
-          </Link>
+          <div className="flex items-center space-x-3">
+            <Link
+              to="/page-builder"
+              className="inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-all"
+            >
+              <Plus className="-ml-1 mr-2 h-4 w-4" />
+              Create Page
+            </Link>
+            <Link
+              to="/program-builder"
+              className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all"
+            >
+              <Calendar className="-ml-1 mr-2 h-4 w-4" />
+              Create Program
+            </Link>
+          </div>
         </div>
 
         {/* Stats Grid */}
@@ -281,7 +290,7 @@ export function Dashboard() {
         {/* Quick Actions */}
         <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Quick Actions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
             <Link
               to="/training-zone/wods"
               className="flex items-center space-x-3 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
@@ -291,7 +300,7 @@ export function Dashboard() {
               </div>
               <div>
                 <p className="font-medium text-gray-900">Browse WODs</p>
-                <p className="text-sm text-gray-500">View all workout programs</p>
+                <p className="text-sm text-gray-500">View all workouts</p>
               </div>
             </Link>
             
@@ -317,19 +326,48 @@ export function Dashboard() {
               </div>
               <div>
                 <p className="font-medium text-gray-900">Browse BLOCKS</p>
-                <p className="text-sm text-gray-500">Modular workout components</p>
+                <p className="text-sm text-gray-500">Modular components</p>
               </div>
             </Link>
             
-            <button className="flex items-center space-x-3 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group">
-              <div className="bg-gray-100 p-3 rounded-lg group-hover:bg-gray-200 transition-colors">
-                <BarChart3 className="h-5 w-5 text-gray-600" />
+            <Link
+              to="/page-builder?repo=blocks"
+              className="flex items-center space-x-3 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
+            >
+              <div className="bg-cyan-100 p-3 rounded-lg group-hover:bg-cyan-200 transition-colors">
+                <Plus className="h-5 w-5 text-cyan-600" />
               </div>
               <div>
-                <p className="font-medium text-gray-900">Analytics</p>
-                <p className="text-sm text-gray-500">Track performance</p>
+                <p className="font-medium text-gray-900">Create BLOCK</p>
+                <p className="text-sm text-gray-500">Build new component</p>
               </div>
-            </button>
+            </Link>
+            
+            <Link
+              to="/training-zone/programs"
+              className="flex items-center space-x-3 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
+            >
+              <div className="bg-purple-100 p-3 rounded-lg group-hover:bg-purple-200 transition-colors">
+                <Calendar className="h-5 w-5 text-purple-600" />
+              </div>
+              <div>
+                <p className="font-medium text-gray-900">Browse Programs</p>
+                <p className="text-sm text-gray-500">Training programs</p>
+              </div>
+            </Link>
+            
+            <Link
+              to="/program-builder"
+              className="flex items-center space-x-3 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
+            >
+              <div className="bg-violet-100 p-3 rounded-lg group-hover:bg-violet-200 transition-colors">
+                <Plus className="h-5 w-5 text-violet-600" />
+              </div>
+              <div>
+                <p className="font-medium text-gray-900">Create Program</p>
+                <p className="text-sm text-gray-500">Build training program</p>
+              </div>
+            </Link>
           </div>
         </div>
 

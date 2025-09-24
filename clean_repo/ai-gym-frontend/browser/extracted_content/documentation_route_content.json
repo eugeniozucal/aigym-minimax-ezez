@@ -1,0 +1,18 @@
+📄 Extracted from page: ai-gym-platform-video-fix
+URL: https://if4yb5jxn92w.space.minimax.io/documentation
+
+Extracted content:
+```json
+{
+    "title": "ai-gym-platform-video-fix",
+    "url": "https://if4yb5jxn92w.space.minimax.io/documentation",
+    "summary": "The content displayed on the `/documentation` route is a \"Page Not Found\" error message, indicating that the requested page does not exist. It also mentions that the page was created by a \"MiniMax Agent.\"",
+    "key_points": [
+        "The page at the `/documentation` route does not exist.",
+        "A 'Page Not Found' error message is displayed.",
+        "The page was created by MiniMax Agent."
+    ],
+    "relevant_links": [],
+    "file_name": "documentation_route_content.json"
+}
+```

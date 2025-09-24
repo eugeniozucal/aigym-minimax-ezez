@@ -1,0 +1,471 @@
+src/components/page-builder/modals/ContentSelectorModal.tsx:1:8 - error TS1259: Module '"/workspace/ai-gym-platform/node_modules/.pnpm/@types+react@18.3.20/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+1 import React, { useState, useEffect, useCallback, useMemo } from 'react'
+         ~~~~~
+
+  node_modules/.pnpm/@types+react@18.3.20/node_modules/@types/react/index.d.ts:46:1
+    46 export = React;
+       ~~~~~~~~~~~~~~~
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:3:111 - error TS2307: Cannot find module '@/lib/content-queries' or its corresponding type declarations.
+
+3 import { contentSelectionApi, ContentItemForSelection, ContentSelectionOptions, contentMetadataHelpers } from '@/lib/content-queries'
+                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:4:44 - error TS2307: Cannot find module '@/lib/supabase' or its corresponding type declarations.
+
+4 import { ContentType, CONTENT_TYPES } from '@/lib/supabase'
+                                             ~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:5:32 - error TS2307: Cannot find module '@/components/ui/LoadingSpinner' or its corresponding type declarations.
+
+5 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:126:5 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+126     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:127:7 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+127       <div className="bg-white rounded-xl shadow-2xl w-full max-w-6xl max-h-[90vh] flex flex-col">
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:129:9 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+129         <div className="flex items-center justify-between p-6 border-b border-gray-200">
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:130:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+130           <div className="flex items-center space-x-4">
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:131:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+131             <div
+                ~~~~
+132               className="h-12 w-12 rounded-xl flex items-center justify-center shadow-sm"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+133               style={{ backgroundColor: typeConfig.color + '15' }}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+134             >
+    ~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:140:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+140             <div>
+                ~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:141:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+141               <h2 className="text-2xl font-bold text-gray-900">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:144:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+144               <p className="text-sm text-gray-600">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:149:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+149           <button
+              ~~~~~~~
+150             onClick={onClose}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+151             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+152           >
+    ~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:153:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+153             <X className="h-5 w-5 text-gray-500" />
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:158:9 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+158         <div className="p-6 border-b border-gray-200">
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:159:11 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+159           <div className="flex items-center justify-between space-x-4">
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:161:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+161             <div className="flex-1 max-w-md relative">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:162:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+162               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:163:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+163               <input
+                  ~~~~~~
+164                 type="text"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+167                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+168               />
+    ~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:172:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+172             <select
+                ~~~~~~~
+173               value={status}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+178               className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+179             >
+    ~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:180:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+180               <option value="published">Published Only</option>
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:181:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+181               <option value="all">All Content</option>
+                  ~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:182:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+182               <option value="draft">Drafts Only</option>
+                  ~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:186:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+186             <div className="flex bg-gray-100 rounded-lg p-1">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:187:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+187               <button
+                  ~~~~~~~
+188                 onClick={() => setViewMode('cards')}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+194                 title="Card View"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+195               >
+    ~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:196:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+196                 <Grid className="h-4 w-4" />
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:198:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+198               <button
+                  ~~~~~~~
+199                 onClick={() => setViewMode('list')}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+205                 title="List View"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+206               >
+    ~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:207:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+207                 <List className="h-4 w-4" />
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:214:9 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+214         <div className="flex-1 overflow-y-auto p-6">
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:216:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+216             <div className="flex justify-center items-center py-20">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:217:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+217               <div className="text-center">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:218:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+218                 <LoadingSpinner size="lg" />
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:219:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+219                 <p className="text-sm text-gray-500 mt-3">Loading {typeConfig.label.toLowerCase()}...</p>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:223:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+223             <div className="text-center py-20">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:224:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+224               <div className="text-red-500 mb-4">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:227:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+227               <h3 className="text-lg font-medium text-gray-900 mb-2">Error Loading Content</h3>
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:228:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+228               <p className="text-sm text-gray-500 mb-4">{error}</p>
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:229:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+229               <button
+                  ~~~~~~~
+230                 onClick={fetchItems}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+231                 className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+232               >
+    ~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:237:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+237             <div className="text-center py-20">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:238:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+238               <div
+                  ~~~~
+239                 className="mx-auto h-24 w-24 rounded-full flex items-center justify-center mb-4"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+240                 style={{ backgroundColor: typeConfig.color + '10' }}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+241               >
+    ~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:247:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+247               <h3 className="text-lg font-medium text-gray-900">No content found</h3>
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:248:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+248               <p className="text-sm text-gray-500 mt-2 max-w-sm mx-auto">
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:256:13 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+256             <>
+                ~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:258:15 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+258               <div className={viewMode === 'cards'
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+259                 ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+260                 : 'space-y-3'
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+261               }>
+    ~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:268:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+268                     <div
+                        ~~~~
+269                       key={item.id}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+271                       className="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+272                     >
+    ~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:273:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+273                       <div className="flex items-start justify-between mb-3">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:274:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+274                         <div
+                            ~~~~
+275                           className="h-10 w-10 rounded-lg flex items-center justify-center flex-shrink-0"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+276                           style={{ backgroundColor: typeConfig.color + '15' }}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+277                         >
+    ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:283:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+283                         <div className="flex items-center space-x-2">
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:284:27 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+284                           <StatusIcon className="h-4 w-4 text-gray-400" />
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:285:27 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+285                           <span className={`text-xs px-2 py-1 rounded-full ${
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+286                             item.status === 'published' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+287                           }`}>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:293:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+293                       <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:297:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+297                       <p className="text-sm text-gray-600 line-clamp-2 mb-3">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:301:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+301                       <div className="text-xs text-gray-500">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:307:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+307                     <div
+                        ~~~~
+308                       key={item.id}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+310                       className="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 hover:shadow-sm transition-all cursor-pointer group flex items-center space-x-4"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+311                     >
+    ~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:312:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+312                       <div
+                          ~~~~
+313                         className="h-12 w-12 rounded-lg flex items-center justify-center flex-shrink-0"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+314                         style={{ backgroundColor: typeConfig.color + '15' }}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+315                       >
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:322:23 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+322                       <div className="flex-1 min-w-0">
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:323:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+323                         <div className="flex items-center justify-between">
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:324:27 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+324                           <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:327:27 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+327                           <div className="flex items-center space-x-2 ml-4">
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:328:29 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+328                             <StatusIcon className="h-4 w-4 text-gray-400" />
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:329:29 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+329                             <span className={`text-xs px-2 py-1 rounded-full whitespace-nowrap ${
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+330                               item.status === 'published' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+331                             }`}>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:336:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+336                         <p className="text-sm text-gray-600 mt-1 truncate">
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:339:25 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+339                         <div className="text-xs text-gray-500 mt-1">
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:350:17 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+350                 <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-200">
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:351:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+351                   <div className="text-sm text-gray-500">
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:355:19 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+355                   <div className="flex items-center space-x-2">
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:356:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+356                     <button
+                        ~~~~~~~
+357                       onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+359                       className="px-3 py-2 text-sm border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+360                     >
+    ~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:364:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+364                     <div className="flex space-x-1">
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:373:27 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+373                           <button
+                              ~~~~~~~
+374                             key={pageNum}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+380                             }`}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+381                           >
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/page-builder/modals/ContentSelectorModal.tsx:388:21 - error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+
+388                     <button
+                        ~~~~~~~
+389                       onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+391                       className="px-3 py-2 text-sm border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+392                     >
+    ~~~~~~~~~~~~~~~~~~~~~
+
+
+Found 70 errors in the same file, starting at: src/components/page-builder/modals/ContentSelectorModal.tsx:1
+

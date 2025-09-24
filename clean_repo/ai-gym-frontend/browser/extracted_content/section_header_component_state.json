@@ -1,0 +1,22 @@
+📄 Extracted from page: 
+URL: http://localhost:5173/demo/section-header
+
+Extracted content:
+```json
+{
+  "title": "Simple Section Header Test",
+  "url": "http://localhost:5173/demo/section-header",
+  "summary": "This page demonstrates a 'Section Header' component with improved auto-selection functionality for direct text editing. Users can click on the title or subtitle to edit them directly without explicit edit buttons. The current state of the component, as reflected in the live JSON preview after testing, shows the title as 'Fixed Title Text' and the subtitle as 'Fixed Subtitle Text'. The system supports auto-saving, auto-resizing for the subtitle, and provides visual feedback during editing.",
+  "key_points": [
+    "The Section Header component allows direct click-to-edit for both title and subtitle.",
+    "The improved auto-selection functionality simplifies editing, requiring no explicit edit buttons.",
+    "The live JSON preview reflects the component's state, showing 'Fixed Title Text' for the title.",
+    "The live JSON preview reflects the component's state, showing 'Fixed Subtitle Text' for the subtitle.",
+    "Changes made during editing are automatically saved.",
+    "The subtitle textarea features auto-resize to accommodate content.",
+    "Visual feedback (blue focus ring, background) is provided on focus."
+  ],
+  "relevant_links": [],
+  "file_name": "section_header_component_state.json"
+}
+```

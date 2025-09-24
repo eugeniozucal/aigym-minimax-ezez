@@ -1,0 +1,171 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1.1s using pnpm v10.12.4
+src/pages/content/AIAgentEditor.tsx:783:25 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+783                         >
+                            ~
+
+src/pages/content/AIAgentEditor.tsx:785:27 - error TS17002: Expected corresponding JSX closing tag for 'div'.
+
+785                         </button>
+                              ~~~~~~
+
+src/pages/content/AIAgentEditor.tsx:794:21 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+794                   ))}
+                        ~
+
+src/pages/content/AIAgentEditor.tsx:795:19 - error TS17002: Expected corresponding JSX closing tag for 'ContentEditor'.
+
+795                 </div>
+                      ~~~
+
+src/pages/content/AIAgentEditor.tsx:796:15 - error TS1005: ')' expected.
+
+796               </div>
+                  ~~
+
+src/pages/content/AIAgentEditor.tsx:797:13 - error TS1109: Expression expected.
+
+797             </div>
+                ~~
+
+src/pages/content/AIAgentEditor.tsx:800:18 - error TS1005: ';' expected.
+
+800             <div className="flex-1 flex flex-col">
+                     ~~~~~~~~~
+
+src/pages/content/AIAgentEditor.tsx:802:17 - error TS1003: Identifier expected.
+
+802                 <>
+                    ~
+
+src/pages/content/AIAgentEditor.tsx:802:18 - error TS1138: Parameter declaration expected.
+
+802                 <>
+                     ~
+
+src/pages/content/AIAgentEditor.tsx:804:24 - error TS1005: ';' expected.
+
+804                   <div className="flex-1 overflow-y-auto p-4 space-y-4" id="messages-container">
+                           ~~~~~~~~~
+
+src/pages/content/AIAgentEditor.tsx:804:73 - error TS1005: ';' expected.
+
+804                   <div className="flex-1 overflow-y-auto p-4 space-y-4" id="messages-container">
+                                                                            ~~
+
+src/pages/content/AIAgentEditor.tsx:805:40 - error TS1005: ',' expected.
+
+805                     {activeConversation.messages.length === 0 ? (
+                                           ~
+
+src/pages/content/AIAgentEditor.tsx:861:19 - error TS1128: Declaration or statement expected.
+
+861                   </div>
+                      ~~
+
+src/pages/content/AIAgentEditor.tsx:864:24 - error TS1005: ';' expected.
+
+864                   <div className="border-t border-gray-200 p-4">
+                           ~~~~~~~~~
+
+src/pages/content/AIAgentEditor.tsx:865:32 - error TS1005: ',' expected.
+
+865                     {testError && (
+                                   ~~
+
+src/pages/content/AIAgentEditor.tsx:873:21 - error TS2657: JSX expressions must have one parent element.
+
+873                     <div className="flex space-x-3">
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+874                       <div className="flex-1">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+898                       Press Enter to send, Shift+Enter for new line
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+899                     </p>
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/content/AIAgentEditor.tsx:900:19 - error TS1128: Declaration or statement expected.
+
+900                   </div>
+                      ~~
+
+src/pages/content/AIAgentEditor.tsx:901:17 - error TS1109: Expression expected.
+
+901                 </>
+                    ~~
+
+src/pages/content/AIAgentEditor.tsx:901:19 - error TS1109: Expression expected.
+
+901                 </>
+                      ~
+
+src/pages/content/AIAgentEditor.tsx:902:15 - error TS1109: Expression expected.
+
+902               ) : (
+                  ~
+
+src/pages/content/AIAgentEditor.tsx:902:17 - error TS1128: Declaration or statement expected.
+
+902               ) : (
+                    ~
+
+src/pages/content/AIAgentEditor.tsx:920:16 - error TS1128: Declaration or statement expected.
+
+920               )}
+                   ~
+
+src/pages/content/AIAgentEditor.tsx:921:13 - error TS1128: Declaration or statement expected.
+
+921             </div>
+                ~~
+
+src/pages/content/AIAgentEditor.tsx:922:11 - error TS1109: Expression expected.
+
+922           </div>
+              ~~
+
+src/pages/content/AIAgentEditor.tsx:923:9 - error TS1109: Expression expected.
+
+923         </div>
+            ~~
+
+src/pages/content/AIAgentEditor.tsx:924:7 - error TS1109: Expression expected.
+
+924       </div>
+          ~~
+
+src/pages/content/AIAgentEditor.tsx:925:5 - error TS1109: Expression expected.
+
+925     </ContentEditor>
+        ~~
+
+src/pages/content/AIAgentEditor.tsx:926:3 - error TS1109: Expression expected.
+
+926   )
+      ~
+
+src/pages/content/AIAgentEditor.tsx:927:1 - error TS1128: Declaration or statement expected.
+
+927 }
+    ~
+
+
+Found 29 errors.
+

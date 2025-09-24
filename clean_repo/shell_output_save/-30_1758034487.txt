@@ -1,0 +1,215 @@
+/workspace/mission_to_wod_refactoring_analysis_report.md
+/workspace/backend_api_wod_refactoring_report.md
+/workspace/.pnpm-store/v10/index/f7/1a63365de4478ad50d980f35d4cbd3f73a6a8e249baf5aff68a13506dc00dc-vite@6.2.6.json
+/workspace/.pnpm-store/v10/index/8b/00d9aa0d10006ae0f516afe47e27d0ceb87379a4479f5c27ac10a7eec2e272-undici-types@6.21.0.json
+/workspace/.pnpm-store/v10/index/84/621239a3f5f29964cdb58470ffd0bed456d710d7176fbde876c45fa6f2a908-@vitest+ui@3.2.4.json
+/workspace/.pnpm-store/v10/index/e9/eefcadd56d9c1be511582ee9e1440201bdbf7c0b9d811ba0cf08e4ee445ef7-framer-motion@12.23.12.json
+/workspace/.pnpm-store/v10/index/11/b2922a1f9b875135205c5e3b4a60d67e1dbe8393b7450389731dfea9fefabf-vite-node@3.2.4.json
+/workspace/.pnpm-store/v10/index/e6/6e2740aa7ead945bd3d2cd1f9f463380714e1f76e75ff295b2886e97bb4e91-react-dom@18.3.1.json
+/workspace/.pnpm-store/v10/index/c0/2216220f80e17afb35f853b87757fbf14a877f8ea772c16d2a763793dfc7a4-caniuse-lite@1.0.30001713.json
+/workspace/.pnpm-store/v10/index/9d/fdb6fffc046ca5eeb0fe84f697ce083c05747017e2ed7bd9e6892386240d14-@types+react-dom@18.3.6.json
+/workspace/phase_3_validation_report.md
+/workspace/WOD_Builder_Testing_Report.md
+/workspace/Page_Builder_Testing_Report.md
+/workspace/root_cause_analysis_report.md
+/workspace/phase_comparison_test_report.md
+/workspace/memory/research_results.json
+/workspace/memory/todo_meta.json
+/workspace/WOD_Functionality_Testing_Report.md
+/workspace/comprehensive_analysis_report.md
+/workspace/Phase_3_Content_Repository_Testing_Report.md
+/workspace/AI_GYM_Production_Readiness_Test_Report.md
+/workspace/AI_GYM_Platform_Phase1_Report.md
+/workspace/Phase2_Critical_Testing_Report.md
+/workspace/ai_gym_admin_panel_test_report.md
+/workspace/technical_artifacts_summary.md
+/workspace/ai-gym-frontend/src/App.tsx
+/workspace/ai-gym-frontend/src/components/modals/ClientModal.tsx
+/workspace/ai-gym-frontend/src/components/modals/TagModal.tsx
+/workspace/ai-gym-frontend/src/components/modals/EnhancedClientModal.tsx
+/workspace/ai-gym-frontend/src/components/layout/ModernHeader.tsx
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe
+grep: write error: Broken pipe

@@ -1,0 +1,1343 @@
+
+> react_repo@0.0.0 test:run /workspace/ai-gym-platform
+> vitest run
+
+
+ RUN  v3.2.4 /workspace/ai-gym-platform
+
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:06:47
+   Duration 4.41s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:06:47
+   Duration 5.40s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:06:47
+   Duration 6.40s
+
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:06:47
+   Duration 6.90s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:06:47
+   Duration 7.30s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:06:47
+   Duration 7.50s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:06:47
+   Duration 7.70s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:06:47
+   Duration 8.30s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:06:47
+   Duration 8.40s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:06:47
+   Duration 9.40s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:06:47
+   Duration 10.30s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts 1/13
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 1 passed (13)
+   Start at 19:06:47
+   Duration 10.40s
+ ✓ src/lib/__tests__/page-builder-types.test.ts (13 tests) 88ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 0/10
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 1 passed (8)
+      Tests 13 passed (23)
+   Start at 19:06:47
+   Duration 10.60s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 1/10
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 0/12
+
+ Test Files 1 passed (8)
+      Tests 14 passed (35)
+   Start at 19:06:47
+   Duration 10.71s
+stdout | src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders quiz block and handles completion callback
+Quiz completed: {
+  blockId: 'test-block-quiz',
+  score: 85,
+  answers: [ 'answer1', 'answer2' ]
+}
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 2/10
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 0/12
+
+ Test Files 1 passed (8)
+      Tests 15 passed (35)
+   Start at 19:06:47
+   Duration 11.00s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 8/10
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 6/12
+
+ Test Files 1 passed (8)
+      Tests 2 failed | 25 passed (58)
+   Start at 19:06:47
+   Duration 11.20s
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx (10 tests | 2 failed) 404ms
+   ✓ BlockRenderer > renders section header block correctly 95ms
+   ✓ BlockRenderer > renders rich text block correctly 5ms
+   ✓ BlockRenderer > renders image block correctly 3ms
+   ✓ BlockRenderer > renders video block and handles progress callback 94ms
+   ✓ BlockRenderer > renders automations content block with user context 2ms
+   ✓ BlockRenderer > renders quiz block and handles completion callback 8ms
+   × BlockRenderer > renders placeholder for unimplemented block types 97ms
+     → Unable to find an element with the text: Block type "agent" coming soon. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50"
+    >
+      <div
+        class="text-gray-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-gray-500 text-sm font-medium"
+      >
+        AGENT
+         Block
+      </p>
+      <p
+        class="text-gray-400 text-xs mt-1"
+      >
+        Component not implemented yet
+      </p>
+    </div>
+  </div>
+</body>
+   × BlockRenderer > handles unknown block types gracefully 92ms
+     → Unable to find an element with the text: Unknown block type: unknown_type. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-red-300 rounded-lg p-8 text-center bg-red-50"
+    >
+      <div
+        class="text-red-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-red-600 text-sm font-medium"
+      >
+        Unknown Block Type: 
+        unknown_type
+      </p>
+      <p
+        class="text-red-500 text-xs mt-1"
+      >
+        This block type is not supported
+      </p>
+    </div>
+  </div>
+</body>
+   ✓ BlockRenderer > passes through common props correctly 2ms
+   ✓ BlockRenderer > handles missing content gracefully 2ms
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 9/12
+
+ Test Files 1 failed | 1 passed (8)
+      Tests 2 failed | 30 passed (70)
+   Start at 19:06:47
+   Duration 11.30s
+stderr | src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > Error handling and CORS > handles OPTIONS requests for CORS
+[MSW] Error: intercepted a request without a matching request handler:
+
+  • OPTIONS /functions/v1/page-structure-manager
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > renders HTML content correctly
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 9/12
+
+ Test Files 1 failed | 1 passed (8)
+      Tests 2 failed | 30 passed (70)
+   Start at 19:06:47
+   Duration 11.30s
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > falls back to plain text when HTML is missing
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders with default content
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > handles complex HTML structures
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 1/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 failed | 1 passed (8)
+      Tests 5 failed | 31 passed (70)
+   Start at 19:06:47
+   Duration 11.50s
+ ❯ src/test/integration/supabase-edge-functions.test.ts (12 tests | 2 failed) 601ms
+   ✓ Supabase Edge Functions Tests > page-structure-manager function > fetches mission with pages successfully 107ms
+   ✓ Supabase Edge Functions Tests > page-structure-manager function > handles missing parentType parameter 91ms
+   ✓ Supabase Edge Functions Tests > page-structure-manager function > validates parentType values 2ms
+   ✓ Supabase Edge Functions Tests > page-structure-manager function > fetches course with pages 2ms
+   ✓ Supabase Edge Functions Tests > page-structure-manager function > includes user progress when userId is provided 2ms
+   ✓ Supabase Edge Functions Tests > page-builder-bulk-create function > creates multiple pages successfully 3ms
+   ✓ Supabase Edge Functions Tests > page-builder-bulk-create function > validates required parameters 91ms
+   ✓ Supabase Edge Functions Tests > process-automation-block function > processes personalized summary successfully 3ms
+   ✓ Supabase Edge Functions Tests > process-automation-block function > handles different automation content types 99ms
+   × Supabase Edge Functions Tests > process-automation-block function > works without user context 100ms
+     → expected 'Generated content for personalized_su…' to contain 'anonymous'
+   × Supabase Edge Functions Tests > Error handling and CORS > handles OPTIONS requests for CORS 8ms
+     → [MSW] Cannot bypass a request when using the "error" strategy for the "onUnhandledRequest" option.
+   ✓ Supabase Edge Functions Tests > Error handling and CORS > handles malformed JSON requests 90ms
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 1/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 failed | 1 passed (8)
+      Tests 5 failed | 31 passed (70)
+   Start at 19:06:47
+   Duration 11.50s
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > applies custom className
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h1 for level 1 header
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > handles click events when onSelect is provided
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 1/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 failed | 1 passed (8)
+      Tests 5 failed | 31 passed (70)
+   Start at 19:06:47
+   Duration 11.50s
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h2 for level 2 header
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > shows selected state styling
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > shows editing state styling
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > sanitizes potentially dangerous HTML
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h6 for level 6 header
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > renders quiz question and options
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > handles empty content gracefully
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > preserves whitespace and line breaks in HTML
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 5/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 2/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 failed | 1 passed (8)
+      Tests 11 failed | 31 passed (70)
+   Start at 19:06:47
+   Duration 11.60s
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders without subtitle when not provided
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom className
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > handles click when onSelect is provided
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > shows selected state
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > handles special characters in content
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > supports accessibility attributes
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > shows editing state
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles option selection
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 1/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 12/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 5/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 failed | 1 passed (8)
+      Tests 22 failed | 31 passed (70)
+   Start at 19:06:47
+   Duration 11.70s
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > handles missing content gracefully
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > validates heading level bounds
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 4/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 failed | 1 passed (8)
+      Tests 31 failed | 31 passed (70)
+   Start at 19:06:47
+   Duration 12.00s
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx (11 tests | 11 failed) 609ms
+   × SectionHeaderBlock > renders with default content 300ms
+     → Cannot read properties of undefined (reading 'content')
+   × SectionHeaderBlock > renders h1 for level 1 header 97ms
+     → Cannot read properties of undefined (reading 'content')
+   × SectionHeaderBlock > renders h2 for level 2 header 4ms
+     → Cannot read properties of undefined (reading 'content')
+   × SectionHeaderBlock > renders h6 for level 6 header 96ms
+     → Cannot read properties of undefined (reading 'content')
+   × SectionHeaderBlock > renders without subtitle when not provided 3ms
+     → Cannot read properties of undefined (reading 'content')
+   × SectionHeaderBlock > applies custom className 3ms
+     → Cannot read properties of undefined (reading 'content')
+   × SectionHeaderBlock > handles click when onSelect is provided 2ms
+     → Cannot read properties of undefined (reading 'content')
+   × SectionHeaderBlock > shows selected state 90ms
+     → Cannot read properties of undefined (reading 'content')
+   × SectionHeaderBlock > shows editing state 5ms
+     → Cannot read properties of undefined (reading 'content')
+   × SectionHeaderBlock > handles missing content gracefully 2ms
+     → Cannot read properties of undefined (reading 'content')
+   × SectionHeaderBlock > validates heading level bounds 3ms
+     → Cannot read properties of undefined (reading 'content')
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx (12 tests | 12 failed) 604ms
+   × RichTextBlock > renders HTML content correctly 205ms
+     → Cannot read properties of undefined (reading 'content')
+   × RichTextBlock > falls back to plain text when HTML is missing 89ms
+     → Cannot read properties of undefined (reading 'content')
+   × RichTextBlock > handles complex HTML structures 3ms
+     → Cannot read properties of undefined (reading 'content')
+   × RichTextBlock > applies custom className 3ms
+     → Cannot read properties of undefined (reading 'content')
+   × RichTextBlock > handles click events when onSelect is provided 98ms
+     → Cannot read properties of undefined (reading 'content')
+   × RichTextBlock > shows selected state styling 4ms
+     → Cannot read properties of undefined (reading 'content')
+   × RichTextBlock > shows editing state styling 4ms
+     → Cannot read properties of undefined (reading 'content')
+   × RichTextBlock > sanitizes potentially dangerous HTML 89ms
+     → Cannot read properties of undefined (reading 'content')
+   × RichTextBlock > handles empty content gracefully 3ms
+     → Cannot read properties of undefined (reading 'content')
+   × RichTextBlock > preserves whitespace and line breaks in HTML 95ms
+     → Cannot read properties of undefined (reading 'content')
+   × RichTextBlock > handles special characters in content 2ms
+     → Cannot read properties of undefined (reading 'content')
+   × RichTextBlock > supports accessibility attributes 2ms
+     → Cannot read properties of undefined (reading 'content')
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 4/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 failed | 1 passed (8)
+      Tests 31 failed | 31 passed (70)
+   Start at 19:06:47
+   Duration 12.00s
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > shows result when quiz is submitted
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > shows incorrect result for wrong answer
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles multiple correct answers
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > calculates partial credit for multiple select
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > prevents submission without selection
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > allows retrying the quiz
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles free text questions
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > shows points value
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 4/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 failed | 1 passed (8)
+      Tests 31 failed | 31 passed (70)
+   Start at 19:06:47
+   Duration 12.00s
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > applies custom styling
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles missing content gracefully
+The above error occurred in the <QuizBlockComponent> component:
+
+    at QuizBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/QuizBlock.tsx:6:31)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 failed | 1 passed (8)
+      Tests 39 failed | 31 passed (79)
+   Start at 19:06:47
+   Duration 12.30s
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx (12 tests | 12 failed) 800ms
+   × QuizBlock > renders quiz question and options 396ms
+     → Cannot read properties of undefined (reading 'content')
+   × QuizBlock > handles option selection 6ms
+     → Cannot read properties of undefined (reading 'content')
+   × QuizBlock > shows result when quiz is submitted 97ms
+     → Cannot read properties of undefined (reading 'content')
+   × QuizBlock > shows incorrect result for wrong answer 4ms
+     → Cannot read properties of undefined (reading 'content')
+   × QuizBlock > handles multiple correct answers 3ms
+     → Cannot read properties of undefined (reading 'content')
+   × QuizBlock > calculates partial credit for multiple select 90ms
+     → Cannot read properties of undefined (reading 'content')
+   × QuizBlock > prevents submission without selection 3ms
+     → Cannot read properties of undefined (reading 'content')
+   × QuizBlock > allows retrying the quiz 4ms
+     → Cannot read properties of undefined (reading 'content')
+   × QuizBlock > handles free text questions 3ms
+     → Cannot read properties of undefined (reading 'content')
+   × QuizBlock > shows points value 90ms
+     → Cannot read properties of undefined (reading 'content')
+   × QuizBlock > applies custom styling 4ms
+     → Cannot read properties of undefined (reading 'content')
+   × QuizBlock > handles missing content gracefully 97ms
+     → Cannot read properties of undefined (reading 'content')
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 failed | 1 passed (8)
+      Tests 39 failed | 31 passed (79)
+   Start at 19:06:47
+   Duration 12.30s
+stderr | src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > renders loading state initially
+The above error occurred in the <AutomationsContentBlockComponent> component:
+
+    at AutomationsContentBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/AutomationsContentBlock.tsx:9:3)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > handles different content types
+The above error occurred in the <AutomationsContentBlockComponent> component:
+
+    at AutomationsContentBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/AutomationsContentBlock.tsx:9:3)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > applies custom styling classes
+The above error occurred in the <AutomationsContentBlockComponent> component:
+
+    at AutomationsContentBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/AutomationsContentBlock.tsx:9:3)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 1/9
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 failed | 1 passed (8)
+      Tests 40 failed | 31 passed (79)
+   Start at 19:06:47
+   Duration 12.70s
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx (9 tests | 9 failed) 403ms
+   × AutomationsContentBlock > renders loading state initially 296ms
+     → useAuth must be used within an AuthProvider
+   × AutomationsContentBlock > fetches and displays content on mount 2ms
+     → fetch.mockResolvedValueOnce is not a function
+   × AutomationsContentBlock > displays error state when fetch fails 1ms
+     → fetch.mockRejectedValueOnce is not a function
+   × AutomationsContentBlock > displays error when API returns error response 1ms
+     → fetch.mockResolvedValueOnce is not a function
+   × AutomationsContentBlock > handles refresh button click 1ms
+     → fetch.mockResolvedValueOnce is not a function
+   × AutomationsContentBlock > handles different content types 3ms
+     → useAuth must be used within an AuthProvider
+   × AutomationsContentBlock > displays last updated timestamp 1ms
+     → fetch.mockResolvedValueOnce is not a function
+   × AutomationsContentBlock > works without user context 1ms
+     → fetch.mockResolvedValueOnce is not a function
+   × AutomationsContentBlock > applies custom styling classes 91ms
+     → useAuth must be used within an AuthProvider
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/integration/page-builder-editor.test.tsx [ src/test/integration/page-builder-editor.test.tsx ]
+Error: Failed to resolve import "../../../pages/PageBuilderEditor" from "src/test/integration/page-builder-editor.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /workspace/ai-gym-platform/src/test/integration/page-builder-editor.test.tsx:4:0
+  40 |  const __vi_import_1__ = await import("@testing-library/react");
+  41 |  const __vi_import_2__ = await import("@testing-library/user-event");
+  42 |  const __vi_import_3__ = await import("../../../pages/PageBuilderEditor");
+     |                                       ^
+  43 |  
+  44 |  import { describe, it, expect, beforeEach, vi } from "vitest";
+ ❯ TransformPluginContext._formatLog node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:47897:41
+ ❯ TransformPluginContext.error node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:47894:16
+ ❯ normalizeUrl node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:46027:23
+ ❯ node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:46146:37
+ ❯ TransformPluginContext.transform node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:46073:7
+ ❯ EnvironmentPluginContainer.transform node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:47692:18
+ ❯ loadAndTransform node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:41327:27
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/49]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 48 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > process-automation-block function > works without user context
+AssertionError: expected 'Generated content for personalized_su…' to contain 'anonymous'
+
+Expected: "anonymous"
+Received: "Generated content for personalized_summary"
+
+ ❯ src/test/integration/supabase-edge-functions.test.ts:497:35
+    495|       
+    496|       expect(response.ok).toBe(true)
+    497|       expect(result.data.content).toContain('anonymous')
+       |                                   ^
+    498|     })
+    499|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/49]⎯
+
+ FAIL  src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > Error handling and CORS > handles OPTIONS requests for CORS
+InternalError: [MSW] Cannot bypass a request when using the "error" strategy for the "onUnhandledRequest" option.
+ ❯ applyStrategy node_modules/.pnpm/msw@2.10.5_@types+node@22.14.1_typescript@5.6.3/node_modules/msw/src/core/utils/request/onUnhandledRequest.ts:42:15
+ ❯ onUnhandledRequest node_modules/.pnpm/msw@2.10.5_@types+node@22.14.1_typescript@5.6.3/node_modules/msw/src/core/utils/request/onUnhandledRequest.ts:79:5
+ ❯ handleRequest node_modules/.pnpm/msw@2.10.5_@types+node@22.14.1_typescript@5.6.3/node_modules/msw/src/core/utils/handleRequest.ts:79:5
+ ❯ _Emitter.<anonymous> node_modules/.pnpm/msw@2.10.5_@types+node@22.14.1_typescript@5.6.3/node_modules/msw/src/node/SetupServerCommonApi.ts:60:26
+ ❯ emitAsync node_modules/.pnpm/@mswjs+interceptors@0.39.6/node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/.pnpm/@mswjs+interceptors@0.39.6/node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:145:5
+ ❯ until node_modules/.pnpm/@open-draft+until@2.1.0/node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/.pnpm/@mswjs+interceptors@0.39.6/node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:134:18
+ ❯ globalThis.fetch node_modules/.pnpm/@mswjs+interceptors@0.39.6/node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:72:32
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/49]⎯
+
+ FAIL  src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders placeholder for unimplemented block types
+TestingLibraryElementError: Unable to find an element with the text: Block type "agent" coming soon. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50"
+    >
+      <div
+        class="text-gray-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-gray-500 text-sm font-medium"
+      >
+        AGENT
+         Block
+      </p>
+      <p
+        class="text-gray-400 text-xs mt-1"
+      >
+        Component not implemented yet
+      </p>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx:149:19
+    147|     render(<BlockRenderer block={block} />)
+    148|     
+    149|     expect(screen.getByText('Block type "agent" coming soon')).toBeInT…
+       |                   ^
+    150|     expect(screen.getByText('This block type is planned for future imp…
+    151|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/49]⎯
+
+ FAIL  src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > handles unknown block types gracefully
+TestingLibraryElementError: Unable to find an element with the text: Unknown block type: unknown_type. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-red-300 rounded-lg p-8 text-center bg-red-50"
+    >
+      <div
+        class="text-red-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-red-600 text-sm font-medium"
+      >
+        Unknown Block Type: 
+        unknown_type
+      </p>
+      <p
+        class="text-red-500 text-xs mt-1"
+      >
+        This block type is not supported
+      </p>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx:158:19
+    156|     render(<BlockRenderer block={block} />)
+    157|     
+    158|     expect(screen.getByText('Unknown block type: unknown_type')).toBeI…
+       |                   ^
+    159|   })
+    160| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/49]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > renders loading state initially
+ FAIL  src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > handles different content types
+ FAIL  src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > applies custom styling classes
+Error: useAuth must be used within an AuthProvider
+ ❯ useAuth src/contexts/AuthContext.tsx:18:11
+     16|   const context = useContext(AuthContext)
+     17|   if (context === undefined) {
+     18|     throw new Error('useAuth must be used within an AuthProvider')
+       |           ^
+     19|   }
+     20|   return context
+ ❯ AutomationsContentBlockComponent src/components/page-builder/blocks/AutomationsContentBlock.tsx:18:20
+ ❯ renderWithHooks node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:15486:18
+ ❯ mountIndeterminateComponent node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:20103:13
+ ❯ beginWork node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:21626:16
+ ❯ HTMLUnknownElement.callCallback node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:4164:14
+ ❯ HTMLUnknownElement.#callDispatchEventListeners node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:289:42
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:136:35
+ ❯ HTMLUnknownElement.#goThroughDispatchEventPhases node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:198:33
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:129:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/49]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > fetches and displays content on mount
+TypeError: fetch.mockResolvedValueOnce is not a function
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx:52:21
+     50|     }
+     51|     
+     52|     ;(fetch as any).mockResolvedValueOnce({
+       |                     ^
+     53|       ok: true,
+     54|       json: () => Promise.resolve(mockResponse)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/49]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > displays error state when fetch fails
+TypeError: fetch.mockRejectedValueOnce is not a function
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx:83:21
+     81| 
+     82|   it('displays error state when fetch fails', async () => {
+     83|     ;(fetch as any).mockRejectedValueOnce(new Error('Network error'))
+       |                     ^
+     84| 
+     85|     const block = createMockBlock()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/49]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > displays error when API returns error response
+TypeError: fetch.mockResolvedValueOnce is not a function
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx:95:21
+     93| 
+     94|   it('displays error when API returns error response', async () => {
+     95|     ;(fetch as any).mockResolvedValueOnce({
+       |                     ^
+     96|       ok: false,
+     97|       status: 500,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/49]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > handles refresh button click
+TypeError: fetch.mockResolvedValueOnce is not a function
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx:111:21
+    109|   it('handles refresh button click', async () => {
+    110|     // First fetch - success
+    111|     ;(fetch as any).mockResolvedValueOnce({
+       |                     ^
+    112|       ok: true,
+    113|       json: () => Promise.resolve({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/49]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > displays last updated timestamp
+TypeError: fetch.mockResolvedValueOnce is not a function
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx:169:21
+    167|     }
+    168|     
+    169|     ;(fetch as any).mockResolvedValueOnce({
+       |                     ^
+    170|       ok: true,
+    171|       json: () => Promise.resolve(mockResponse)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/49]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > works without user context
+TypeError: fetch.mockResolvedValueOnce is not a function
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx:190:21
+    188|     }
+    189|     
+    190|     ;(fetch as any).mockResolvedValueOnce({
+       |                     ^
+    191|       ok: true,
+    192|       json: () => Promise.resolve(mockResponse)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/49]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > renders quiz question and options
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles option selection
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > shows result when quiz is submitted
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > shows incorrect result for wrong answer
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles multiple correct answers
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > calculates partial credit for multiple select
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > prevents submission without selection
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > allows retrying the quiz
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles free text questions
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > shows points value
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > applies custom styling
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles missing content gracefully
+TypeError: Cannot read properties of undefined (reading 'content')
+ ❯ QuizBlockComponent src/components/page-builder/blocks/QuizBlock.tsx:13:25
+     11| 
+     12| function QuizBlockComponent({ block, onComplete }: QuizBlockProps) {
+     13|   const content = block.content as QuizContent
+       |                         ^
+     14|   const { 
+     15|     title, 
+ ❯ renderWithHooks node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:15486:18
+ ❯ mountIndeterminateComponent node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:20103:13
+ ❯ beginWork node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:21626:16
+ ❯ HTMLUnknownElement.callCallback node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:4164:14
+ ❯ HTMLUnknownElement.#callDispatchEventListeners node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:289:42
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:136:35
+ ❯ HTMLUnknownElement.#goThroughDispatchEventPhases node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:198:33
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:129:38
+ ❯ Object.invokeGuardedCallbackDev node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:4213:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/49]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > renders HTML content correctly
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > falls back to plain text when HTML is missing
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > handles complex HTML structures
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > applies custom className
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > handles click events when onSelect is provided
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > shows selected state styling
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > shows editing state styling
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > sanitizes potentially dangerous HTML
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > handles empty content gracefully
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > preserves whitespace and line breaks in HTML
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > handles special characters in content
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > supports accessibility attributes
+TypeError: Cannot read properties of undefined (reading 'content')
+ ❯ RichTextBlockComponent src/components/page-builder/blocks/RichTextBlock.tsx:10:25
+      8| 
+      9| function RichTextBlockComponent({ block }: RichTextBlockProps) {
+     10|   const content = block.content as RichTextContent
+       |                         ^
+     11|   const { html } = content
+     12| 
+ ❯ renderWithHooks node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:15486:18
+ ❯ mountIndeterminateComponent node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:20103:13
+ ❯ beginWork node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:21626:16
+ ❯ HTMLUnknownElement.callCallback node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:4164:14
+ ❯ HTMLUnknownElement.#callDispatchEventListeners node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:289:42
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:136:35
+ ❯ HTMLUnknownElement.#goThroughDispatchEventPhases node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:198:33
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:129:38
+ ❯ Object.invokeGuardedCallbackDev node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:4213:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/49]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders with default content
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h1 for level 1 header
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h2 for level 2 header
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h6 for level 6 header
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders without subtitle when not provided
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom className
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > handles click when onSelect is provided
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > shows selected state
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > shows editing state
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > handles missing content gracefully
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > validates heading level bounds
+TypeError: Cannot read properties of undefined (reading 'content')
+ ❯ SectionHeaderBlockComponent src/components/page-builder/blocks/SectionHeaderBlock.tsx:11:25
+      9| 
+     10| function SectionHeaderBlockComponent({ block }: SectionHeaderBlockProp…
+     11|   const content = block.content as SectionHeaderContent
+       |                         ^
+     12|   const { title, subtitle, level = 2 } = content
+     13| 
+ ❯ renderWithHooks node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:15486:18
+ ❯ mountIndeterminateComponent node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:20103:13
+ ❯ beginWork node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:21626:16
+ ❯ HTMLUnknownElement.callCallback node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:4164:14
+ ❯ HTMLUnknownElement.#callDispatchEventListeners node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:289:42
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:136:35
+ ❯ HTMLUnknownElement.#goThroughDispatchEventPhases node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:198:33
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:129:38
+ ❯ Object.invokeGuardedCallbackDev node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:4213:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/49]⎯
+
+
+ Test Files  7 failed | 1 passed (8)
+      Tests  48 failed | 31 passed (79)
+   Start at  19:06:47
+   Duration  12.92s (transform 3.08s, setup 20.62s, collect 6.43s, tests 3.51s, environment 23.48s, prepare 8.93s)
+
+ ELIFECYCLE  Command failed with exit code 1.

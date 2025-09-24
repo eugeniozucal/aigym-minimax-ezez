@@ -10,6 +10,7 @@ interface BlockRendererProps {
   onSelect: () => void
   onMoveUp: () => void
   onMoveDown: () => void
+  onDelete?: () => void
   isPreview?: boolean
 }
 
@@ -21,6 +22,7 @@ export function BlockRenderer({
   onSelect,
   onMoveUp,
   onMoveDown,
+  onDelete,
   isPreview = false
 }: BlockRendererProps) {
   
@@ -707,6 +709,220 @@ export function BlockRenderer({
           </div>
         )
         
+      case 'wods':
+        const wodContent = block.data.selectedContent
+        
+        if (isPreview && wodContent?.wod) {
+          // In preview mode, show actual WOD content
+          return (
+            <div className="space-y-4">
+              <div className="text-center border-b border-gray-200 pb-4">
+                <h3 className="text-lg font-semibold">{wodContent.title}</h3>
+                {wodContent.description && (
+                  <p className="text-gray-600 mt-2">{wodContent.description}</p>
+                )}
+                <div className="flex justify-center items-center space-x-4 text-sm text-gray-500 mt-2">
+                  {wodContent.wod.duration_minutes && (
+                    <span>{wodContent.wod.duration_minutes} min</span>
+                  )}
+                  {wodContent.wod.difficulty_level && (
+                    <span className="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">
+                      {wodContent.wod.difficulty_level} difficulty
+                    </span>
+                  )}
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl">
+                    💪
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-medium text-gray-900 mb-3">Workout of the Day</h4>
+                    
+                    {wodContent.wod.instructions && (
+                      <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+                        <h5 className="font-medium text-sm text-gray-900 mb-2">Instructions</h5>
+                        <div className="text-sm text-gray-600 whitespace-pre-wrap">
+                          {wodContent.wod.instructions}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {wodContent.wod.target_muscle_groups && wodContent.wod.target_muscle_groups.length > 0 && (
+                      <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+                        <h5 className="font-medium text-sm text-gray-900 mb-2">Target Muscle Groups</h5>
+                        <div className="flex flex-wrap gap-2">
+                          {wodContent.wod.target_muscle_groups.map((group: string, index: number) => (
+                            <span key={index} className="px-2 py-1 bg-orange-100 text-orange-800 rounded text-xs">
+                              {group}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {wodContent.wod.equipment_needed && wodContent.wod.equipment_needed.length > 0 && (
+                      <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+                        <h5 className="font-medium text-sm text-gray-900 mb-2">Equipment Needed</h5>
+                        <div className="flex flex-wrap gap-2">
+                          {wodContent.wod.equipment_needed.map((equipment: string, index: number) => (
+                            <span key={index} className="px-2 py-1 bg-gray-100 text-gray-800 rounded text-xs">
+                              {equipment}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {wodContent.wod.notes && (
+                      <div className="bg-white rounded-lg p-4 border border-gray-200">
+                        <h5 className="font-medium text-sm text-gray-900 mb-2">Notes</h5>
+                        <p className="text-sm text-gray-600">{wodContent.wod.notes}</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        }
+        
+        // Editor mode or no WOD selected
+        return (
+          <div className="bg-orange-50 rounded-lg p-8 text-center">
+            <div className="text-4xl mb-2">💪</div>
+            <p className="font-medium">
+              {wodContent?.title || 'WOD Block'}
+            </p>
+            <p className="text-sm text-gray-600 mt-1">
+              {wodContent?.description || 'Select a WOD from repository'}
+            </p>
+            {wodContent?.wod && (
+              <div className="text-xs text-gray-500 mt-2 space-x-4">
+                {wodContent.wod.duration_minutes && (
+                  <span>{wodContent.wod.duration_minutes} min</span>
+                )}
+                {wodContent.wod.difficulty_level && (
+                  <span className="px-2 py-1 bg-orange-100 text-orange-800 rounded">
+                    {wodContent.wod.difficulty_level} difficulty
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
+        )
+        
+      case 'blocks':
+        const blockContent = block.data.selectedContent
+        
+        if (isPreview && blockContent?.block) {
+          // In preview mode, show actual BLOCK content
+          return (
+            <div className="space-y-4">
+              <div className="text-center border-b border-gray-200 pb-4">
+                <h3 className="text-lg font-semibold">{blockContent.title}</h3>
+                {blockContent.description && (
+                  <p className="text-gray-600 mt-2">{blockContent.description}</p>
+                )}
+                <div className="flex justify-center items-center space-x-4 text-sm text-gray-500 mt-2">
+                  {blockContent.block.duration_minutes && (
+                    <span>{blockContent.block.duration_minutes} min</span>
+                  )}
+                  {blockContent.block.intensity_level && (
+                    <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
+                      {blockContent.block.intensity_level} intensity
+                    </span>
+                  )}
+                  {blockContent.block.block_type && (
+                    <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
+                      {blockContent.block.block_type}
+                    </span>
+                  )}
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl">
+                    🏗️
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-medium text-gray-900 mb-3">Training Block</h4>
+                    
+                    {blockContent.block.instructions && (
+                      <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+                        <h5 className="font-medium text-sm text-gray-900 mb-2">Instructions</h5>
+                        <div className="text-sm text-gray-600 whitespace-pre-wrap">
+                          {blockContent.block.instructions}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {blockContent.block.target_area && (
+                      <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+                        <h5 className="font-medium text-sm text-gray-900 mb-2">Target Area</h5>
+                        <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm">
+                          {blockContent.block.target_area}
+                        </span>
+                      </div>
+                    )}
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {blockContent.block.repetitions > 0 && (
+                        <div className="bg-white rounded-lg p-4 border border-gray-200">
+                          <h5 className="font-medium text-sm text-gray-900 mb-1">Repetitions</h5>
+                          <p className="text-lg font-bold text-blue-600">{blockContent.block.repetitions}</p>
+                        </div>
+                      )}
+                      
+                      {blockContent.block.rest_periods > 0 && (
+                        <div className="bg-white rounded-lg p-4 border border-gray-200">
+                          <h5 className="font-medium text-sm text-gray-900 mb-1">Rest Period</h5>
+                          <p className="text-lg font-bold text-blue-600">{blockContent.block.rest_periods}s</p>
+                        </div>
+                      )}
+                      
+                      {blockContent.block.intensity_level && (
+                        <div className="bg-white rounded-lg p-4 border border-gray-200">
+                          <h5 className="font-medium text-sm text-gray-900 mb-1">Intensity</h5>
+                          <p className="text-lg font-bold text-blue-600">{blockContent.block.intensity_level}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        }
+        
+        // Editor mode or no BLOCK selected
+        return (
+          <div className="bg-blue-50 rounded-lg p-8 text-center">
+            <div className="text-4xl mb-2">🏗️</div>
+            <p className="font-medium">
+              {blockContent?.title || 'Training Block'}
+            </p>
+            <p className="text-sm text-gray-600 mt-1">
+              {blockContent?.description || 'Select a training block from repository'}
+            </p>
+            {blockContent?.block && (
+              <div className="text-xs text-gray-500 mt-2 space-x-4">
+                {blockContent.block.duration_minutes && (
+                  <span>{blockContent.block.duration_minutes} min</span>
+                )}
+                {blockContent.block.intensity_level && (
+                  <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded">
+                    {blockContent.block.intensity_level} intensity
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
+        )
+        
       default:
         return (
           <div className="text-center text-gray-400">
@@ -768,6 +984,22 @@ export function BlockRenderer({
         >
           <ChevronDown className="w-3 h-3" />
         </button>
+        
+        {/* Individual Delete Button */}
+        {onDelete && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              if (confirm(`Are you sure you want to delete this ${block.type.replace('-', ' ')} block?`)) {
+                onDelete()
+              }
+            }}
+            className="w-6 h-6 bg-white border border-red-300 rounded-full flex items-center justify-center hover:bg-red-50 hover:border-red-400 text-red-600 hover:text-red-700 transition-colors"
+            title="Delete block"
+          >
+            <Trash2 className="w-3 h-3" />
+          </button>
+        )}
       </div>
       
       {/* Block Content */}

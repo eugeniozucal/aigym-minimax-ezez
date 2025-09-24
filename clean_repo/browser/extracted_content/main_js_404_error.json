@@ -1,0 +1,21 @@
+📄 Extracted from page: 404 - Page Not Found
+URL: https://if4yb5jxn92w.space.minimax.io/static/js/main.js
+
+Extracted content:
+```json
+{
+    "title": "404 - Page Not Found",
+    "url": "https://if4yb5jxn92w.space.minimax.io/static/js/main.js",
+    "summary": "The requested URL, which was expected to be a JavaScript file, returned a '404 - Page Not Found' error. The content is an HTML page indicating that the resource does not exist or has been moved, rather than actual JavaScript source code. Therefore, no JavaScript-specific elements such as function names, API endpoints, route definitions, component names, or configuration details could be extracted.",
+    "key_points": [
+        "The page is a 404 'Page Not Found' error.",
+        "Despite the '.js' extension in the URL, the content is an HTML error page, not JavaScript source code.",
+        "The requested resource was not found.",
+        "No JavaScript code, functions, APIs, routes, components, or configurations are present on this page."
+    ],
+    "relevant_links": [
+        "javascript:history.back()"
+    ],
+    "file_name": "main_js_404_error.json"
+}
+```

@@ -1,0 +1,219 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild, msw.                                       │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1.2s using pnpm v10.12.4
+src/components/content/ContentRepository.tsx:194:7 - error TS2353: Object literal may only specify known properties, and ''ai_agent'' does not exist in type 'Record<ContentType, string>'.
+
+194       'ai_agent': 'ai-agents',
+          ~~~~~~~~~~
+
+src/lib/content-queries.ts:94:10 - error TS2678: Type '"ai_agent"' is not comparable to type 'ContentType'.
+
+94     case 'ai_agent':
+            ~~~~~~~~~~
+
+src/lib/content-queries.ts:101:10 - error TS2678: Type '"video"' is not comparable to type 'ContentType'.
+
+101     case 'video':
+             ~~~~~~~
+
+src/lib/content-queries.ts:108:10 - error TS2678: Type '"document"' is not comparable to type 'ContentType'.
+
+108     case 'document':
+             ~~~~~~~~~~
+
+src/lib/content-queries.ts:115:10 - error TS2678: Type '"prompt"' is not comparable to type 'ContentType'.
+
+115     case 'prompt':
+             ~~~~~~~~
+
+src/lib/content-queries.ts:122:10 - error TS2678: Type '"automation"' is not comparable to type 'ContentType'.
+
+122     case 'automation':
+             ~~~~~~~~~~~~
+
+src/lib/content-queries.ts:157:37 - error TS2345: Argument of type '"ai_agent"' is not assignable to parameter of type 'ContentType'.
+
+157     return fetchContentWithMetadata('ai_agent', options)
+                                        ~~~~~~~~~~
+
+src/lib/content-queries.ts:162:37 - error TS2345: Argument of type '"video"' is not assignable to parameter of type 'ContentType'.
+
+162     return fetchContentWithMetadata('video', options)
+                                        ~~~~~~~
+
+src/lib/content-queries.ts:167:37 - error TS2345: Argument of type '"document"' is not assignable to parameter of type 'ContentType'.
+
+167     return fetchContentWithMetadata('document', options)
+                                        ~~~~~~~~~~
+
+src/lib/content-queries.ts:172:37 - error TS2345: Argument of type '"prompt"' is not assignable to parameter of type 'ContentType'.
+
+172     return fetchContentWithMetadata('prompt', options)
+                                        ~~~~~~~~
+
+src/lib/content-queries.ts:177:37 - error TS2345: Argument of type '"automation"' is not assignable to parameter of type 'ContentType'.
+
+177     return fetchContentWithMetadata('automation', options)
+                                        ~~~~~~~~~~~~
+
+src/lib/content-queries.ts:205:12 - error TS2678: Type '"ai_agent"' is not comparable to type 'ContentType'.
+
+205       case 'ai_agent':
+               ~~~~~~~~~~
+
+src/lib/content-queries.ts:213:12 - error TS2678: Type '"video"' is not comparable to type 'ContentType'.
+
+213       case 'video':
+               ~~~~~~~
+
+src/lib/content-queries.ts:221:12 - error TS2678: Type '"document"' is not comparable to type 'ContentType'.
+
+221       case 'document':
+               ~~~~~~~~~~
+
+src/lib/content-queries.ts:229:12 - error TS2678: Type '"prompt"' is not comparable to type 'ContentType'.
+
+229       case 'prompt':
+               ~~~~~~~~
+
+src/lib/content-queries.ts:237:12 - error TS2678: Type '"automation"' is not comparable to type 'ContentType'.
+
+237       case 'automation':
+               ~~~~~~~~~~~~
+
+src/lib/content-queries.ts:346:12 - error TS2678: Type '"ai_agent"' is not comparable to type 'ContentType'.
+
+346       case 'ai_agent':
+               ~~~~~~~~~~
+
+src/lib/content-queries.ts:349:12 - error TS2678: Type '"video"' is not comparable to type 'ContentType'.
+
+349       case 'video':
+               ~~~~~~~
+
+src/lib/content-queries.ts:354:12 - error TS2678: Type '"document"' is not comparable to type 'ContentType'.
+
+354       case 'document':
+               ~~~~~~~~~~
+
+src/lib/content-queries.ts:359:12 - error TS2678: Type '"prompt"' is not comparable to type 'ContentType'.
+
+359       case 'prompt':
+               ~~~~~~~~
+
+src/lib/content-queries.ts:364:12 - error TS2678: Type '"automation"' is not comparable to type 'ContentType'.
+
+364       case 'automation':
+               ~~~~~~~~~~~~
+
+src/pages/ContentSelectorDemo.tsx:16:77 - error TS2345: Argument of type '"video"' is not assignable to parameter of type 'ContentType | (() => ContentType)'.
+
+16   const [currentContentType, setCurrentContentType] = useState<ContentType>('video')
+                                                                               ~~~~~~~
+
+src/pages/ContentSelectorDemo.tsx:28:7 - error TS2820: Type '"video"' is not assignable to type 'ContentType'. Did you mean '"videos"'?
+
+28       type: 'video',
+         ~~~~
+
+  src/pages/ContentSelectorDemo.tsx:21:5
+    21     type: ContentType
+           ~~~~
+    The expected type comes from property 'type' which is declared here on type '{ type: ContentType; label: string; icon: ComponentType<any>; color: string; description: string; }'
+
+src/pages/ContentSelectorDemo.tsx:42:7 - error TS2820: Type '"document"' is not assignable to type 'ContentType'. Did you mean '"documents"'?
+
+42       type: 'document',
+         ~~~~
+
+  src/pages/ContentSelectorDemo.tsx:21:5
+    21     type: ContentType
+           ~~~~
+    The expected type comes from property 'type' which is declared here on type '{ type: ContentType; label: string; icon: ComponentType<any>; color: string; description: string; }'
+
+src/pages/ContentSelectorDemo.tsx:49:7 - error TS2820: Type '"prompt"' is not assignable to type 'ContentType'. Did you mean '"prompts"'?
+
+49       type: 'prompt',
+         ~~~~
+
+  src/pages/ContentSelectorDemo.tsx:21:5
+    21     type: ContentType
+           ~~~~
+    The expected type comes from property 'type' which is declared here on type '{ type: ContentType; label: string; icon: ComponentType<any>; color: string; description: string; }'
+
+src/pages/ContentSelectorDemo.tsx:56:7 - error TS2820: Type '"automation"' is not assignable to type 'ContentType'. Did you mean '"automations"'?
+
+56       type: 'automation',
+         ~~~~
+
+  src/pages/ContentSelectorDemo.tsx:21:5
+    21     type: ContentType
+           ~~~~
+    The expected type comes from property 'type' which is declared here on type '{ type: ContentType; label: string; icon: ComponentType<any>; color: string; description: string; }'
+
+src/pages/content/AIAgentsRepository.tsx:9:7 - error TS2820: Type '"ai_agent"' is not assignable to type 'ContentType'. Did you mean '"ai_agents"'?
+
+9       contentType="ai_agent"
+        ~~~~~~~~~~~
+
+  src/components/content/ContentRepository.tsx:18:3
+    18   contentType: ContentType
+         ~~~~~~~~~~~
+    The expected type comes from property 'contentType' which is declared here on type 'IntrinsicAttributes & ContentRepositoryProps'
+
+src/pages/content/AutomationsRepository.tsx:9:7 - error TS2820: Type '"automation"' is not assignable to type 'ContentType'. Did you mean '"automations"'?
+
+9       contentType="automation"
+        ~~~~~~~~~~~
+
+  src/components/content/ContentRepository.tsx:18:3
+    18   contentType: ContentType
+         ~~~~~~~~~~~
+    The expected type comes from property 'contentType' which is declared here on type 'IntrinsicAttributes & ContentRepositoryProps'
+
+src/pages/content/DocumentsRepository.tsx:9:7 - error TS2820: Type '"document"' is not assignable to type 'ContentType'. Did you mean '"documents"'?
+
+9       contentType="document"
+        ~~~~~~~~~~~
+
+  src/components/content/ContentRepository.tsx:18:3
+    18   contentType: ContentType
+         ~~~~~~~~~~~
+    The expected type comes from property 'contentType' which is declared here on type 'IntrinsicAttributes & ContentRepositoryProps'
+
+src/pages/content/PromptsRepository.tsx:9:7 - error TS2820: Type '"prompt"' is not assignable to type 'ContentType'. Did you mean '"prompts"'?
+
+9       contentType="prompt"
+        ~~~~~~~~~~~
+
+  src/components/content/ContentRepository.tsx:18:3
+    18   contentType: ContentType
+         ~~~~~~~~~~~
+    The expected type comes from property 'contentType' which is declared here on type 'IntrinsicAttributes & ContentRepositoryProps'
+
+src/pages/content/VideosRepository.tsx:9:7 - error TS2820: Type '"video"' is not assignable to type 'ContentType'. Did you mean '"videos"'?
+
+9       contentType="video"
+        ~~~~~~~~~~~
+
+  src/components/content/ContentRepository.tsx:18:3
+    18   contentType: ContentType
+         ~~~~~~~~~~~
+    The expected type comes from property 'contentType' which is declared here on type 'IntrinsicAttributes & ContentRepositoryProps'
+
+
+Found 31 errors.
+

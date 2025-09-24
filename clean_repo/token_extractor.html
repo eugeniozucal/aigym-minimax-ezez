@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extract Auth Token</title>
+</head>
+<body>
+    <h2>Auth Token Extraction</h2>
+    <div id="output"></div>
+    <button onclick="extractToken()">Extract Token</button>
+    
+    <script>
+        function extractToken() {
+            const output = document.getElementById('output');
+            let html = '<h3>LocalStorage Analysis:</h3><pre>';
+            
+            // First, list all localStorage keys
+            html += 'All localStorage keys:\n';
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                html += `- ${key}\n`;
+            }
+            
+            // Try the specific key requested
+            html += '\n=== Specific Token Extraction ===\n';
+            const specificKey = 'sb-givgsxytkbsdrlmoxzkp-auth-token';
+            const tokenData = localStorage.getItem(specificKey);
+            
+            if (tokenData) {
+                try {
+                    const token = JSON.parse(tokenData);
+                    html += `Key found: ${specificKey}\n`;
+                    html += `Bearer Token: ${token?.access_token || 'Not found'}\n\n`;
+                    html += `Full Auth Data:\n${JSON.stringify(token, null, 2)}\n`;
+                } catch (e) {
+                    html += `Error parsing token: ${e.message}\n`;
+                }
+            } else {
+                html += `Token key "${specificKey}" not found in localStorage\n`;
+                
+                // Look for alternative Supabase keys
+                const supabaseKeys = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key.startsWith('sb-')) {
+                        supabaseKeys.push(key);
+                    }
+                }
+                
+                if (supabaseKeys.length > 0) {
+                    html += '\nFound other Supabase-related keys:\n';
+                    supabaseKeys.forEach(key => {
+                        const value = localStorage.getItem(key);
+                        html += `\n--- ${key} ---\n`;
+                        try {
+                            const parsed = JSON.parse(value);
+                            if (parsed.access_token) {
+                                html += `Bearer Token: ${parsed.access_token}\n`;
+                            }
+                            html += `Data: ${JSON.stringify(parsed, null, 2)}\n`;
+                        } catch (e) {
+                            html += `Raw value: ${value}\n`;
+                        }
+                    });
+                }
+            }
+            
+            html += '</pre>';
+            output.innerHTML = html;
+        }
+        
+        // Auto-extract on page load
+        window.onload = function() {
+            extractToken();
+        };
+    </script>
+</body>
+</html>

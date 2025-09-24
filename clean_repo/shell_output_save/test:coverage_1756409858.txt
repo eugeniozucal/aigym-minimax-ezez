@@ -1,0 +1,646 @@
+
+> react_repo@0.0.0 test:coverage
+> vitest run --coverage
+
+
+ RUN  v3.2.4 /workspace/ai-gym-platform
+      Coverage enabled with v8
+
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 947ms
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 1.95s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 2.95s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 3.95s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 4.95s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 5.95s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 6.75s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 6.95s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 7.25s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 7.65s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 7.75s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 8.05s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 9.05s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:37:21
+   Duration 10.37s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 1/12
+
+ Test Files 0 passed (8)
+      Tests 1 passed (12)
+   Start at 19:37:21
+   Duration 10.65s
+ ✓ src/test/integration/supabase-edge-functions.test.ts (12 tests) 372ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts 0/13
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 1 passed (8)
+      Tests 12 passed (25)
+   Start at 19:37:21
+   Duration 10.95s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts 0/13
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 1 passed (8)
+      Tests 12 passed (25)
+   Start at 19:37:21
+   Duration 11.37s
+ ✓ src/lib/__tests__/page-builder-types.test.ts (13 tests) 8ms
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 1/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 passed (8)
+      Tests 26 passed (58)
+   Start at 19:37:21
+   Duration 11.85s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 3/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 1/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 passed (8)
+      Tests 29 passed (58)
+   Start at 19:37:21
+   Duration 12.05s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 1/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 9/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 2/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 passed (8)
+      Tests 37 passed (58)
+   Start at 19:37:21
+   Duration 12.15s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 1/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 9/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 6/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 2 passed (8)
+      Tests 41 passed (67)
+   Start at 19:37:21
+   Duration 12.25s
+ ✓ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx (10 tests) 504ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 3/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 10/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 3 passed (8)
+      Tests 48 passed (67)
+   Start at 19:37:21
+   Duration 12.45s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 4/12
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 10/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 3 passed (8)
+      Tests 49 passed (67)
+   Start at 19:37:21
+   Duration 12.65s
+ ✓ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx (11 tests) 894ms
+   ✓ SectionHeaderBlock > renders with default content  301ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 5/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 passed (8)
+      Tests 51 passed (67)
+   Start at 19:37:21
+   Duration 12.85s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 1/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 6/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 passed (8)
+      Tests 53 passed (67)
+   Start at 19:37:21
+   Duration 12.95s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 2/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 8/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 passed (8)
+      Tests 56 passed (67)
+   Start at 19:37:21
+   Duration 13.05s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 3/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 9/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 passed (8)
+      Tests 58 passed (67)
+   Start at 19:37:21
+   Duration 13.25s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 7/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 10/12
+ ❯ src/test/integration/page-builder-editor.test.tsx 0/13
+
+ Test Files 4 passed (8)
+      Tests 63 passed (80)
+   Start at 19:37:21
+   Duration 13.45s
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Loading and Display > loads and displays page content correctly
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Loading and Display > handles loading state
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Loading and Display > handles error state when page fails to load
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Block Management > adds new block to the page
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Block Management > deletes block from the page
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Block Management > reorders blocks via drag and drop
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Saving > saves page successfully
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Saving > handles save errors gracefully
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 0/10
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 8/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 10/12
+ ❯ src/test/integration/page-builder-editor.test.tsx 1/13
+
+ Test Files 4 passed (8)
+      Tests 1 failed | 64 passed (90)
+   Start at 19:37:21
+   Duration 13.65s
+ ✓ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx (12 tests) 1896ms
+   ✓ QuizBlock > renders quiz question and options  305ms
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 1/10
+ ❯ src/test/integration/page-builder-editor.test.tsx 12/13
+
+ Test Files 6 passed (8)
+      Tests 12 failed | 68 passed (90)
+   Start at 19:37:21
+   Duration 13.85s
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Saving > auto-saves changes periodically
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Block Editing > enters and exits edit mode for blocks
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Block Editing > cancels editing on Escape key
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Validation and Error Handling > validates required fields before saving
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 1/10
+ ❯ src/test/integration/page-builder-editor.test.tsx 12/13
+
+ Test Files 6 passed (8)
+      Tests 12 failed | 68 passed (90)
+   Start at 19:37:21
+   Duration 13.85s
+ ✓ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx (9 tests) 1109ms
+   ✓ AutomationsContentBlock > renders content type label correctly  398ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 1/10
+ ❯ src/test/integration/page-builder-editor.test.tsx 12/13
+
+ Test Files 6 passed (8)
+      Tests 12 failed | 68 passed (90)
+   Start at 19:37:21
+   Duration 13.85s
+stderr | src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Validation and Error Handling > shows unsaved changes warning when navigating away
+The above error occurred in the <PageBuilderEditor> component:
+
+    at PageBuilderEditor (/workspace/ai-gym-platform/src/pages/PageBuilderEditor.tsx:28:53)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 1/10
+ ❯ src/test/integration/page-builder-editor.test.tsx 12/13
+
+ Test Files 6 passed (8)
+      Tests 12 failed | 68 passed (90)
+   Start at 19:37:21
+   Duration 13.85s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 6/10
+ ❯ src/test/integration/page-builder-editor.test.tsx 13/13
+
+ Test Files 6 passed (8)
+      Tests 13 failed | 73 passed (90)
+   Start at 19:37:21
+   Duration 14.05s
+ ❯ src/test/integration/page-builder-editor.test.tsx (13 tests | 13 failed) -274480807ms
+   × Page Builder Integration Tests > Page Loading and Display > loads and displays page content correctly 202ms
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Page Loading and Display > handles loading state 89ms
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Page Loading and Display > handles error state when page fails to load 1ms
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Block Management > adds new block to the page 3ms
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Block Management > deletes block from the page 1ms
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Block Management > reorders blocks via drag and drop 1ms
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Page Saving > saves page successfully 1ms
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Page Saving > handles save errors gracefully 91ms
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Page Saving > auto-saves changes periodically -274481201ms
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Block Editing > enters and exits edit mode for blocks
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Block Editing > cancels editing on Escape key
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Validation and Error Handling > validates required fields before saving
+     → useAuth must be used within an AuthProvider
+   × Page Builder Integration Tests > Validation and Error Handling > shows unsaved changes warning when navigating away
+     → useAuth must be used within an AuthProvider
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 7/10
+
+ Test Files 1 failed | 6 passed (8)
+      Tests 14 failed | 73 passed (90)
+   Start at 19:37:21
+   Duration 14.15s
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx (10 tests | 1 failed) 305ms
+   ✓ BlockRenderer > renders section header block correctly 196ms
+   ✓ BlockRenderer > renders rich text block correctly 3ms
+   ✓ BlockRenderer > renders placeholder for unimplemented block types 3ms
+   ✓ BlockRenderer > renders placeholder for document block type 2ms
+   ✓ BlockRenderer > renders placeholder for prompt block type 2ms
+   ✓ BlockRenderer > renders placeholder for user_submission block type 83ms
+   × BlockRenderer > handles unknown block types gracefully 7ms
+     → Unable to find an element with the text: unknown_type. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-red-300 rounded-lg p-8 text-center bg-red-50"
+    >
+      <div
+        class="text-red-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-red-600 text-sm font-medium"
+      >
+        Unknown Block Type: 
+        unknown_type
+      </p>
+      <p
+        class="text-red-500 text-xs mt-1"
+      >
+        This block type is not supported
+      </p>
+    </div>
+  </div>
+</body>
+   ✓ BlockRenderer > passes through props correctly to block components 3ms
+   ✓ BlockRenderer > handles missing content gracefully 1ms
+   ✓ BlockRenderer > does not render when block is not visible 2ms
+
+ Test Files 2 failed | 6 passed (8)
+      Tests 14 failed | 76 passed (90)
+   Start at 19:37:21
+   Duration 14.36s
+
+ Test Files 2 failed | 6 passed (8)
+      Tests 14 failed | 76 passed (90)
+   Start at 19:37:21
+   Duration 16.25s
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 14 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Loading and Display > loads and displays page content correctly
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Loading and Display > handles loading state
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Loading and Display > handles error state when page fails to load
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Block Management > adds new block to the page
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Block Management > deletes block from the page
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Block Management > reorders blocks via drag and drop
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Saving > saves page successfully
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Saving > handles save errors gracefully
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Page Saving > auto-saves changes periodically
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Block Editing > enters and exits edit mode for blocks
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Block Editing > cancels editing on Escape key
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Validation and Error Handling > validates required fields before saving
+ FAIL  src/test/integration/page-builder-editor.test.tsx > Page Builder Integration Tests > Validation and Error Handling > shows unsaved changes warning when navigating away
+Error: useAuth must be used within an AuthProvider
+ ❯ useAuth src/contexts/AuthContext.tsx:18:11
+     16|   const context = useContext(AuthContext)
+     17|   if (context === undefined) {
+     18|     throw new Error('useAuth must be used within an AuthProvider')
+       |           ^
+     19|   }
+     20|   return context
+ ❯ PageBuilderEditor src/pages/PageBuilderEditor.tsx:31:20
+ ❯ renderWithHooks node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:15486:18
+ ❯ mountIndeterminateComponent node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:20103:13
+ ❯ beginWork node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:21626:16
+ ❯ HTMLUnknownElement.callCallback node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:4164:14
+ ❯ HTMLUnknownElement.#callDispatchEventListeners node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:289:42
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:136:35
+ ❯ HTMLUnknownElement.#goThroughDispatchEventPhases node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:198:33
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:129:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/14]⎯
+
+ FAIL  src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > handles unknown block types gracefully
+TestingLibraryElementError: Unable to find an element with the text: unknown_type. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-red-300 rounded-lg p-8 text-center bg-red-50"
+    >
+      <div
+        class="text-red-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-red-600 text-sm font-medium"
+      >
+        Unknown Block Type: 
+        unknown_type
+      </p>
+      <p
+        class="text-red-500 text-xs mt-1"
+      >
+        This block type is not supported
+      </p>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx:81:19
+     79|     // The text is split across multiple elements, so check for both p…
+     80|     expect(screen.getByText(/Unknown Block Type:/)).toBeInTheDocument()
+     81|     expect(screen.getByText('unknown_type')).toBeInTheDocument()
+       |                   ^
+     82|   })
+     83| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/14]⎯
+
+
+ Test Files  2 failed | 6 passed (8)
+      Tests  14 failed | 76 passed (90)
+   Start at  19:37:21
+   Duration  16.47s (transform 4.83s, setup 24.91s, collect 10.62s, tests 5.09s, environment 24.69s, prepare 10.21s)
+

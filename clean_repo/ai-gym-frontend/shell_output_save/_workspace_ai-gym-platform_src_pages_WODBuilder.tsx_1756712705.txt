@@ -1,0 +1,126 @@
+            <div className="flex items-center border border-gray-200 rounded-lg">
+              {(['desktop', 'tablet', 'mobile'] as ViewMode[]).map((mode) => {
+                const Icon = getViewModeIcon(mode)
+                return (
+                  <Button
+                    key={mode}
+                    variant={viewMode === mode ? 'default' : 'ghost'}
+                    size="sm"
+                    onClick={() => setViewMode(mode)}
+                    className="rounded-none first:rounded-l-lg last:rounded-r-lg"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </Button>
+                )
+              })}
+            </div>
+          )}
+          
+          {/* Save Status */}
+          <div className="flex items-center space-x-2">
+            {saveStatus === 'saving' && (
+              <div className="flex items-center text-blue-600 text-sm">
+                <div className="animate-spin rounded-full h-3 w-3 border-b border-blue-600 mr-2"></div>
+                Saving...
+              </div>
+            )}
+            {saveStatus === 'saved' && (
+              <div className="flex items-center text-green-600 text-sm">
+                <CheckCircle className="h-3 w-3 mr-1" />
+                Saved
+              </div>
+            )}
+            {saveStatus === 'error' && saveError && (
+              <div className="flex items-center text-red-600 text-sm">
+                <AlertCircle className="h-3 w-3 mr-1" />
+                {saveError}
+              </div>
+            )}
+            {isEditing && saveStatus === 'idle' && (
+              <Badge variant="outline" className="text-orange-600">
+                Unsaved Changes
+              </Badge>
+            )}
+          </div>
+          
+          {/* Action Buttons */}
+          <Button
+            variant={previewMode ? 'default' : 'outline'}
+            size="sm"
+            onClick={handlePreviewToggle}
+            className="min-w-[100px]"
+          >
+            {previewMode ? (
+              <>
+                <EyeOff className="h-4 w-4 mr-2" />
+                Exit Preview
+              </>
+            ) : (
+              <>
+                <Eye className="h-4 w-4 mr-2" />
+                Preview
+              </>
+            )}
+          </Button>
+          
+          <Button
+            onClick={() => handleSave(false)}
+            disabled={isSaving || !isEditing}
+            size="sm"
+            className="min-w-[80px]"
+          >
+            {isSaving ? (
+              <div className="animate-spin rounded-full h-4 w-4 border-b border-white mr-2"></div>
+            ) : (
+              <Save className="h-4 w-4 mr-2" />
+            )}
+            Save
+          </Button>
+        </div>
+      </div>
+
+      {/* Persistent Icon Navigation Rail */}
+      {!previewMode && (
+        <PersistentIconNavigationRail
+          onBlockAdd={handleAddBlock}
+          onPageCreate={handlePageCreate}
+          onPageSelect={handlePageSelect}
+          pages={structure.pages.map(page => ({
+            id: page.id,
+            title: page.title,
+            blocks: page.blocks?.length || 0
+          }))}
+          currentPageId={currentPage?.id}
+          structure={parent}
+          onSave={() => handleSave(false)}
+          onPreview={handlePreviewToggle}
+          isPreviewMode={previewMode}
+        />
+      )}
+
+      <div className="flex-1 flex overflow-hidden ml-16">{/* Add margin for icon rail */}
+
+        {/* Main Content Area */}
+        <div className={cn(
+          'flex-1 overflow-auto',
+          previewMode && 'bg-white',
+          !previewMode && showRightSidebar && 'mr-96'
+        )}>
+          <div className={cn('min-h-full', getViewModeClasses())}>
+            <DndContext
+              sensors={sensors}
+              onDragStart={handleDragStart}
+              onDragEnd={handleDragEnd}
+            >
+              <div className={cn(
+                'min-h-full',
+                previewMode ? 'bg-white' : 'bg-gray-50 p-8'
+              )}>
+                {currentPage ? (
+                  <div className={cn(
+                    'bg-white rounded-lg shadow-sm',
+                    previewMode ? 'min-h-screen' : 'min-h-[600px] p-6'
+                  )}>
+                    {/* Page Content */}
+                    {currentPage.blocks && currentPage.blocks.length > 0 ? (
+                      <SortableContext 

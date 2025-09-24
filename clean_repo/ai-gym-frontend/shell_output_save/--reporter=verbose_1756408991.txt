@@ -1,0 +1,151 @@
+
+> react_repo@0.0.0 test:run /workspace/ai-gym-platform
+> vitest run src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx --reporter\=verbose
+
+
+ RUN  v3.2.4 /workspace/ai-gym-platform
+
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:22:52
+   Duration 2.39s
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:22:52
+   Duration 7.50s
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:22:52
+   Duration 8.40s
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:22:52
+   Duration 9.50s
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:22:52
+   Duration 10.50s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:22:52
+   Duration 11.50s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:22:52
+   Duration 12.40s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:22:52
+   Duration 13.40s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:22:52
+   Duration 14.40s
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+
+ Test Files 0 passed (1)
+      Tests 0 passed (11)
+   Start at 19:22:52
+   Duration 14.80s
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 1/11
+
+ Test Files 0 passed (1)
+      Tests 1 passed (11)
+   Start at 19:22:52
+   Duration 15.40s
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 2/11
+
+ Test Files 0 passed (1)
+      Tests 2 passed (11)
+   Start at 19:22:52
+   Duration 15.50s
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 6/11
+
+ Test Files 0 passed (1)
+      Tests 6 passed (11)
+   Start at 19:22:52
+   Duration 15.90s
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom styles from block.style
+Warning: Unsupported style property background-color. Did you mean backgroundColor?
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+Warning: Unsupported style property font-size. Did you mean fontSize?
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 8/11
+
+ Test Files 0 passed (1)
+      Tests 8 passed (11)
+   Start at 19:22:52
+   Duration 16.20s
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx (11 tests | 1 failed) 1393ms
+   ❯ SectionHeaderBlock (11)
+     ✓ renders with default content  301ms
+     ✓ renders h1 for level 1 header 201ms
+     ✓ renders h2 for level 2 header 100ms
+     ✓ renders h6 for level 6 header 6ms
+     ✓ renders without subtitle when not provided 91ms
+     ✓ applies custom className through BlockWrapper 4ms
+     ✓ handles click when onSelect is provided 100ms
+     ✓ shows selected state through BlockWrapper 96ms
+     ✓ handles missing content gracefully 4ms
+     ✓ does not render when block is not visible 95ms
+     × applies custom styles from block.style 211ms
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom styles from block.style
+Error: expect(element).toHaveStyle()
+
+- Expected
++ Received
+
+- background-color: red;
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx:131:23
+    129|     
+    130|     const container = document.querySelector('[data-block-id="test-sec…
+    131|     expect(container).toHaveStyle('background-color: red')
+       |                       ^
+    132|     expect(container).toHaveStyle('font-size: 20px')
+    133|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 passed (11)
+   Start at  19:22:52
+   Duration  16.70s (transform 1.39s, setup 3.20s, collect 1.10s, tests 1.39s, environment 2.80s, prepare 1.40s)
+
+ ELIFECYCLE  Command failed with exit code 1.

@@ -1,0 +1,82 @@
+
+> react_repo@0.0.0 build /workspace/ai-gym-platform
+> pnpm install --prefer-offline && rm -rf node_modules/.vite-temp && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1.6s using pnpm v10.12.4
+vite v6.2.6 building for production...
+transforming...
+✓ 1600 modules transformed.
+✗ Build failed in 8.03s
+error during build:
+src/pages/Progress/UserProgressDashboard.tsx (11:2): "TrendingUpIcon" is not exported by "node_modules/.pnpm/@heroicons+react@2.2.0_react@18.3.1/node_modules/@heroicons/react/24/outline/esm/index.js", imported by "src/pages/Progress/UserProgressDashboard.tsx".
+file: /workspace/ai-gym-platform/src/pages/Progress/UserProgressDashboard.tsx:11:2
+
+ 9:   ChartBarIcon,
+10:   ClockIcon,
+11:   TrendingUpIcon,
+      ^
+12:   EyeIcon,
+13:   CalendarIcon,
+
+    at getRollupError (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/parseAst.js:397:41)
+    at error (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/parseAst.js:393:42)
+    at Module.error (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:16711:16)
+    at Module.traceVariable (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:17160:29)
+    at ModuleScope.findVariable (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:14816:39)
+    at FunctionScope.findVariable (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:5582:38)
+    at FunctionBodyScope.findVariable (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:5582:38)
+    at ReturnValueScope.findVariable (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:5582:38)
+    at FunctionBodyScope.findVariable (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:5582:38)
+    at Identifier.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:5356:40)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:11928:15)
+    at ArrayExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at Property.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2783:23)
+    at ObjectExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:11928:15)
+    at ArrayExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at Property.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2783:23)
+    at ObjectExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:11928:15)
+    at ArrayExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at Property.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2783:23)
+    at ObjectExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:11928:15)
+    at ArrowFunctionExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2783:23)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:11928:15)
+    at Property.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2783:23)
+    at ObjectExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:11928:15)
+    at ArrayExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at Property.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2783:23)
+    at ObjectExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:11928:15)
+    at ArrayExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at Property.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2783:23)
+    at ObjectExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:11928:15)
+    at ArrayExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at Property.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2783:23)
+    at ObjectExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at CallExpression.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:11928:15)
+    at ReturnStatement.bind (file:///workspace/ai-gym-platform/node_modules/.pnpm/rollup@4.39.0/node_modules/rollup/dist/es/shared/node-entry.js:2783:23)
+ ELIFECYCLE  Command failed with exit code 1.

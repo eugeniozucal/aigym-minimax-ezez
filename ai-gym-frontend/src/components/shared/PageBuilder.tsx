@@ -518,6 +518,36 @@ export function PageBuilder() {
     }
   }
 
+  const handleBlockDelete = (blockId: string) => {
+    const currentPage = getCurrentPage()
+    const blockToDelete = currentPage.blocks.find(b => b.id === blockId)
+    
+    if (blockToDelete) {
+      // Remove the block from the page
+      const newBlocks = currentPage.blocks.filter(b => b.id !== blockId)
+      
+      // Update order property for remaining blocks
+      newBlocks.forEach((block, index) => {
+        block.order = index
+      })
+      
+      setPageData(prev => ({
+        ...prev,
+        pages: prev.pages.map(page => 
+          page.id === currentPageId
+            ? { ...page, blocks: newBlocks }
+            : page
+        )
+      }))
+      
+      // Clear selection if the deleted block was selected
+      if (selectedBlock?.id === blockId) {
+        setSelectedBlock(null)
+        setShowRightPanel(false)
+      }
+    }
+  }
+
   const handleBackToRepository = () => {
     navigate(`/training-zone/${targetRepository}`)
   }
@@ -590,6 +620,7 @@ export function PageBuilder() {
           selectedBlock={selectedBlock}
           onBlockSelect={handleBlockSelect}
           onBlockReorder={handleBlockReorder}
+          onBlockDelete={handleBlockDelete}
           onBackToRepository={handleBackToRepository}
           onSave={savePageData}
           saving={saving}

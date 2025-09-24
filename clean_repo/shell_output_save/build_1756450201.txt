@@ -1,0 +1,181 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild, msw.                                       │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1.2s using pnpm v10.12.4
+src/components/ContentPicker/index.ts:2:15 - error TS2459: Module '"./ContentPicker"' declares 'UploadedFile' locally, but it is not exported.
+
+2 export type { UploadedFile } from './ContentPicker';
+                ~~~~~~~~~~~~
+
+  src/components/ContentPicker/ContentPicker.tsx:5:11
+    5 interface UploadedFile {
+                ~~~~~~~~~~~~
+    'UploadedFile' is declared here.
+
+src/components/RightSidebar.tsx:47:13 - error TS2322: Type 'Block' is not assignable to type 'TextBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"text"'.
+
+47             block={selectedBlock}
+               ~~~~~
+
+  src/components/BlockEditors/TextEditor.tsx:17:3
+    17   block: TextBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & TextEditorProps'
+
+src/components/RightSidebar.tsx:56:13 - error TS2322: Type 'Block' is not assignable to type 'ImageBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"image"'.
+
+56             block={selectedBlock}
+               ~~~~~
+
+  src/components/BlockEditors/ImageEditor.tsx:24:3
+    24   block: ImageBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & ImageEditorProps'
+
+src/components/RightSidebar.tsx:65:13 - error TS2322: Type 'Block' is not assignable to type 'VideoBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"video"'.
+
+65             block={selectedBlock}
+               ~~~~~
+
+  src/components/BlockEditors/VideoEditor.tsx:24:3
+    24   block: VideoBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & VideoEditorProps'
+
+src/components/RightSidebar.tsx:74:13 - error TS2322: Type 'Block' is not assignable to type 'DocumentBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"document"'.
+
+74             block={selectedBlock}
+               ~~~~~
+
+  src/components/BlockEditors/DocumentEditor.tsx:17:3
+    17   block: DocumentBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & DocumentEditorProps'
+
+src/components/RightSidebar.tsx:83:13 - error TS2322: Type 'Block' is not assignable to type 'PDFBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"pdf"'.
+
+83             block={selectedBlock}
+               ~~~~~
+
+  src/components/BlockEditors/PDFEditor.tsx:19:3
+    19   block: PDFBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & PDFEditorProps'
+
+src/components/RightSidebar.tsx:92:13 - error TS2322: Type 'Block' is not assignable to type 'PromptsBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"prompts"'.
+
+92             block={selectedBlock}
+               ~~~~~
+
+  src/components/BlockEditors/PromptsEditor.tsx:28:3
+    28   block: PromptsBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & PromptsEditorProps'
+
+src/components/RightSidebar.tsx:101:13 - error TS2322: Type 'Block' is not assignable to type 'AutomationBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"automation"'.
+
+101             block={selectedBlock}
+                ~~~~~
+
+  src/components/BlockEditors/AutomationEditor.tsx:39:3
+    39   block: AutomationBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & AutomationEditorProps'
+
+src/components/RightSidebar.tsx:110:13 - error TS2322: Type 'Block' is not assignable to type 'QuizBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"quiz"'.
+
+110             block={selectedBlock}
+                ~~~~~
+
+  src/components/BlockEditors/QuizEditor.tsx:41:3
+    41   block: QuizBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & QuizEditorProps'
+
+src/components/RightSidebar.tsx:119:13 - error TS2322: Type 'Block' is not assignable to type 'AccordionBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"accordion"'.
+
+119             block={selectedBlock}
+                ~~~~~
+
+  src/components/BlockEditors/AccordionEditor.tsx:29:3
+    29   block: AccordionBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & AccordionEditorProps'
+
+src/components/RightSidebar.tsx:128:13 - error TS2322: Type 'Block' is not assignable to type 'UserSubmissionBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"user-submission"'.
+
+128             block={selectedBlock}
+                ~~~~~
+
+  src/components/BlockEditors/UserSubmissionEditor.tsx:38:3
+    38   block: UserSubmissionBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & UserSubmissionEditorProps'
+
+src/components/RightSidebar.tsx:137:13 - error TS2322: Type 'Block' is not assignable to type 'AIAgentBlock'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"ai-agent"'.
+
+137             block={selectedBlock}
+                ~~~~~
+
+  src/components/BlockEditors/AIAgentEditor.tsx:34:3
+    34   block: AIAgentBlock;
+         ~~~~~
+    The expected type comes from property 'block' which is declared here on type 'IntrinsicAttributes & AIAgentEditorProps'
+
+src/components/page-builder/editors/AccordionEditor.tsx:37:9 - error TS2741: Property 'items' is missing in type 'Record<string, any>' but required in type 'AccordionContent'.
+
+37   const content: AccordionContent = block.content || {
+           ~~~~~~~
+
+  src/components/page-builder/editors/AccordionEditor.tsx:27:3
+    27   items: AccordionItem[]
+         ~~~~~
+    'items' is declared here.
+
+src/components/page-builder/editors/QuizEditor.tsx:45:9 - error TS2739: Type 'Record<string, any>' is missing the following properties from type 'QuizContent': title, questions
+
+45   const content: QuizContent = block.content || {
+           ~~~~~~~
+
+src/components/page-builder/editors/UserSubmissionEditor.tsx:55:9 - error TS2739: Type 'Record<string, any>' is missing the following properties from type 'UserSubmissionContent': title, submission_type, instructions
+
+55   const content: UserSubmissionContent = block.content || {
+           ~~~~~~~
+
+
+Found 15 errors.
+

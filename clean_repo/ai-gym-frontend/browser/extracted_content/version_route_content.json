@@ -1,0 +1,18 @@
+📄 Extracted from page: ai-gym-platform-video-fix
+URL: https://if4yb5jxn92w.space.minimax.io/version
+
+Extracted content:
+```json
+{
+    "title": "ai-gym-platform-video-fix",
+    "url": "https://if4yb5jxn92w.space.minimax.io/version",
+    "summary": "The content displayed on the `/version` route indicates that the requested page was not found. The page explicitly states 'Page Not Found' and 'The page you're looking for doesn't exist.' It also credits 'MiniMax Agent' as the creator.",
+    "key_points": [
+        "The page at the /version route returns a 'Page Not Found' error.",
+        "The specific message states: 'The page you're looking for doesn't exist.'",
+        "The page content also includes 'Created by MiniMax Agent'."
+    ],
+    "relevant_links": [],
+    "file_name": "version_route_content.json"
+}
+```

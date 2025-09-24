@@ -1,0 +1,42 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 1.1s using pnpm v10.12.4
+src/__tests__/stores.test.ts(110,23): error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: any[]; order: number; }[]; settings: { communities: any[]; tags: any[]; people: any[]; difficulty: number; estimatedDuration: number; autoSaveEnabled: boolean; }; }' is not assignable to parameter of type 'PageData'.
+  The types of 'settings.difficulty' are incompatible between these types.
+    Type 'number' is not assignable to type '1 | 2 | 5 | 3 | 4'.
+src/__tests__/stores.test.ts(111,30): error TS2345: Argument of type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is not assignable to parameter of type 'Block'.
+  Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is missing the following properties from type 'Block': data, pageId
+src/__tests__/stores.test.ts(149,23): error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  Types of property 'pages' are incompatible.
+    Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }[]' is not assignable to type 'Page[]'.
+      Type '{ id: string; title: string; blocks: { id: string; type: string; title: string; description: string; content: string; order: number; }[]; order: number; }' is not assignable to type 'Page'.
+        Types of property 'blocks' are incompatible.
+          Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }[]' is not assignable to type 'Block[]'.
+            Type '{ id: string; type: string; title: string; description: string; content: string; order: number; }' is missing the following properties from type 'Block': data, pageId
+src/__tests__/stores.test.ts(184,23): error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; pageId: string; data: {}; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  The types of 'settings.difficulty' are incompatible between these types.
+    Type 'number' is not assignable to type '1 | 2 | 5 | 3 | 4'.
+src/__tests__/stores.test.ts(220,23): error TS2345: Argument of type '{ title: string; description: string; status: "draft"; targetRepository: "wods"; pages: { id: string; title: string; blocks: { id: string; type: string; title: string; content: string; order: number; pageId: string; data: {}; }[]; order: number; }[]; settings: { ...; }; }' is not assignable to parameter of type 'PageData'.
+  The types of 'settings.difficulty' are incompatible between these types.
+    Type 'number' is not assignable to type '1 | 2 | 5 | 3 | 4'.
+src/components/shared/NewPageBuilder.tsx(199,11): error TS2322: Type '{ activeMenu: string; onMenuToggle: (menu: string) => void; repositoryType: RepositoryType; }' is not assignable to type 'IntrinsicAttributes & FixedLeftRailProps'.
+  Property 'repositoryType' does not exist on type 'IntrinsicAttributes & FixedLeftRailProps'.
+src/components/shared/NewPageBuilder.tsx(204,11): error TS2322: Type '{ activeMenu: string; onClose: () => void; repositoryType: RepositoryType; }' is not assignable to type 'IntrinsicAttributes & DeployedLeftMenuProps'.
+  Property 'activeMenu' does not exist on type 'IntrinsicAttributes & DeployedLeftMenuProps'.
+src/components/shared/NewPageBuilder.tsx(212,13): error TS2322: Type '{ pageData: PageData; selectedBlock: Block; onBlockSelect: (block: Block) => void; onSave: () => Promise<void>; isAutoSaving: boolean; error: string; successMessage: string; config: { ...; } | ... 8 more ... | { ...; }; }' is not assignable to type 'IntrinsicAttributes & CenterCanvasProps'.
+  Property 'pageData' does not exist on type 'IntrinsicAttributes & CenterCanvasProps'.
+src/components/shared/NewPageBuilder.tsx(226,13): error TS2322: Type '{ selectedBlock: Block; onClose: () => void; pageData: PageData; }' is not assignable to type 'IntrinsicAttributes & RightBlockEditorProps'.
+  Property 'selectedBlock' does not exist on type 'IntrinsicAttributes & RightBlockEditorProps'.

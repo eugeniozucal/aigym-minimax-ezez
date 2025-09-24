@@ -1,0 +1,557 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +706
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 706, reused 0, downloaded 0, added 0
+Progress: resolved 706, reused 59, downloaded 0, added 0
+Progress: resolved 706, reused 209, downloaded 0, added 0
+6535504701Progress: resolved 706, reused 705, downloaded 0, added 10
+
+   ╭──────────────────────────────────────────╮
+   │                                          │
+   │   Update available! 10.12.4 → 10.15.0.   │
+   │   Changelog: https://pnpm.io/v/10.15.0   │
+   │     To update, run: pnpm add -g pnpm     │
+   │                                          │
+   ╰──────────────────────────────────────────╯
+
+Progress: resolved 706, reused 705, downloaded 0, added 10
+6, downloaded 0, added 2Progress: resolved 706, reused 706, downloaded 0, added 112
+270364438507767035Progress: resolved 706, reused 706, downloaded 0, added 706, done
+
+dependencies:
++ @dnd-kit/core 6.3.1
++ @dnd-kit/sortable 10.0.0
++ @dnd-kit/utilities 3.2.2
++ @hookform/resolvers 3.10.0
++ @monaco-editor/react 4.7.0
++ @radix-ui/react-accordion 1.2.4
++ @radix-ui/react-alert-dialog 1.1.7
++ @radix-ui/react-aspect-ratio 1.1.3
++ @radix-ui/react-avatar 1.1.4
++ @radix-ui/react-checkbox 1.1.5
++ @radix-ui/react-collapsible 1.1.4
++ @radix-ui/react-context-menu 2.2.7
++ @radix-ui/react-dialog 1.1.7
++ @radix-ui/react-dropdown-menu 2.1.7
++ @radix-ui/react-hover-card 1.1.7
++ @radix-ui/react-label 2.1.3
++ @radix-ui/react-menubar 1.1.7
++ @radix-ui/react-navigation-menu 1.2.6
++ @radix-ui/react-popover 1.1.7
++ @radix-ui/react-progress 1.1.3
++ @radix-ui/react-radio-group 1.2.4
++ @radix-ui/react-scroll-area 1.2.4
++ @radix-ui/react-select 2.1.7
++ @radix-ui/react-separator 1.1.3
++ @radix-ui/react-slider 1.2.4
++ @radix-ui/react-slot 1.2.0
++ @radix-ui/react-switch 1.1.4
++ @radix-ui/react-tabs 1.1.4
++ @radix-ui/react-toast 1.2.7
++ @radix-ui/react-toggle 1.1.3
++ @radix-ui/react-toggle-group 1.1.3
++ @radix-ui/react-tooltip 1.2.0
++ @supabase/supabase-js 2.56.0
++ @tiptap/extension-color 3.3.0
++ @tiptap/extension-image 3.3.0
++ @tiptap/extension-link 3.3.0
++ @tiptap/extension-placeholder 3.3.0
++ @tiptap/extension-text-align 3.3.0
++ @tiptap/extension-text-style 3.3.0
++ @tiptap/extension-typography 3.3.0
++ @tiptap/react 3.3.0
++ @tiptap/starter-kit 3.3.0
++ class-variance-authority 0.7.1
++ clsx 2.1.1
++ cmdk 1.0.0
++ date-fns 3.6.0
++ embla-carousel-react 8.6.0
++ input-otp 1.4.2
++ lucide-react 0.364.0
++ next-themes 0.4.6
++ quill 2.0.3
++ react 18.3.1
++ react-day-picker 8.10.1
++ react-dom 18.3.1
++ react-hook-form 7.55.0
++ react-quill 2.0.0
++ react-resizable-panels 2.1.7
++ react-router-dom 6.30.0
++ recharts 2.15.2
++ sonner 1.7.4
++ tailwind-merge 2.6.0
++ tailwindcss-animate 1.0.7
++ vaul 1.1.2
++ zod 3.24.2
+
+devDependencies:
++ @eslint/js 9.24.0
++ @testing-library/jest-dom 6.8.0
++ @testing-library/react 16.3.0
++ @testing-library/user-event 14.6.1
++ @types/node 22.14.1
++ @types/react 18.3.20
++ @types/react-dom 18.3.6
++ @types/react-router-dom 5.3.3
++ @vitejs/plugin-react 4.3.4
++ @vitest/coverage-v8 3.2.4
++ @vitest/ui 3.2.4
++ autoprefixer 10.4.20
++ eslint 9.24.0
++ eslint-plugin-react-hooks 5.2.0
++ eslint-plugin-react-refresh 0.4.19
++ globals 15.15.0
++ happy-dom 18.0.1
++ jsdom 26.1.0
++ msw 2.10.5
++ postcss 8.4.49
++ tailwindcss 3.4.16
++ typescript 5.6.3
++ typescript-eslint 8.29.1
++ vite 6.2.6
++ vite-plugin-source-identifier 1.1.2
++ vitest 3.2.4
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild, msw.                                       │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 8.6s using pnpm v10.12.4
+src/components/page-builder/editors/index.ts:25:10 - error TS1005: '>' expected.
+
+25     <div className="p-4 text-center text-gray-500">
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:25:19 - error TS1005: ')' expected.
+
+25     <div className="p-4 text-center text-gray-500">
+                     ~
+
+src/components/page-builder/editors/index.ts:26:19 - error TS1005: ';' expected.
+
+26       <p>Document editor coming soon</p>
+                     ~~~~~~
+
+src/components/page-builder/editors/index.ts:26:26 - error TS1434: Unexpected keyword or identifier.
+
+26       <p>Document editor coming soon</p>
+                            ~~~~~~
+
+src/components/page-builder/editors/index.ts:26:38 - error TS1161: Unterminated regular expression literal.
+
+26       <p>Document editor coming soon</p>
+                                        ~~~
+
+src/components/page-builder/editors/index.ts:27:10 - error TS1005: ';' expected.
+
+27       <p className="text-sm">This will integrate with the document repository</p>
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:27:35 - error TS1005: ';' expected.
+
+27       <p className="text-sm">This will integrate with the document repository</p>
+                                     ~~~~
+
+src/components/page-builder/editors/index.ts:27:40 - error TS1434: Unexpected keyword or identifier.
+
+27       <p className="text-sm">This will integrate with the document repository</p>
+                                          ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:27:55 - error TS1005: '(' expected.
+
+27       <p className="text-sm">This will integrate with the document repository</p>
+                                                         ~~~
+
+src/components/page-builder/editors/index.ts:27:59 - error TS1005: ')' expected.
+
+27       <p className="text-sm">This will integrate with the document repository</p>
+                                                             ~~~~~~~~
+
+src/components/page-builder/editors/index.ts:27:79 - error TS1161: Unterminated regular expression literal.
+
+27       <p className="text-sm">This will integrate with the document repository</p>
+                                                                                 ~~~
+
+src/components/page-builder/editors/index.ts:28:6 - error TS1161: Unterminated regular expression literal.
+
+28     </div>
+        ~~~~~
+
+src/components/page-builder/editors/index.ts:29:3 - error TS1128: Declaration or statement expected.
+
+29   )
+     ~
+
+src/components/page-builder/editors/index.ts:35:10 - error TS1005: '>' expected.
+
+35     <div className="p-4 text-center text-gray-500">
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:35:19 - error TS1005: ')' expected.
+
+35     <div className="p-4 text-center text-gray-500">
+                     ~
+
+src/components/page-builder/editors/index.ts:36:17 - error TS1005: ';' expected.
+
+36       <p>Prompt editor coming soon</p>
+                   ~~~~~~
+
+src/components/page-builder/editors/index.ts:36:24 - error TS1434: Unexpected keyword or identifier.
+
+36       <p>Prompt editor coming soon</p>
+                          ~~~~~~
+
+src/components/page-builder/editors/index.ts:36:36 - error TS1161: Unterminated regular expression literal.
+
+36       <p>Prompt editor coming soon</p>
+                                      ~~~
+
+src/components/page-builder/editors/index.ts:37:10 - error TS1005: ';' expected.
+
+37       <p className="text-sm">This will integrate with the prompts repository</p>
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:37:35 - error TS1005: ';' expected.
+
+37       <p className="text-sm">This will integrate with the prompts repository</p>
+                                     ~~~~
+
+src/components/page-builder/editors/index.ts:37:40 - error TS1434: Unexpected keyword or identifier.
+
+37       <p className="text-sm">This will integrate with the prompts repository</p>
+                                          ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:37:55 - error TS1005: '(' expected.
+
+37       <p className="text-sm">This will integrate with the prompts repository</p>
+                                                         ~~~
+
+src/components/page-builder/editors/index.ts:37:59 - error TS1005: ')' expected.
+
+37       <p className="text-sm">This will integrate with the prompts repository</p>
+                                                             ~~~~~~~
+
+src/components/page-builder/editors/index.ts:37:78 - error TS1161: Unterminated regular expression literal.
+
+37       <p className="text-sm">This will integrate with the prompts repository</p>
+                                                                                ~~~
+
+src/components/page-builder/editors/index.ts:38:6 - error TS1161: Unterminated regular expression literal.
+
+38     </div>
+        ~~~~~
+
+src/components/page-builder/editors/index.ts:39:3 - error TS1128: Declaration or statement expected.
+
+39   )
+     ~
+
+src/components/page-builder/editors/index.ts:45:10 - error TS1005: '>' expected.
+
+45     <div className="p-4 text-center text-gray-500">
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:45:19 - error TS1005: ')' expected.
+
+45     <div className="p-4 text-center text-gray-500">
+                     ~
+
+src/components/page-builder/editors/index.ts:46:21 - error TS1005: ';' expected.
+
+46       <p>Automation editor coming soon</p>
+                       ~~~~~~
+
+src/components/page-builder/editors/index.ts:46:28 - error TS1434: Unexpected keyword or identifier.
+
+46       <p>Automation editor coming soon</p>
+                              ~~~~~~
+
+src/components/page-builder/editors/index.ts:46:40 - error TS1161: Unterminated regular expression literal.
+
+46       <p>Automation editor coming soon</p>
+                                          ~~~
+
+src/components/page-builder/editors/index.ts:47:10 - error TS1005: ';' expected.
+
+47       <p className="text-sm">This will integrate with the automations repository</p>
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:47:35 - error TS1005: ';' expected.
+
+47       <p className="text-sm">This will integrate with the automations repository</p>
+                                     ~~~~
+
+src/components/page-builder/editors/index.ts:47:40 - error TS1434: Unexpected keyword or identifier.
+
+47       <p className="text-sm">This will integrate with the automations repository</p>
+                                          ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:47:55 - error TS1005: '(' expected.
+
+47       <p className="text-sm">This will integrate with the automations repository</p>
+                                                         ~~~
+
+src/components/page-builder/editors/index.ts:47:59 - error TS1005: ')' expected.
+
+47       <p className="text-sm">This will integrate with the automations repository</p>
+                                                             ~~~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:47:82 - error TS1161: Unterminated regular expression literal.
+
+47       <p className="text-sm">This will integrate with the automations repository</p>
+                                                                                    ~~~
+
+src/components/page-builder/editors/index.ts:48:6 - error TS1161: Unterminated regular expression literal.
+
+48     </div>
+        ~~~~~
+
+src/components/page-builder/editors/index.ts:49:3 - error TS1128: Declaration or statement expected.
+
+49   )
+     ~
+
+src/components/page-builder/editors/index.ts:55:10 - error TS1005: '>' expected.
+
+55     <div className="p-4 text-center text-gray-500">
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:55:19 - error TS1005: ')' expected.
+
+55     <div className="p-4 text-center text-gray-500">
+                     ~
+
+src/components/page-builder/editors/index.ts:56:15 - error TS1005: ';' expected.
+
+56       <p>Quiz editor coming soon</p>
+                 ~~~~~~
+
+src/components/page-builder/editors/index.ts:56:22 - error TS1434: Unexpected keyword or identifier.
+
+56       <p>Quiz editor coming soon</p>
+                        ~~~~~~
+
+src/components/page-builder/editors/index.ts:56:34 - error TS1161: Unterminated regular expression literal.
+
+56       <p>Quiz editor coming soon</p>
+                                    ~~~
+
+src/components/page-builder/editors/index.ts:57:10 - error TS1005: ';' expected.
+
+57       <p className="text-sm">This will include question creation and scoring</p>
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:57:35 - error TS1005: ';' expected.
+
+57       <p className="text-sm">This will include question creation and scoring</p>
+                                     ~~~~
+
+src/components/page-builder/editors/index.ts:57:40 - error TS1434: Unexpected keyword or identifier.
+
+57       <p className="text-sm">This will include question creation and scoring</p>
+                                          ~~~~~~~
+
+src/components/page-builder/editors/index.ts:57:48 - error TS1434: Unexpected keyword or identifier.
+
+57       <p className="text-sm">This will include question creation and scoring</p>
+                                                  ~~~~~~~~
+
+src/components/page-builder/editors/index.ts:57:57 - error TS1434: Unexpected keyword or identifier.
+
+57       <p className="text-sm">This will include question creation and scoring</p>
+                                                           ~~~~~~~~
+
+src/components/page-builder/editors/index.ts:57:66 - error TS1434: Unexpected keyword or identifier.
+
+57       <p className="text-sm">This will include question creation and scoring</p>
+                                                                    ~~~
+
+src/components/page-builder/editors/index.ts:57:78 - error TS1161: Unterminated regular expression literal.
+
+57       <p className="text-sm">This will include question creation and scoring</p>
+                                                                                ~~~
+
+src/components/page-builder/editors/index.ts:58:6 - error TS1161: Unterminated regular expression literal.
+
+58     </div>
+        ~~~~~
+
+src/components/page-builder/editors/index.ts:59:3 - error TS1128: Declaration or statement expected.
+
+59   )
+     ~
+
+src/components/page-builder/editors/index.ts:65:10 - error TS1005: '>' expected.
+
+65     <div className="p-4 text-center text-gray-500">
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:65:19 - error TS1005: ')' expected.
+
+65     <div className="p-4 text-center text-gray-500">
+                     ~
+
+src/components/page-builder/editors/index.ts:66:20 - error TS1005: ';' expected.
+
+66       <p>Accordion editor coming soon</p>
+                      ~~~~~~
+
+src/components/page-builder/editors/index.ts:66:27 - error TS1434: Unexpected keyword or identifier.
+
+66       <p>Accordion editor coming soon</p>
+                             ~~~~~~
+
+src/components/page-builder/editors/index.ts:66:39 - error TS1161: Unterminated regular expression literal.
+
+66       <p>Accordion editor coming soon</p>
+                                         ~~~
+
+src/components/page-builder/editors/index.ts:67:10 - error TS1005: ';' expected.
+
+67       <p className="text-sm">This will create expandable sections</p>
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:67:35 - error TS1005: ';' expected.
+
+67       <p className="text-sm">This will create expandable sections</p>
+                                     ~~~~
+
+src/components/page-builder/editors/index.ts:67:40 - error TS1434: Unexpected keyword or identifier.
+
+67       <p className="text-sm">This will create expandable sections</p>
+                                          ~~~~~~
+
+src/components/page-builder/editors/index.ts:67:47 - error TS1434: Unexpected keyword or identifier.
+
+67       <p className="text-sm">This will create expandable sections</p>
+                                                 ~~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:67:67 - error TS1161: Unterminated regular expression literal.
+
+67       <p className="text-sm">This will create expandable sections</p>
+                                                                     ~~~
+
+src/components/page-builder/editors/index.ts:68:6 - error TS1161: Unterminated regular expression literal.
+
+68     </div>
+        ~~~~~
+
+src/components/page-builder/editors/index.ts:69:3 - error TS1128: Declaration or statement expected.
+
+69   )
+     ~
+
+src/components/page-builder/editors/index.ts:75:10 - error TS1005: '>' expected.
+
+75     <div className="p-4 text-center text-gray-500">
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:75:19 - error TS1005: ')' expected.
+
+75     <div className="p-4 text-center text-gray-500">
+                     ~
+
+src/components/page-builder/editors/index.ts:76:15 - error TS1005: ';' expected.
+
+76       <p>User submission editor coming soon</p>
+                 ~~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:76:26 - error TS1434: Unexpected keyword or identifier.
+
+76       <p>User submission editor coming soon</p>
+                            ~~~~~~
+
+src/components/page-builder/editors/index.ts:76:33 - error TS1434: Unexpected keyword or identifier.
+
+76       <p>User submission editor coming soon</p>
+                                   ~~~~~~
+
+src/components/page-builder/editors/index.ts:76:45 - error TS1161: Unterminated regular expression literal.
+
+76       <p>User submission editor coming soon</p>
+                                               ~~~
+
+src/components/page-builder/editors/index.ts:77:10 - error TS1005: ';' expected.
+
+77       <p className="text-sm">This will create forms for user data collection</p>
+            ~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:77:35 - error TS1005: ';' expected.
+
+77       <p className="text-sm">This will create forms for user data collection</p>
+                                     ~~~~
+
+src/components/page-builder/editors/index.ts:77:40 - error TS1434: Unexpected keyword or identifier.
+
+77       <p className="text-sm">This will create forms for user data collection</p>
+                                          ~~~~~~
+
+src/components/page-builder/editors/index.ts:77:47 - error TS1435: Unknown keyword or identifier. Did you mean 'for'?
+
+77       <p className="text-sm">This will create forms for user data collection</p>
+                                                 ~~~~~
+
+src/components/page-builder/editors/index.ts:77:57 - error TS1005: '(' expected.
+
+77       <p className="text-sm">This will create forms for user data collection</p>
+                                                           ~~~~
+
+src/components/page-builder/editors/index.ts:77:62 - error TS1005: ';' expected.
+
+77       <p className="text-sm">This will create forms for user data collection</p>
+                                                                ~~~~
+
+src/components/page-builder/editors/index.ts:77:67 - error TS1005: ';' expected.
+
+77       <p className="text-sm">This will create forms for user data collection</p>
+                                                                     ~~~~~~~~~~
+
+src/components/page-builder/editors/index.ts:77:78 - error TS1161: Unterminated regular expression literal.
+
+77       <p className="text-sm">This will create forms for user data collection</p>
+                                                                                ~~~
+
+src/components/page-builder/editors/index.ts:78:6 - error TS1161: Unterminated regular expression literal.
+
+78     </div>
+        ~~~~~
+
+src/components/page-builder/editors/index.ts:80:1 - error TS1109: Expression expected.
+
+80 }
+   ~
+
+src/components/ui/label.tsx:20:4 - error TS1109: Expression expected.
+
+20   />
+      ~
+
+src/components/ui/label.tsx:21:1 - error TS1109: Expression expected.
+
+21 ))
+   ~
+
+src/components/ui/separator.tsx:23:4 - error TS1109: Expression expected.
+
+23   />
+      ~
+
+src/components/ui/separator.tsx:24:1 - error TS1109: Expression expected.
+
+24 ))
+   ~
+
+
+Found 85 errors.
+

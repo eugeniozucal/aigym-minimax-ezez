@@ -1,0 +1,21 @@
+📄 Extracted from page: 404 - Page Not Found
+URL: https://if4yb5jxn92w.space.minimax.io/static/js/main.js
+
+Extracted content:
+```json
+{
+  "title": "404 - Page Not Found",
+  "url": "https://if4yb5jxn92w.space.minimax.io/static/js/main.js",
+  "summary": "This page is a standard 404 'Page Not Found' error page. It clearly communicates that the requested resource could not be located on the server, indicating that the page either doesn't exist or has been moved.",
+  "key_points": [
+    "It is an error page.",
+    "It explicitly states '404 - Page Not Found'.",
+    "The core message is that 'The page you're looking for doesn't exist or has been moved.'",
+    "It includes a 'Go Back' link to navigate to the previous page."
+  ],
+  "relevant_links": [
+    "javascript:history.back()"
+  ],
+  "file_name": "404_page_not_found_description.json"
+}
+```

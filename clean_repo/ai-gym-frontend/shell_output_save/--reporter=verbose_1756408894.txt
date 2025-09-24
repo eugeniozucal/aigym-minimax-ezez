@@ -1,0 +1,270 @@
+
+> react_repo@0.0.0 test:run /workspace/ai-gym-platform
+> vitest run src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx --reporter\=verbose
+
+
+ RUN  v3.2.4 /workspace/ai-gym-platform
+
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:21:15
+   Duration 1.90s
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:21:15
+   Duration 7.80s
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:21:15
+   Duration 8.70s
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:21:15
+   Duration 9.80s
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:21:15
+   Duration 10.70s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:21:15
+   Duration 11.50s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:21:15
+   Duration 11.70s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:21:15
+   Duration 12.70s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:21:15
+   Duration 13.80s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 19:21:15
+   Duration 14.80s
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+
+ Test Files 0 passed (1)
+      Tests 0 passed (11)
+   Start at 19:21:15
+   Duration 15.39s
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+
+ Test Files 0 passed (1)
+      Tests 0 passed (11)
+   Start at 19:21:15
+   Duration 15.70s
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders with default content
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h1 for level 1 header
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h2 for level 2 header
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 1/11
+
+ Test Files 0 passed (1)
+      Tests 1 failed | 0 passed (11)
+   Start at 19:21:15
+   Duration 15.90s
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h6 for level 6 header
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders without subtitle when not provided
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom className through BlockWrapper
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > handles click when onSelect is provided
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > shows selected state through BlockWrapper
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > handles missing content gracefully
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 6/11
+
+ Test Files 0 passed (1)
+      Tests 6 failed | 0 passed (11)
+   Start at 19:21:15
+   Duration 16.19s
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom styles from block.style
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx (11 tests | 10 failed) 893ms
+   ❯ SectionHeaderBlock (11)
+     × renders with default content 403ms
+     × renders h1 for level 1 header 96ms
+     × renders h2 for level 2 header 4ms
+     × renders h6 for level 6 header 96ms
+     × renders without subtitle when not provided 2ms
+     × applies custom className through BlockWrapper 3ms
+     × handles click when onSelect is provided 5ms
+     × shows selected state through BlockWrapper 90ms
+     × handles missing content gracefully 2ms
+     ✓ does not render when block is not visible 6ms
+     × applies custom styles from block.style 2ms
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders with default content
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h1 for level 1 header
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h2 for level 2 header
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h6 for level 6 header
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders without subtitle when not provided
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom className through BlockWrapper
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > handles click when onSelect is provided
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > shows selected state through BlockWrapper
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > handles missing content gracefully
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom styles from block.style
+TypeError: Cannot read properties of undefined (reading 'content')
+ ❯ SectionHeaderBlockComponent src/components/page-builder/blocks/SectionHeaderBlock.tsx:11:25
+      9| 
+     10| function SectionHeaderBlockComponent({ block }: SectionHeaderBlockProp…
+     11|   const content = block.content as SectionHeaderContent
+       |                         ^
+     12|   const { title = '', subtitle, level = 2 } = content || {}
+     13| 
+ ❯ renderWithHooks node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:15486:18
+ ❯ mountIndeterminateComponent node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:20103:13
+ ❯ beginWork node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:21626:16
+ ❯ HTMLUnknownElement.callCallback node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:4164:14
+ ❯ HTMLUnknownElement.#callDispatchEventListeners node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:289:42
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:136:35
+ ❯ HTMLUnknownElement.#goThroughDispatchEventPhases node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:198:33
+ ❯ HTMLUnknownElement.dispatchEvent node_modules/.pnpm/happy-dom@18.0.1/node_modules/happy-dom/src/event/EventTarget.ts:129:38
+ ❯ Object.invokeGuardedCallbackDev node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:4213:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 failed | 1 passed (11)
+   Start at  19:21:15
+   Duration  16.59s (transform 1.21s, setup 3.09s, collect 803ms, tests 893ms, environment 3.30s, prepare 1.80s)
+
+ ELIFECYCLE  Command failed with exit code 1.

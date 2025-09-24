@@ -1,0 +1,154 @@
+
+> react_repo@0.0.0 test:run /workspace/ai-gym-platform
+> vitest run --reporter\=verbose
+
+
+ RUN  v3.2.4 /workspace/ai-gym-platform
+
+ ✓ src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > page-structure-manager function > fetches mission with pages successfully 76ms
+ ✓ src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > page-structure-manager function > handles missing parentType parameter 4ms
+ ✓ src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > page-structure-manager function > validates parentType values 2ms
+ ✓ src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > page-structure-manager function > fetches course with pages 2ms
+ ✓ src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > page-structure-manager function > includes user progress when userId is provided 2ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > BlockType > includes all expected block types 2ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > ContentStatus > includes all expected status values 0ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > DifficultyLevel > includes all expected difficulty levels 0ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > ProgressType > includes all expected progress types 0ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > Block interface > has all required properties 0ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > Mission interface > has all required properties 0ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > Mission interface > allows optional properties to be undefined 0ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > Page interface > can be associated with mission or course 0ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > Content type interfaces > SectionHeaderContent has required properties 0ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > Content type interfaces > RichTextContent has required properties 0ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > Content type interfaces > ImageContent has required and optional properties 0ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > Content type interfaces > AutomationsContent has required properties 0ms
+ ✓ src/lib/__tests__/page-builder-types.test.ts > Page Builder Types > UserProgress interface > handles different progress contexts 0ms
+stderr | src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > Error handling and CORS > handles OPTIONS requests for CORS
+[MSW] Error: intercepted a request without a matching request handler:
+
+  • OPTIONS /functions/v1/page-structure-manager
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests
+
+ ✓ src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > page-builder-bulk-create function > creates multiple pages successfully 78ms
+ ✓ src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > page-builder-bulk-create function > validates required parameters 3ms
+ ✓ src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > process-automation-block function > processes personalized summary successfully 2ms
+ ✓ src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > process-automation-block function > handles different automation content types 6ms
+ × src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > process-automation-block function > works without user context 5ms
+   → expected 'Generated content for personalized_su…' to contain 'anonymous'
+ × src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > Error handling and CORS > handles OPTIONS requests for CORS 88ms
+   → [MSW] Cannot bypass a request when using the "error" strategy for the "onUnhandledRequest" option.
+ ✓ src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > Error handling and CORS > handles malformed JSON requests 95ms
+ ✓ src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders section header block correctly 199ms
+ ✓ src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders rich text block correctly 5ms
+ ✓ src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders image block correctly 3ms
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders with default content
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > renders HTML content correctly
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h1 for level 1 header
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stdout | src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders quiz block and handles completion callback
+Quiz completed: {
+  blockId: 'test-block-quiz',
+  score: 85,
+  answers: [ 'answer1', 'answer2' ]
+}
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h2 for level 2 header
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > handles complex HTML structures
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h6 for level 6 header
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > applies custom className through BlockWrapper
+The above error occurred in the <RichTextBlockComponent> component:
+
+    at RichTextBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/RichTextBlock.tsx:3:35)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders without subtitle when not provided
+The above error occurred in the <SectionHeaderBlockComponent> component:
+
+    at SectionHeaderBlockComponent (/workspace/ai-gym-platform/src/components/page-builder/blocks/SectionHeaderBlock.tsx:4:40)
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+ ✓ src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders video block and handles progress callback 94ms
+ ✓ src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders automations content block with user context 2ms
+ ✓ src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders quiz block and handles completion callback 94ms
+ × src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders with default content 203ms
+   → Cannot read properties of undefined (reading 'content')
+ × src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > renders h1 for level 1 header 90ms

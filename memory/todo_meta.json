@@ -3,31 +3,59 @@
     "Coordinator": {
       "1": {
         "id": "1",
-        "content": "Deploy the new save/load implementation to production",
-        "details": "1. Push all changes to GitHub repository. 2. Deploy the updated application. 3. Verify deployment is successful and accessible.",
+        "content": "Analyze existing codebase structure",
+        "details": "1. Examine the current Program Builder implementation\n2. Study the existing RepositoryPopup.tsx component\n3. Understand the WODs/BLOCKS page builder structure\n4. Identify components that can be reused vs. new ones needed",
         "status": "completed",
         "priority": "high"
       },
       "2": {
         "id": "2",
-        "content": "Comprehensive end-to-end testing of WOD save/load functionality",
-        "details": "1. Test creating a new WOD with content blocks. 2. Save the WOD and verify thumbnail appears. 3. Click thumbnail and verify saved content loads correctly. 4. Test editing existing WOD and saving updates.",
-        "status": "pending",
+        "content": "Build the main Program Builder layout",
+        "details": "1. Create a new ProgramBuilder component with split layout\n2. Left side: Interactive index builder area\n3. Right side: Preview area for navigation\n4. Implement responsive design similar to existing builders",
+        "status": "completed",
         "priority": "high"
       },
       "3": {
         "id": "3",
-        "content": "Comprehensive end-to-end testing of Block save/load functionality",
-        "details": "1. Test creating a new Block with content. 2. Save the Block and verify thumbnail appears. 3. Click thumbnail and verify saved content loads correctly. 4. Test editing existing Block and saving updates.",
-        "status": "pending",
+        "content": "Implement Sections functionality",
+        "details": "1. Create Section component with bold headings\n2. Add editable text functionality\n3. Implement three-dot menu with delete option\n4. Add drag-and-drop functionality for reordering\n5. Auto-renumber sections based on position\n6. Implement expand/collapse functionality (first section expanded by default)",
+        "status": "completed",
         "priority": "high"
       },
       "4": {
         "id": "4",
-        "content": "Verify and document testing results",
-        "details": "1. Document all test results and any issues found. 2. Confirm the critical save/load bug is fully resolved. 3. Provide final status report to user.",
-        "status": "pending",
+        "content": "Implement Subsections functionality",
+        "details": "1. Create Subsection component with plain text (not bold)\n2. Add editable title functionality\n3. Implement three-dot menu with options:\n   - Title (edit title text)\n   - Assign (opens existing RepositoryPopup)\n   - Delete (delete subsection)\n4. Add drag-and-drop functionality for reordering\n5. Integrate with existing RepositoryPopup.tsx",
+        "status": "completed",
         "priority": "high"
+      },
+      "5": {
+        "id": "5",
+        "content": "Integrate RepositoryPopup for assignment functionality",
+        "details": "1. Import and reuse existing RepositoryPopup.tsx\n2. Configure it for WODs and BLOCKS selection\n3. Add dropdown menu to select type (default: WODs)\n4. Ensure 'Published' checkbox is checked by default\n5. Handle the connection/assignment logic",
+        "status": "completed",
+        "priority": "high"
+      },
+      "6": {
+        "id": "6",
+        "content": "Build preview area functionality",
+        "details": "1. Create preview area for right side\n2. Enable navigation through subsections that have assigned WODs/BLOCKS\n3. Display the assigned content in the preview area\n4. Implement navigation controls between subsections",
+        "status": "completed",
+        "priority": "medium"
+      },
+      "7": {
+        "id": "7",
+        "content": "Connect new Program Builder to existing Programs marketplace",
+        "details": "1. Update the Programs marketplace to link to the new Program Builder\n2. Ensure proper routing between marketplace and builder\n3. Test the complete flow from marketplace to builder",
+        "status": "completed",
+        "priority": "medium"
+      },
+      "8": {
+        "id": "8",
+        "content": "Testing and deployment",
+        "details": "1. Test all drag-and-drop functionality\n2. Test section/subsection creation, editing, and deletion\n3. Test RepositoryPopup integration\n4. Test preview area navigation\n5. Deploy updated version\n6. Provide deployment URL for user testing",
+        "status": "completed",
+        "priority": "medium"
       }
     }
   }

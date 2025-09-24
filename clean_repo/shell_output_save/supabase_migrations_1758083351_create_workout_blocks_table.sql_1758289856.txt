@@ -1,0 +1,65 @@
+-- Migration: create_workout_blocks_table
+-- Created at: 1758083351
+
+-- Create workout_blocks table for modular workout components
+CREATE TABLE IF NOT EXISTS workout_blocks (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  thumbnail_url TEXT,
+  status VARCHAR(20) DEFAULT 'draft' CHECK (status IN ('draft', 'published', 'archived')),
+  estimated_duration_minutes INTEGER DEFAULT 30,
+  difficulty_level VARCHAR(20) DEFAULT 'beginner' CHECK (difficulty_level IN ('beginner', 'intermediate', 'advanced')),
+  tags TEXT[] DEFAULT '{}',
+  block_category VARCHAR(50) DEFAULT 'general' CHECK (block_category IN ('warm-up', 'cardio', 'strength', 'flexibility', 'cool-down', 'general')),
+  equipment_needed TEXT[] DEFAULT '{}',
+  instructions TEXT,
+  created_by TEXT, -- Store admin email
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- Create updated_at trigger for workout_blocks
+CREATE TRIGGER update_workout_blocks_updated_at BEFORE UPDATE ON workout_blocks
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+-- Enable RLS
+ALTER TABLE workout_blocks ENABLE ROW LEVEL SECURITY;
+
+-- Create RLS policies for workout_blocks
+CREATE POLICY "Allow all operations on workout_blocks" ON workout_blocks
+    FOR ALL USING (true);
+
+-- Create workout block community assignments table
+CREATE TABLE IF NOT EXISTS workout_block_community_assignments (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  workout_block_id UUID REFERENCES workout_blocks(id) ON DELETE CASCADE,
+  community_id UUID REFERENCES communities(id) ON DELETE CASCADE,
+  assigned_by TEXT, -- Store admin email
+  assigned_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+  UNIQUE(workout_block_id, community_id)
+);
+
+-- Enable RLS for workout block assignments
+ALTER TABLE workout_block_community_assignments ENABLE ROW LEVEL SECURITY;
+
+-- Create RLS policies for workout block assignments
+CREATE POLICY "Allow all operations on workout_block_assignments" ON workout_block_community_assignments
+    FOR ALL USING (true);
+
+-- Create indexes for performance
+CREATE INDEX IF NOT EXISTS idx_workout_blocks_status ON workout_blocks(status);
+CREATE INDEX IF NOT EXISTS idx_workout_blocks_difficulty ON workout_blocks(difficulty_level);
+CREATE INDEX IF NOT EXISTS idx_workout_blocks_category ON workout_blocks(block_category);
+CREATE INDEX IF NOT EXISTS idx_workout_blocks_created_at ON workout_blocks(created_at);
+CREATE INDEX IF NOT EXISTS idx_workout_blocks_updated_at ON workout_blocks(updated_at);
+CREATE INDEX IF NOT EXISTS idx_workout_block_assignments_block_id ON workout_block_community_assignments(workout_block_id);
+CREATE INDEX IF NOT EXISTS idx_workout_block_assignments_community_id ON workout_block_community_assignments(community_id);
+
+-- Insert some sample workout blocks for testing
+INSERT INTO workout_blocks (title, description, status, difficulty_level, block_category, equipment_needed, instructions, created_by) VALUES
+('Push-Up Set', 'Classic bodyweight exercise for upper body strength', 'published', 'beginner', 'strength', '{}', 'Perform 3 sets of 10-15 push-ups with 30 seconds rest between sets. Maintain proper form with straight body line.', 'admin@ai-gym.com'),
+('Mountain Climbers', 'High-intensity cardio exercise', 'published', 'intermediate', 'cardio', '{}', 'Alternate bringing knees to chest in plank position for 30 seconds. Keep core engaged and maintain steady rhythm.', 'admin@ai-gym.com'),
+('Resistance Band Rows', 'Upper body pulling exercise', 'published', 'beginner', 'strength', '{"resistance band", "anchor point"}', 'Attach resistance band at chest height. Pull handles back squeezing shoulder blades. 3 sets of 12-15 reps.', 'admin@ai-gym.com'),
+('Cool Down Stretch', 'Full body stretching routine', 'published', 'beginner', 'cool-down', '{"yoga mat"}', 'Hold each stretch for 30 seconds. Focus on major muscle groups used during workout.', 'admin@ai-gym.com'),
+('Kettlebell Swings', 'Dynamic full-body movement', 'draft', 'advanced', 'strength', '{"kettlebell"}', 'Hip-hinge movement with explosive extension. 4 sets of 20 swings with 45 seconds rest.', 'admin@ai-gym.com');;

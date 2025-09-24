@@ -1,0 +1,18 @@
+📄 Extracted from page: ai-gym-platform-video-fix
+URL: https://if4yb5jxn92w.space.minimax.io/api/health
+
+Extracted content:
+```json
+{
+    "title": "ai-gym-platform-video-fix",
+    "url": "https://if4yb5jxn92w.space.minimax.io/api/health",
+    "summary": "The goal was to extract the API response from the `/api/health` endpoint. However, upon attempting to access the page, a \"Page Not Found\" error was returned. Therefore, no API response data from the intended endpoint was found or returned.",
+    "key_points": [
+        "The requested URL, `https://if4yb5jxn92w.space.minimax.io/api/health`, resulted in a 'Page Not Found' error.",
+        "No API response data was returned from the `/api/health` endpoint.",
+        "The content displayed is an error page, not an API response."
+    ],
+    "relevant_links": [],
+    "file_name": "api_health_endpoint_not_found.json"
+}
+```

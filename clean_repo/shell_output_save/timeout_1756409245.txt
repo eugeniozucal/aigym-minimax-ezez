@@ -1,0 +1,1962 @@
+
+> react_repo@0.0.0 test
+> vitest
+
+
+ DEV  v3.2.4 /workspace/ai-gym-platform
+
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 6.40s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 7.30s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 8.40s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 9.40s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 10.50s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 11.40s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 12.40s
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 12.50s
+
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 13.00s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 13.10s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 13.51s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 14.40s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 15.60s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 15.80s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 16.50s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 16.70s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 17.60s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 17.70s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 18.50s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 18.70s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 19.60s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 20.01s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 20.80s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts [queued]
+
+ Test Files 0 passed (8)
+      Tests 0 passed (0)
+   Start at 19:25:37
+   Duration 21.20s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 0/12
+
+ Test Files 0 passed (8)
+      Tests 0 passed (12)
+   Start at 19:25:37
+   Duration 21.30s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/lib/__tests__/page-builder-types.test.ts 1/13
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 0/12
+
+ Test Files 0 passed (8)
+      Tests 1 passed (25)
+   Start at 19:25:37
+   Duration 21.50s
+ ✓ src/lib/__tests__/page-builder-types.test.ts (13 tests) 101ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 1/12
+
+ Test Files 1 passed (8)
+      Tests 14 passed (25)
+   Start at 19:25:37
+   Duration 21.71s
+stderr | src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > Error handling and CORS > handles OPTIONS requests for CORS
+[MSW] Error: intercepted a request without a matching request handler:
+
+  • OPTIONS /functions/v1/page-structure-manager
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 9/12
+
+ Test Files 1 passed (8)
+      Tests 22 passed (25)
+   Start at 19:25:37
+   Duration 22.10s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+ ❯ src/test/integration/supabase-edge-functions.test.ts 10/12
+
+ Test Files 1 passed (8)
+      Tests 1 failed | 22 passed (25)
+   Start at 19:25:37
+   Duration 22.20s
+ ❯ src/test/integration/supabase-edge-functions.test.ts (12 tests | 2 failed) 800ms
+   ✓ Supabase Edge Functions Tests > page-structure-manager function > fetches mission with pages successfully 199ms
+   ✓ Supabase Edge Functions Tests > page-structure-manager function > handles missing parentType parameter 4ms
+   ✓ Supabase Edge Functions Tests > page-structure-manager function > validates parentType values 2ms
+   ✓ Supabase Edge Functions Tests > page-structure-manager function > fetches course with pages 2ms
+   ✓ Supabase Edge Functions Tests > page-structure-manager function > includes user progress when userId is provided 2ms
+   ✓ Supabase Edge Functions Tests > page-builder-bulk-create function > creates multiple pages successfully 90ms
+   ✓ Supabase Edge Functions Tests > page-builder-bulk-create function > validates required parameters 4ms
+   ✓ Supabase Edge Functions Tests > process-automation-block function > processes personalized summary successfully 2ms
+   ✓ Supabase Edge Functions Tests > process-automation-block function > handles different automation content types 99ms
+   × Supabase Edge Functions Tests > process-automation-block function > works without user context 100ms
+     → expected 'Generated content for personalized_su…' to contain 'anonymous'
+   × Supabase Edge Functions Tests > Error handling and CORS > handles OPTIONS requests for CORS 197ms
+     → [MSW] Cannot bypass a request when using the "error" strategy for the "onUnhandledRequest" option.
+   ✓ Supabase Edge Functions Tests > Error handling and CORS > handles malformed JSON requests 2ms
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 0/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 1 failed | 1 passed (8)
+      Tests 2 failed | 23 passed (35)
+   Start at 19:25:37
+   Duration 22.70s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 0/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 0/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 1 failed | 1 passed (8)
+      Tests 2 failed | 23 passed (58)
+   Start at 19:25:37
+   Duration 23.20s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 0/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 1/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 1 failed | 1 passed (8)
+      Tests 2 failed | 24 passed (58)
+   Start at 19:25:37
+   Duration 23.50s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 1/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 2/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 1 failed | 1 passed (8)
+      Tests 2 failed | 26 passed (58)
+   Start at 19:25:37
+   Duration 23.60s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 0/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 3/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 3/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 1 failed | 1 passed (8)
+      Tests 2 failed | 29 passed (58)
+   Start at 19:25:37
+   Duration 24.00s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 1/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 8/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 7/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 1 failed | 1 passed (8)
+      Tests 3 failed | 38 passed (67)
+   Start at 19:25:37
+   Duration 24.10s
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 2/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 8/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 7/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 1 failed | 1 passed (8)
+      Tests 4 failed | 38 passed (67)
+   Start at 19:25:37
+   Duration 24.30s
+stderr | src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom styles from block.style
+Warning: Unsupported style property background-color. Did you mean backgroundColor?
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+Warning: Unsupported style property font-size. Did you mean fontSize?
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 2/12
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx 8/10
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx 11/11
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 1 failed | 1 passed (8)
+      Tests 5 failed | 41 passed (67)
+   Start at 19:25:37
+   Duration 24.40s
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx (11 tests | 1 failed) 1404ms
+   ✓ SectionHeaderBlock > renders with default content  495ms
+   ✓ SectionHeaderBlock > renders h1 for level 1 header 104ms
+   ✓ SectionHeaderBlock > renders h2 for level 2 header 99ms
+   ✓ SectionHeaderBlock > renders h6 for level 6 header 98ms
+   ✓ SectionHeaderBlock > renders without subtitle when not provided 3ms
+   ✓ SectionHeaderBlock > applies custom className through BlockWrapper 97ms
+   ✓ SectionHeaderBlock > handles click when onSelect is provided 99ms
+   ✓ SectionHeaderBlock > shows selected state through BlockWrapper 3ms
+   ✓ SectionHeaderBlock > handles missing content gracefully 97ms
+   ✓ SectionHeaderBlock > does not render when block is not visible 2ms
+   × SectionHeaderBlock > applies custom styles from block.style 301ms
+     → expect(element).toHaveAttribute("style") // element.hasAttribute("style")
+
+Expected the element to have attribute:
+  style
+Received:
+  null
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 3/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 3 failed | 1 passed (8)
+      Tests 7 failed | 42 passed (67)
+   Start at 19:25:37
+   Duration 24.70s
+stderr | src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > applies custom styles from block.style
+Warning: Unsupported style property background-color. Did you mean backgroundColor?
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 3/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 3 failed | 1 passed (8)
+      Tests 7 failed | 42 passed (67)
+   Start at 19:25:37
+   Duration 24.70s
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx (10 tests | 1 failed) 1504ms
+   ✓ RichTextBlock > renders HTML content correctly  595ms
+   ✓ RichTextBlock > handles complex HTML structures 101ms
+   ✓ RichTextBlock > applies custom className through BlockWrapper 5ms
+   ✓ RichTextBlock > handles click events when onSelect is provided 100ms
+   ✓ RichTextBlock > shows selected state styling 96ms
+   ✓ RichTextBlock > handles empty content gracefully 3ms
+   ✓ RichTextBlock > preserves whitespace and line breaks in HTML 96ms
+   ✓ RichTextBlock > does not render when block is not visible 2ms
+   ✓ RichTextBlock > applies prose classes to content 99ms
+   × RichTextBlock > applies custom styles from block.style 402ms
+     → expect(element).toHaveStyle()
+
+- Expected
++ Received
+
+- background-color: yellow;
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 3/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 3 failed | 1 passed (8)
+      Tests 7 failed | 42 passed (67)
+   Start at 19:25:37
+   Duration 24.70s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 5/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 3 failed | 1 passed (8)
+      Tests 9 failed | 42 passed (67)
+   Start at 19:25:37
+   Duration 24.80s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 6/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 3 failed | 1 passed (8)
+      Tests 10 failed | 42 passed (67)
+   Start at 19:25:37
+   Duration 25.00s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 0/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 9/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 3 failed | 1 passed (8)
+      Tests 13 failed | 42 passed (67)
+   Start at 19:25:37
+   Duration 25.20s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 1/9
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx 10/12
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 3 failed | 1 passed (8)
+      Tests 14 failed | 43 passed (67)
+   Start at 19:25:37
+   Duration 26.10s
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx (12 tests | 12 failed) 2000ms
+   × QuizBlock > renders quiz question and options 697ms
+     → Unable to find an element with the text: What is 2 + 2?. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+   × QuizBlock > handles option selection 102ms
+     → Unable to find a label with the text of: 4
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+   × QuizBlock > shows result when quiz is submitted 102ms
+     → Unable to find a label with the text of: 4
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+   × QuizBlock > shows incorrect result for wrong answer 97ms
+     → Unable to find a label with the text of: 3
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+   × QuizBlock > handles multiple correct answers 400ms
+     → Unable to find an accessible element with the role "checkbox"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+   × QuizBlock > calculates partial credit for multiple select 103ms
+     → Unable to find an accessible element with the role "checkbox"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+   × QuizBlock > prevents submission without selection 195ms
+     → Unable to find an accessible element with the role "button" and name `/submit/i`
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+   × QuizBlock > allows retrying the quiz 3ms
+     → Unable to find a label with the text of: 3
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+   × QuizBlock > handles free text questions 98ms
+     → Unable to find an element with the text: Explain photosynthesis. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+   × QuizBlock > shows points value 4ms
+     → Unable to find an element with the text: /15 points/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+   × QuizBlock > applies custom styling 98ms
+     → Unable to find an element with the text: What is 2 + 2?. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200 custom-quiz"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+   × QuizBlock > handles missing content gracefully 97ms
+     → Unable to find an element with the text: /quiz configuration error/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 4/9
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 failed | 1 passed (8)
+      Tests 16 failed | 46 passed (67)
+   Start at 19:25:37
+   Duration 26.20s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 6/9
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 failed | 1 passed (8)
+      Tests 16 failed | 48 passed (67)
+   Start at 19:25:37
+   Duration 26.40s
+stderr | src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > applies custom styles from block.style
+Warning: Unsupported style property background-color. Did you mean backgroundColor?
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+Warning: Unsupported style property border-radius. Did you mean borderRadius?
+    at div
+    at BlockWrapper (/workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:5:3)
+    at div
+    at /workspace/ai-gym-platform/src/components/page-builder/BlockWrapper.tsx:78:13
+
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx 8/9
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 4 failed | 1 passed (8)
+      Tests 16 failed | 50 passed (67)
+   Start at 19:25:37
+   Duration 26.90s
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx (9 tests | 1 failed) 2901ms
+   ✓ AutomationsContentBlock > renders content type label correctly  601ms
+   ✓ AutomationsContentBlock > handles different content types  499ms
+   ✓ AutomationsContentBlock > displays generated content when available  700ms
+   ✓ AutomationsContentBlock > shows generate button when no content is available 199ms
+   ✓ AutomationsContentBlock > applies custom className through BlockWrapper 98ms
+   ✓ AutomationsContentBlock > does not render when block is not visible 2ms
+   ✓ AutomationsContentBlock > handles missing user context gracefully 98ms
+   ✓ AutomationsContentBlock > shows refresh indicator when content is stale 103ms
+   × AutomationsContentBlock > applies custom styles from block.style 595ms
+     → expect(element).toHaveStyle()
+
+- Expected
++ Received
+
+- background-color: lightblue;
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 failed | 1 passed (8)
+      Tests 17 failed | 50 passed (67)
+   Start at 19:25:37
+   Duration 27.10s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx [queued]
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 failed | 1 passed (8)
+      Tests 17 failed | 50 passed (67)
+   Start at 19:25:37
+   Duration 28.00s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 0/10
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 failed | 1 passed (8)
+      Tests 17 failed | 50 passed (77)
+   Start at 19:25:37
+   Duration 28.30s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 1/10
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 failed | 1 passed (8)
+      Tests 17 failed | 51 passed (77)
+   Start at 19:25:37
+   Duration 28.80s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 2/10
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 failed | 1 passed (8)
+      Tests 17 failed | 52 passed (77)
+   Start at 19:25:37
+   Duration 28.90s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 5/10
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 failed | 1 passed (8)
+      Tests 20 failed | 52 passed (77)
+   Start at 19:25:37
+   Duration 29.10s
+
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx 8/10
+ ❯ src/test/integration/page-builder-editor.test.tsx [queued]
+
+ Test Files 5 failed | 1 passed (8)
+      Tests 22 failed | 53 passed (77)
+   Start at 19:25:37
+   Duration 29.20s
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx (10 tests | 5 failed) 991ms
+   ✓ BlockRenderer > renders section header block correctly  301ms
+   ✓ BlockRenderer > renders rich text block correctly 98ms
+   × BlockRenderer > renders placeholder for unimplemented block types 8ms
+     → Unable to find an element with the text: Block type "agent" coming soon. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50"
+    >
+      <div
+        class="text-gray-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-gray-500 text-sm font-medium"
+      >
+        AGENT
+         Block
+      </p>
+      <p
+        class="text-gray-400 text-xs mt-1"
+      >
+        Component not implemented yet
+      </p>
+    </div>
+  </div>
+</body>
+   × BlockRenderer > renders placeholder for document block type 3ms
+     → Unable to find an element with the text: Block type "document" coming soon. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50"
+    >
+      <div
+        class="text-gray-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-gray-500 text-sm font-medium"
+      >
+        DOCUMENT
+         Block
+      </p>
+      <p
+        class="text-gray-400 text-xs mt-1"
+      >
+        Component not implemented yet
+      </p>
+    </div>
+  </div>
+</body>
+   × BlockRenderer > renders placeholder for prompt block type 93ms
+     → Unable to find an element with the text: Block type "prompt" coming soon. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50"
+    >
+      <div
+        class="text-gray-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-gray-500 text-sm font-medium"
+      >
+        PROMPT
+         Block
+      </p>
+      <p
+        class="text-gray-400 text-xs mt-1"
+      >
+        Component not implemented yet
+      </p>
+    </div>
+  </div>
+</body>
+   × BlockRenderer > renders placeholder for user_submission block type 96ms
+     → Unable to find an element with the text: Block type "user_submission" coming soon. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50"
+    >
+      <div
+        class="text-gray-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-gray-500 text-sm font-medium"
+      >
+        USER SUBMISSION
+         Block
+      </p>
+      <p
+        class="text-gray-400 text-xs mt-1"
+      >
+        Component not implemented yet
+      </p>
+    </div>
+  </div>
+</body>
+   × BlockRenderer > handles unknown block types gracefully 99ms
+     → Unable to find an element with the text: Unknown block type: unknown_type. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-red-300 rounded-lg p-8 text-center bg-red-50"
+    >
+      <div
+        class="text-red-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-red-600 text-sm font-medium"
+      >
+        Unknown Block Type: 
+        unknown_type
+      </p>
+      <p
+        class="text-red-500 text-xs mt-1"
+      >
+        This block type is not supported
+      </p>
+    </div>
+  </div>
+</body>
+   ✓ BlockRenderer > passes through props correctly to block components 99ms
+   ✓ BlockRenderer > handles missing content gracefully 3ms
+   ✓ BlockRenderer > does not render when block is not visible 2ms
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/integration/page-builder-editor.test.tsx [ src/test/integration/page-builder-editor.test.tsx ]
+Error: Failed to resolve import "../../../pages/PageBuilderEditor" from "src/test/integration/page-builder-editor.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /workspace/ai-gym-platform/src/test/integration/page-builder-editor.test.tsx:4:0
+  40 |  const __vi_import_1__ = await import("@testing-library/react");
+  41 |  const __vi_import_2__ = await import("@testing-library/user-event");
+  42 |  const __vi_import_3__ = await import("../../../pages/PageBuilderEditor");
+     |                                       ^
+  43 |  
+  44 |  import { describe, it, expect, beforeEach, vi } from "vitest";
+ ❯ TransformPluginContext._formatLog node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:47897:41
+ ❯ TransformPluginContext.error node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:47894:16
+ ❯ normalizeUrl node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:46027:23
+ ❯ node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:46146:37
+ ❯ TransformPluginContext.transform node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:46073:7
+ ❯ EnvironmentPluginContainer.transform node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:47692:18
+ ❯ loadAndTransform node_modules/.pnpm/vite@6.2.6_@types+node@22.14.1_jiti@1.21.7_yaml@2.7.1/node_modules/vite/dist/node/chunks/dep-Bid9ssRr.js:41327:27
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/23]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 22 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > process-automation-block function > works without user context
+AssertionError: expected 'Generated content for personalized_su…' to contain 'anonymous'
+
+Expected: "anonymous"
+Received: "Generated content for personalized_summary"
+
+ ❯ src/test/integration/supabase-edge-functions.test.ts:497:35
+    495|       
+    496|       expect(response.ok).toBe(true)
+    497|       expect(result.data.content).toContain('anonymous')
+       |                                   ^
+    498|     })
+    499|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/23]⎯
+
+ FAIL  src/test/integration/supabase-edge-functions.test.ts > Supabase Edge Functions Tests > Error handling and CORS > handles OPTIONS requests for CORS
+InternalError: [MSW] Cannot bypass a request when using the "error" strategy for the "onUnhandledRequest" option.
+ ❯ applyStrategy node_modules/.pnpm/msw@2.10.5_@types+node@22.14.1_typescript@5.6.3/node_modules/msw/src/core/utils/request/onUnhandledRequest.ts:42:15
+ ❯ onUnhandledRequest node_modules/.pnpm/msw@2.10.5_@types+node@22.14.1_typescript@5.6.3/node_modules/msw/src/core/utils/request/onUnhandledRequest.ts:79:5
+ ❯ handleRequest node_modules/.pnpm/msw@2.10.5_@types+node@22.14.1_typescript@5.6.3/node_modules/msw/src/core/utils/handleRequest.ts:79:5
+ ❯ _Emitter.<anonymous> node_modules/.pnpm/msw@2.10.5_@types+node@22.14.1_typescript@5.6.3/node_modules/msw/src/node/SetupServerCommonApi.ts:60:26
+ ❯ emitAsync node_modules/.pnpm/@mswjs+interceptors@0.39.6/node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/.pnpm/@mswjs+interceptors@0.39.6/node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:145:5
+ ❯ until node_modules/.pnpm/@open-draft+until@2.1.0/node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/.pnpm/@mswjs+interceptors@0.39.6/node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:134:18
+ ❯ globalThis.fetch node_modules/.pnpm/@mswjs+interceptors@0.39.6/node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:72:32
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/23]⎯
+
+ FAIL  src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders placeholder for unimplemented block types
+TestingLibraryElementError: Unable to find an element with the text: Block type "agent" coming soon. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50"
+    >
+      <div
+        class="text-gray-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-gray-500 text-sm font-medium"
+      >
+        AGENT
+         Block
+      </p>
+      <p
+        class="text-gray-400 text-xs mt-1"
+      >
+        Component not implemented yet
+      </p>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx:43:19
+     41|     render(<BlockRenderer block={block} />)
+     42|     
+     43|     expect(screen.getByText('Block type "agent" coming soon')).toBeInT…
+       |                   ^
+     44|   })
+     45| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/23]⎯
+
+ FAIL  src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders placeholder for document block type
+TestingLibraryElementError: Unable to find an element with the text: Block type "document" coming soon. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50"
+    >
+      <div
+        class="text-gray-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-gray-500 text-sm font-medium"
+      >
+        DOCUMENT
+         Block
+      </p>
+      <p
+        class="text-gray-400 text-xs mt-1"
+      >
+        Component not implemented yet
+      </p>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx:51:19
+     49|     render(<BlockRenderer block={block} />)
+     50|     
+     51|     expect(screen.getByText('Block type "document" coming soon')).toBe…
+       |                   ^
+     52|   })
+     53| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/23]⎯
+
+ FAIL  src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders placeholder for prompt block type
+TestingLibraryElementError: Unable to find an element with the text: Block type "prompt" coming soon. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50"
+    >
+      <div
+        class="text-gray-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-gray-500 text-sm font-medium"
+      >
+        PROMPT
+         Block
+      </p>
+      <p
+        class="text-gray-400 text-xs mt-1"
+      >
+        Component not implemented yet
+      </p>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx:59:19
+     57|     render(<BlockRenderer block={block} />)
+     58|     
+     59|     expect(screen.getByText('Block type "prompt" coming soon')).toBeIn…
+       |                   ^
+     60|   })
+     61| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/23]⎯
+
+ FAIL  src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > renders placeholder for user_submission block type
+TestingLibraryElementError: Unable to find an element with the text: Block type "user_submission" coming soon. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50"
+    >
+      <div
+        class="text-gray-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-gray-500 text-sm font-medium"
+      >
+        USER SUBMISSION
+         Block
+      </p>
+      <p
+        class="text-gray-400 text-xs mt-1"
+      >
+        Component not implemented yet
+      </p>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx:67:19
+     65|     render(<BlockRenderer block={block} />)
+     66|     
+     67|     expect(screen.getByText('Block type "user_submission" coming soon'…
+       |                   ^
+     68|   })
+     69| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/23]⎯
+
+ FAIL  src/components/page-builder/__tests__/BlockRenderer.test.tsx > BlockRenderer > handles unknown block types gracefully
+TestingLibraryElementError: Unable to find an element with the text: Unknown block type: unknown_type. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="border-2 border-dashed border-red-300 rounded-lg p-8 text-center bg-red-50"
+    >
+      <div
+        class="text-red-400 mb-2"
+      >
+        <svg
+          class="w-8 h-8 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <p
+        class="text-red-600 text-sm font-medium"
+      >
+        Unknown Block Type: 
+        unknown_type
+      </p>
+      <p
+        class="text-red-500 text-xs mt-1"
+      >
+        This block type is not supported
+      </p>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/__tests__/BlockRenderer.test.tsx:75:19
+     73|     render(<BlockRenderer block={block} />)
+     74|     
+     75|     expect(screen.getByText('Unknown block type: unknown_type')).toBeI…
+       |                   ^
+     76|   })
+     77| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx > AutomationsContentBlock > applies custom styles from block.style
+Error: expect(element).toHaveStyle()
+
+- Expected
++ Received
+
+- background-color: lightblue;
+ ❯ src/components/page-builder/blocks/__tests__/AutomationsContentBlock.test.tsx:149:23
+    147|     
+    148|     const container = document.querySelector('[data-block-id="test-aut…
+    149|     expect(container).toHaveStyle('background-color: lightblue')
+       |                       ^
+    150|     expect(container).toHaveStyle('border-radius: 8px')
+    151|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > renders quiz question and options
+TestingLibraryElementError: Unable to find an element with the text: What is 2 + 2?. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:39:19
+     37|     render(<QuizBlock block={block} />)
+     38|     
+     39|     expect(screen.getByText('What is 2 + 2?')).toBeInTheDocument()
+       |                   ^
+     40|     expect(screen.getByText('3')).toBeInTheDocument()
+     41|     expect(screen.getByText('4')).toBeInTheDocument()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles option selection
+TestingLibraryElementError: Unable to find a label with the text of: 4
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:55:34
+     53|     render(<QuizBlock block={block} />)
+     54|     
+     55|     const correctOption = screen.getByLabelText('4')
+       |                                  ^
+     56|     fireEvent.click(correctOption)
+     57|     
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > shows result when quiz is submitted
+TestingLibraryElementError: Unable to find a label with the text of: 4
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:68:34
+     66|     
+     67|     // Select correct answer
+     68|     const correctOption = screen.getByLabelText('4')
+       |                                  ^
+     69|     fireEvent.click(correctOption)
+     70|     
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > shows incorrect result for wrong answer
+TestingLibraryElementError: Unable to find a label with the text of: 3
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:92:32
+     90|     
+     91|     // Select wrong answer
+     92|     const wrongOption = screen.getByLabelText('3')
+       |                                ^
+     93|     fireEvent.click(wrongOption)
+     94|     
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles multiple correct answers
+TestingLibraryElementError: Unable to find an accessible element with the role "checkbox"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:109:15
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:124:31
+    122|     
+    123|     // Select both correct answers
+    124|     const checkboxes = screen.getAllByRole('checkbox')
+       |                               ^
+    125|     fireEvent.click(checkboxes[0]) // 2
+    126|     fireEvent.click(checkboxes[2]) // 4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > calculates partial credit for multiple select
+TestingLibraryElementError: Unable to find an accessible element with the role "checkbox"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:109:15
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:154:31
+    152|     
+    153|     // Select only one correct answer out of two
+    154|     const checkboxes = screen.getAllByRole('checkbox')
+       |                               ^
+    155|     fireEvent.click(checkboxes[0]) // Correct
+    156|     
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > prevents submission without selection
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/submit/i`
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:170:33
+    168|     render(<QuizBlock block={block} />)
+    169|     
+    170|     const submitButton = screen.getByRole('button', { name: /submit/i …
+       |                                 ^
+    171|     fireEvent.click(submitButton)
+    172|     
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > allows retrying the quiz
+TestingLibraryElementError: Unable to find a label with the text of: 3
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:183:32
+    181|     
+    182|     // Submit with wrong answer
+    183|     const wrongOption = screen.getByLabelText('3')
+       |                                ^
+    184|     fireEvent.click(wrongOption)
+    185|     
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles free text questions
+TestingLibraryElementError: Unable to find an element with the text: Explain photosynthesis. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:211:19
+    209|     render(<QuizBlock block={block} />)
+    210|     
+    211|     expect(screen.getByText('Explain photosynthesis')).toBeInTheDocume…
+       |                   ^
+    212|     expect(screen.getByRole('textbox')).toBeInTheDocument()
+    213|     expect(screen.queryByRole('radio')).not.toBeInTheDocument()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > shows points value
+TestingLibraryElementError: Unable to find an element with the text: /15 points/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:221:19
+    219|     render(<QuizBlock block={block} />)
+    220|     
+    221|     expect(screen.getByText(/15 points/i)).toBeInTheDocument()
+       |                   ^
+    222|   })
+    223| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > applies custom styling
+TestingLibraryElementError: Unable to find an element with the text: What is 2 + 2?. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200 custom-quiz"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:229:30
+    227|     render(<QuizBlock block={block} className="custom-quiz" />)
+    228|     
+    229|     const container = screen.getByText('What is 2 + 2?').closest('.cus…
+       |                              ^
+    230|     expect(container).toBeInTheDocument()
+    231|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx > QuizBlock > handles missing content gracefully
+TestingLibraryElementError: Unable to find an element with the text: /quiz configuration error/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <div
+        class="relative group transition-all duration-200"
+        data-block-id="test-quiz"
+        data-block-type="quiz"
+      >
+        <div
+          class="text-gray-400 italic py-8 text-center"
+        >
+          No quiz questions configured
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/page-builder/blocks/__tests__/QuizBlock.test.tsx:243:19
+    241|     
+    242|     // Should not crash and show some fallback
+    243|     expect(screen.getByText(/quiz configuration error/i)).toBeInTheDoc…
+       |                   ^
+    244|   })
+    245| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx > RichTextBlock > applies custom styles from block.style
+Error: expect(element).toHaveStyle()
+
+- Expected
++ Received
+
+- background-color: yellow;
+ ❯ src/components/page-builder/blocks/__tests__/RichTextBlock.test.tsx:147:23
+    145|     
+    146|     const container = document.querySelector('[data-block-id="test-ric…
+    147|     expect(container).toHaveStyle('background-color: yellow')
+       |                       ^
+    148|     expect(container).toHaveStyle('padding: 10px')
+    149|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/23]⎯
+
+ FAIL  src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx > SectionHeaderBlock > applies custom styles from block.style
+Error: expect(element).toHaveAttribute("style") // element.hasAttribute("style")
+
+Expected the element to have attribute:
+  style
+Received:
+  null
+ ❯ src/components/page-builder/blocks/__tests__/SectionHeaderBlock.test.tsx:134:23
+    132|     // The styles should be applied to the BlockWrapper container
+    133|     // Note: Happy-DOM might handle CSS property names differently
+    134|     expect(container).toHaveAttribute('style')
+       |                       ^
+    135|   })
+    136| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/23]⎯
+
+
+ Test Files  7 failed | 1 passed (8)
+      Tests  22 failed | 55 passed (77)
+   Start at  19:25:37
+   Duration  29.70s (transform 14.30s, setup 51.41s, collect 26.11s, tests 9.70s, environment 49.81s, prepare 23.20s)
+
+ FAIL  Tests failed. Watching for file changes...
+       press h to show help, press q to quit
