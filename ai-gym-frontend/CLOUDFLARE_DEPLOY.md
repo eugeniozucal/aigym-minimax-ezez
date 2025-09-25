@@ -7,7 +7,7 @@ El proyecto **aigym-minimax-ezez** está listo para ser desplegado en Cloudflare
 
 ### **1. Configuración del Build**
 - **Framework preset**: `Vite`
-- **Build command**: `npm ci && npm run build`
+- **Build command**: `npm install && npm run build`
 - **Build output directory**: `dist`
 - **Node.js version**: `18.x`
 - **Package manager**: `npm` (NO usar pnpm)
@@ -100,10 +100,11 @@ Después del despliegue, verifica:
 ### **Error: "packages field missing or empty"**
 - **Causa**: Cloudflare está detectando pnpm en lugar de npm
 - **Solución**: 
-  1. Asegurar que el build command sea: `npm ci && npm run build`
-  2. Verificar que no existe `pnpm-lock.yaml` en el repositorio
-  3. Confirmar que existe `package-lock.json`
-  4. Configurar la variable de entorno `PACKAGE_MANAGER=npm`
+  1. Asegurar que el build command sea: `npm install && npm run build`
+  2. Eliminar `pnpm-workspace.yaml` del directorio raíz
+  3. Verificar que no existe `pnpm-lock.yaml` en el repositorio
+  4. Confirmar que existe `package-lock.json`
+  5. Configurar la variable de entorno `PACKAGE_MANAGER=npm`
 
 ### **Error de TypeScript**
 - **Solución**: El build usa Vite directamente, saltándose la verificación de TypeScript
