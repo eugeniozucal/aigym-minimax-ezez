@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/contexts/SimpleAuthContext'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Eye, EyeOff, Building2 } from 'lucide-react'
 
@@ -11,7 +11,7 @@ export function Login() {
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   
-  const { user, admin, signIn } = useAuth()
+  const { user, signIn } = useAuth()
   const location = useLocation()
   
   // Smart redirect based on user role
@@ -19,8 +19,8 @@ export function Login() {
     const from = (location.state as any)?.from?.pathname
     if (from && from !== '/') return from
     
-    // If user is admin, go to dashboard; otherwise go to training zone
-    return admin ? '/dashboard' : '/training-zone'
+    // For now, redirect all users to training zone
+    return '/training-zone'
   }
 
   if (user) {

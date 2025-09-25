@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/contexts/SimpleAuthContext'
 import { Building2, ChevronDown, Users, Settings, LogOut, Home, Tag, Bot, Play, FileText, MessageSquare, Zap, Image, FileType, Dumbbell } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 
 export function Header() {
-  const { admin, signOut } = useAuth()
+  const { user, signOut } = useAuth()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isContentDropdownOpen, setIsContentDropdownOpen] = useState(false)
   const location = useLocation()
@@ -132,12 +132,12 @@ export function Header() {
               <div className="flex items-center space-x-2">
                 <div className="h-8 w-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm font-medium">
-                    {admin?.email.charAt(0).toUpperCase()}
+                    {user?.email?.charAt(0).toUpperCase() || 'U'}
                   </span>
                 </div>
                 <div className="hidden md:block text-left">
-                  <p className="text-sm font-medium text-gray-900">{admin?.email}</p>
-                  <p className="text-xs text-gray-500 capitalize">{admin?.role?.replace('_', ' ')}</p>
+                  <p className="text-sm font-medium text-gray-900">{user?.email}</p>
+                  <p className="text-xs text-gray-500 capitalize">User</p>
                 </div>
                 <ChevronDown className="h-4 w-4 text-gray-400" />
               </div>

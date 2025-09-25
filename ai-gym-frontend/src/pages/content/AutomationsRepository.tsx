@@ -1,7 +1,7 @@
 import React from 'react'
 import { ContentRepository } from '@/components/content/ContentRepository'
 import { Zap } from 'lucide-react'
-import { CONTENT_TYPES } from '@/lib/supabase'
+import { CONTENT_TYPES } from '@/lib/constants'
 
 export function AutomationsRepository() {
   return (

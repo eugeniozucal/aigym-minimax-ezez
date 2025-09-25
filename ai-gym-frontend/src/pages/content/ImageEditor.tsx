@@ -4,7 +4,7 @@ import { ContentEditor } from '@/components/content/ContentEditor'
 import { supabase, Image as ImageType } from '@/lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Image, Upload, Eye, FileImage, Info, AlertTriangle } from 'lucide-react'
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/contexts/SimpleAuthContext'
 
 interface ImageMetadata {
   fileSize: number
@@ -17,7 +17,7 @@ interface ImageMetadata {
 export function ImageEditor() {
   const { id } = useParams()
   const isEdit = !!id
-  const { admin } = useAuth()
+  const { user } = useAuth()
   const fileInputRef = useRef<HTMLInputElement>(null)
   
   const [image, setImage] = useState<ImageType | null>(null)
@@ -88,8 +88,8 @@ export function ImageEditor() {
   }, [])
 
   const handleImageUpload = async (file: File) => {
-    if (!admin) {
-      setUploadError('Admin authentication required')
+    if (!user) {
+      setUploadError('Authentication required')
       return
     }
 

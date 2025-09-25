@@ -1,9 +1,9 @@
 import { Navigate } from 'react-router-dom'
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/contexts/SimpleAuthContext'
 import { LoadingSpinner } from './ui/LoadingSpinner'
 
 export function SmartRedirect() {
-  const { user, admin, loading } = useAuth()
+  const { user, loading } = useAuth()
 
   // Show loading while authentication is being determined
   if (loading) {
@@ -22,8 +22,7 @@ export function SmartRedirect() {
     return <Navigate to="/login" replace />
   }
 
-  // If authenticated, redirect based on role
-  // Admin users go to dashboard, regular users go to training zone
-  const redirectPath = admin ? '/dashboard' : '/training-zone'
-  return <Navigate to={redirectPath} replace />
+  // If authenticated, redirect to training zone for now
+  // TODO: Implement proper role-based routing later
+  return <Navigate to="/training-zone" replace />
 }
