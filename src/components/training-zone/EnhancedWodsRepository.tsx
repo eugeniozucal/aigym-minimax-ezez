@@ -1,0 +1,1119 @@
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { supabase } from '@/lib/supabase'
+import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
+import { Search, Filter, Grid, List, Plus, Eye, EyeOff, Calendar, Target, Dumbbell, Star, StarOff, FolderPlus, Home, ChevronRight, Folder, CheckSquare, Square } from 'lucide-react'
+import { ItemContextMenu } from './components/ItemContextMenu'
+import { BulkActionBar } from './components/BulkActionBar'
+import { FolderCreateModal } from './components/FolderCreateModal'
+import { MoveToFolderModal } from './components/MoveToFolderModal'
+
+interface WOD {
+  id: string
+  title: string
+  description: string
+  thumbnail_url: string
+  status: 'draft' | 'published' | 'archived'
+  estimated_duration_minutes: number
+  difficulty_level: 'beginner' | 'intermediate' | 'advanced'
+  tags: string[]
+  created_by: string
+  created_at: string
+  updated_at: string
+  folder_id: string | null
+  is_favorite: boolean
+}
+
+interface FolderItem {
+  id: string
+  name: string
+  parent_folder_id: string | null
+  repository_type: 'wods' | 'blocks'
+  created_at: string
+  updated_at: string
+}
+
+interface Community {
+  id: string
+  name: string
+  brand_color: string
+}
+
+interface RepositoryFilters {
+  search: string
+  communities: string[]
+  status: 'all' | 'draft' | 'published' | 'archived'
+  difficulty: 'all' | 'beginner' | 'intermediate' | 'advanced'
+  sortBy: 'created_at' | 'updated_at' | 'title'
+  sortOrder: 'asc' | 'desc'
+  viewMode: 'cards' | 'list'
+  showFavorites: boolean
+  folderId: string | null
+}
+
+export function WodsRepository() {
+  const navigate = useNavigate()
+  const [wods, setWods] = useState<WOD[]>([])
+  const [folders, setFolders] = useState<FolderItem[]>([])
+  const [communities, setCommunities] = useState<Community[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [assignmentCounts, setAssignmentCounts] = useState<{[key: string]: number}>({})
+  const mountedRef = useRef(true)
+  const lastFetchRef = useRef<string>('')
+  
+  // Selection and bulk operations state
+  const [selectedItems, setSelectedItems] = useState<Set<string>>(new Set())
+  const [isSelectionMode, setIsSelectionMode] = useState(false)
+  
+  // Folder creation modal state
+  const [showFolderModal, setShowFolderModal] = useState(false)
+  const [folderCreating, setFolderCreating] = useState(false)
+  const [folderError, setFolderError] = useState<string | null>(null)
+  
+  // Move to folder modal state
+  const [showMoveModal, setShowMoveModal] = useState(false)
+  const [moveItem, setMoveItem] = useState<{ id: string; name: string } | null>(null)
+  const [itemMoving, setItemMoving] = useState(false)
+  
+  const [filters, setFilters] = useState<RepositoryFilters>({
+    search: '',
+    communities: [],
+    status: 'all',
+    difficulty: 'all',
+    sortBy: 'updated_at',
+    sortOrder: 'desc',
+    viewMode: 'cards',
+    showFavorites: false,
+    folderId: null
+  })
+  const [showFilters, setShowFilters] = useState(false)
+
+  // Memoized filter key to prevent unnecessary re-renders
+  const filterKey = useMemo(() => {
+    return JSON.stringify({
+      search: filters.search,
+      communities: filters.communities.sort(),
+      status: filters.status,
+      difficulty: filters.difficulty,
+      sortBy: filters.sortBy,
+      sortOrder: filters.sortOrder,
+      showFavorites: filters.showFavorites,
+      folderId: filters.folderId
+    })
+  }, [filters.search, filters.communities, filters.status, filters.difficulty, filters.sortBy, filters.sortOrder, filters.showFavorites, filters.folderId])
+
+  // API functions for folder and content management
+  const fetchFolders = useCallback(async () => {
+    try {
+      const { data, error } = await supabase.functions.invoke('folders-api', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      })
+      
+      if (error) {
+        console.error('Error fetching folders:', error)
+        return []
+      }
+      
+      // Filter folders by repository type on client side since API returns all
+      const allFolders = data?.data || []
+      return allFolders.filter(folder => folder.repository_type === 'wods')
+    } catch (error) {
+      console.error('Error fetching folders:', error)
+      return []
+    }
+  }, [])
+
+  const createFolder = useCallback(async (name: string, parentFolderId: string | null) => {
+    const { data, error } = await supabase.functions.invoke('folders-api', {
+      method: 'POST',
+      body: {
+        name,
+        parent_folder_id: parentFolderId,
+        repository_type: 'wods'
+      }
+    })
+    
+    if (error) {
+      throw new Error(error.message || 'Failed to create folder')
+    }
+    
+    return data?.data
+  }, [])
+
+  const bulkOperation = useCallback(async (action: string, items: string[], folderId?: string | null) => {
+    const { data, error } = await supabase.functions.invoke('content-management-api', {
+      method: 'POST',
+      body: {
+        action,
+        items,
+        repository_type: 'wods',
+        folder_id: folderId
+      }
+    })
+    
+    if (error) {
+      throw new Error(error.message || `Failed to ${action} items`)
+    }
+    
+    return data?.data
+  }, [])
+
+  // Stable fetch function
+  const fetchData = useCallback(async () => {
+    if (!mountedRef.current) return
+    
+    const currentFilterKey = filterKey
+    
+    // Prevent duplicate requests
+    if (lastFetchRef.current === currentFilterKey) {
+      return
+    }
+    
+    try {
+      setLoading(true)
+      setError(null)
+      lastFetchRef.current = currentFilterKey
+
+      // Build query with filters including new fields
+      let query = supabase
+        .from('wods')
+        .select('*')
+
+      // Apply folder filter
+      if (filters.folderId !== null) {
+        query = query.eq('folder_id', filters.folderId)
+      } else {
+        query = query.is('folder_id', null)
+      }
+
+      // Apply search filter
+      if (filters.search.trim()) {
+        query = query.or(`title.ilike.%${filters.search}%,description.ilike.%${filters.search}%`)
+      }
+
+      // Apply status filter
+      if (filters.status !== 'all') {
+        query = query.eq('status', filters.status)
+      }
+
+      // Apply difficulty filter
+      if (filters.difficulty !== 'all') {
+        query = query.eq('difficulty_level', filters.difficulty)
+      }
+
+      // Apply favorites filter
+      if (filters.showFavorites) {
+        query = query.eq('is_favorite', true)
+      }
+
+      // Apply sorting
+      query = query.order(filters.sortBy, { ascending: filters.sortOrder === 'asc' })
+
+      const { data: wodsData, error: wodsError } = await query
+      
+      if (!mountedRef.current) return
+      
+      if (wodsError) {
+        console.error('Error fetching WODs:', wodsError)
+        setError('Failed to load WODs')
+        setWods([])
+        return
+      }
+
+      let filteredWods = wodsData || []
+
+      // Filter by community assignments if specified
+      if (filters.communities.length > 0) {
+        const { data: assignments, error: assignError } = await supabase
+          .from('wod_community_assignments')
+          .select('wod_id')
+          .in('community_id', filters.communities)
+        
+        if (assignError) {
+          console.error('Error fetching assignments:', assignError)
+        } else if (assignments) {
+          const assignedWodIds = assignments.map(a => a.wod_id)
+          filteredWods = filteredWods.filter(wod => assignedWodIds.includes(wod.id))
+        }
+      }
+
+      if (!mountedRef.current) return
+      setWods(filteredWods)
+
+      // Fetch assignment counts for each WOD
+      if (filteredWods.length > 0) {
+        const wodIds = filteredWods.map(wod => wod.id)
+        const [communityAssignments, userAssignments] = await Promise.all([
+          supabase.from('wod_community_assignments').select('wod_id').in('wod_id', wodIds),
+          supabase.from('user_wods').select('wod_id').in('wod_id', wodIds)
+        ])
+
+        const counts: {[key: string]: number} = {}
+        wodIds.forEach(id => {
+          const communityCount = communityAssignments.data?.filter(a => a.wod_id === id).length || 0
+          const userCount = userAssignments.data?.filter(a => a.wod_id === id).length || 0
+          counts[id] = communityCount + userCount
+        })
+        
+        if (mountedRef.current) {
+          setAssignmentCounts(counts)
+        }
+      }
+
+    } catch (error) {
+      console.error('Error in fetchData:', error)
+      if (mountedRef.current) {
+        setError('Failed to load WODs')
+        setWods([])
+      }
+    } finally {
+      if (mountedRef.current) {
+        setLoading(false)
+      }
+    }
+  }, [filterKey, filters.search, filters.communities, filters.status, filters.difficulty, filters.sortBy, filters.sortOrder, filters.showFavorites, filters.folderId])
+
+  // Fetch communities once on mount
+  const fetchCommunities = useCallback(async () => {
+    try {
+      const { data: communitiesData, error: communityError } = await supabase
+        .from('communities')
+        .select('*')
+        .eq('status', 'active')
+        .order('name')
+      
+      if (communityError) {
+        console.error('Error fetching communities:', communityError)
+      } else if (communitiesData && mountedRef.current) {
+        setCommunities(communitiesData)
+      }
+    } catch (error) {
+      console.error('Error fetching communities:', error)
+    }
+  }, [])
+
+  // Load folders on mount
+  useEffect(() => {
+    fetchFolders().then(folderData => {
+      if (mountedRef.current) {
+        setFolders(folderData.filter(f => f.repository_type === 'wods'))
+      }
+    })
+  }, [])
+
+  // Initial data fetch on mount and filter changes
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  // Fetch communities on mount
+  useEffect(() => {
+    fetchCommunities()
+  }, [fetchCommunities])
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      mountedRef.current = false
+    }
+  }, [])
+
+  // Selection handlers
+  const handleSelectItem = useCallback((itemId: string, selected: boolean) => {
+    setSelectedItems(prev => {
+      const newSelected = new Set(prev)
+      if (selected) {
+        newSelected.add(itemId)
+      } else {
+        newSelected.delete(itemId)
+      }
+      return newSelected
+    })
+  }, [])
+
+  const handleSelectAll = useCallback((selected: boolean) => {
+    if (selected) {
+      setSelectedItems(new Set(wods.map(wod => wod.id)))
+    } else {
+      setSelectedItems(new Set())
+    }
+  }, [wods])
+
+  const handleClearSelection = useCallback(() => {
+    setSelectedItems(new Set())
+    setIsSelectionMode(false)
+  }, [])
+
+  // Content management handlers
+  const handleToggleFavorite = useCallback(async (wodId: string) => {
+    try {
+      await bulkOperation('toggle_favorite', [wodId])
+      // Refresh data to show updated favorite status
+      fetchData()
+    } catch (error) {
+      console.error('Error toggling favorite:', error)
+    }
+  }, [bulkOperation, fetchData])
+
+  const handleCopyItem = useCallback(async (wodId: string) => {
+    try {
+      await bulkOperation('copy', [wodId], filters.folderId)
+      // Refresh data to show copied item
+      fetchData()
+    } catch (error) {
+      console.error('Error copying item:', error)
+    }
+  }, [bulkOperation, fetchData, filters.folderId])
+
+  const handleDeleteItem = useCallback(async (wodId: string) => {
+    if (confirm('Are you sure you want to delete this WOD?')) {
+      try {
+        await bulkOperation('delete', [wodId])
+        // Refresh data to remove deleted item
+        fetchData()
+      } catch (error) {
+        console.error('Error deleting item:', error)
+      }
+    }
+  }, [bulkOperation, fetchData])
+
+  const handleMoveToFolder = useCallback(async (wodId: string) => {
+    const wod = wods.find(w => w.id === wodId)
+    if (wod) {
+      setMoveItem({ id: wodId, name: wod.title })
+      setShowMoveModal(true)
+    }
+  }, [wods])
+
+  const handleSingleItemMove = useCallback(async (folderId: string | null) => {
+    if (!moveItem) return
+    
+    setItemMoving(true)
+    try {
+      await bulkOperation('move', [moveItem.id], folderId)
+      fetchData() // Refresh data to show updated folder
+      setShowMoveModal(false)
+      setMoveItem(null)
+    } catch (error) {
+      console.error('Error moving item:', error)
+    } finally {
+      setItemMoving(false)
+    }
+  }, [moveItem, bulkOperation, fetchData])
+
+  // Bulk operation handlers
+  const handleBulkMove = useCallback(async (folderId: string) => {
+    try {
+      const targetFolderId = folderId === 'root' ? null : folderId
+      await bulkOperation('move', Array.from(selectedItems), targetFolderId)
+      handleClearSelection()
+      fetchData()
+    } catch (error) {
+      console.error('Error moving items:', error)
+    }
+  }, [bulkOperation, selectedItems, handleClearSelection, fetchData])
+
+  const handleBulkCopy = useCallback(async () => {
+    try {
+      await bulkOperation('copy', Array.from(selectedItems), filters.folderId)
+      handleClearSelection()
+      fetchData()
+    } catch (error) {
+      console.error('Error copying items:', error)
+    }
+  }, [bulkOperation, selectedItems, filters.folderId, handleClearSelection, fetchData])
+
+  const handleBulkDelete = useCallback(async () => {
+    if (confirm(`Are you sure you want to delete ${selectedItems.size} items?`)) {
+      try {
+        await bulkOperation('delete', Array.from(selectedItems))
+        handleClearSelection()
+        fetchData()
+      } catch (error) {
+        console.error('Error deleting items:', error)
+      }
+    }
+  }, [bulkOperation, selectedItems, handleClearSelection, fetchData])
+
+  // Folder management handlers
+  const handleCreateFolder = useCallback(async (name: string, parentFolderId: string | null) => {
+    setFolderCreating(true)
+    setFolderError(null)
+    
+    try {
+      const newFolder = await createFolder(name, parentFolderId)
+      // Refresh folders
+      const updatedFolders = await fetchFolders()
+      setFolders(updatedFolders.filter(f => f.repository_type === 'wods'))
+      setShowFolderModal(false)
+    } catch (error) {
+      setFolderError(error.message)
+    } finally {
+      setFolderCreating(false)
+    }
+  }, [createFolder, fetchFolders])
+
+  const handleCreateFolderAndMove = useCallback(async () => {
+    setShowFolderModal(true)
+  }, [])
+
+  const handleNavigateToFolder = useCallback((folderId: string | null) => {
+    setFilters(prev => ({ ...prev, folderId }))
+    handleClearSelection()
+  }, [handleClearSelection])
+
+  // Get current folder and breadcrumb path
+  const currentFolder = useMemo(() => {
+    return folders.find(f => f.id === filters.folderId) || null
+  }, [folders, filters.folderId])
+
+  const breadcrumbPath = useMemo(() => {
+    const path: FolderItem[] = []
+    let current = currentFolder
+    
+    while (current) {
+      path.unshift(current)
+      current = folders.find(f => f.id === current?.parent_folder_id) || null
+    }
+    
+    return path
+  }, [currentFolder, folders])
+
+  // Get folders in current directory
+  const currentFolders = useMemo(() => {
+    return folders.filter(f => f.parent_folder_id === filters.folderId)
+  }, [folders, filters.folderId])
+
+  const handleCreateNew = useCallback(() => {
+    navigate('/page-builder?repo=wods')
+  }, [navigate])
+
+  const handleWodClick = useCallback((wodId: string) => {
+    navigate(`/page-builder?repo=wods&id=${wodId}`)
+  }, [navigate])
+
+  const handleFilterChange = useCallback((key: keyof RepositoryFilters, value: any) => {
+    setFilters(prev => ({ ...prev, [key]: value }))
+  }, [])
+
+  const clearAllFilters = useCallback(() => {
+    setFilters(prev => ({
+      search: '',
+      communities: [],
+      status: 'all',
+      difficulty: 'all',
+      sortBy: 'updated_at',
+      sortOrder: 'desc',
+      viewMode: prev.viewMode, // Preserve view mode
+      showFavorites: false,
+      folderId: null
+    }))
+  }, [])
+
+  const getStatusBadge = useCallback((status: string) => {
+    const statusConfig = {
+      'published': { color: 'bg-green-100 text-green-800', icon: Eye, label: 'Published' },
+      'draft': { color: 'bg-yellow-100 text-yellow-800', icon: EyeOff, label: 'Draft' },
+      'archived': { color: 'bg-gray-100 text-gray-800', icon: EyeOff, label: 'Archived' }
+    }
+    const config = statusConfig[status as keyof typeof statusConfig] || statusConfig.draft
+    const Icon = config.icon
+    
+    return (
+      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${config.color}`}>
+        <Icon className="h-3 w-3 mr-1" />
+        {config.label}
+      </span>
+    )
+  }, [])
+
+  const getDifficultyBadge = useCallback((difficulty: string) => {
+    const difficultyConfig = {
+      'beginner': 'bg-green-100 text-green-800',
+      'intermediate': 'bg-yellow-100 text-yellow-800',
+      'advanced': 'bg-red-100 text-red-800'
+    }
+    return (
+      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+        difficultyConfig[difficulty as keyof typeof difficultyConfig] || 'bg-gray-100 text-gray-800'
+      }`}>
+        {difficulty}
+      </span>
+    )
+  }, [])
+
+  const formatDate = useCallback((dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    })
+  }, [])
+
+  const formatDuration = useCallback((minutes: number) => {
+    if (minutes < 60) {
+      return `${minutes}m`
+    }
+    const hours = Math.floor(minutes / 60)
+    const remainingMinutes = minutes % 60
+    return remainingMinutes > 0 ? `${hours}h ${remainingMinutes}m` : `${hours}h`
+  }, [])
+
+  // Error state
+  if (error && !loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-red-500 mb-4">
+            <Dumbbell className="h-12 w-12 mx-auto" />
+          </div>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Error Loading WODs</h3>
+          <p className="text-sm text-gray-500 mb-4">{error}</p>
+          <button
+            onClick={() => {
+              setError(null)
+              fetchData()
+            }}
+            className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="min-h-full flex bg-gray-50">
+      {/* Filter Sidebar */}
+      <div className={`transition-all duration-300 ${
+        showFilters ? 'w-80' : 'w-12'
+      } bg-white border-r border-gray-200 flex flex-col shadow-sm`}>
+        <div className="p-4 border-b border-gray-200">
+          <button
+            onClick={() => setShowFilters(!showFilters)}
+            className="flex items-center justify-center w-full p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+          >
+            <Filter className="h-5 w-5" />
+            {showFilters && <span className="ml-2 text-sm font-medium">Filters</span>}
+          </button>
+        </div>
+
+        {showFilters && (
+          <div className="flex-1 p-4 space-y-6 overflow-y-auto">
+            {/* Search */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Search WODs
+              </label>
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                <input
+                  type="text"
+                  placeholder="Search by title or description..."
+                  value={filters.search}
+                  onChange={(e) => handleFilterChange('search', e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm"
+                />
+              </div>
+            </div>
+
+            {/* Favorites Filter */}
+            <div>
+              <label className="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={filters.showFavorites}
+                  onChange={(e) => handleFilterChange('showFavorites', e.target.checked)}
+                  className="rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                />
+                <Star className="h-4 w-4 text-orange-500" />
+                <span className="text-sm text-gray-900">Show Favorites Only</span>
+              </label>
+            </div>
+
+            {/* Status Filter */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Publication Status
+              </label>
+              <select
+                value={filters.status}
+                onChange={(e) => handleFilterChange('status', e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm"
+              >
+                <option value="all">All Status</option>
+                <option value="published">Published Only</option>
+                <option value="draft">Drafts Only</option>
+                <option value="archived">Archived Only</option>
+              </select>
+            </div>
+
+            {/* Difficulty Filter */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Difficulty Level
+              </label>
+              <select
+                value={filters.difficulty}
+                onChange={(e) => handleFilterChange('difficulty', e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm"
+              >
+                <option value="all">All Levels</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+
+            {/* Community Filter */}
+            {communities.length > 0 && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Filter by Communities
+                </label>
+                <div className="space-y-2 max-h-48 overflow-y-auto border border-gray-200 rounded-lg p-2">
+                  {communities.map((community) => (
+                    <label key={community.id} className="flex items-center space-x-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={filters.communities.includes(community.id)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            handleFilterChange('communities', [...filters.communities, community.id])
+                          } else {
+                            handleFilterChange('communities', filters.communities.filter(id => id !== community.id))
+                          }
+                        }}
+                        className="rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                      />
+                      <div className="flex items-center space-x-2">
+                        <div 
+                          className="w-3 h-3 rounded-full"
+                          style={{ backgroundColor: community.brand_color }}
+                        />
+                        <span className="text-sm text-gray-900">{community.name}</span>
+                      </div>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Sort Options */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Sort WODs
+              </label>
+              <select
+                value={`${filters.sortBy}_${filters.sortOrder}`}
+                onChange={(e) => {
+                  const [sortBy, sortOrder] = e.target.value.split('_')
+                  handleFilterChange('sortBy', sortBy)
+                  handleFilterChange('sortOrder', sortOrder)
+                }}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm"
+              >
+                <option value="updated_at_desc">Last Updated (Newest)</option>
+                <option value="updated_at_asc">Last Updated (Oldest)</option>
+                <option value="created_at_desc">Date Created (Newest)</option>
+                <option value="created_at_asc">Date Created (Oldest)</option>
+                <option value="title_asc">Title (A-Z)</option>
+                <option value="title_desc">Title (Z-A)</option>
+              </select>
+            </div>
+
+            {/* Clear Filters */}
+            <div className="pt-4 border-t border-gray-200">
+              <button
+                onClick={clearAllFilters}
+                className="w-full px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+              >
+                Clear All Filters
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Content Panel */}
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <div className="bg-white border-b border-gray-200 px-6 py-4 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <div className="h-12 w-12 rounded-xl flex items-center justify-center shadow-sm bg-orange-100">
+                <Dumbbell className="h-6 w-6 text-orange-600" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">WODs (Workouts of the Day)</h1>
+                <p className="text-sm text-gray-600 mt-1">Create and manage fitness challenges and workout programs</p>
+                <div className="flex items-center space-x-4 mt-2">
+                  <span className="text-xs text-gray-500">
+                    {wods.length} {wods.length === 1 ? 'WOD' : 'WODs'}
+                  </span>
+                  {filters.status !== 'all' && (
+                    <span className="text-xs text-gray-500">• Filtered by {filters.status}</span>
+                  )}
+                  {filters.difficulty !== 'all' && (
+                    <span className="text-xs text-gray-500">• {filters.difficulty} level</span>
+                  )}
+                  {filters.communities.length > 0 && (
+                    <span className="text-xs text-gray-500">• {filters.communities.length} community(s)</span>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              {/* View Mode Toggle */}
+              <div className="flex bg-gray-100 rounded-lg p-1">
+                <button
+                  onClick={() => handleFilterChange('viewMode', 'cards')}
+                  className={`p-2 rounded-md transition-colors ${
+                    filters.viewMode === 'cards' 
+                      ? 'bg-white text-gray-900 shadow-sm' 
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                  title="Card View"
+                >
+                  <Grid className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => handleFilterChange('viewMode', 'list')}
+                  className={`p-2 rounded-md transition-colors ${
+                    filters.viewMode === 'list' 
+                      ? 'bg-white text-gray-900 shadow-sm' 
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                  title="List View"
+                >
+                  <List className="h-4 w-4" />
+                </button>
+              </div>
+              
+              {/* New Folder Button */}
+              <button
+                onClick={() => setShowFolderModal(true)}
+                className="inline-flex items-center px-3 py-2 border border-orange-300 text-sm font-medium rounded-lg text-orange-700 bg-orange-50 hover:bg-orange-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-all"
+              >
+                <FolderPlus className="-ml-1 mr-2 h-4 w-4" />
+                New Folder
+              </button>
+              
+              <button
+                onClick={handleCreateNew}
+                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-all"
+              >
+                <Plus className="-ml-1 mr-2 h-4 w-4" />
+                Create WOD
+              </button>
+            </div>
+          </div>
+
+          {/* Breadcrumb Navigation */}
+          {(breadcrumbPath.length > 0 || filters.folderId !== null) && (
+            <div className="flex items-center space-x-2 mt-4 text-sm text-gray-600">
+              <button
+                onClick={() => handleNavigateToFolder(null)}
+                className="flex items-center hover:text-orange-600 transition-colors"
+              >
+                <Home className="h-4 w-4 mr-1" />
+                Root
+              </button>
+              {breadcrumbPath.map((folder, index) => (
+                <React.Fragment key={folder.id}>
+                  <ChevronRight className="h-4 w-4" />
+                  <button
+                    onClick={() => handleNavigateToFolder(folder.id)}
+                    className={`hover:text-orange-600 transition-colors ${
+                      index === breadcrumbPath.length - 1 ? 'font-medium text-gray-900' : ''
+                    }`}
+                  >
+                    {folder.name}
+                  </button>
+                </React.Fragment>
+              ))}
+            </div>
+          )}
+
+          {/* Selection toolbar */}
+          {selectedItems.size > 0 && (
+            <div className="flex items-center justify-between mt-4 p-3 bg-orange-50 rounded-lg border border-orange-200">
+              <span className="text-sm text-orange-800">
+                {selectedItems.size} item{selectedItems.size !== 1 ? 's' : ''} selected
+              </span>
+              <button
+                onClick={handleClearSelection}
+                className="text-sm text-orange-600 hover:text-orange-800"
+              >
+                Clear selection
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Content Area */}
+        <div className="flex-1 overflow-y-auto p-6">
+          {loading ? (
+            <div className="flex justify-center items-center py-20">
+              <div className="text-center">
+                <LoadingSpinner size="lg" />
+                <p className="text-sm text-gray-500 mt-3">Loading WODs...</p>
+              </div>
+            </div>
+          ) : (
+            <>
+              {/* Folders */}
+              {currentFolders.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-medium text-gray-900 mb-3">Folders</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-6">
+                    {currentFolders.map((folder) => (
+                      <button
+                        key={folder.id}
+                        onClick={() => handleNavigateToFolder(folder.id)}
+                        className="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-orange-300 transition-colors group"
+                      >
+                        <Folder className="h-12 w-12 text-orange-500 mb-2 group-hover:text-orange-600" />
+                        <span className="text-sm text-center text-gray-900 truncate w-full">
+                          {folder.name}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* WODs */}
+              {wods.length === 0 && currentFolders.length === 0 ? (
+                <div className="text-center py-20">
+                  <div className="bg-orange-100 mx-auto h-24 w-24 rounded-full flex items-center justify-center mb-4">
+                    <Dumbbell className="h-12 w-12 text-orange-600" />
+                  </div>
+                  <h3 className="text-lg font-medium text-gray-900">No WODs found</h3>
+                  <p className="text-sm text-gray-500 mt-2 max-w-sm mx-auto">
+                    {filters.search || filters.status !== 'all' || filters.difficulty !== 'all' || filters.communities.length > 0
+                      ? 'Try adjusting your filters to find more results.'
+                      : 'Get started by creating your first workout of the day.'}
+                  </p>
+                  <div className="mt-6">
+                    <button
+                      onClick={handleCreateNew}
+                      className="inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 shadow-sm"
+                    >
+                      <Plus className="-ml-1 mr-2 h-4 w-4" />
+                      Create WOD
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {wods.length > 0 && (
+                    <div className="mb-4">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-lg font-medium text-gray-900">WODs</h3>
+                        {wods.length > 0 && (
+                          <label className="flex items-center space-x-2 cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={selectedItems.size === wods.length && wods.length > 0}
+                              onChange={(e) => handleSelectAll(e.target.checked)}
+                              className="rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                            />
+                            <span className="text-sm text-gray-600">Select all</span>
+                          </label>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className={filters.viewMode === 'cards' 
+                    ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
+                    : 'space-y-4'
+                  }>
+                    {wods.map((wod) => (
+                      <div
+                        key={wod.id}
+                        className={`relative group transition-all ${
+                          filters.viewMode === 'cards'
+                            ? 'border border-gray-200 rounded-lg overflow-hidden hover:shadow-md bg-white'
+                            : 'flex items-center space-x-4 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 bg-white'
+                        }`}
+                      >
+                        {/* Selection Checkbox */}
+                        <div className="absolute top-3 left-3 z-10">
+                          <label className="cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={selectedItems.has(wod.id)}
+                              onChange={(e) => handleSelectItem(wod.id, e.target.checked)}
+                              className="rounded border-gray-300 text-orange-600 focus:ring-orange-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                            />
+                          </label>
+                        </div>
+
+                        {/* Favorite Star */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleToggleFavorite(wod.id)
+                          }}
+                          className={`absolute ${
+                            filters.viewMode === 'cards' ? 'top-3 right-12' : 'top-3 right-12'
+                          } z-10 p-1 rounded-full hover:bg-white hover:bg-opacity-80 transition-all`}
+                        >
+                          {wod.is_favorite ? (
+                            <Star className="h-5 w-5 text-orange-500 fill-current" />
+                          ) : (
+                            <StarOff className="h-5 w-5 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          )}
+                        </button>
+
+                        {/* Context Menu */}
+                        <div className={`absolute ${
+                          filters.viewMode === 'cards' ? 'top-3 right-3' : 'top-3 right-3'
+                        } z-10`}>
+                          <ItemContextMenu
+                            isFavorited={wod.is_favorite}
+                            repositoryType="wods"
+                            onCopy={() => handleCopyItem(wod.id)}
+                            onDelete={() => handleDeleteItem(wod.id)}
+                            onMoveToFolder={() => handleMoveToFolder(wod.id)}
+                            onToggleFavorite={() => handleToggleFavorite(wod.id)}
+                            size="sm"
+                          />
+                        </div>
+
+                        {/* Content */}
+                        <div
+                          onClick={() => handleWodClick(wod.id)}
+                          className="cursor-pointer flex-1"
+                        >
+                          {filters.viewMode === 'cards' ? (
+                            <>
+                              <div className="aspect-video bg-gray-200 relative overflow-hidden">
+                                {wod.thumbnail_url ? (
+                                  <img
+                                    src={wod.thumbnail_url}
+                                    alt={wod.title}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                                  />
+                                ) : (
+                                  <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                                    <Dumbbell className="h-8 w-8 text-white" />
+                                  </div>
+                                )}
+                                <div className="absolute bottom-2 left-2 flex space-x-1">
+                                  {getStatusBadge(wod.status)}
+                                </div>
+                              </div>
+                              <div className="p-4">
+                                <h3 className="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors line-clamp-2">
+                                  {wod.title}
+                                </h3>
+                                <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                                  {wod.description || 'No description provided'}
+                                </p>
+                                <div className="flex items-center justify-between mt-3">
+                                  <div className="flex items-center space-x-2">
+                                    {wod.difficulty_level && getDifficultyBadge(wod.difficulty_level)}
+                                    {wod.estimated_duration_minutes && (
+                                      <span className="inline-flex items-center text-xs text-gray-500">
+                                        <Calendar className="h-3 w-3 mr-1" />
+                                        {formatDuration(wod.estimated_duration_minutes)}
+                                      </span>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          ) : (
+                            <>
+                              <div className="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                                {wod.thumbnail_url ? (
+                                  <img
+                                    src={wod.thumbnail_url}
+                                    alt={wod.title}
+                                    className="w-full h-full object-cover rounded-lg"
+                                  />
+                                ) : (
+                                  <Dumbbell className="h-6 w-6 text-gray-500" />
+                                )}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <h3 className="font-semibold text-gray-900 truncate">{wod.title}</h3>
+                                <p className="text-sm text-gray-600 truncate">
+                                  {wod.description || 'No description provided'}
+                                </p>
+                                <div className="flex items-center space-x-3 mt-2">
+                                  {getStatusBadge(wod.status)}
+                                  {wod.difficulty_level && getDifficultyBadge(wod.difficulty_level)}
+                                  {wod.estimated_duration_minutes && (
+                                    <span className="inline-flex items-center text-xs text-gray-500">
+                                      <Calendar className="h-3 w-3 mr-1" />
+                                      {formatDuration(wod.estimated_duration_minutes)}
+                                    </span>
+                                  )}
+                                  <span className="text-xs text-gray-500">
+                                    Updated {formatDate(wod.updated_at)}
+                                  </span>
+                                </div>
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* Bulk Action Bar */}
+      {selectedItems.size > 0 && (
+        <BulkActionBar
+          selectedCount={selectedItems.size}
+          folders={folders.filter(f => f.repository_type === 'wods')}
+          repositoryType="wods"
+          onClearSelection={handleClearSelection}
+          onDeleteSelected={handleBulkDelete}
+          onCopySelected={handleBulkCopy}
+          onMoveToFolder={handleBulkMove}
+          onCreateFolderAndMove={handleCreateFolderAndMove}
+        />
+      )}
+
+      {/* Folder Creation Modal */}
+      <FolderCreateModal
+        isOpen={showFolderModal}
+        onClose={() => setShowFolderModal(false)}
+        onCreateFolder={handleCreateFolder}
+        folders={folders.filter(f => f.repository_type === 'wods')}
+        repositoryType="wods"
+        isCreating={folderCreating}
+        error={folderError}
+      />
+
+      {/* Move to Folder Modal */}
+      <MoveToFolderModal
+        isOpen={showMoveModal}
+        onClose={() => {
+          setShowMoveModal(false)
+          setMoveItem(null)
+        }}
+        onMoveToFolder={handleSingleItemMove}
+        folders={folders.filter(f => f.repository_type === 'wods')}
+        repositoryType="wods"
+        isMoving={itemMoving}
+        itemName={moveItem?.name || 'item'}
+      />
+    </div>
+  )
+}
+
+export default WodsRepository
