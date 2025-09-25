@@ -1,6 +1,6 @@
 [build]
-command = "npm install && npm run build"
-publish = "dist"
+command = "cd ai-gym-frontend && npm install && npm run build"
+publish = "ai-gym-frontend/dist"
 
 [build.environment]
 NODE_VERSION = "18"
