@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/contexts/SimpleAuthContext'
 import { ChevronDown, BarChart3, Users, FileText, Settings, LogOut, User } from 'lucide-react'
 
 export function ModernHeader() {
-  const { admin, signOut } = useAuth()
+  const { user, signOut } = useAuth()
   const location = useLocation()
   const [userMenuOpen, setUserMenuOpen] = useState(false)
 
@@ -103,7 +103,7 @@ export function ModernHeader() {
               </div>
               <div className="hidden sm:block text-left">
                 <p className="text-sm font-medium text-gray-900">
-                  {admin?.email?.split('@')[0] || 'Admin'}
+                  {user?.email?.split('@')[0] || 'User'}
                 </p>
                 <p className="text-xs text-gray-500">Super Admin</p>
               </div>
@@ -115,7 +115,7 @@ export function ModernHeader() {
                 <div className="py-1">
                   <div className="px-4 py-3 border-b border-gray-100">
                     <p className="text-sm font-medium text-gray-900">
-                      {admin?.email}
+                      {user?.email}
                     </p>
                     <p className="text-xs text-gray-500">Super Admin</p>
                   </div>

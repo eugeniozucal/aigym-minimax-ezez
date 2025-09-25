@@ -1,0 +1,16 @@
+name = "aigym-minimax-ezez"
+compatibility_date = "2024-01-01"
+
+[env.production]
+name = "aigym-minimax-ezez-prod"
+
+[[env.production.routes]]
+pattern = "aigym-minimax-ezez.pages.dev/*"
+zone_name = "pages.dev"
+
+[build]
+command = "npm run build"
+cwd = "."
+
+[build.environment_variables]
+NODE_VERSION = "18"

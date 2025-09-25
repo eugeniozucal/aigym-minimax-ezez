@@ -1,10 +1,9 @@
 import React, { createContext, useContext, useEffect, useState, useCallback, useRef } from 'react'
-import { supabase, Admin } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase'
 import { User } from '@supabase/supabase-js'
 
 interface AuthContextType {
   user: User | null
-  admin: Admin | null
   loading: boolean
   signIn: (email: string, password: string) => Promise<{ error?: string }>
   signOut: () => Promise<void>

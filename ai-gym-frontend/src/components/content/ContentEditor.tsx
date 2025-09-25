@@ -17,7 +17,7 @@ import {
   EyeOff,
   X
 } from 'lucide-react'
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/contexts/SimpleAuthContext'
 
 interface ContentEditorProps {
   contentType: string
@@ -325,7 +325,7 @@ export function ContentEditor({
 }: ContentEditorProps) {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { admin } = useAuth()
+  const { user } = useAuth()
   
   const [contentItem, setContentItem] = useState<ContentItem | null>(null)
   const [communities, setCommunities] = useState<Community[]>([])
@@ -520,8 +520,8 @@ export function ContentEditor({
   }, [contentType]);
 
   const saveCommunityAssignments = useCallback(async (contentItemId: string) => {
-    if (!admin) {
-      throw new Error('Admin authentication required');
+    if (!user) {
+      throw new Error('Authentication required');
     }
 
     try {
@@ -538,7 +538,7 @@ export function ContentEditor({
         const assignments = assignedCommunities.map(communityId => ({
           content_item_id: contentItemId,
           community_id: communityId,
-          assigned_by: admin.id
+          assigned_by: user.id
         }));
         
         const { error: insertError } = await supabase
@@ -551,11 +551,11 @@ export function ContentEditor({
       console.error('Error saving community assignments:', error);
       throw new Error('Failed to save community assignments');
     }
-  }, [admin, assignedCommunities]);
+  }, [user, assignedCommunities]);
 
   const handleDelete = useCallback(async () => {
-    if (!contentItem || !admin) {
-      setError('Unable to delete: missing content item or admin authentication');
+    if (!contentItem || !user) {
+      setError('Unable to delete: missing content item or authentication');
       return;
     }
     
@@ -586,10 +586,10 @@ export function ContentEditor({
     } finally {
       setSaving(false);
     }
-  }, [contentItem, admin, navigate]);
+  }, [contentItem, user, navigate]);
 
   const handleSave = useCallback(async () => {
-    if (!admin) {
+    if (!user) {
       setError('Admin authentication required');
       return;
     }
@@ -606,7 +606,7 @@ export function ContentEditor({
         content_type: contentType,
         status,
         thumbnail_url: thumbnailUrl.trim() || null,
-        created_by: admin.id,
+        created_by: user.id,
         updated_at: new Date().toISOString()
       };
 
@@ -665,10 +665,10 @@ export function ContentEditor({
     } finally {
       setSaving(false);
     }
-  }, [admin, id, itemTitle, itemDescription, contentType, status, thumbnailUrl, onSaveContent, assignedCommunities, isEdit, navigate]);
+  }, [user, id, itemTitle, itemDescription, contentType, status, thumbnailUrl, onSaveContent, assignedCommunities, isEdit, navigate]);
 
   const handleSaveAndReturn = useCallback(async () => {
-    if (!admin) {
+    if (!user) {
       setError('Admin authentication required');
       return;
     }
@@ -685,7 +685,7 @@ export function ContentEditor({
         content_type: contentType,
         status,
         thumbnail_url: thumbnailUrl.trim() || null,
-        created_by: admin.id,
+        created_by: user.id,
         updated_at: new Date().toISOString()
       };
 
@@ -733,7 +733,7 @@ export function ContentEditor({
     } finally {
       setSaving(false);
     }
-  }, [admin, id, itemTitle, itemDescription, contentType, status, thumbnailUrl, onSaveContent, assignedCommunities, navigate]);
+  }, [user, id, itemTitle, itemDescription, contentType, status, thumbnailUrl, onSaveContent, assignedCommunities, navigate]);
 
   const toggleCommunityAssignment = useCallback((communityId: string) => {
     setAssignedCommunities(prev => {
@@ -948,7 +948,7 @@ export function ContentEditor({
                     </select>
                     <p className="text-xs text-gray-500 mt-1">
                       {status === 'draft' 
-                        ? 'Only visible to admin users' 
+                        ? 'Only visible to user users' 
                         : 'Visible to assigned communities and users'
                       }
                     </p>

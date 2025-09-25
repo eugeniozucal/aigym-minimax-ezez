@@ -1,9 +1,9 @@
-import '@testing-library/jest-dom'
-
-// Simple test environment setup
-global.fetch = global.fetch || (() => Promise.resolve({
-  json: () => Promise.resolve({}),
-  text: () => Promise.resolve(''),
-  ok: true,
-  status: 200
-}))
+import { expect, afterEach } from 'vitest';
+import { cleanup } from '@testing-library/react';
+import * as matchers from '@testing-library/jest-dom/matchers';
+// extends Vitest's expect method with methods from react-testing-library
+expect.extend(matchers);
+// runs a cleanup after each test case (e.g. clearing jsdom)
+afterEach(() => {
+    cleanup();
+});

@@ -1,0 +1,13 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+export function SectionHeaderEditor({ block, onUpdate }) {
+    const handleChange = (field, value) => {
+        onUpdate({
+            ...block,
+            data: {
+                ...block.data,
+                [field]: value
+            }
+        });
+    };
+    return (_jsxs("div", { className: "p-6 space-y-4", children: [_jsx("h3", { className: "font-medium text-gray-900 mb-4", children: "Section Header Settings" }), _jsxs("div", { children: [_jsx("label", { className: "block text-sm font-medium text-gray-700 mb-2", children: "Header Text" }), _jsx("input", { type: "text", value: block.data.text || '', onChange: (e) => handleChange('text', e.target.value), className: "w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500", placeholder: "Enter section title..." })] }), _jsxs("div", { children: [_jsx("label", { className: "block text-sm font-medium text-gray-700 mb-2", children: "Heading Level" }), _jsxs("select", { value: block.data.level || 'h2', onChange: (e) => handleChange('level', e.target.value), className: "w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500", children: [_jsx("option", { value: "h1", children: "H1 - Main Title" }), _jsx("option", { value: "h2", children: "H2 - Section Title" }), _jsx("option", { value: "h3", children: "H3 - Subsection" }), _jsx("option", { value: "h4", children: "H4 - Small Header" }), _jsx("option", { value: "h5", children: "H5 - Minor Header" }), _jsx("option", { value: "h6", children: "H6 - Tiny Header" })] })] }), _jsxs("div", { children: [_jsx("label", { className: "block text-sm font-medium text-gray-700 mb-2", children: "Alignment" }), _jsxs("select", { value: block.data.alignment || 'left', onChange: (e) => handleChange('alignment', e.target.value), className: "w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500", children: [_jsx("option", { value: "left", children: "Left" }), _jsx("option", { value: "center", children: "Center" }), _jsx("option", { value: "right", children: "Right" })] })] }), _jsxs("div", { children: [_jsx("label", { className: "block text-sm font-medium text-gray-700 mb-2", children: "Color" }), _jsxs("select", { value: block.data.color || 'default', onChange: (e) => handleChange('color', e.target.value), className: "w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500", children: [_jsx("option", { value: "default", children: "Default" }), _jsx("option", { value: "primary", children: "Primary" }), _jsx("option", { value: "secondary", children: "Secondary" })] })] })] }));
+}

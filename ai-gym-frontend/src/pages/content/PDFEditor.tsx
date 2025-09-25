@@ -4,7 +4,7 @@ import { ContentEditor } from '@/components/content/ContentEditor'
 import { supabase, PDF as PDFType } from '@/lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { FileText, Upload, Eye, File, Info, AlertTriangle, FileType } from 'lucide-react'
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/contexts/SimpleAuthContext'
 
 interface PDFMetadata {
   fileSize: number
@@ -16,7 +16,7 @@ interface PDFMetadata {
 export function PDFEditor() {
   const { id } = useParams()
   const isEdit = !!id
-  const { admin } = useAuth()
+  const { user } = useAuth()
   const fileInputRef = useRef<HTMLInputElement>(null)
   
   const [pdf, setPdf] = useState<PDFType | null>(null)
@@ -84,8 +84,8 @@ export function PDFEditor() {
   }, [])
 
   const handlePDFUpload = async (file: File) => {
-    if (!admin) {
-      setUploadError('Admin authentication required')
+    if (!user) {
+      setUploadError('Authentication required')
       return
     }
 
