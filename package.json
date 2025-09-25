@@ -9,5 +9,22 @@
   "engines": {
     "node": "18.x",
     "npm": "9.x"
-  }
+  },
+  "main": "check_localStorage.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugeniozucal/aigym-minimax-ezez.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eugeniozucal/aigym-minimax-ezez/issues"
+  },
+  "homepage": "https://github.com/eugeniozucal/aigym-minimax-ezez#readme",
+  "description": ""
 }
