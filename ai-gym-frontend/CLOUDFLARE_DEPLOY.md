@@ -97,14 +97,15 @@ Después del despliegue, verifica:
 
 ## 🆘 **Solución de Problemas**
 
-### **Error: "packages field missing or empty"**
-- **Causa**: Cloudflare está detectando pnpm en lugar de npm
+### **Error: "No preset version installed for command pnpm"**
+- **Causa**: Cloudflare está intentando usar pnpm pero no está disponible en el entorno
 - **Solución**: 
   1. Asegurar que el build command sea: `cd ai-gym-frontend && npm install && npm run build`
-  2. Eliminar `pnpm-workspace.yaml` del directorio raíz
+  2. Eliminar cualquier directorio duplicado que contenga scripts con pnpm
   3. Verificar que no existe `pnpm-lock.yaml` en el repositorio
   4. Confirmar que existe `package-lock.json`
   5. Configurar la variable de entorno `PACKAGE_MANAGER=npm`
+  6. **IMPORTANTE**: Eliminar el directorio `ai-gym-frontend/ai-gym-frontend/` si existe
 
 ### **Error de TypeScript**
 - **Solución**: El build usa Vite directamente, saltándose la verificación de TypeScript
