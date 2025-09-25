@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { ContentEditor } from '@/components/content/ContentEditor'
-import { supabase, Prompt } from '@/lib/supabase'
+import { supabase, Prompt } from '../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { MessageSquare, Copy, Hash, BarChart3, Clock, CheckCircle, Tag } from 'lucide-react'
 

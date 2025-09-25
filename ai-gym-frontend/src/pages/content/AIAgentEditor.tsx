@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { ContentEditor } from '@/components/content/ContentEditor'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 import Editor from '@monaco-editor/react'
-import { supabase, AIAgent } from '@/lib/supabase'
+import { supabase, AIAgent } from '../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Bot, AlertCircle, Copy, RotateCcw, X } from 'lucide-react'
 

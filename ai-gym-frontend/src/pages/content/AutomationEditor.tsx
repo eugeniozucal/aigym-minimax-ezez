@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { ContentEditor } from '@/components/content/ContentEditor'
-import { supabase, Automation } from '@/lib/supabase'
+import { supabase, Automation } from '../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Zap, Globe, Wrench, Plus, X, ExternalLink, CheckCircle, AlertCircle, BookOpen } from 'lucide-react'
 

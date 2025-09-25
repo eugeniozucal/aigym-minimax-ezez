@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { X, Search, Grid, List, Filter, Play, Calendar } from 'lucide-react'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../../../lib/supabase'
 
 interface RepositoryPopupProps {
   contentType: string

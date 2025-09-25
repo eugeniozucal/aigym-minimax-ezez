@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { supabase, ContentItem, ContentType, Community } from '@/lib/supabase'
+import { supabase, ContentItem, ContentType, Community } from '../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Search, Filter, Grid, List, Plus, ChevronDown, Eye, EyeOff, Calendar, Tag as TagIcon, Users as UsersIcon } from 'lucide-react'
 import { Layout } from '@/components/layout/Layout'

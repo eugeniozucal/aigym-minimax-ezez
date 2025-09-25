@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react'
 import { Layout } from '@/components/layout/Layout'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { 
   Building2, 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Layout } from '@/components/layout/Layout'
-import { supabase, UserTag, Community } from '@/lib/supabase'
+import { supabase, UserTag, Community } from '../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Plus, Tag, Building2, Users, Edit2, Trash2 } from 'lucide-react'
 import { TagModal } from '@/components/modals/TagModal'

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Layout } from '@/components/layout/Layout'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { 
   Save, 

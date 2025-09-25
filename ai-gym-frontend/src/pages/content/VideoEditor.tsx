@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { ContentEditor } from '@/components/content/ContentEditor'
-import { supabase, Video } from '@/lib/supabase'
+import { supabase, Video } from '../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Play, Globe, Clock, FileText, AlertCircle, ExternalLink, CheckCircle } from 'lucide-react'
 

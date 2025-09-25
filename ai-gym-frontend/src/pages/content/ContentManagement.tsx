@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Layout } from '@/components/layout/Layout'
 import { Bot, Play, FileText, MessageSquare, Zap, Plus, Search, Filter, Image, FileType } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../../lib/supabase'
 
 interface ContentType {
   type: string

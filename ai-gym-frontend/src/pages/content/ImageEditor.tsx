@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import { ContentEditor } from '@/components/content/ContentEditor'
-import { supabase, Image as ImageType } from '@/lib/supabase'
+import { supabase, Image as ImageType } from '../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Image, Upload, Eye, FileImage, Info, AlertTriangle } from 'lucide-react'
 import { useAuth } from '@/contexts/SimpleAuthContext'

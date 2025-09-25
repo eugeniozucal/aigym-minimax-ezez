@@ -13,7 +13,7 @@ import {
 } from 'lucide-react'
 import { PageData } from '@/types/pageBuilder'
 import { BlockRenderer } from '../BlockRenderer'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../../../lib/supabase'
 
 interface ProgramPreviewProps {
   programData: ProgramData

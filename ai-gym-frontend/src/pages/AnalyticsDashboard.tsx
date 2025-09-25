@@ -10,7 +10,7 @@ import {
   RecentActivity,
   ContentEngagementData,
   AgentUsageData
-} from '@/lib/supabase'
+} from '../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { 
   Calendar, 

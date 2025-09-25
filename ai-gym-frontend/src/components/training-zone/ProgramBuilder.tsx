@@ -4,7 +4,7 @@ import { Layout } from '@/components/layout/Layout'
 import { ProgramIndexBuilder } from './components/program-builder/ProgramIndexBuilder'
 import { ProgramPreview } from './components/program-builder/ProgramPreview'
 import { RepositoryPopup } from './components/RepositoryPopup'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { ArrowLeft, Save, Eye, Settings } from 'lucide-react'
 
