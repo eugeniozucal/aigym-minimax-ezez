@@ -3,59 +3,45 @@
     "Coordinator": {
       "1": {
         "id": "1",
-        "content": "Analyze existing codebase structure",
-        "details": "1. Examine the current Program Builder implementation\n2. Study the existing RepositoryPopup.tsx component\n3. Understand the WODs/BLOCKS page builder structure\n4. Identify components that can be reused vs. new ones needed",
-        "status": "completed",
+        "content": "Database Schema Enhancement",
+        "details": "1. Create user_communities junction table for many-to-many relationships. 2. Add community membership management functions. 3. Update RLS policies to support multi-community access. 4. Create indexes for performance.",
+        "status": "pending",
         "priority": "high"
       },
       "2": {
         "id": "2",
-        "content": "Build the main Program Builder layout",
-        "details": "1. Create a new ProgramBuilder component with split layout\n2. Left side: Interactive index builder area\n3. Right side: Preview area for navigation\n4. Implement responsive design similar to existing builders",
-        "status": "completed",
+        "content": "Backend Edge Functions Enhancement",
+        "details": "1. Update existing community-signup function to handle multi-community memberships. 2. Create community-membership-manager function for admin operations. 3. Add auth hooks for automatic community assignment. 4. Update RLS enforcement functions.",
+        "status": "pending",
         "priority": "high"
       },
       "3": {
         "id": "3",
-        "content": "Implement Sections functionality",
-        "details": "1. Create Section component with bold headings\n2. Add editable text functionality\n3. Implement three-dot menu with delete option\n4. Add drag-and-drop functionality for reordering\n5. Auto-renumber sections based on position\n6. Implement expand/collapse functionality (first section expanded by default)",
-        "status": "completed",
+        "content": "Frontend Admin UI Implementation",
+        "details": "1. Add signup link generation/copy UI to Communities page. 2. Create CommunityMembership management modal. 3. Enhance Users page with multi-community assignment UI. 4. Add bulk user management capabilities. 5. Create community membership overview dashboard.",
+        "status": "pending",
         "priority": "high"
       },
       "4": {
         "id": "4",
-        "content": "Implement Subsections functionality",
-        "details": "1. Create Subsection component with plain text (not bold)\n2. Add editable title functionality\n3. Implement three-dot menu with options:\n   - Title (edit title text)\n   - Assign (opens existing RepositoryPopup)\n   - Delete (delete subsection)\n4. Add drag-and-drop functionality for reordering\n5. Integrate with existing RepositoryPopup.tsx",
-        "status": "completed",
-        "priority": "high"
+        "content": "Supabase Auth Integration",
+        "details": "1. Create auth hook triggers for automatic community assignment on signup. 2. Update signup flow to handle community tokens properly. 3. Ensure proper RLS enforcement across all operations.",
+        "status": "pending",
+        "priority": "medium"
       },
       "5": {
         "id": "5",
-        "content": "Integrate RepositoryPopup for assignment functionality",
-        "details": "1. Import and reuse existing RepositoryPopup.tsx\n2. Configure it for WODs and BLOCKS selection\n3. Add dropdown menu to select type (default: WODs)\n4. Ensure 'Published' checkbox is checked by default\n5. Handle the connection/assignment logic",
-        "status": "completed",
-        "priority": "high"
+        "content": "E2E Testing Implementation",
+        "details": "1. Create signup link generation tests. 2. Test end-user signup through community links. 3. Test admin community membership management. 4. Test RLS enforcement across multi-community scenarios. 5. Test bulk user operations.",
+        "status": "pending",
+        "priority": "medium"
       },
       "6": {
         "id": "6",
-        "content": "Build preview area functionality",
-        "details": "1. Create preview area for right side\n2. Enable navigation through subsections that have assigned WODs/BLOCKS\n3. Display the assigned content in the preview area\n4. Implement navigation controls between subsections",
-        "status": "completed",
-        "priority": "medium"
-      },
-      "7": {
-        "id": "7",
-        "content": "Connect new Program Builder to existing Programs marketplace",
-        "details": "1. Update the Programs marketplace to link to the new Program Builder\n2. Ensure proper routing between marketplace and builder\n3. Test the complete flow from marketplace to builder",
-        "status": "completed",
-        "priority": "medium"
-      },
-      "8": {
-        "id": "8",
-        "content": "Testing and deployment",
-        "details": "1. Test all drag-and-drop functionality\n2. Test section/subsection creation, editing, and deletion\n3. Test RepositoryPopup integration\n4. Test preview area navigation\n5. Deploy updated version\n6. Provide deployment URL for user testing",
-        "status": "completed",
-        "priority": "medium"
+        "content": "Deployment & Validation",
+        "details": "1. Deploy all changes to production. 2. Run comprehensive E2E validation. 3. Test RLS security boundaries. 4. Validate performance with multiple communities.",
+        "status": "pending",
+        "priority": "low"
       }
     }
   }

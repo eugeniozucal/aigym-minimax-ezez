@@ -1,3 +1,2 @@
-2025/09/23-23:40:52.341 ee2 Reusing MANIFEST /workspace/browser/user_data/Default/Site Characteristics Database/MANIFEST-000001
-2025/09/23-23:40:52.342 ee2 Recovering log #3
-2025/09/23-23:40:52.342 ee2 Reusing old log /workspace/browser/user_data/Default/Site Characteristics Database/000003.log 
+2025/09/24-15:56:13.510 312d Creating DB /workspace/browser/user_data/Default/Site Characteristics Database since it was missing.
+2025/09/24-15:56:13.527 312d Reusing MANIFEST /workspace/browser/user_data/Default/Site Characteristics Database/MANIFEST-000001

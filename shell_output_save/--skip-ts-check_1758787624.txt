@@ -1,0 +1,197 @@
+
+> react_repo@0.0.0 build /workspace
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build --skip-ts-check
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 2.1s using pnpm v10.12.4
+src/components/modals/EnhancedCommunityModal.tsx:2:20 - error TS2305: Module '"@/lib/supabase"' has no exported member 'Community'.
+
+2 import { supabase, Community, ApiKey, createCommunityFromTemplate } from '@/lib/supabase'
+                     ~~~~~~~~~
+
+src/components/modals/EnhancedCommunityModal.tsx:2:39 - error TS2724: '"@/lib/supabase"' has no exported member named 'createCommunityFromTemplate'. Did you mean 'createClientFromTemplate'?
+
+2 import { supabase, Community, ApiKey, createCommunityFromTemplate } from '@/lib/supabase'
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/lib/supabase.ts:394:14
+    394 export const createClientFromTemplate = async (request: {
+                     ~~~~~~~~~~~~~~~~~~~~~~~~
+    'createClientFromTemplate' is declared here.
+
+src/lib/hooks/useContent.ts:6:55 - error TS2307: Cannot find module '@tanstack/react-query' or its corresponding type declarations.
+
+6 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+                                                        ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/lib/providers/QueryProvider.tsx:5:8 - error TS2307: Cannot find module '@tanstack/react-query' or its corresponding type declarations.
+
+5 } from '@tanstack/react-query'
+         ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/lib/providers/QueryProvider.tsx:6:36 - error TS2307: Cannot find module '@tanstack/react-query-devtools' or its corresponding type declarations.
+
+6 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/lib/stores/contentStore.ts:6:24 - error TS2307: Cannot find module 'zustand' or its corresponding type declarations.
+
+6 import { create } from 'zustand'
+                         ~~~~~~~~~
+
+src/lib/stores/contentStore.ts:7:23 - error TS2307: Cannot find module 'zustand/middleware/immer' or its corresponding type declarations.
+
+7 import { immer } from 'zustand/middleware/immer'
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/lib/stores/contentStore.ts:8:39 - error TS2307: Cannot find module 'zustand/middleware' or its corresponding type declarations.
+
+8 import { subscribeWithSelector } from 'zustand/middleware'
+                                        ~~~~~~~~~~~~~~~~~~~~
+
+src/lib/stores/urlStore.ts:6:24 - error TS2307: Cannot find module 'zustand' or its corresponding type declarations.
+
+6 import { create } from 'zustand'
+                         ~~~~~~~~~
+
+src/lib/stores/urlStore.ts:7:23 - error TS2307: Cannot find module 'zustand/middleware/immer' or its corresponding type declarations.
+
+7 import { immer } from 'zustand/middleware/immer'
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:6:3 - error TS2305: Module '"@/lib/supabase"' has no exported member 'Community'.
+
+6   Community,
+    ~~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:7:3 - error TS2724: '"@/lib/supabase"' has no exported member named 'createCommunityFromTemplate'. Did you mean 'createClientFromTemplate'?
+
+7   createCommunityFromTemplate,
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/lib/supabase.ts:394:14
+    394 export const createClientFromTemplate = async (request: {
+                     ~~~~~~~~~~~~~~~~~~~~~~~~
+    'createClientFromTemplate' is declared here.
+
+src/pages/EnhancedCommunitiesPage.tsx:121:31 - error TS2339: Property 'created_at' does not exist on type 'ExtendedCommunity'.
+
+121           aValue = new Date(a.created_at).getTime()
+                                  ~~~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:122:31 - error TS2339: Property 'created_at' does not exist on type 'ExtendedCommunity'.
+
+122           bValue = new Date(b.created_at).getTime()
+                                  ~~~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:125:22 - error TS2339: Property 'name' does not exist on type 'ExtendedCommunity'.
+
+125           aValue = a.name.toLowerCase()
+                         ~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:126:22 - error TS2339: Property 'name' does not exist on type 'ExtendedCommunity'.
+
+126           bValue = b.name.toLowerCase()
+                         ~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:239:37 - error TS2339: Property 'id' does not exist on type 'ExtendedCommunity'.
+
+239                 <div key={community.id} className="px-6 py-4 hover:bg-gray-50">
+                                        ~~
+
+src/pages/EnhancedCommunitiesPage.tsx:244:36 - error TS2339: Property 'logo_url' does not exist on type 'ExtendedCommunity'.
+
+244                         {community.logo_url ? (
+                                       ~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:246:44 - error TS2339: Property 'logo_url' does not exist on type 'ExtendedCommunity'.
+
+246                             src={community.logo_url}
+                                               ~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:247:44 - error TS2339: Property 'name' does not exist on type 'ExtendedCommunity'.
+
+247                             alt={community.name}
+                                               ~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:253:65 - error TS2339: Property 'brand_color' does not exist on type 'ExtendedCommunity'.
+
+253                             style={{ backgroundColor: community.brand_color }}
+                                                                    ~~~~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:255:40 - error TS2339: Property 'name' does not exist on type 'ExtendedCommunity'.
+
+255                             {community.name.charAt(0).toUpperCase()}
+                                           ~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:260:85 - error TS2339: Property 'name' does not exist on type 'ExtendedCommunity'.
+
+260                         <p className="text-sm font-medium text-gray-900">{community.name}</p>
+                                                                                        ~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:261:36 - error TS2339: Property 'template_source_id' does not exist on type 'ExtendedCommunity'.
+
+261                         {community.template_source_id && (
+                                       ~~~~~~~~~~~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:272:71 - error TS2339: Property 'project_name' does not exist on type 'ExtendedCommunity'.
+
+272                       <p className="text-sm text-gray-900">{community.project_name}</p>
+                                                                          ~~~~~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:288:52 - error TS2339: Property 'api_key_id' does not exist on type 'ExtendedCommunity'.
+
+288                           {getApiKeyName(community.api_key_id)}
+                                                       ~~~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:298:47 - error TS2339: Property 'created_at' does not exist on type 'ExtendedCommunity'.
+
+298                           {new Date(community.created_at).toLocaleDateString()}
+                                                  ~~~~~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:306:35 - error TS2339: Property 'status' does not exist on type 'ExtendedCommunity'.
+
+306                         community.status === 'active'
+                                      ~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:310:36 - error TS2339: Property 'status' does not exist on type 'ExtendedCommunity'.
+
+310                         {community.status === 'active' && <CheckCircle className="h-3 w-3 mr-1" />}
+                                       ~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:311:36 - error TS2339: Property 'status' does not exist on type 'ExtendedCommunity'.
+
+311                         {community.status}
+                                       ~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:319:57 - error TS2339: Property 'id' does not exist on type 'ExtendedCommunity'.
+
+319                           to={`/communities/${community.id}`}
+                                                            ~~
+
+src/pages/EnhancedCommunitiesPage.tsx:327:75 - error TS2339: Property 'id' does not exist on type 'ExtendedCommunity'.
+
+327                           onClick={() => handleArchiveCommunity(community.id, community.status === 'active')}
+                                                                              ~~
+
+src/pages/EnhancedCommunitiesPage.tsx:327:89 - error TS2339: Property 'status' does not exist on type 'ExtendedCommunity'.
+
+327                           onClick={() => handleArchiveCommunity(community.id, community.status === 'active')}
+                                                                                            ~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:329:39 - error TS2339: Property 'status' does not exist on type 'ExtendedCommunity'.
+
+329                             community.status === 'active'
+                                          ~~~~~~
+
+src/pages/EnhancedCommunitiesPage.tsx:333:44 - error TS2339: Property 'status' does not exist on type 'ExtendedCommunity'.
+
+333                           title={community.status === 'active' ? 'Archive Community' : 'Restore Community'}
+                                               ~~~~~~
+
+
+Found 35 errors.
+
+ ELIFECYCLE  Command failed with exit code 2.

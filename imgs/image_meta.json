@@ -1,0 +1,470 @@
+[
+  {
+    "query": "A modern course thumbnail for full stack web development",
+    "image_info": {
+      "url": "https://jaro-website.s3.ap-south-1.amazonaws.com/2024/04/0-cl7fc6pt1MHjIF4K.png",
+      "file_path": "/workspace/imgs/full-stack-development-course-overview-thumbnail.jpg",
+      "img_format": "PNG",
+      "mode": "P",
+      "file_size": 95082,
+      "width": 1400,
+      "height": 850,
+      "total_pixels": 1190000,
+      "basic_score": 0.912424774578267
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 98.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 95.0,
+      "explanation": "The image is exceptionally relevant to both the search query and prompt, clearly depicting the components of full-stack development with modern icons and technologies. Its clean, infographic-style design and vibrant colors make it an excellent choice for a course thumbnail.",
+      "file_name": "full-stack-development-course-overview-thumbnail.jpg",
+      "caption": "An infographic-style course thumbnail for full-stack development, illustrating key components like Front-End Dev (JavaScript, HTML5, CSS3), Back-End Dev (Ruby, Python, Java, .NET), Databases (MongoDB, PostgreSQL, MySQL), DevOps (GitLab, AWS, Docker), and Mobile App Dev (Swift, Android). The design features a clear hierarchy, modern icons, and legible text on a split yellow and blue background, making it ideal for educational content.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A modern course thumbnail for full stack web development",
+    "image_info": {
+      "url": "https://roszetdigital.com/wp-content/uploads/2024/06/Full-Stack-Development-Course-in-Chandigargh-mob-min.jpg",
+      "file_path": "/workspace/imgs/modern-full-stack-developer-course-technologies-map.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 54113,
+      "width": 852,
+      "height": 808,
+      "total_pixels": 688416,
+      "basic_score": 0.8932517385867601
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 98.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 95.0,
+      "explanation": "The image is extremely relevant to 'full stack development course' as it explicitly states 'Full Stack Developer Course' and visually represents a comprehensive array of technologies (Front-end, Back-end, Database, HTML, CSS, JS, Python, Java, PHP, MySQL, MongoDB, MERN, MEAN) associated with it. The clarity is excellent, with crisp vector graphics and readable text. There are no watermarks. The overall design is modern, professional, and well-composed, making it an ideal course thumbnail.",
+      "file_name": "modern-full-stack-developer-course-technologies-map.jpg",
+      "caption": "A modern course thumbnail for full stack web development, visually mapping key technologies and concepts. The design features a central Venn diagram illustrating Front-end, Back-end, and Database components, surrounded by icons and labels for various programming languages and frameworks including HTML, CSS, JavaScript (JS), Python, Java, PHP, MySQL, MongoDB, MERN stack, and MEAN stack.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A modern course thumbnail for full stack web development",
+    "image_info": {
+      "url": "https://www.keycdn.com/img/support/full-stack-development.png",
+      "file_path": "/workspace/imgs/full_stack_development_course_technologies_thumbnail.jpg",
+      "img_format": "PNG",
+      "mode": "RGB",
+      "file_size": 90525,
+      "width": 1460,
+      "height": 730,
+      "total_pixels": 1065800,
+      "basic_score": 0.9078566690657262
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 95.0,
+      "explanation": "The image is extremely relevant to 'full stack development course' as it explicitly states 'Full Stack Development' and displays a comprehensive collection of relevant programming language and framework logos. The design is modern, clean, and clear, making it an excellent thumbnail. There are no watermarks.",
+      "file_name": "full_stack_development_course_technologies_thumbnail.jpg",
+      "caption": "A modern course thumbnail for full-stack web development, featuring a central laptop icon with gears, encircled by various programming language and framework logos including Python, Django, Spring, C#, AngularJS, JavaScript, HTML5, jQuery, Laravel, Java, React, and Bootstrap. A prominent blue banner at the bottom reads 'Full Stack Development' on a clean white background.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A modern course thumbnail for full stack web development",
+    "image_info": {
+      "url": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190626123927/untitlsssssed.png",
+      "file_path": "/workspace/imgs/modern_full_stack_web_development_technologies_course_thumbnail.jpg",
+      "img_format": "PNG",
+      "mode": "RGB",
+      "file_size": 113463,
+      "width": 1456,
+      "height": 768,
+      "total_pixels": 1118208,
+      "basic_score": 0.9177752611581882
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 98.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 95.0,
+      "explanation": "The image is highly relevant as it explicitly features numerous programming languages and technologies commonly associated with full-stack development (front-end, back-end, and databases), such as ReactJS, Node.js, Python, HTML, CSS, JavaScript, MySQL, MongoDB, and more. The illustration of a developer coding on a computer with gears in the background clearly conveys the theme of a development course. The style is modern, clean, and highly suitable for a course thumbnail. Clarity is excellent, and there are no watermarks.",
+      "file_name": "modern_full_stack_web_development_technologies_course_thumbnail.jpg",
+      "caption": "A modern illustration depicting a person coding at a computer, surrounded by various full-stack web development technologies including MongoDB, ReactJS, Node.js, Angular, MySQL, SQL, Python, CSS, C++, HTML, JavaScript, PHP, Oracle, and Ruby. The image is suitable for a course thumbnail, representing the comprehensive skills taught in full-stack development.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A modern course thumbnail for full stack web development",
+    "image_info": {
+      "url": "https://i.ytimg.com/vi/nu_pCVPKzTk/maxresdefault.jpg",
+      "file_path": "/workspace/imgs/full_stack_web_development_course_thumbnail_css_html_js_node_mongodb.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 147501,
+      "width": 1280,
+      "height": 720,
+      "total_pixels": 921600,
+      "basic_score": 0.9345313607709681
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 95.0,
+      "watermark_score": 90.0,
+      "overall_score": 95.0,
+      "explanation": "The image is perfectly relevant to the search query, explicitly stating 'Full Stack Web Dev Course' and showcasing key technologies like CSS, HTML, JavaScript, Node.js, and MongoDB. The clarity is excellent with sharp text and logos. A small brand logo (flame icon) is present, but it's part of the design and not an intrusive watermark. The overall composition is professional, modern, and highly effective as a course thumbnail.",
+      "file_name": "full_stack_web_development_course_thumbnail_css_html_js_node_mongodb.jpg",
+      "caption": "A modern course thumbnail for a Full Stack Web Development course, featuring two male instructors. The thumbnail prominently displays the text 'Full Stack Web Dev Course' and logos for HTML, CSS, JavaScript, Node.js, and MongoDB against a dynamic blue and dark background.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A clean course thumbnail for TypeScript fundamentals",
+    "image_info": {
+      "url": "https://i.ytimg.com/vi/gp5H0Vw39yw/maxresdefault.jpg",
+      "file_path": "/workspace/imgs/typescript_crash_course_thumbnail_fundamentals.png",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 63144,
+      "width": 1280,
+      "height": 720,
+      "total_pixels": 921600,
+      "basic_score": 0.9261767544550653
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 100.0,
+      "watermark_score": 100.0,
+      "overall_score": 100.0,
+      "explanation": "The image is perfectly relevant to the search query and prompt, directly displaying 'TypeScript Crash Course' with the official TypeScript logo. It exhibits excellent clarity, high resolution, and a professional, clean design ideal for a course thumbnail, with no watermarks.",
+      "file_name": "typescript_crash_course_thumbnail_fundamentals.png",
+      "caption": "A clean, professional course thumbnail featuring the white TypeScript 'TS' logo within a blue square, alongside a stylized white flame symbol on a dark blue background. The text 'TypeScript' is prominently displayed in white, followed by 'Crash Course' in a slightly smaller, italicized white font, indicating a fundamental programming course.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A clean course thumbnail for TypeScript fundamentals",
+    "image_info": {
+      "url": "https://images.ctfassets.net/aq13lwl6616q/3JL4P1nmfnH425Rxkl4n5U/60c357f354d9a9284418737b3e423971/Course_Thumbnail_-_TypeScript_9.png",
+      "file_path": "/workspace/imgs/typescript_fundamentals_programming_course_thumbnail_logo.jpg",
+      "img_format": "PNG",
+      "mode": "RGBA",
+      "file_size": 603152,
+      "width": 1280,
+      "height": 720,
+      "total_pixels": 921600,
+      "basic_score": 0.9548513657137827
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 95.0,
+      "explanation": "The image is perfectly relevant, featuring the iconic TypeScript logo prominently, making it ideal for a TypeScript course. It is very clear, clean, and has excellent professional composition with no watermarks, making it an outstanding course thumbnail.",
+      "file_name": "typescript_fundamentals_programming_course_thumbnail_logo.jpg",
+      "caption": "A clean and modern course thumbnail featuring the white 'TS' (TypeScript) logo on a bright blue square. The background consists of abstract hexagonal patterns in soft pink-red and blue hues, with subtle neon-blue geometric lines framing the sides, set against a gradient background.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A clean course thumbnail for TypeScript fundamentals",
+    "image_info": {
+      "url": "https://campus.w3schools.com/cdn/shop/files/12_ef437e6c-a575-49b6-9a63-2e822927cb2d_1024x1024.png?v=1733733433",
+      "file_path": "/workspace/imgs/typescript_programming_course_thumbnail_fundamentals_exam_included.jpg",
+      "img_format": "PNG",
+      "mode": "RGBA",
+      "file_size": 829943,
+      "width": 1024,
+      "height": 1024,
+      "total_pixels": 1048576,
+      "basic_score": 0.9537728232230265
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 100.0,
+      "watermark_score": 100.0,
+      "overall_score": 100.0,
+      "explanation": "The image is perfectly relevant to both the search query 'typescript programming course' and the prompt 'A clean course thumbnail for TypeScript fundamentals'. It is exceptionally clear, professionally designed, and contains no watermarks, making it an ideal asset.",
+      "file_name": "typescript_programming_course_thumbnail_fundamentals_exam_included.jpg",
+      "caption": "A clean and professional course thumbnail for a TypeScript programming course. The image features the iconic blue TypeScript (TS) logo at the top left, with prominent white text reading 'TypeScript Course'. Below, smaller text states 'Become a more efficient JavaScript developer' and 'Beginner friendly'. A purple ribbon in the upper right corner diagonally displays 'Exam Included'. The background is a dark blue gradient.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A clean course thumbnail for TypeScript fundamentals",
+    "image_info": {
+      "url": "https://cdn.shopaccino.com/igmguru/products/typescript-course-2-2649644700930565_l.jpg?v=532",
+      "file_path": "/workspace/imgs/typescript_programming_course_thumbnail_igmGuru.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 44359,
+      "width": 1000,
+      "height": 750,
+      "total_pixels": 750000,
+      "basic_score": 0.9057975432400542
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 95.0,
+      "watermark_score": 50.0,
+      "overall_score": 85.0,
+      "explanation": "The image is highly relevant to the search query, clearly displaying 'TypeScript Programming Course' along with the official TypeScript logo. The clarity is excellent with sharp text and logos against a clean white background. However, it contains a prominent 'igmGuru' brand logo in the top right corner, acting as a watermark. The overall composition is professional and suitable for a course thumbnail.",
+      "file_name": "typescript_programming_course_thumbnail_igmGuru.jpg",
+      "caption": "A clean, minimalist course thumbnail featuring the blue TypeScript logo and black text 'TypeScript Programming Course' centered on a white background, with the 'igmGuru' brand logo and slogan 'Learn anywhere, anytime' in the top right corner.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A clean course thumbnail for TypeScript fundamentals",
+    "image_info": {
+      "url": "https://i.ytimg.com/vi/gieEQFIfgYc/maxresdefault.jpg",
+      "file_path": "/workspace/imgs/typescript_full_programming_course_thumbnail_8_hours.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 66706,
+      "width": 1280,
+      "height": 720,
+      "total_pixels": 921600,
+      "basic_score": 0.9265425365148151
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 100.0,
+      "watermark_score": 100.0,
+      "overall_score": 95.0,
+      "explanation": "The image is perfectly relevant to the search query, explicitly mentioning 'TYPESCRIPT' and 'Full Course' along with the official TS logo. It boasts excellent clarity with sharp, legible text on a contrasting background. There are no watermarks, and the overall professional and clean composition makes it an outstanding course thumbnail, fulfilling the prompt's requirements.",
+      "file_name": "typescript_full_programming_course_thumbnail_8_hours.jpg",
+      "caption": "A clean and professional course thumbnail for a TypeScript fundamentals program. The image features the word 'TYPESCRIPT' in large white letters at the top on a black background, separated by a thin blue horizontal line. Below this, the text '8 Hours' is prominently displayed in blue, followed by 'Full Course' in white. On the right side, the iconic blue square TypeScript logo with white 'TS' letters is visible. The high contrast design ensures excellent readability.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A professional course thumbnail for React development training",
+    "image_info": {
+      "url": "https://i.ytimg.com/vi/Osn2NHmaG8A/maxresdefault.jpg",
+      "file_path": "/workspace/imgs/react_js_programming_course_tutorial_thumbnail.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 118733,
+      "width": 1280,
+      "height": 720,
+      "total_pixels": 921600,
+      "basic_score": 0.9317571446016009
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 95.0,
+      "explanation": "The image is perfectly relevant to the search query and prompt, clearly indicating a 'React JS tutorial' and 'complete course' for programming. The clarity is excellent with sharp text and graphics. There are no watermarks. The overall composition is professional, visually appealing, and well-suited for a course thumbnail.",
+      "file_name": "react_js_programming_course_tutorial_thumbnail.jpg",
+      "caption": "A professional and vibrant course thumbnail for a 'React JS Basic to Advance Complete Course'. The image features large, bold white text on a bright blue background, including 'REACT JS TUTORIAL' and 'INTRODUCTION'. It is adorned with modern, stylized icons for JavaScript (JS), React, and Node.js, alongside an isometric illustration of a laptop displaying code, all set against a dark purple background on the right.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A professional course thumbnail for React development training",
+    "image_info": {
+      "url": "https://i.ytimg.com/vi/RVFAyFWO4go/maxresdefault.jpg",
+      "file_path": "/workspace/imgs/react_full_course_programming_tutorial_thumbnail.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 95071,
+      "width": 1280,
+      "height": 720,
+      "total_pixels": 921600,
+      "basic_score": 0.9294159349899147
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 95.0,
+      "explanation": "The image is perfectly relevant to the search query and prompt, clearly indicating a 'React Full Course' with the prominent React logo. The text is crisp and legible, and the design is professional and clean, making it an excellent course thumbnail. No watermarks are present.",
+      "file_name": "react_full_course_programming_tutorial_thumbnail.jpg",
+      "caption": "A professional course thumbnail featuring the word 'REACT' in large, glowing white letters with a blue outline, alongside the React logo in blue and purple. Below, the text '9 Hours' is in blue, and 'Full Course' is in white, all set against a dark gray background with a faint, repeating React logo pattern. The design is clean and informative, clearly advertising a React programming tutorial.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A professional course thumbnail for React development training",
+    "image_info": {
+      "url": "https://i.ytimg.com/vi/bMknfKXIFA8/maxresdefault.jpg",
+      "file_path": "/workspace/imgs/react_full_course_programming_tutorial_thumbnail_2022.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 95729,
+      "width": 1280,
+      "height": 720,
+      "total_pixels": 921600,
+      "basic_score": 0.92948173986282
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 95.0,
+      "watermark_score": 85.0,
+      "overall_score": 95.0,
+      "explanation": "The image is perfectly relevant to the search query and prompt, clearly functioning as a professional course thumbnail for a React development training. It features excellent clarity, sharp text, and a well-composed design with an engaging instructor. There is a small branding logo in the bottom left corner, which is common for course thumbnails but technically prevents a perfect watermark score.",
+      "file_name": "react_full_course_programming_tutorial_thumbnail_2022.jpg",
+      "caption": "A professional and engaging course thumbnail for a 'React Full Course (2022)' programming tutorial. The image displays bold white text 'React Full Course (2022)' and the iconic React logo on a dark blue background, with a smiling male instructor wearing a black hoodie on the right side. A small flame logo, likely representing the course provider, is visible in the bottom left corner.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A professional course thumbnail for React development training",
+    "image_info": {
+      "url": "https://dotnettrickscloud.blob.core.windows.net/article/5720250716184031.png",
+      "file_path": "/workspace/imgs/learn-reactjs-2025-programming-course-thumbnail.jpg",
+      "img_format": "PNG",
+      "mode": "P",
+      "file_size": 20893,
+      "width": 1200,
+      "height": 675,
+      "total_pixels": 810000,
+      "basic_score": 0.9009830761265174
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 95.0,
+      "clarity_score": 95.0,
+      "watermark_score": 70.0,
+      "overall_score": 90.0,
+      "explanation": "The image is highly relevant to both the search query and prompt, clearly displaying 'How to learn React JS in 2025' with the React logo. It has excellent clarity and a professional composition suitable for a course thumbnail. The presence of the 'ScholarHat' branding acts as a logo/watermark, slightly reducing its score for generic use.",
+      "file_name": "learn-reactjs-2025-programming-course-thumbnail.jpg",
+      "caption": "A professional course thumbnail featuring the title 'How to learn React JS in 2025' in white text on a dark blue background. The iconic light blue React logo is prominently displayed on the left within a rounded rectangle, complementing the main text. A small, light blue arrow icon in a circular button hints at navigation or a call to action. The top left corner includes the 'ScholarHat' logo and text branding.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A creative course thumbnail for UI/UX design principles",
+    "image_info": {
+      "url": "https://blog.pwskills.com/wp-content/uploads/2024/06/10-Best-Courses-For-UI-UX-Design-That-Will-Make-You-a-Pro.jpg",
+      "file_path": "/workspace/imgs/best_ui_ux_design_courses_thumbnail.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 526759,
+      "width": 1536,
+      "height": 864,
+      "total_pixels": 1327104,
+      "basic_score": 0.9394837828927641
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 95.0,
+      "clarity_score": 90.0,
+      "watermark_score": 60.0,
+      "overall_score": 85.0,
+      "explanation": "The image is highly relevant to the search query 'ui ux design course' as it explicitly mentions 'UI UX DESIGN' and '10 BEST COURSES'. It also visually represents UI/UX concepts within a mobile interface, making it a creative and effective course thumbnail. The clarity is excellent, with sharp text and graphics. However, it contains a prominent 'PW SKILLS' logo, which acts as a watermark/branding, slightly reducing its general reusability without specific permission.",
+      "file_name": "best_ui_ux_design_courses_thumbnail.jpg",
+      "caption": "A vibrant and professional course thumbnail featuring the text '10 BEST COURSES FOR UI UX DESIGN THAT WILL MAKE YOU A PRO' on a dark blue background with abstract purple lines. The right side of the image displays a stylized mobile phone interface with 'UI' and 'UX' blocks, sliders, icons (play, download), and percentage indicators, symbolizing user interface and user experience design concepts. The 'PW SKILLS' logo is present in the top left corner.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A creative course thumbnail for UI/UX design principles",
+    "image_info": {
+      "url": "https://blog.pwskills.com/wp-content/uploads/2025/01/4-UI_UX-Design-Courses-For-Free-On-YouTube.jpg",
+      "file_path": "/workspace/imgs/ui_ux_design_courses_free_youtube_thumbnail.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 634560,
+      "width": 1536,
+      "height": 864,
+      "total_pixels": 1327104,
+      "basic_score": 0.9430192606013075
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 95.0,
+      "clarity_score": 90.0,
+      "watermark_score": 70.0,
+      "overall_score": 88.0,
+      "explanation": "The image is highly relevant to the search query 'ui ux design course' and perfectly fits the prompt's request for a 'creative course thumbnail for UI/UX design principles'. It clearly advertises '4 UI/UX DESIGN COURSES FOR FREE ON YOUTUBE' with engaging graphics showing UI/UX elements. The clarity is excellent, with sharp text and visuals. The 'PW SKILLS' logo acts as a brand watermark, slightly reducing the score for general use, but it's intentional for a course thumbnail. The overall composition and design are professional and eye-catching.",
+      "file_name": "ui_ux_design_courses_free_youtube_thumbnail.jpg",
+      "caption": "A vibrant and professional thumbnail image advertising '4 UI/UX DESIGN COURSES FOR FREE ON YOUTUBE' by 'PW SKILLS'. The left side features bold yellow and white text against a dark blue background, while the right side displays an abstract illustration of a laptop screen with various colorful UI/UX design elements and interconnected components, including music players, profile icons, and toggles, creating an engaging visual.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A creative course thumbnail for UI/UX design principles",
+    "image_info": {
+      "url": "https://i.ytimg.com/vi/BU_afT-aIn0/maxresdefault.jpg",
+      "file_path": "/workspace/imgs/ui_ux_design_full_course_thumbnail_instructor.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 134721,
+      "width": 1280,
+      "height": 720,
+      "total_pixels": 921600,
+      "basic_score": 0.9333089679344336
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 95.0,
+      "watermark_score": 60.0,
+      "overall_score": 90.0,
+      "explanation": "The image is perfectly relevant to 'ui ux design course' and aligns well with the 'creative course thumbnail' prompt. It features clear, bold text, a professional-looking instructor, and creative UI/UX-themed background elements. Clarity is excellent. There is a prominent 'IntelliPaat' logo and partial text watermark, which reduces the watermark score, but is expected for a branded course thumbnail. Overall, it's a high-quality and engaging image for its purpose.",
+      "file_name": "ui_ux_design_full_course_thumbnail_instructor.jpg",
+      "caption": "A creative and engaging course thumbnail for a UI/UX Design full course, featuring a smiling male instructor with dark hair and a beard, wearing a brown shirt and a watch, on the right side. The left side prominently displays bold white text 'UI/UX Design' and 'Full Course' on a purple rectangular badge. The background is a mix of light grey with a subtle dotted pattern, modern abstract shapes in orange, purple, and green, and various UI elements and icons (such as a power button, lock, favorite star, cloud, and 'FigJam' text with connector lines) suggesting design principles. The IntelliPaat logo is visible in the top left corner.",
+      "recommend": true,
+      "error": ""
+    }
+  },
+  {
+    "query": "A creative course thumbnail for UI/UX design principles",
+    "image_info": {
+      "url": "https://hype4-academy-storyblok-copy.s3.amazonaws.com/storyblok-assets/1748944848822-springboard.jpg",
+      "file_path": "/workspace/imgs/springboard_ui_ux_design_bootcamp_overview.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 239998,
+      "width": 1452,
+      "height": 779,
+      "total_pixels": 1131108,
+      "basic_score": 0.9403720252645721
+    },
+    "llm_score": {
+      "success": true,
+      "relevance_score": 100.0,
+      "clarity_score": 95.0,
+      "watermark_score": 100.0,
+      "overall_score": 90.0,
+      "explanation": "The image is perfectly relevant to the search query 'ui ux design course' as it's a webpage for a 'UI / UX Design Bootcamp'. It is clear, well-composed, and features creative elements like the green swirl and an engaging human subject, making it highly suitable for a 'creative course thumbnail' (or content from which one could be created). There are no watermarks.",
+      "file_name": "springboard_ui_ux_design_bootcamp_overview.jpg",
+      "caption": "A screenshot of the Springboard website promoting a 'UI / UX Design Bootcamp'. The left side details key course features including '6 Months Job Prep Included', '100% online', 'beginner-friendly', '1:1 mentorship', and 'NEW! AI for Design Professionals learning units'. On the right, a smiling woman with dark curly hair intently looks down at a tablet she is holding. A flowing green line design adds a creative touch, and the bottom banner lists companies like GoPro, Meta, Nike, NBCUniversal, and Pandora that have hired Springboard UI/UX design graduates.",
+      "recommend": true,
+      "error": ""
+    }
+  }
+]
