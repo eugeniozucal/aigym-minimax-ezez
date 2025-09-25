@@ -1,0 +1,13 @@
+{
+  "name": "aigym-minimax-ezez",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd ai-gym-frontend && npm install && npm run build",
+    "dev": "cd ai-gym-frontend && npm run dev"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  }
+}

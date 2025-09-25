@@ -1,0 +1,21 @@
+[build]
+command = "cd ai-gym-frontend && npm install && npm run build"
+publish = "ai-gym-frontend/dist"
+
+[build.environment]
+NODE_VERSION = "18"
+NPM_VERSION = "9"
+PACKAGE_MANAGER = "npm"
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
