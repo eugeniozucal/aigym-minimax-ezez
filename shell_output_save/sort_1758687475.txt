@@ -1,0 +1,255 @@
+extracted_backup/agent_workspace/.DS_Store
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_135608.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_135644.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_135720.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_135752.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_140018.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_140049.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_140125.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_140159.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_140251.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_140322.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_140354.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_140423.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_150743.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_150823.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_150853.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_150920.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_150949.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_151014.png
+extracted_backup/agent_workspace/.browser_screenshots/visual_feedback_20250825_151035.png
+find: write error
+---
+extracted_backup/agent_workspace
+extracted_backup/agent_workspace/.browser_screenshots
+extracted_backup/agent_workspace/ai-gym-frontend
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/components
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/components/content
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/components/layout
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/components/modals
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/components/ui
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/contexts
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/hooks
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/pages
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/pages/content
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/pages/training-zone
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/pages/training-zone/components
+extracted_backup/agent_workspace/ai-gym-frontend/ai-gym-frontend/src/pages/training-zone/components/block-editors
+extracted_backup/agent_workspace/ai-gym-frontend/browser
+extracted_backup/agent_workspace/ai-gym-frontend/browser/browser_extension
+extracted_backup/agent_workspace/ai-gym-frontend/browser/browser_extension/error_capture
+extracted_backup/agent_workspace/ai-gym-frontend/browser/extracted_content
+extracted_backup/agent_workspace/ai-gym-frontend/browser/screenshots
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/AutofillStrikeDatabase
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/BudgetDatabase
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Cache
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Cache/Cache_Data
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Cache/Cache_Data/index-dir
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/ClientCertificates
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Code Cache
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Code Cache/js
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Code Cache/js/index-dir
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Code Cache/wasm
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Code Cache/wasm/index-dir
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/DawnGraphiteCache
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/DawnWebGPUCache
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Download Service
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Download Service/EntryDB
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Extension Rules
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Extension Scripts
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Extension State
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Feature Engagement Tracker
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Feature Engagement Tracker/AvailabilityDB
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Feature Engagement Tracker/EventDB
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/GCM Store
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/GCM Store/Encryption
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/GPUCache
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Local Storage
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Local Storage/leveldb
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/PersistentOriginTrials
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Segmentation Platform
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Segmentation Platform/SegmentInfoDB
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Segmentation Platform/SignalDB
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Segmentation Platform/SignalStorageConfigDB
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Service Worker
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Service Worker/Database
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Service Worker/ScriptCache
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Service Worker/ScriptCache/index-dir
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Session Storage
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Sessions
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Shared Dictionary
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Site Characteristics Database
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Sync Data
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/Sync Data/LevelDB
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/VideoDecodeStats
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/WebStorage
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/WebStorage/12
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/WebStorage/12/CacheStorage
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/WebStorage/12/IndexedDB
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/WebStorage/12/IndexedDB/indexeddb.leveldb
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/chrome_cart_db
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/commerce_subscription_db
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/discounts_db
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/optimization_guide_hint_cache_store
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/parcel_tracking_db
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/shared_proto_db
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Default/shared_proto_db/metadata
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/Dictionaries
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/GrShaderCache
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/GraphiteDawnCache
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/ShaderCache
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/component_crx_cache
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/extensions_crx_cache
+extracted_backup/agent_workspace/ai-gym-frontend/browser/user_data/segmentation_platform
+extracted_backup/agent_workspace/ai-gym-frontend/charts
+extracted_backup/agent_workspace/ai-gym-frontend/debugging
+extracted_backup/agent_workspace/ai-gym-frontend/development_fixes
+extracted_backup/agent_workspace/ai-gym-frontend/dist
+extracted_backup/agent_workspace/ai-gym-frontend/dist/assets
+extracted_backup/agent_workspace/ai-gym-frontend/docs
+extracted_backup/agent_workspace/ai-gym-frontend/external_api
+extracted_backup/agent_workspace/ai-gym-frontend/external_api/data_sources
+extracted_backup/agent_workspace/ai-gym-frontend/extract
+extracted_backup/agent_workspace/ai-gym-frontend/memory
+extracted_backup/agent_workspace/ai-gym-frontend/public
+extracted_backup/agent_workspace/ai-gym-frontend/reports
+extracted_backup/agent_workspace/ai-gym-frontend/section-header-demo
+extracted_backup/agent_workspace/ai-gym-frontend/shell_output_save
+extracted_backup/agent_workspace/ai-gym-frontend/src
+extracted_backup/agent_workspace/ai-gym-frontend/src/__tests__
+extracted_backup/agent_workspace/ai-gym-frontend/src/components
+extracted_backup/agent_workspace/ai-gym-frontend/src/components/content
+extracted_backup/agent_workspace/ai-gym-frontend/src/components/layout
+extracted_backup/agent_workspace/ai-gym-frontend/src/components/modals
+extracted_backup/agent_workspace/ai-gym-frontend/src/components/shared
+extracted_backup/agent_workspace/ai-gym-frontend/src/components/shared/PageBuilder
+extracted_backup/agent_workspace/ai-gym-frontend/src/components/training-zone
+extracted_backup/agent_workspace/ai-gym-frontend/src/components/training-zone/components
+extracted_backup/agent_workspace/ai-gym-frontend/src/components/training-zone/components/block-editors
+extracted_backup/agent_workspace/ai-gym-frontend/src/components/training-zone/components/program-builder
+extracted_backup/agent_workspace/ai-gym-frontend/src/components/ui
+extracted_backup/agent_workspace/ai-gym-frontend/src/contexts
+extracted_backup/agent_workspace/ai-gym-frontend/src/hooks
+extracted_backup/agent_workspace/ai-gym-frontend/src/lib
+extracted_backup/agent_workspace/ai-gym-frontend/src/lib/api
+extracted_backup/agent_workspace/ai-gym-frontend/src/lib/hooks
+extracted_backup/agent_workspace/ai-gym-frontend/src/lib/providers
+extracted_backup/agent_workspace/ai-gym-frontend/src/lib/stores
+extracted_backup/agent_workspace/ai-gym-frontend/src/pages
+extracted_backup/agent_workspace/ai-gym-frontend/src/pages/content
+extracted_backup/agent_workspace/ai-gym-frontend/src/test
+extracted_backup/agent_workspace/ai-gym-frontend/src/types
+extracted_backup/agent_workspace/ai-gym-frontend/supabase
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/cron_jobs
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/docs
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/achievements-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/admin-dashboard-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/admin-login-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/ai-chat
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/analytics-computation-cron
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/analytics-dashboard
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/automated-content-generator
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/automated-reports
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/bulk-upload-users
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/clone-community-template
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/community-management
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/content-repository-manager
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/conversation-history
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/courses-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/create-admin-user
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/create-bucket-assets-temp
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/create-bucket-content-thumbnails-temp
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/create-community-template
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/enhanced-file-upload
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/enhanced-progress-tracking
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/image-upload
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/learning-path-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/learning-path-validator
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/manage-user-tags
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/mastery-assessment-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/milestone-validation-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/page-builder-bulk-create
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/page-builder-content-generator
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/page-structure-manager
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/pdf-upload
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/process-csv-upload
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/program-enrollment-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/programs-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/setup-admin
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/setup-admin-final
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/simple-wods-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/streak-tracking-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/system-health-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/track-user-activity
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/track-user-progress
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/update-user-password
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/functions/wods-api
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/tests
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/tests/achievements
+extracted_backup/agent_workspace/ai-gym-frontend/supabase/tests/enhanced-progress
+extracted_backup/agent_workspace/ai-gym-frontend/user_input_files
+extracted_backup/agent_workspace/charts
+extracted_backup/agent_workspace/memory
+extracted_backup/agent_workspace/migrations
+extracted_backup/agent_workspace/reports
+extracted_backup/agent_workspace/section-header-demo
+extracted_backup/agent_workspace/supabase
+extracted_backup/agent_workspace/supabase/cron_jobs
+extracted_backup/agent_workspace/supabase/docs
+extracted_backup/agent_workspace/supabase/functions
+extracted_backup/agent_workspace/supabase/functions/achievements-api
+extracted_backup/agent_workspace/supabase/functions/admin-dashboard-api
+extracted_backup/agent_workspace/supabase/functions/admin-login-api
+extracted_backup/agent_workspace/supabase/functions/ai-chat
+extracted_backup/agent_workspace/supabase/functions/analytics-computation-cron
+extracted_backup/agent_workspace/supabase/functions/analytics-dashboard
+extracted_backup/agent_workspace/supabase/functions/automated-content-generator
+extracted_backup/agent_workspace/supabase/functions/automated-reports
+extracted_backup/agent_workspace/supabase/functions/bulk-upload-users
+extracted_backup/agent_workspace/supabase/functions/clone-community-template
+extracted_backup/agent_workspace/supabase/functions/community-management
+extracted_backup/agent_workspace/supabase/functions/content-management-api
+extracted_backup/agent_workspace/supabase/functions/content-repository-manager
+extracted_backup/agent_workspace/supabase/functions/conversation-history
+extracted_backup/agent_workspace/supabase/functions/courses-api
+extracted_backup/agent_workspace/supabase/functions/create-admin-user
+extracted_backup/agent_workspace/supabase/functions/create-bucket-assets-temp
+extracted_backup/agent_workspace/supabase/functions/create-bucket-content-thumbnails-temp
+extracted_backup/agent_workspace/supabase/functions/create-community-template
+extracted_backup/agent_workspace/supabase/functions/create-demo-user
+extracted_backup/agent_workspace/supabase/functions/enhanced-file-upload
+extracted_backup/agent_workspace/supabase/functions/enhanced-progress-tracking
+extracted_backup/agent_workspace/supabase/functions/folders-api
+extracted_backup/agent_workspace/supabase/functions/image-upload
+extracted_backup/agent_workspace/supabase/functions/learning-path-api
+extracted_backup/agent_workspace/supabase/functions/learning-path-validator
+extracted_backup/agent_workspace/supabase/functions/manage-user-tags
+extracted_backup/agent_workspace/supabase/functions/mastery-assessment-api
+extracted_backup/agent_workspace/supabase/functions/milestone-validation-api
+extracted_backup/agent_workspace/supabase/functions/page-builder-bulk-create
+extracted_backup/agent_workspace/supabase/functions/page-builder-content-generator
+extracted_backup/agent_workspace/supabase/functions/page-structure-manager
+extracted_backup/agent_workspace/supabase/functions/pdf-upload
+extracted_backup/agent_workspace/supabase/functions/process-csv-upload
+extracted_backup/agent_workspace/supabase/functions/program-enrollment-api
+extracted_backup/agent_workspace/supabase/functions/programs-api
+extracted_backup/agent_workspace/supabase/functions/setup-admin
+extracted_backup/agent_workspace/supabase/functions/setup-admin-final
+extracted_backup/agent_workspace/supabase/functions/simple-wods-api
+extracted_backup/agent_workspace/supabase/functions/streak-tracking-api
+extracted_backup/agent_workspace/supabase/functions/system-health-api
+extracted_backup/agent_workspace/supabase/functions/track-user-activity
+extracted_backup/agent_workspace/supabase/functions/track-user-progress
+extracted_backup/agent_workspace/supabase/functions/update-user-password
+extracted_backup/agent_workspace/supabase/functions/wods-api
+extracted_backup/agent_workspace/supabase/functions/workout-blocks-api
+extracted_backup/agent_workspace/supabase/migrations
+extracted_backup/agent_workspace/supabase/tables
+extracted_backup/agent_workspace/supabase/tests
+extracted_backup/agent_workspace/supabase/tests/achievements
+extracted_backup/agent_workspace/supabase/tests/enhanced-progress
