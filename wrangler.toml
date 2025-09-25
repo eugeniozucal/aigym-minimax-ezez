@@ -1,0 +1,11 @@
+name = "aigym-minimax-ezez"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "cd ai-gym-frontend && npm install && npm run build"
+publish = "ai-gym-frontend/dist"
+
+[build.environment]
+NODE_VERSION = "18"
+NPM_VERSION = "9"
+PACKAGE_MANAGER = "npm"
