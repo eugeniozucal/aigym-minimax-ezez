@@ -7,8 +7,8 @@ El proyecto **aigym-minimax-ezez** está listo para ser desplegado en Cloudflare
 
 ### **1. Configuración del Build**
 - **Framework preset**: `Vite`
-- **Build command**: `npm install && npm run build`
-- **Build output directory**: `dist`
+- **Build command**: `cd ai-gym-frontend && npm install && npm run build`
+- **Build output directory**: `ai-gym-frontend/dist`
 - **Node.js version**: `18.x`
 - **Package manager**: `npm` (NO usar pnpm)
 
@@ -100,7 +100,7 @@ Después del despliegue, verifica:
 ### **Error: "packages field missing or empty"**
 - **Causa**: Cloudflare está detectando pnpm en lugar de npm
 - **Solución**: 
-  1. Asegurar que el build command sea: `npm install && npm run build`
+  1. Asegurar que el build command sea: `cd ai-gym-frontend && npm install && npm run build`
   2. Eliminar `pnpm-workspace.yaml` del directorio raíz
   3. Verificar que no existe `pnpm-lock.yaml` en el repositorio
   4. Confirmar que existe `package-lock.json`
