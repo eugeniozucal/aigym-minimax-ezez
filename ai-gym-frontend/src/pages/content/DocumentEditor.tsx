@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { ContentEditor } from '@/components/content/ContentEditor'
-import { supabase, Document } from '@/lib/supabase'
+import { supabase, Document } from '../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'

@@ -7,7 +7,7 @@ import { CenterCanvas } from '@/components/training-zone/components/CenterCanvas
 import { RightBlockEditor } from '@/components/training-zone/components/RightBlockEditor'
 import { RepositoryPopup } from '@/components/training-zone/components/RepositoryPopup'
 import { PreviewModal } from '@/components/training-zone/components/PreviewModal'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 
 import { Block, Page, PageData } from '@/types/pageBuilder'

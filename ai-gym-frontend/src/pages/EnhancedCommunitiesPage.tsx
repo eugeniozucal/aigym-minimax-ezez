@@ -7,7 +7,7 @@ import {
   createCommunityFromTemplate,
   ApiKey,
   PLATFORM_FEATURES
-} from '@/lib/supabase'
+} from '../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import {
   Plus,

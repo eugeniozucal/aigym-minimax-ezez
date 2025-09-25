@@ -13,7 +13,7 @@ import {
   FileText,
   MoreVertical
 } from 'lucide-react'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../../lib/supabase'
 import { Link } from 'react-router-dom'
 
 interface Category {

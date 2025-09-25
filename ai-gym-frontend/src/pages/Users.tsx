@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Layout } from '@/components/layout/Layout'
-import { supabase, User, Community, UserTag } from '@/lib/supabase'
+import { supabase, User, Community, UserTag } from '../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Plus, Users, Search, Building2, Tag, MoreHorizontal } from 'lucide-react'
 

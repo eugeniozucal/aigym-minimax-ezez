@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { supabase, Community, ApiKey, createCommunityFromTemplate } from '@/lib/supabase'
+import { supabase, Community, ApiKey, createCommunityFromTemplate } from '../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { X, Upload, Palette, Key, Copy, Building, Image, AlertCircle, Plus } from 'lucide-react'
 

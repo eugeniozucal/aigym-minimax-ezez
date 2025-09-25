@@ -5,7 +5,7 @@ import { Search, Filter, Grid, List, Plus, Eye, EyeOff, Calendar, Target, Dumbbe
 import { ItemContextMenu } from './components/ItemContextMenu'
 import { BulkActionBar } from './components/BulkActionBar'
 import { FolderCreateModal } from './components/FolderCreateModal'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../../../lib/supabase'
 
 interface Program {
   id: string

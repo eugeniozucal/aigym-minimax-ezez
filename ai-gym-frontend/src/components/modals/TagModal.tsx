@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { supabase, UserTag, Community } from '@/lib/supabase'
+import { supabase, UserTag, Community } from '../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { X, Tag, Building2 } from 'lucide-react'
 

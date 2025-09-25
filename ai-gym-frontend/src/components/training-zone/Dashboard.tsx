@@ -12,7 +12,7 @@ import {
   BarChart3,
   TrendingUp
 } from 'lucide-react'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 
 interface TrainingStats {

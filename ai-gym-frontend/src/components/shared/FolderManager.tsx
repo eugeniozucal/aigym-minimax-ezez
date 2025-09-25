@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { ChevronRight, Folder, FolderPlus, Home, Search, Edit2, Trash2, X } from 'lucide-react'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../../lib/supabase'
 
 interface Folder {
   id: string

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../../../lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Search, Filter, Grid, List, Plus, Eye, EyeOff, Calendar, Target, Dumbbell, Star, StarOff, FolderPlus, Home, ChevronRight, Folder, CheckSquare, Square } from 'lucide-react'
 import { ItemContextMenu } from './components/ItemContextMenu'
