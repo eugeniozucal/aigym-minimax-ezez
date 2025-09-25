@@ -24,10 +24,7 @@ Deno.serve(async (req) => {
             throw new Error('Supabase configuration missing');
         }
 
-        // Default admin UUID for fallback
-        const defaultAdminUuid = '84ee8814-0acd-48f6-a7ca-b6ec935b0d5e';
-
-        // For GET requests, use service role to bypass RLS restrictions
+        // For GET requests, use public access
         if (method === 'GET') {
             let apiUrl;
             if (wodId) {
@@ -40,8 +37,8 @@ Deno.serve(async (req) => {
 
             const response = await fetch(apiUrl, {
                 headers: {
-                    'Authorization': `Bearer ${serviceRoleKey}`,
-                    'apikey': serviceRoleKey,
+                    'Authorization': `Bearer ${anonKey}`,
+                    'apikey': anonKey,
                     'Content-Type': 'application/json'
                 }
             });
@@ -60,7 +57,7 @@ Deno.serve(async (req) => {
             });
         }
 
-        // For POST/PUT/DELETE, get user context but don't require authentication
+        // For POST/PUT/DELETE, require authentication
         const authHeader = req.headers.get('Authorization');
         const token = authHeader?.replace('Bearer ', '');
         
@@ -80,32 +77,21 @@ Deno.serve(async (req) => {
         }
 
         if (method === 'POST') {
-            // Create WOD
+            // Create WOD - require authentication
+            if (!user) {
+                throw new Error('Authentication required for creating WODs');
+            }
+
             const requestData = await req.json();
-            const { 
-                title, 
-                description, 
-                status, 
-                thumbnail_url, 
-                tags, 
-                estimated_duration_minutes,
-                difficulty_level,
-                pages,
-                settings,
-                created_by 
-            } = requestData;
-            
+            const { title, description, status, thumbnail_url, tags, created_by } = requestData;
+
             const wodData = {
                 title: title || 'Untitled WOD',
                 description: description || '',
                 status: status || 'draft',
                 thumbnail_url: thumbnail_url || '',
                 tags: tags || [],
-                estimated_duration_minutes: estimated_duration_minutes || 30,
-                difficulty_level: difficulty_level || 'beginner',
-                pages: pages || [],
-                settings: settings || {},
-                created_by: user?.id || created_by || defaultAdminUuid,
+                created_by: created_by || user.id,
                 created_at: new Date().toISOString(),
                 updated_at: new Date().toISOString()
             };
@@ -147,13 +133,6 @@ Deno.serve(async (req) => {
                 ...requestData,
                 updated_at: new Date().toISOString()
             };
-
-            // Remove undefined fields
-            Object.keys(updateData).forEach(key => {
-                if (updateData[key] === undefined) {
-                    delete updateData[key];
-                }
-            });
 
             const response = await fetch(`${supabaseUrl}/rest/v1/wods?id=eq.${wodId}`, {
                 method: 'PATCH',
@@ -215,10 +194,8 @@ Deno.serve(async (req) => {
         console.error('WODs API Error:', error);
         
         return new Response(JSON.stringify({ 
-            error: {
-                code: 'WODS_API_ERROR',
-                message: error.message || 'Internal server error'
-            }
+            error: error.message || 'Internal server error',
+            details: error.toString()
         }), {
             status: 500,
             headers: { ...corsHeaders, 'Content-Type': 'application/json' }
