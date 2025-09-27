@@ -1,0 +1,22 @@
+[
+  {
+    "type": "log",
+    "text": "Auth state change: INITIAL_SESSION",
+    "timestamp": 1758977989.8931456
+  },
+  {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "timestamp": 1758977989.9070256
+  },
+  {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "timestamp": 1758977989.915
+  },
+  {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 400 ()",
+    "timestamp": 1758977990.5977616
+  }
+]

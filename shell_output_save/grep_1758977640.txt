@@ -1,0 +1,42 @@
+root       13802  0.0  0.0 1120776 86568 ?       Sl   20:05   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       13876  0.0  0.0      0     0 ?        Z    20:05   0:00 [chrome_crashpad] <defunct>
+root       13878  0.0  0.0      0     0 ?        Z    20:05   0:00 [chrome_crashpad] <defunct>
+root       13881  0.0  0.0      0     0 ?        Z    20:05   0:00 [chrome] <defunct>
+root       13882  0.0  0.0      0     0 ?        Z    20:05   0:00 [chrome] <defunct>
+root       13887  0.0  0.0 1120776 85632 ?       Sl   20:05   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       13906  0.0  0.0 1054504 85032 ?       Sl   20:06   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       13919  0.0  0.0      0     0 ?        Z    20:06   0:00 [chrome_crashpad] <defunct>
+root       13921  0.0  0.0      0     0 ?        Z    20:06   0:00 [chrome_crashpad] <defunct>
+root       13924  0.0  0.0      0     0 ?        Z    20:06   0:00 [chrome] <defunct>
+root       13925  0.0  0.0      0     0 ?        Z    20:06   0:00 [chrome] <defunct>
+root       13930  0.0  0.0 1120264 85260 ?       Sl   20:06   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       13941  0.0  0.0 1054720 85340 ?       Sl   20:06   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       13954  0.0  0.0      0     0 ?        Z    20:06   0:00 [chrome_crashpad] <defunct>
+root       13956  0.0  0.0      0     0 ?        Z    20:06   0:00 [chrome_crashpad] <defunct>
+root       13959  0.0  0.0      0     0 ?        Z    20:06   0:00 [chrome] <defunct>
+root       13960  0.0  0.0      0     0 ?        Z    20:06   0:00 [chrome] <defunct>
+root       13965  0.0  0.0 1120784 85764 ?       Sl   20:07   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       14439  0.0  0.0 1055504 85848 ?       Sl   20:22   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       14452  0.0  0.0      0     0 ?        Z    20:22   0:00 [chrome_crashpad] <defunct>
+root       14454  0.0  0.0      0     0 ?        Z    20:22   0:00 [chrome_crashpad] <defunct>
+root       14457  0.0  0.0      0     0 ?        Z    20:22   0:00 [chrome] <defunct>
+root       14458  0.0  0.0      0     0 ?        Z    20:22   0:00 [chrome] <defunct>
+root       14463  0.0  0.0 1120256 84732 ?       Sl   20:22   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       14741  0.0  0.0 1054728 84964 ?       Sl   20:27   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       14754  0.0  0.0      0     0 ?        Z    20:27   0:00 [chrome_crashpad] <defunct>
+root       14756  0.0  0.0      0     0 ?        Z    20:27   0:00 [chrome_crashpad] <defunct>
+root       14759  0.0  0.0      0     0 ?        Z    20:27   0:00 [chrome] <defunct>
+root       14760  0.0  0.0      0     0 ?        Z    20:27   0:00 [chrome] <defunct>
+root       14765  0.0  0.0 1121708 84776 ?       Sl   20:27   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       15206  0.1  0.0 1055240 86848 ?       Sl   20:50   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       15219  0.0  0.0      0     0 ?        Z    20:50   0:00 [chrome_crashpad] <defunct>
+root       15221  0.0  0.0      0     0 ?        Z    20:50   0:00 [chrome_crashpad] <defunct>
+root       15224  0.0  0.0      0     0 ?        Z    20:50   0:00 [chrome] <defunct>
+root       15225  0.0  0.0      0     0 ?        Z    20:50   0:00 [chrome] <defunct>
+root       15226  0.1  0.0 1120272 84800 ?       Sl   20:50   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       15241  0.1  0.0 1054720 86132 ?       Sl   20:50   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+root       15254  0.0  0.0      0     0 ?        Z    20:50   0:00 [chrome_crashpad] <defunct>
+root       15256  0.0  0.0      0     0 ?        Z    20:50   0:00 [chrome_crashpad] <defunct>
+root       15259  0.0  0.0      0     0 ?        Z    20:50   0:00 [chrome] <defunct>
+root       15260  0.0  0.0      0     0 ?        Z    20:50   0:00 [chrome] <defunct>
+root       15261  0.1  0.0 1120512 85404 ?       Sl   20:50   0:00 /app/.venv/lib/python3.12/site-packages/playwright/driver/node /app/.venv/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver

@@ -1,0 +1,171 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 2.4s using pnpm v10.12.4
+src/App.tsx:204:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+204               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:206:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+206               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:210:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+210               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:212:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+212               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:216:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+216               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:218:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+218               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:222:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+222               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:224:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+224               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:228:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+228               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:230:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+230               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:234:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+234               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:236:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+236               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:240:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+240               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:242:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+242               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:246:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+246               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:248:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+248               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:252:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+252               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:254:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+254               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:258:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+258               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:260:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+260               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:264:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+264               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:266:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+266               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:270:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+270               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:272:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+272               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:276:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+276               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:278:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+278               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:282:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+282               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:284:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+284               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:288:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+288               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:290:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+290               </AdminRoute>
+                    ~~~~~~~~~~
+
+src/App.tsx:294:16 - error TS2304: Cannot find name 'AdminRoute'.
+
+294               <AdminRoute>
+                   ~~~~~~~~~~
+
+src/App.tsx:296:17 - error TS2304: Cannot find name 'AdminRoute'.
+
+296               </AdminRoute>
+                    ~~~~~~~~~~
+
+
+Found 32 errors.
+

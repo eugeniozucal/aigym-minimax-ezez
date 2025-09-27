@@ -1,0 +1,424 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .browser_screenshots/visual_feedback_20250924_235640.png
+	new file:   .browser_screenshots/visual_feedback_20250924_235715.png
+	new file:   .browser_screenshots/visual_feedback_20250924_235743.png
+	new file:   .browser_screenshots/visual_feedback_20250924_235808.png
+	new file:   .browser_screenshots/visual_feedback_20250924_235849.png
+	new file:   .browser_screenshots/visual_feedback_20250925_000118.png
+	new file:   .browser_screenshots/visual_feedback_20250925_000148.png
+	new file:   .browser_screenshots/visual_feedback_20250925_000220.png
+	new file:   .browser_screenshots/visual_feedback_20250925_000330.png
+	new file:   .browser_screenshots/visual_feedback_20250925_000357.png
+	new file:   .browser_screenshots/visual_feedback_20250925_000447.png
+	modified:   .gitignore
+	new file:   REPOSITORY_ANALYSIS_REPORT.docx
+	new file:   REPOSITORY_ANALYSIS_REPORT.md
+	new file:   REPOSITORY_ANALYSIS_REPORT.pdf
+	modified:   browser/browser_extension/error_capture/background.js
+	modified:   browser/browser_extension/error_capture/content.js
+	modified:   browser/browser_extension/error_capture/injector.js
+	modified:   browser/browser_extension/error_capture/manifest.json
+	modified:   browser/global_browser.py
+	modified:   browser/user_data/Default/AutofillStrikeDatabase/LOG
+	modified:   browser/user_data/Default/BrowsingTopicsState
+	modified:   browser/user_data/Default/BudgetDatabase/LOG
+	modified:   browser/user_data/Default/Cache/Cache_Data/006756c088ecc36c_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/06a52e83fffbff16_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/097dabdc193d22ba_0
+	modified:   browser/user_data/Default/Cache/Cache_Data/1f2ca5ded044b066_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/1f80b85211c4fc62_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/2fb46421a7310d34_0
+	modified:   browser/user_data/Default/Cache/Cache_Data/31bcc3ceccbc2057_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/381a160aa78499e2_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/58030896c5bbcc16_0
+	modified:   browser/user_data/Default/Cache/Cache_Data/5c21fb3d0a47bcb0_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/725470c5b3a4105f_0
+	modified:   browser/user_data/Default/Cache/Cache_Data/7d4920961a0fae38_0
+	modified:   browser/user_data/Default/Cache/Cache_Data/86feba25f0962238_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/8c53d263eee08eda_0
+	modified:   browser/user_data/Default/Cache/Cache_Data/8e32fd9848432fe6_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/9ec50cc2eb5c4397_0
+	modified:   browser/user_data/Default/Cache/Cache_Data/ad379f4115c01895_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/ae8f1ab2eb17de07_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/b2d41b566489ad23_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/c947aa52cadb164e_0
+	new file:   browser/user_data/Default/Cache/Cache_Data/d606555b0d7bd351_0
+	modified:   browser/user_data/Default/Cache/Cache_Data/f80c3c6e9017e3a9_0
+	modified:   browser/user_data/Default/Cache/Cache_Data/f918e88613958476_0
+	modified:   browser/user_data/Default/Cache/Cache_Data/index-dir/the-real-index
+	modified:   browser/user_data/Default/ClientCertificates/LOG
+	new file:   browser/user_data/Default/Code Cache/js/61fdaf9fd545a60b_0
+	new file:   browser/user_data/Default/Code Cache/js/b9cdb4f93a88a643_0
+	modified:   browser/user_data/Default/Code Cache/js/c1c440c6533ad353_0
+	modified:   browser/user_data/Default/Code Cache/js/index-dir/the-real-index
+	modified:   browser/user_data/Default/Code Cache/wasm/index-dir/the-real-index
+	modified:   browser/user_data/Default/Cookies
+	modified:   browser/user_data/Default/DIPS
+	modified:   browser/user_data/Default/DIPS-shm
+	modified:   browser/user_data/Default/DIPS-wal
+	modified:   browser/user_data/Default/DawnGraphiteCache/data_1
+	modified:   browser/user_data/Default/DawnGraphiteCache/index
+	modified:   browser/user_data/Default/DawnWebGPUCache/data_1
+	modified:   browser/user_data/Default/DawnWebGPUCache/index
+	modified:   browser/user_data/Default/Download Service/EntryDB/LOG
+	modified:   browser/user_data/Default/Extension Rules/LOG
+	modified:   browser/user_data/Default/Extension Scripts/LOG
+	modified:   browser/user_data/Default/Extension State/LOG
+	modified:   browser/user_data/Default/Feature Engagement Tracker/AvailabilityDB/LOG
+	modified:   browser/user_data/Default/Feature Engagement Tracker/EventDB/LOG
+	modified:   browser/user_data/Default/GCM Store/Encryption/LOG
+	modified:   browser/user_data/Default/GPUCache/data_1
+	modified:   browser/user_data/Default/GPUCache/index
+	modified:   browser/user_data/Default/History
+	modified:   browser/user_data/Default/History-journal
+	modified:   browser/user_data/Default/LOG
+	new file:   browser/user_data/Default/Local Storage/leveldb/000008.ldb
+	new file:   browser/user_data/Default/Local Storage/leveldb/000011.ldb
+	new file:   browser/user_data/Default/Local Storage/leveldb/000014.ldb
+	new file:   browser/user_data/Default/Local Storage/leveldb/000017.ldb
+	modified:   browser/user_data/Default/Local Storage/leveldb/LOG
+	modified:   browser/user_data/Default/Local Storage/leveldb/MANIFEST-000001
+	modified:   browser/user_data/Default/Network Action Predictor
+	modified:   browser/user_data/Default/Network Persistent State
+	modified:   browser/user_data/Default/PersistentOriginTrials/LOG
+	modified:   browser/user_data/Default/Preferences
+	modified:   browser/user_data/Default/Reporting and NEL
+	modified:   browser/user_data/Default/SCT Auditing Pending Reports
+	modified:   browser/user_data/Default/Segmentation Platform/SegmentInfoDB/LOG
+	modified:   browser/user_data/Default/Segmentation Platform/SignalDB/LOG
+	modified:   browser/user_data/Default/Segmentation Platform/SignalStorageConfigDB/LOG
+	modified:   browser/user_data/Default/Service Worker/Database/LOG
+	modified:   browser/user_data/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0
+	modified:   browser/user_data/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_1
+	modified:   browser/user_data/Default/Service Worker/ScriptCache/index-dir/the-real-index
+	modified:   browser/user_data/Default/Session Storage/LOG
+	new file:   browser/user_data/Default/Sessions/Tabs_13402513590610879
+	new file:   browser/user_data/Default/Sessions/Tabs_13403202976073670
+	modified:   browser/user_data/Default/Site Characteristics Database/CURRENT
+	modified:   browser/user_data/Default/Site Characteristics Database/LOCK
+	modified:   browser/user_data/Default/Site Characteristics Database/LOG
+	modified:   browser/user_data/Default/Site Characteristics Database/MANIFEST-000001
+	modified:   browser/user_data/Default/Sync Data/LevelDB/LOG
+	modified:   browser/user_data/Default/Top Sites
+	modified:   browser/user_data/Default/TransportSecurity
+	modified:   browser/user_data/Default/Web Data
+	modified:   browser/user_data/Default/WebStorage/12/IndexedDB/indexeddb.leveldb/LOG
+	modified:   browser/user_data/Default/WebStorage/QuotaManager
+	modified:   browser/user_data/Default/chrome_cart_db/LOG
+	modified:   browser/user_data/Default/commerce_subscription_db/LOG
+	modified:   browser/user_data/Default/discounts_db/LOG
+	modified:   browser/user_data/Default/heavy_ad_intervention_opt_out.db-journal
+	modified:   browser/user_data/Default/optimization_guide_hint_cache_store/LOG
+	modified:   browser/user_data/Default/parcel_tracking_db/LOG
+	modified:   browser/user_data/Default/passkey_enclave_state
+	modified:   browser/user_data/Default/shared_proto_db/LOG
+	modified:   browser/user_data/Default/shared_proto_db/metadata/LOG
+	modified:   browser/user_data/Default/trusted_vault.pb
+	new file:   browser/user_data/DeferredBrowserMetrics/BrowserMetrics-68D50EA9-320B.pma
+	new file:   browser/user_data/DeferredBrowserMetrics/BrowserMetrics-68D50EB5-322E.pma
+	modified:   browser/user_data/GrShaderCache/data_1
+	modified:   browser/user_data/GrShaderCache/index
+	modified:   browser/user_data/GraphiteDawnCache/data_1
+	modified:   browser/user_data/GraphiteDawnCache/index
+	modified:   browser/user_data/Local State
+	modified:   browser/user_data/ShaderCache/data_1
+	modified:   browser/user_data/ShaderCache/index
+	new file:   browser/user_data/SingletonCookie
+	new file:   browser/user_data/SingletonLock
+	new file:   browser/user_data/SingletonSocket
+	modified:   browser/user_data/Variations
+	modified:   browser/user_data/first_party_sets.db-journal
+	modified:   browser/user_data/segmentation_platform/ukm_db
+	new file:   community-creation-fix-report.docx
+	new file:   community-creation-fix-report.md
+	new file:   community-creation-fix-report.pdf
+	new file:   components.json
+	modified:   deploy_url.txt
+	new file:   docs/reports/phase3_ai_agents_test_report.md
+	new file:   eslint.config.js
+	modified:   external_api/__init__.py
+	modified:   external_api/data_sources/__init__.py
+	modified:   external_api/data_sources/base.py
+	modified:   external_api/data_sources/booking_source.py
+	modified:   external_api/data_sources/client.py
+	modified:   external_api/data_sources/commodities_source.py
+	modified:   external_api/data_sources/metal_source.py
+	modified:   external_api/data_sources/patents_source.py
+	modified:   external_api/data_sources/pinterest_source.py
+	modified:   external_api/data_sources/scholar_source.py
+	modified:   external_api/data_sources/tripadvisor_source.py
+	modified:   external_api/data_sources/twitter_source.py
+	modified:   external_api/data_sources/yahoo_source.py
+	modified:   external_api/function_utils.py
+	modified:   external_api/mcp_function_list.json
+	new file:   imgs/best_ui_ux_design_courses_thumbnail.jpg
+	new file:   imgs/full-stack-development-course-overview-thumbnail.jpg
+	new file:   imgs/full_stack_development_course_technologies_thumbnail.jpg
+	new file:   imgs/full_stack_web_development_course_thumbnail_css_html_js_node_mongodb.jpg
+	new file:   imgs/image_meta.json
+	new file:   imgs/learn-reactjs-2025-programming-course-thumbnail.jpg
+	new file:   imgs/modern-full-stack-developer-course-technologies-map.jpg
+	new file:   imgs/modern_full_stack_web_development_technologies_course_thumbnail.jpg
+	new file:   imgs/react_full_course_programming_tutorial_thumbnail.jpg
+	new file:   imgs/react_full_course_programming_tutorial_thumbnail_2022.jpg
+	new file:   imgs/react_js_programming_course_tutorial_thumbnail.jpg
+	new file:   imgs/springboard_ui_ux_design_bootcamp_overview.jpg
+	new file:   imgs/typescript_crash_course_thumbnail_fundamentals.png
+	new file:   imgs/typescript_full_programming_course_thumbnail_8_hours.jpg
+	new file:   imgs/typescript_fundamentals_programming_course_thumbnail_logo.jpg
+	new file:   imgs/typescript_programming_course_thumbnail_fundamentals_exam_included.jpg
+	new file:   imgs/typescript_programming_course_thumbnail_igmGuru.jpg
+	new file:   imgs/ui_ux_design_courses_free_youtube_thumbnail.jpg
+	new file:   imgs/ui_ux_design_full_course_thumbnail_instructor.jpg
+	new file:   index.html
+	modified:   memory/research_results.json
+	modified:   memory/todo_meta.json
+	modified:   memory/url_source_meta.json
+	new file:   package.json
+	new file:   package_test.json
+	new file:   pnpm-workspace.yaml
+	new file:   postcss.config.js
+	modified:   pyproject.toml
+	modified:   root_cause_analysis_report.docx
+	modified:   root_cause_analysis_report.pdf
+	new file:   scripts/deploy-enterprise-schema.sh
+	new file:   scripts/run_comprehensive_validation.sh
+	new file:   shell_output_save/--force_1758787604.txt
+	new file:   shell_output_save/--skip-ts-check_1758787624.txt
+	new file:   shell_output_save/-la_1758687605.txt
+	new file:   shell_output_save/-la_1758803677.txt
+	new file:   shell_output_save/build_1758687909.txt
+	new file:   shell_output_save/build_1758728476.txt
+	new file:   shell_output_save/build_1758728513.txt
+	new file:   shell_output_save/build_1758801763.txt
+	new file:   shell_output_save/clean_repo_1758803667.txt
+	new file:   shell_output_save/sort_1758687475.txt
+	new file:   src/App.css
+	new file:   src/App.tsx
+	new file:   src/__tests__/api.test.ts
+	new file:   src/__tests__/integration.test.ts
+	new file:   src/__tests__/stores.test.ts
+	new file:   src/components/ErrorBoundary.tsx
+	new file:   src/components/ProtectedRoute.tsx
+	new file:   src/components/SmartRedirect.tsx
+	new file:   src/components/content/ContentEditor.tsx
+	new file:   src/components/content/ContentRepository.tsx
+	new file:   src/components/layout/Header.tsx
+	new file:   src/components/layout/Layout.tsx
+	new file:   src/components/layout/ModernHeader.tsx
+	new file:   src/components/layout/ModernLayout.tsx
+	new file:   src/components/layout/TrainingZoneLayout.tsx
+	new file:   src/components/modals/CSVUploadModal.tsx
+	new file:   src/components/modals/CommunityModal.tsx
+	new file:   src/components/modals/CreateUserModal.tsx
+	new file:   src/components/modals/EnhancedCommunityModal.tsx
+	new file:   src/components/modals/TagModal.tsx
+	new file:   src/components/shared/BreadcrumbNavigation.tsx
+	new file:   src/components/shared/BulkActionsToolbar.tsx
+	new file:   src/components/shared/ContextMenu.tsx
+	new file:   src/components/shared/EnhancedContentCard.tsx
+	new file:   src/components/shared/FolderManager.tsx
+	new file:   src/components/shared/NewPageBuilder.tsx
+	new file:   src/components/shared/PageBuilder.tsx
+	new file:   src/components/shared/PageBuilder/PageBuilderCanvas.tsx
+	new file:   src/components/shared/PageBuilder/PageBuilderHeader.tsx
+	new file:   src/components/shared/PageBuilder/PageBuilderModals.tsx
+	new file:   src/components/shared/PageBuilder/PageBuilderRightPanel.tsx
+	new file:   src/components/shared/PageBuilder/PageBuilderSidebar.tsx
+	new file:   src/components/training-zone/BlocksRepository.tsx
+	new file:   src/components/training-zone/Dashboard.tsx
+	new file:   src/components/training-zone/EnhancedBlocksRepository.tsx
+	new file:   src/components/training-zone/EnhancedWodsRepository.tsx
+	new file:   src/components/training-zone/ProgramBuilder.tsx
+	new file:   src/components/training-zone/ProgramsRepository.tsx
+	new file:   src/components/training-zone/WODEditor.tsx
+	new file:   src/components/training-zone/WodsRepository.tsx
+	new file:   src/components/training-zone/components/BlockRenderer.tsx
+	new file:   src/components/training-zone/components/BulkActionBar.tsx
+	new file:   src/components/training-zone/components/CenterCanvas.tsx
+	new file:   src/components/training-zone/components/DeployedLeftMenu.tsx
+	new file:   src/components/training-zone/components/FixedLeftRail.tsx
+	new file:   src/components/training-zone/components/FolderCreateModal.tsx
+	new file:   src/components/training-zone/components/ItemContextMenu.tsx
+	new file:   src/components/training-zone/components/MoveToFolderModal.tsx
+	new file:   src/components/training-zone/components/PreviewModal.tsx
+	new file:   src/components/training-zone/components/RepositoryPopup.tsx
+	new file:   src/components/training-zone/components/RightBlockEditor.tsx
+	new file:   src/components/training-zone/components/WODSettingsPanel.tsx
+	new file:   src/components/training-zone/components/block-editors/ContentBlockEditor.tsx
+	new file:   src/components/training-zone/components/block-editors/ListEditor.tsx
+	new file:   src/components/training-zone/components/block-editors/QuizEditor.tsx
+	new file:   src/components/training-zone/components/block-editors/QuoteEditor.tsx
+	new file:   src/components/training-zone/components/block-editors/RichTextEditor.tsx
+	new file:   src/components/training-zone/components/block-editors/SectionHeaderEditor.tsx
+	new file:   src/components/training-zone/components/program-builder/ProgramIndexBuilder.tsx
+	new file:   src/components/training-zone/components/program-builder/ProgramPreview.tsx
+	new file:   src/components/training-zone/components/program-builder/ProgramSectionComponent.tsx
+	new file:   src/components/training-zone/components/program-builder/ProgramSubsectionComponent.tsx
+	new file:   src/components/ui/LoadingSpinner.tsx
+	new file:   src/components/user/BLOCKCard.tsx
+	new file:   src/components/user/PostCard.tsx
+	new file:   src/components/user/PostList.tsx
+	new file:   src/components/user/ProgramCard.tsx
+	new file:   src/components/user/TagFilter.tsx
+	new file:   src/components/user/UserAvatar.tsx
+	new file:   src/components/user/UserBLOCKDetail.tsx
+	new file:   src/components/user/UserHeader.tsx
+	new file:   src/components/user/UserLayout.tsx
+	new file:   src/components/user/UserTabs.tsx
+	new file:   src/components/user/UserWODDetail.tsx
+	new file:   src/components/user/WODCard.tsx
+	new file:   src/components/user/WriteBox.tsx
+	new file:   src/contexts/AuthContext.tsx
+	new file:   src/hooks/use-mobile.tsx
+	new file:   src/hooks/useCommunitySignup.ts
+	new file:   src/index.css
+	new file:   src/main.tsx
+	new file:   src/pages/AnalyticsDashboard.tsx
+	new file:   src/pages/Communities.tsx
+	new file:   src/pages/CommunityConfig.tsx
+	new file:   src/pages/CommunitySignup.tsx
+	new file:   src/pages/Dashboard.tsx
+	new file:   src/pages/EnhancedCommunitiesPage.tsx
+	new file:   src/pages/Login.tsx
+	new file:   src/pages/Logout.tsx
+	new file:   src/pages/Tags.tsx
+	new file:   src/pages/UserDetailReport.tsx
+	new file:   src/pages/Users.tsx
+	new file:   src/pages/content/AIAgentEditor.tsx
+	new file:   src/pages/content/AIAgentsRepository.tsx
+	new file:   src/pages/content/ArticleEditor.tsx
+	new file:   src/pages/content/ArticlesManagement.tsx
+	new file:   src/pages/content/AutomationEditor.tsx
+	new file:   src/pages/content/AutomationsRepository.tsx
+	new file:   src/pages/content/ContentManagement.tsx
+	new file:   src/pages/content/DocumentEditor.tsx
+	new file:   src/pages/content/DocumentsRepository.tsx
+	new file:   src/pages/content/ImageEditor.tsx
+	new file:   src/pages/content/ImagesRepository.tsx
+	new file:   src/pages/content/PDFEditor.tsx
+	new file:   src/pages/content/PDFsRepository.tsx
+	new file:   src/pages/content/PromptEditor.tsx
+	new file:   src/pages/content/PromptsRepository.tsx
+	new file:   src/pages/content/VideoEditor.tsx
+	new file:   src/pages/content/VideosRepository.tsx
+	new file:   src/pages/user/CommunityPage.tsx
+	new file:   src/pages/user/TrainingZonePage.tsx
+	new file:   src/pages/user/UserDashboard.tsx
+	new file:   src/test/api-validation.test.mjs
+	new file:   src/test/e2e-workflow.test.mjs
+	new file:   src/test/environment.test.js
+	new file:   src/test/node-test.mjs
+	new file:   src/test/setup.js
+	new file:   src/test/setup.ts
+	new file:   src/test/simple.test.js
+	new file:   src/test/store-validation.test.mjs
+	new file:   src/types/index.ts
+	new file:   src/types/pageBuilder.ts
+	new file:   src/vite-env.d.ts
+	modified:   supabase/functions/community-management/index.ts
+	new file:   supabase/functions/community-signup-validator/index.ts
+	new file:   supabase/functions/community-signup/index.ts
+	modified:   supabase/functions/create-admin-user/index.ts
+	new file:   supabase/functions/create-ez-test-user/index.ts
+	new file:   supabase/functions/create-test-user/index.ts
+	new file:   supabase/functions/delete-test-user/index.ts
+	new file:   supabase/functions/generate-community-signup-link/index.ts
+	new file:   supabase/functions/list-auth-users/index.ts
+	modified:   supabase/functions/programs-api/index.ts
+	modified:   supabase/functions/wods-api/index.ts
+	new file:   supabase/supabase_backend/cron_jobs/job_1.json
+	new file:   supabase/supabase_backend/docs/advanced_analytics_system_report.md
+	new file:   supabase/supabase_backend/docs/granular_progress_validation_report.md
+	new file:   supabase/supabase_backend/functions/achievements-api/index.ts
+	new file:   supabase/supabase_backend/functions/admin-dashboard-api/index.ts
+	new file:   supabase/supabase_backend/functions/admin-login-api/index.ts
+	new file:   supabase/supabase_backend/functions/ai-chat/deno.json
+	new file:   supabase/supabase_backend/functions/ai-chat/index.ts
+	new file:   supabase/supabase_backend/functions/analytics-computation-cron/index.ts
+	new file:   supabase/supabase_backend/functions/analytics-dashboard/deno.json
+	new file:   supabase/supabase_backend/functions/analytics-dashboard/helpers.ts
+	new file:   supabase/supabase_backend/functions/analytics-dashboard/index.ts
+	new file:   supabase/supabase_backend/functions/automated-content-generator/index.ts
+	new file:   supabase/supabase_backend/functions/automated-reports/index.ts
+	new file:   supabase/supabase_backend/functions/bulk-upload-users/deno.json
+	new file:   supabase/supabase_backend/functions/bulk-upload-users/index.ts
+	new file:   supabase/supabase_backend/functions/clone-community-template/index.ts
+	new file:   supabase/supabase_backend/functions/community-management/deno.json
+	new file:   supabase/supabase_backend/functions/community-management/index.ts
+	new file:   supabase/supabase_backend/functions/content-management-api/index.ts
+	new file:   supabase/supabase_backend/functions/content-repository-manager/index.ts
+	new file:   supabase/supabase_backend/functions/conversation-history/index.ts
+	new file:   supabase/supabase_backend/functions/courses-api/index.ts
+	new file:   supabase/supabase_backend/functions/create-admin-user/index.ts
+	new file:   supabase/supabase_backend/functions/create-bucket-assets-temp/index.ts
+	new file:   supabase/supabase_backend/functions/create-bucket-content-thumbnails-temp/index.ts
+	new file:   supabase/supabase_backend/functions/create-community-template/deno.json
+	new file:   supabase/supabase_backend/functions/create-community-template/index.ts
+	new file:   supabase/supabase_backend/functions/create-demo-user/index.ts
+	new file:   supabase/supabase_backend/functions/enhanced-file-upload/index.ts
+	new file:   supabase/supabase_backend/functions/enhanced-progress-tracking/index.ts
+	new file:   supabase/supabase_backend/functions/folders-api/index.ts
+	new file:   supabase/supabase_backend/functions/image-upload/index.ts
+	new file:   supabase/supabase_backend/functions/learning-path-api/index.ts
+	new file:   supabase/supabase_backend/functions/learning-path-validator/index.ts
+	new file:   supabase/supabase_backend/functions/manage-user-tags/index.ts
+	new file:   supabase/supabase_backend/functions/mastery-assessment-api/index.ts
+	new file:   supabase/supabase_backend/functions/milestone-validation-api/index.ts
+	new file:   supabase/supabase_backend/functions/page-builder-bulk-create/index.ts
+	new file:   supabase/supabase_backend/functions/page-builder-content-generator/index.ts
+	new file:   supabase/supabase_backend/functions/page-structure-manager/index.ts
+	new file:   supabase/supabase_backend/functions/pdf-upload/index.ts
+	new file:   supabase/supabase_backend/functions/process-csv-upload/index.ts
+	new file:   supabase/supabase_backend/functions/program-enrollment-api/index.ts
+	new file:   supabase/supabase_backend/functions/programs-api/index.ts
+	new file:   supabase/supabase_backend/functions/setup-admin-final/index.ts
+	new file:   supabase/supabase_backend/functions/setup-admin/index.ts
+	new file:   supabase/supabase_backend/functions/simple-wods-api/index.ts
+	new file:   supabase/supabase_backend/functions/streak-tracking-api/index.ts
+	new file:   supabase/supabase_backend/functions/system-health-api/index.ts
+	new file:   supabase/supabase_backend/functions/track-user-activity/deno.json
+	new file:   supabase/supabase_backend/functions/track-user-activity/index.ts
+	new file:   supabase/supabase_backend/functions/track-user-progress/index.ts
+	new file:   supabase/supabase_backend/functions/update-user-password/index.ts
+	new file:   supabase/supabase_backend/functions/wods-api/index.ts
+	new file:   supabase/supabase_backend/functions/workout-blocks-api/index.ts
+	new file:   supabase/supabase_backend/functions/workout-blocks-index.ts
+	new file:   supabase/supabase_backend/simple-chat.ts
+	new file:   supabase/supabase_backend/tests/achievements/integration_test.ts
+	new file:   supabase/supabase_backend/tests/enhanced-progress/integration_test.ts
+	new file:   tailwind.config.js
+	new file:   test-community-creation.js
+	new file:   tests/test_ai_agents_query.ts
+	new file:   tests/test_api_validation.ts
+	new file:   tests/test_auth_document_queries.ts
+	new file:   tests/test_block_creation.js
+	new file:   tests/test_document_queries.ts
+	new file:   tests/validate_database_operations.ts
+	new file:   tests/verify_document_query.ts
+	new file:   tsconfig.app.json
+	new file:   tsconfig.json
+	new file:   tsconfig.node.json
+	new file:   user_input_files/Screenshot 2025-09-22 at 01.12.12.png
+	new file:   user_input_files/Screenshot 2025-09-24 at 18.14.14.png
+	new file:   user_input_files/Screenshot 2025-09-24 at 18.52.34.png
+	new file:   user_input_files/Screenshot 2025-09-24 at 18.58.03.png
+	new file:   user_input_files/Screenshot 2025-09-25 at 01.44.46.png
+	new file:   user_input_files/Screenshot 2025-09-25 at 01.45.04.png
+	new file:   user_input_files/Screenshot 2025-09-25 at 09.15.26.png
+	new file:   user_input_files/Screenshot 2025-09-25 at 09.15.34.png
+	new file:   user_input_files/Screenshot 2025-09-25 at 09.15.42.png
+	new file:   user_input_files/Screenshot 2025-09-25 at 09.15.49.png
+	new file:   user_input_files/Screenshot 2025-09-25 at 11.33.41.png
+	modified:   user_input_files/image.png
+	modified:   user_input_files/image_1.png
+	modified:   user_input_files/image_2.png
+	new file:   vite.config.ts
+	new file:   vitest.config.js
+	new file:   vitest.config.ts
+	new file:   workspace.json
+

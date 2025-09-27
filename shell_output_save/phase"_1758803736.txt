@@ -1,0 +1,373 @@
+> > > > > > > > > > [main 2158b7c7] Pre-implementation backup: Community signup system baseline
+ 418 files changed, 53153 insertions(+), 1071 deletions(-)
+ create mode 100644 .browser_screenshots/visual_feedback_20250924_235640.png
+ create mode 100644 .browser_screenshots/visual_feedback_20250924_235715.png
+ create mode 100644 .browser_screenshots/visual_feedback_20250924_235743.png
+ create mode 100644 .browser_screenshots/visual_feedback_20250924_235808.png
+ create mode 100644 .browser_screenshots/visual_feedback_20250924_235849.png
+ create mode 100644 .browser_screenshots/visual_feedback_20250925_000118.png
+ create mode 100644 .browser_screenshots/visual_feedback_20250925_000148.png
+ create mode 100644 .browser_screenshots/visual_feedback_20250925_000220.png
+ create mode 100644 .browser_screenshots/visual_feedback_20250925_000330.png
+ create mode 100644 .browser_screenshots/visual_feedback_20250925_000357.png
+ create mode 100644 .browser_screenshots/visual_feedback_20250925_000447.png
+ mode change 100755 => 100644 .gitignore
+ create mode 100644 REPOSITORY_ANALYSIS_REPORT.docx
+ create mode 100644 REPOSITORY_ANALYSIS_REPORT.md
+ create mode 100644 REPOSITORY_ANALYSIS_REPORT.pdf
+ mode change 100755 => 100644 browser/browser_extension/error_capture/background.js
+ mode change 100755 => 100644 browser/browser_extension/error_capture/content.js
+ mode change 100755 => 100644 browser/browser_extension/error_capture/injector.js
+ mode change 100755 => 100644 browser/browser_extension/error_capture/manifest.json
+ mode change 100755 => 100644 browser/global_browser.py
+ mode change 100755 => 100644 browser/user_data/Default/AutofillStrikeDatabase/LOG
+ mode change 100755 => 100644 browser/user_data/Default/BrowsingTopicsState
+ mode change 100755 => 100644 browser/user_data/Default/BudgetDatabase/LOG
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/06a52e83fffbff16_0
+ create mode 100755 browser/user_data/Default/Cache/Cache_Data/097dabdc193d22ba_0
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/1f80b85211c4fc62_0
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/2fb46421a7310d34_0
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/381a160aa78499e2_0
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/58030896c5bbcc16_0
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/725470c5b3a4105f_0
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/8c53d263eee08eda_0
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/9ec50cc2eb5c4397_0
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/ae8f1ab2eb17de07_0
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/b2d41b566489ad23_0
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/c947aa52cadb164e_0
+ create mode 100644 browser/user_data/Default/Cache/Cache_Data/d606555b0d7bd351_0
+ mode change 100755 => 100644 browser/user_data/Default/Cache/Cache_Data/index-dir/the-real-index
+ mode change 100755 => 100644 browser/user_data/Default/ClientCertificates/LOG
+ create mode 100644 browser/user_data/Default/Code Cache/js/61fdaf9fd545a60b_0
+ create mode 100644 browser/user_data/Default/Code Cache/js/b9cdb4f93a88a643_0
+ mode change 100755 => 100644 browser/user_data/Default/Code Cache/js/index-dir/the-real-index
+ mode change 100755 => 100644 browser/user_data/Default/Code Cache/wasm/index-dir/the-real-index
+ mode change 100755 => 100644 browser/user_data/Default/Download Service/EntryDB/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Extension Rules/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Extension Scripts/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Extension State/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Feature Engagement Tracker/AvailabilityDB/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Feature Engagement Tracker/EventDB/LOG
+ mode change 100755 => 100644 browser/user_data/Default/GCM Store/Encryption/LOG
+ mode change 100755 => 100644 browser/user_data/Default/LOG
+ create mode 100755 browser/user_data/Default/Local Storage/leveldb/000008.ldb
+ create mode 100755 browser/user_data/Default/Local Storage/leveldb/000011.ldb
+ create mode 100755 browser/user_data/Default/Local Storage/leveldb/000014.ldb
+ create mode 100755 browser/user_data/Default/Local Storage/leveldb/000017.ldb
+ mode change 100755 => 100644 browser/user_data/Default/Local Storage/leveldb/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Network Persistent State
+ mode change 100755 => 100644 browser/user_data/Default/PersistentOriginTrials/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Preferences
+ mode change 100755 => 100644 browser/user_data/Default/SCT Auditing Pending Reports
+ mode change 100755 => 100644 browser/user_data/Default/Segmentation Platform/SegmentInfoDB/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Segmentation Platform/SignalDB/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Segmentation Platform/SignalStorageConfigDB/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Service Worker/Database/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0
+ mode change 100755 => 100644 browser/user_data/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_1
+ mode change 100755 => 100644 browser/user_data/Default/Service Worker/ScriptCache/index-dir/the-real-index
+ mode change 100755 => 100644 browser/user_data/Default/Session Storage/LOG
+ create mode 100755 browser/user_data/Default/Sessions/Tabs_13402513590610879
+ create mode 100644 browser/user_data/Default/Sessions/Tabs_13403202976073670
+ mode change 100755 => 100644 browser/user_data/Default/Site Characteristics Database/CURRENT
+ mode change 100755 => 100644 browser/user_data/Default/Site Characteristics Database/LOCK
+ mode change 100755 => 100644 browser/user_data/Default/Site Characteristics Database/LOG
+ mode change 100755 => 100644 browser/user_data/Default/Site Characteristics Database/MANIFEST-000001
+ mode change 100755 => 100644 browser/user_data/Default/Sync Data/LevelDB/LOG
+ mode change 100755 => 100644 browser/user_data/Default/TransportSecurity
+ mode change 100755 => 100644 browser/user_data/Default/chrome_cart_db/LOG
+ mode change 100755 => 100644 browser/user_data/Default/commerce_subscription_db/LOG
+ mode change 100755 => 100644 browser/user_data/Default/discounts_db/LOG
+ mode change 100755 => 100644 browser/user_data/Default/heavy_ad_intervention_opt_out.db-journal
+ mode change 100755 => 100644 browser/user_data/Default/optimization_guide_hint_cache_store/LOG
+ mode change 100755 => 100644 browser/user_data/Default/parcel_tracking_db/LOG
+ mode change 100755 => 100644 browser/user_data/Default/passkey_enclave_state
+ mode change 100755 => 100644 browser/user_data/Default/shared_proto_db/LOG
+ mode change 100755 => 100644 browser/user_data/Default/shared_proto_db/metadata/LOG
+ mode change 100755 => 100644 browser/user_data/Default/trusted_vault.pb
+ create mode 100644 browser/user_data/DeferredBrowserMetrics/BrowserMetrics-68D50EA9-320B.pma
+ create mode 100644 browser/user_data/DeferredBrowserMetrics/BrowserMetrics-68D50EB5-322E.pma
+ mode change 100755 => 100644 browser/user_data/Local State
+ create mode 120000 browser/user_data/SingletonCookie
+ create mode 120000 browser/user_data/SingletonLock
+ create mode 120000 browser/user_data/SingletonSocket
+ mode change 100755 => 100644 browser/user_data/first_party_sets.db-journal
+ create mode 100644 community-creation-fix-report.docx
+ create mode 100644 community-creation-fix-report.md
+ create mode 100644 community-creation-fix-report.pdf
+ create mode 100755 components.json
+ create mode 100755 docs/reports/phase3_ai_agents_test_report.md
+ create mode 100755 eslint.config.js
+ mode change 100755 => 100644 external_api/__init__.py
+ mode change 100755 => 100644 external_api/data_sources/__init__.py
+ mode change 100755 => 100644 external_api/data_sources/base.py
+ mode change 100755 => 100644 external_api/data_sources/booking_source.py
+ mode change 100755 => 100644 external_api/data_sources/client.py
+ mode change 100755 => 100644 external_api/data_sources/commodities_source.py
+ mode change 100755 => 100644 external_api/data_sources/metal_source.py
+ mode change 100755 => 100644 external_api/data_sources/patents_source.py
+ mode change 100755 => 100644 external_api/data_sources/pinterest_source.py
+ mode change 100755 => 100644 external_api/data_sources/scholar_source.py
+ mode change 100755 => 100644 external_api/data_sources/tripadvisor_source.py
+ mode change 100755 => 100644 external_api/data_sources/twitter_source.py
+ mode change 100755 => 100644 external_api/data_sources/yahoo_source.py
+ mode change 100755 => 100644 external_api/function_utils.py
+ mode change 100755 => 100644 external_api/mcp_function_list.json
+ create mode 100644 imgs/best_ui_ux_design_courses_thumbnail.jpg
+ create mode 100644 imgs/full-stack-development-course-overview-thumbnail.jpg
+ create mode 100644 imgs/full_stack_development_course_technologies_thumbnail.jpg
+ create mode 100644 imgs/full_stack_web_development_course_thumbnail_css_html_js_node_mongodb.jpg
+ create mode 100644 imgs/image_meta.json
+ create mode 100644 imgs/learn-reactjs-2025-programming-course-thumbnail.jpg
+ create mode 100644 imgs/modern-full-stack-developer-course-technologies-map.jpg
+ create mode 100644 imgs/modern_full_stack_web_development_technologies_course_thumbnail.jpg
+ create mode 100644 imgs/react_full_course_programming_tutorial_thumbnail.jpg
+ create mode 100644 imgs/react_full_course_programming_tutorial_thumbnail_2022.jpg
+ create mode 100644 imgs/react_js_programming_course_tutorial_thumbnail.jpg
+ create mode 100644 imgs/springboard_ui_ux_design_bootcamp_overview.jpg
+ create mode 100644 imgs/typescript_crash_course_thumbnail_fundamentals.png
+ create mode 100644 imgs/typescript_full_programming_course_thumbnail_8_hours.jpg
+ create mode 100644 imgs/typescript_fundamentals_programming_course_thumbnail_logo.jpg
+ create mode 100644 imgs/typescript_programming_course_thumbnail_fundamentals_exam_included.jpg
+ create mode 100644 imgs/typescript_programming_course_thumbnail_igmGuru.jpg
+ create mode 100644 imgs/ui_ux_design_courses_free_youtube_thumbnail.jpg
+ create mode 100644 imgs/ui_ux_design_full_course_thumbnail_instructor.jpg
+ create mode 100755 index.html
+ mode change 100755 => 100644 memory/todo_meta.json
+ create mode 100755 package.json
+ create mode 100755 package_test.json
+ create mode 100644 pnpm-workspace.yaml
+ create mode 100755 postcss.config.js
+ mode change 100755 => 100644 pyproject.toml
+ create mode 100755 scripts/deploy-enterprise-schema.sh
+ create mode 100755 scripts/run_comprehensive_validation.sh
+ create mode 100644 shell_output_save/--force_1758787604.txt
+ create mode 100644 shell_output_save/--skip-ts-check_1758787624.txt
+ create mode 100644 shell_output_save/-la_1758687605.txt
+ create mode 100644 shell_output_save/-la_1758803677.txt
+ create mode 100644 shell_output_save/build_1758687909.txt
+ create mode 100644 shell_output_save/build_1758728476.txt
+ create mode 100644 shell_output_save/build_1758728513.txt
+ create mode 100644 shell_output_save/build_1758801763.txt
+ create mode 100644 shell_output_save/clean_repo_1758803667.txt
+ create mode 100644 shell_output_save/sort_1758687475.txt
+ create mode 100755 src/App.css
+ create mode 100755 src/App.tsx
+ create mode 100755 src/__tests__/api.test.ts
+ create mode 100755 src/__tests__/integration.test.ts
+ create mode 100755 src/__tests__/stores.test.ts
+ create mode 100755 src/components/ErrorBoundary.tsx
+ create mode 100755 src/components/ProtectedRoute.tsx
+ create mode 100755 src/components/SmartRedirect.tsx
+ create mode 100755 src/components/content/ContentEditor.tsx
+ create mode 100755 src/components/content/ContentRepository.tsx
+ create mode 100755 src/components/layout/Header.tsx
+ create mode 100755 src/components/layout/Layout.tsx
+ create mode 100755 src/components/layout/ModernHeader.tsx
+ create mode 100755 src/components/layout/ModernLayout.tsx
+ create mode 100755 src/components/layout/TrainingZoneLayout.tsx
+ create mode 100755 src/components/modals/CSVUploadModal.tsx
+ create mode 100755 src/components/modals/CommunityModal.tsx
+ create mode 100755 src/components/modals/CreateUserModal.tsx
+ create mode 100755 src/components/modals/EnhancedCommunityModal.tsx
+ create mode 100755 src/components/modals/TagModal.tsx
+ create mode 100755 src/components/shared/BreadcrumbNavigation.tsx
+ create mode 100755 src/components/shared/BulkActionsToolbar.tsx
+ create mode 100755 src/components/shared/ContextMenu.tsx
+ create mode 100755 src/components/shared/EnhancedContentCard.tsx
+ create mode 100755 src/components/shared/FolderManager.tsx
+ create mode 100755 src/components/shared/NewPageBuilder.tsx
+ create mode 100755 src/components/shared/PageBuilder.tsx
+ create mode 100755 src/components/shared/PageBuilder/PageBuilderCanvas.tsx
+ create mode 100755 src/components/shared/PageBuilder/PageBuilderHeader.tsx
+ create mode 100755 src/components/shared/PageBuilder/PageBuilderModals.tsx
+ create mode 100755 src/components/shared/PageBuilder/PageBuilderRightPanel.tsx
+ create mode 100755 src/components/shared/PageBuilder/PageBuilderSidebar.tsx
+ create mode 100755 src/components/training-zone/BlocksRepository.tsx
+ create mode 100755 src/components/training-zone/Dashboard.tsx
+ create mode 100755 src/components/training-zone/EnhancedBlocksRepository.tsx
+ create mode 100755 src/components/training-zone/EnhancedWodsRepository.tsx
+ create mode 100755 src/components/training-zone/ProgramBuilder.tsx
+ create mode 100755 src/components/training-zone/ProgramsRepository.tsx
+ create mode 100755 src/components/training-zone/WODEditor.tsx
+ create mode 100755 src/components/training-zone/WodsRepository.tsx
+ create mode 100755 src/components/training-zone/components/BlockRenderer.tsx
+ create mode 100755 src/components/training-zone/components/BulkActionBar.tsx
+ create mode 100755 src/components/training-zone/components/CenterCanvas.tsx
+ create mode 100755 src/components/training-zone/components/DeployedLeftMenu.tsx
+ create mode 100755 src/components/training-zone/components/FixedLeftRail.tsx
+ create mode 100755 src/components/training-zone/components/FolderCreateModal.tsx
+ create mode 100755 src/components/training-zone/components/ItemContextMenu.tsx
+ create mode 100755 src/components/training-zone/components/MoveToFolderModal.tsx
+ create mode 100755 src/components/training-zone/components/PreviewModal.tsx
+ create mode 100755 src/components/training-zone/components/RepositoryPopup.tsx
+ create mode 100755 src/components/training-zone/components/RightBlockEditor.tsx
+ create mode 100755 src/components/training-zone/components/WODSettingsPanel.tsx
+ create mode 100755 src/components/training-zone/components/block-editors/ContentBlockEditor.tsx
+ create mode 100755 src/components/training-zone/components/block-editors/ListEditor.tsx
+ create mode 100755 src/components/training-zone/components/block-editors/QuizEditor.tsx
+ create mode 100755 src/components/training-zone/components/block-editors/QuoteEditor.tsx
+ create mode 100755 src/components/training-zone/components/block-editors/RichTextEditor.tsx
+ create mode 100755 src/components/training-zone/components/block-editors/SectionHeaderEditor.tsx
+ create mode 100755 src/components/training-zone/components/program-builder/ProgramIndexBuilder.tsx
+ create mode 100755 src/components/training-zone/components/program-builder/ProgramPreview.tsx
+ create mode 100755 src/components/training-zone/components/program-builder/ProgramSectionComponent.tsx
+ create mode 100755 src/components/training-zone/components/program-builder/ProgramSubsectionComponent.tsx
+ create mode 100755 src/components/ui/LoadingSpinner.tsx
+ create mode 100644 src/components/user/BLOCKCard.tsx
+ create mode 100644 src/components/user/PostCard.tsx
+ create mode 100644 src/components/user/PostList.tsx
+ create mode 100644 src/components/user/ProgramCard.tsx
+ create mode 100644 src/components/user/TagFilter.tsx
+ create mode 100644 src/components/user/UserAvatar.tsx
+ create mode 100644 src/components/user/UserBLOCKDetail.tsx
+ create mode 100644 src/components/user/UserHeader.tsx
+ create mode 100644 src/components/user/UserLayout.tsx
+ create mode 100644 src/components/user/UserTabs.tsx
+ create mode 100644 src/components/user/UserWODDetail.tsx
+ create mode 100644 src/components/user/WODCard.tsx
+ create mode 100644 src/components/user/WriteBox.tsx
+ create mode 100755 src/contexts/AuthContext.tsx
+ create mode 100755 src/hooks/use-mobile.tsx
+ create mode 100644 src/hooks/useCommunitySignup.ts
+ create mode 100755 src/index.css
+ create mode 100755 src/main.tsx
+ create mode 100755 src/pages/AnalyticsDashboard.tsx
+ create mode 100755 src/pages/Communities.tsx
+ create mode 100755 src/pages/CommunityConfig.tsx
+ create mode 100644 src/pages/CommunitySignup.tsx
+ create mode 100755 src/pages/Dashboard.tsx
+ create mode 100755 src/pages/EnhancedCommunitiesPage.tsx
+ create mode 100755 src/pages/Login.tsx
+ create mode 100755 src/pages/Logout.tsx
+ create mode 100755 src/pages/Tags.tsx
+ create mode 100755 src/pages/UserDetailReport.tsx
+ create mode 100755 src/pages/Users.tsx
+ create mode 100755 src/pages/content/AIAgentEditor.tsx
+ create mode 100755 src/pages/content/AIAgentsRepository.tsx
+ create mode 100755 src/pages/content/ArticleEditor.tsx
+ create mode 100755 src/pages/content/ArticlesManagement.tsx
+ create mode 100755 src/pages/content/AutomationEditor.tsx
+ create mode 100755 src/pages/content/AutomationsRepository.tsx
+ create mode 100755 src/pages/content/ContentManagement.tsx
+ create mode 100755 src/pages/content/DocumentEditor.tsx
+ create mode 100755 src/pages/content/DocumentsRepository.tsx
+ create mode 100755 src/pages/content/ImageEditor.tsx
+ create mode 100755 src/pages/content/ImagesRepository.tsx
+ create mode 100755 src/pages/content/PDFEditor.tsx
+ create mode 100755 src/pages/content/PDFsRepository.tsx
+ create mode 100755 src/pages/content/PromptEditor.tsx
+ create mode 100755 src/pages/content/PromptsRepository.tsx
+ create mode 100755 src/pages/content/VideoEditor.tsx
+ create mode 100755 src/pages/content/VideosRepository.tsx
+ create mode 100644 src/pages/user/CommunityPage.tsx
+ create mode 100644 src/pages/user/TrainingZonePage.tsx
+ create mode 100644 src/pages/user/UserDashboard.tsx
+ create mode 100755 src/test/api-validation.test.mjs
+ create mode 100755 src/test/e2e-workflow.test.mjs
+ create mode 100755 src/test/environment.test.js
+ create mode 100755 src/test/node-test.mjs
+ create mode 100755 src/test/setup.js
+ create mode 100755 src/test/setup.ts
+ create mode 100755 src/test/simple.test.js
+ create mode 100755 src/test/store-validation.test.mjs
+ create mode 100644 src/types/index.ts
+ create mode 100755 src/types/pageBuilder.ts
+ create mode 100755 src/vite-env.d.ts
+ create mode 100644 supabase/functions/community-signup-validator/index.ts
+ create mode 100644 supabase/functions/community-signup/index.ts
+ create mode 100644 supabase/functions/create-ez-test-user/index.ts
+ create mode 100644 supabase/functions/create-test-user/index.ts
+ create mode 100644 supabase/functions/delete-test-user/index.ts
+ create mode 100644 supabase/functions/generate-community-signup-link/index.ts
+ create mode 100644 supabase/functions/list-auth-users/index.ts
+ create mode 100755 supabase/supabase_backend/cron_jobs/job_1.json
+ create mode 100755 supabase/supabase_backend/docs/advanced_analytics_system_report.md
+ create mode 100755 supabase/supabase_backend/docs/granular_progress_validation_report.md
+ create mode 100755 supabase/supabase_backend/functions/achievements-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/admin-dashboard-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/admin-login-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/ai-chat/deno.json
+ create mode 100755 supabase/supabase_backend/functions/ai-chat/index.ts
+ create mode 100755 supabase/supabase_backend/functions/analytics-computation-cron/index.ts
+ create mode 100755 supabase/supabase_backend/functions/analytics-dashboard/deno.json
+ create mode 100755 supabase/supabase_backend/functions/analytics-dashboard/helpers.ts
+ create mode 100755 supabase/supabase_backend/functions/analytics-dashboard/index.ts
+ create mode 100755 supabase/supabase_backend/functions/automated-content-generator/index.ts
+ create mode 100755 supabase/supabase_backend/functions/automated-reports/index.ts
+ create mode 100755 supabase/supabase_backend/functions/bulk-upload-users/deno.json
+ create mode 100755 supabase/supabase_backend/functions/bulk-upload-users/index.ts
+ create mode 100755 supabase/supabase_backend/functions/clone-community-template/index.ts
+ create mode 100755 supabase/supabase_backend/functions/community-management/deno.json
+ create mode 100755 supabase/supabase_backend/functions/community-management/index.ts
+ create mode 100755 supabase/supabase_backend/functions/content-management-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/content-repository-manager/index.ts
+ create mode 100755 supabase/supabase_backend/functions/conversation-history/index.ts
+ create mode 100755 supabase/supabase_backend/functions/courses-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/create-admin-user/index.ts
+ create mode 100755 supabase/supabase_backend/functions/create-bucket-assets-temp/index.ts
+ create mode 100755 supabase/supabase_backend/functions/create-bucket-content-thumbnails-temp/index.ts
+ create mode 100755 supabase/supabase_backend/functions/create-community-template/deno.json
+ create mode 100755 supabase/supabase_backend/functions/create-community-template/index.ts
+ create mode 100755 supabase/supabase_backend/functions/create-demo-user/index.ts
+ create mode 100755 supabase/supabase_backend/functions/enhanced-file-upload/index.ts
+ create mode 100755 supabase/supabase_backend/functions/enhanced-progress-tracking/index.ts
+ create mode 100755 supabase/supabase_backend/functions/folders-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/image-upload/index.ts
+ create mode 100755 supabase/supabase_backend/functions/learning-path-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/learning-path-validator/index.ts
+ create mode 100755 supabase/supabase_backend/functions/manage-user-tags/index.ts
+ create mode 100755 supabase/supabase_backend/functions/mastery-assessment-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/milestone-validation-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/page-builder-bulk-create/index.ts
+ create mode 100755 supabase/supabase_backend/functions/page-builder-content-generator/index.ts
+ create mode 100755 supabase/supabase_backend/functions/page-structure-manager/index.ts
+ create mode 100755 supabase/supabase_backend/functions/pdf-upload/index.ts
+ create mode 100755 supabase/supabase_backend/functions/process-csv-upload/index.ts
+ create mode 100755 supabase/supabase_backend/functions/program-enrollment-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/programs-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/setup-admin-final/index.ts
+ create mode 100755 supabase/supabase_backend/functions/setup-admin/index.ts
+ create mode 100755 supabase/supabase_backend/functions/simple-wods-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/streak-tracking-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/system-health-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/track-user-activity/deno.json
+ create mode 100755 supabase/supabase_backend/functions/track-user-activity/index.ts
+ create mode 100755 supabase/supabase_backend/functions/track-user-progress/index.ts
+ create mode 100755 supabase/supabase_backend/functions/update-user-password/index.ts
+ create mode 100755 supabase/supabase_backend/functions/wods-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/workout-blocks-api/index.ts
+ create mode 100755 supabase/supabase_backend/functions/workout-blocks-index.ts
+ create mode 100755 supabase/supabase_backend/simple-chat.ts
+ create mode 100755 supabase/supabase_backend/tests/achievements/integration_test.ts
+ create mode 100755 supabase/supabase_backend/tests/enhanced-progress/integration_test.ts
+ create mode 100755 tailwind.config.js
+ create mode 100644 test-community-creation.js
+ create mode 100755 tests/test_ai_agents_query.ts
+ create mode 100755 tests/test_api_validation.ts
+ create mode 100755 tests/test_auth_document_queries.ts
+ create mode 100755 tests/test_block_creation.js
+ create mode 100755 tests/test_document_queries.ts
+ create mode 100755 tests/validate_database_operations.ts
+ create mode 100755 tests/verify_document_query.ts
+ create mode 100755 tsconfig.app.json
+ create mode 100755 tsconfig.json
+ create mode 100755 tsconfig.node.json
+ create mode 100644 user_input_files/Screenshot 2025-09-22 at 01.12.12.png
+ create mode 100644 user_input_files/Screenshot 2025-09-24 at 18.14.14.png
+ create mode 100644 user_input_files/Screenshot 2025-09-24 at 18.52.34.png
+ create mode 100644 user_input_files/Screenshot 2025-09-24 at 18.58.03.png
+ create mode 100644 user_input_files/Screenshot 2025-09-25 at 01.44.46.png
+ create mode 100644 user_input_files/Screenshot 2025-09-25 at 01.45.04.png
+ create mode 100644 user_input_files/Screenshot 2025-09-25 at 09.15.26.png
+ create mode 100644 user_input_files/Screenshot 2025-09-25 at 09.15.34.png
+ create mode 100644 user_input_files/Screenshot 2025-09-25 at 09.15.42.png
+ create mode 100644 user_input_files/Screenshot 2025-09-25 at 09.15.49.png
+ create mode 100644 user_input_files/Screenshot 2025-09-25 at 11.33.41.png
+ mode change 100755 => 100644 user_input_files/image.png
+ mode change 100755 => 100644 user_input_files/image_1.png
+ mode change 100755 => 100644 user_input_files/image_2.png
+ create mode 100755 vite.config.ts
+ create mode 100755 vitest.config.js
+ create mode 100755 vitest.config.ts
+ create mode 100644 workspace.json

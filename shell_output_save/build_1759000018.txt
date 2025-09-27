@@ -1,0 +1,551 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 1.7s using pnpm v10.12.4
+src/pages/Dashboard.tsx:118:5 - error TS1005: ',' expected.
+
+118   fn: () => Promise<T>,
+        ~
+
+src/pages/Dashboard.tsx:121:2 - error TS1005: ',' expected.
+
+121 ): Promise<T> => {
+     ~
+
+src/pages/Dashboard.tsx:121:11 - error TS1005: ',' expected.
+
+121 ): Promise<T> => {
+              ~
+
+src/pages/Dashboard.tsx:121:12 - error TS17008: JSX element 'T' has no corresponding closing tag.
+
+121 ): Promise<T> => {
+               ~
+
+src/pages/Dashboard.tsx:121:16 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+121 ): Promise<T> => {
+                   ~
+
+src/pages/Dashboard.tsx:122:7 - error TS1005: '}' expected.
+
+122   let lastError: any
+          ~~~~~~~~~
+
+src/pages/Dashboard.tsx:124:34 - error TS1003: Identifier expected.
+
+124   for (let attempt = 0; attempt <= maxRetries; attempt++) {
+                                     ~
+
+src/pages/Dashboard.tsx:125:5 - error TS1109: Expression expected.
+
+125     try {
+        ~~~
+
+src/pages/Dashboard.tsx:126:7 - error TS1109: Expression expected.
+
+126       return await fn()
+          ~~~~~~
+
+src/pages/Dashboard.tsx:127:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+127     } catch (error) {
+        ~
+
+src/pages/Dashboard.tsx:130:7 - error TS1005: '}' expected.
+
+130       if (attempt === maxRetries) {
+          ~~
+
+src/pages/Dashboard.tsx:131:9 - error TS1109: Expression expected.
+
+131         throw error
+            ~~~~~
+
+src/pages/Dashboard.tsx:132:7 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+132       }
+          ~
+
+src/pages/Dashboard.tsx:136:9 - error TS1109: Expression expected.
+
+136         throw error
+            ~~~~~
+
+src/pages/Dashboard.tsx:137:7 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+137       }
+          ~
+
+src/pages/Dashboard.tsx:141:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+141     }
+        ~
+
+src/pages/Dashboard.tsx:142:3 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+142   }
+      ~
+
+src/pages/Dashboard.tsx:145:1 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+145 }
+    ~
+
+src/pages/Dashboard.tsx:148:26 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+148 const SkeletonCard = () => (
+                             ~
+
+src/pages/Dashboard.tsx:160:55 - error TS1109: Expression expected.
+
+160 const SkeletonWidget = ({ height = "h-80" }: { height?: string }) => (
+                                                          ~
+
+src/pages/Dashboard.tsx:160:68 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+160 const SkeletonWidget = ({ height = "h-80" }: { height?: string }) => (
+                                                                       ~
+
+src/pages/Dashboard.tsx:178:47 - error TS1005: '}' expected.
+
+178 const EmptyState = ({ title, description, icon: Icon }: { title: string; description: string; icon: any }) => (
+                                                  ~
+
+src/pages/Dashboard.tsx:178:54 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+178 const EmptyState = ({ title, description, icon: Icon }: { title: string; description: string; icon: any }) => (
+                                                         ~
+
+src/pages/Dashboard.tsx:178:64 - error TS1005: '}' expected.
+
+178 const EmptyState = ({ title, description, icon: Icon }: { title: string; description: string; icon: any }) => (
+                                                                   ~
+
+src/pages/Dashboard.tsx:178:105 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+178 const EmptyState = ({ title, description, icon: Icon }: { title: string; description: string; icon: any }) => (
+                                                                                                            ~
+
+src/pages/Dashboard.tsx:178:109 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+178 const EmptyState = ({ title, description, icon: Icon }: { title: string; description: string; icon: any }) => (
+                                                                                                                ~
+
+src/pages/Dashboard.tsx:187:3 - error TS1109: Expression expected.
+
+187   const [analyticsData, setAnalyticsData] = useState<AnalyticsData>({})
+      ~~~~~
+
+src/pages/Dashboard.tsx:187:54 - error TS17008: JSX element 'AnalyticsData' has no corresponding closing tag.
+
+187   const [analyticsData, setAnalyticsData] = useState<AnalyticsData>({})
+                                                         ~~~~~~~~~~~~~
+
+src/pages/Dashboard.tsx:188:59 - error TS1003: Identifier expected.
+
+188   const [communities, setCommunities] = useState<Community[]>([])
+                                                              ~
+
+src/pages/Dashboard.tsx:188:61 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+188   const [communities, setCommunities] = useState<Community[]>([])
+                                                                ~
+
+src/pages/Dashboard.tsx:189:62 - error TS17008: JSX element 'string' has no corresponding closing tag.
+
+189   const [selectedCommunity, setSelectedCommunity] = useState<string>('all')
+                                                                 ~~~~~~
+
+src/pages/Dashboard.tsx:191:10 - error TS1005: '}' expected.
+
+191     start: format(subDays(new Date(), 30), 'yyyy-MM-dd'),
+             ~
+
+src/pages/Dashboard.tsx:193:3 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+193   })
+      ~
+
+src/pages/Dashboard.tsx:195:49 - error TS1003: Identifier expected.
+
+195   const [error, setError] = useState<ErrorState | null>(null)
+                                                    ~
+
+src/pages/Dashboard.tsx:195:55 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+195   const [error, setError] = useState<ErrorState | null>(null)
+                                                          ~
+
+src/pages/Dashboard.tsx:198:31 - error TS17008: JSX element 'string' has no corresponding closing tag.
+
+198   const lastFetchRef = useRef<string>('')
+                                  ~~~~~~
+
+src/pages/Dashboard.tsx:199:53 - error TS1003: Identifier expected.
+
+199   const abortControllerRef = useRef<AbortController | null>(null)
+                                                        ~
+
+src/pages/Dashboard.tsx:199:59 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+199   const abortControllerRef = useRef<AbortController | null>(null)
+                                                              ~
+
+src/pages/Dashboard.tsx:202:50 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+202   const fetchCommunities = useCallback(async () => {
+                                                     ~
+
+src/pages/Dashboard.tsx:203:5 - error TS1109: Expression expected.
+
+203     try {
+        ~~~
+
+src/pages/Dashboard.tsx:204:7 - error TS1109: Expression expected.
+
+204       const { data, error } = await supabase
+          ~~~~~
+
+src/pages/Dashboard.tsx:213:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+213     } catch (err) {
+        ~
+
+src/pages/Dashboard.tsx:216:3 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+216   }, [])
+      ~
+
+src/pages/Dashboard.tsx:219:69 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+219   const fetchAnalyticsData = useCallback(async (isRefresh = false) => {
+                                                                        ~
+
+src/pages/Dashboard.tsx:220:5 - error TS1109: Expression expected.
+
+220     if (!mountedRef.current) return
+        ~~
+
+src/pages/Dashboard.tsx:226:7 - error TS1109: Expression expected.
+
+226       return
+          ~~~~~~
+
+src/pages/Dashboard.tsx:227:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+227     }
+        ~
+
+src/pages/Dashboard.tsx:239:7 - error TS1109: Expression expected.
+
+239       if (isRefresh) {
+          ~~
+
+src/pages/Dashboard.tsx:248:42 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+248       const fetchWithTimeout = async () => {
+                                             ~
+
+src/pages/Dashboard.tsx:250:9 - error TS1109: Expression expected.
+
+250         const timeoutId = setTimeout(() => {
+            ~~~~~
+
+src/pages/Dashboard.tsx:250:42 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+250         const timeoutId = setTimeout(() => {
+                                             ~
+
+src/pages/Dashboard.tsx:255:11 - error TS1109: Expression expected.
+
+255           const { data, error: functionError } = await supabase.functions.invoke('analytics-dashboard', {
+              ~~~~~
+
+src/pages/Dashboard.tsx:255:30 - error TS1005: '}' expected.
+
+255           const { data, error: functionError } = await supabase.functions.invoke('analytics-dashboard', {
+                                 ~
+
+src/pages/Dashboard.tsx:255:46 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+255           const { data, error: functionError } = await supabase.functions.invoke('analytics-dashboard', {
+                                                 ~
+
+src/pages/Dashboard.tsx:256:17 - error TS1005: '}' expected.
+
+256             body: {
+                    ~
+
+src/pages/Dashboard.tsx:257:26 - error TS1005: '}' expected.
+
+257               communityId: selectedCommunity === 'all' ? null : selectedCommunity,
+                             ~
+
+src/pages/Dashboard.tsx:259:22 - error TS1005: '}' expected.
+
+259                 start: format(startOfDay(new Date(dateRange.start)), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx"),
+                         ~
+
+src/pages/Dashboard.tsx:261:15 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+261               },
+                  ~
+
+src/pages/Dashboard.tsx:263:13 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+263             }
+                ~
+
+src/pages/Dashboard.tsx:264:11 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+264           })
+              ~
+
+src/pages/Dashboard.tsx:269:13 - error TS1109: Expression expected.
+
+269             throw new Error('Request was cancelled')
+                ~~~~~
+
+src/pages/Dashboard.tsx:270:11 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+270           }
+              ~
+
+src/pages/Dashboard.tsx:273:13 - error TS1109: Expression expected.
+
+273             throw new Error(functionError.message || 'Failed to fetch analytics data')
+                ~~~~~
+
+src/pages/Dashboard.tsx:274:11 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+274           }
+              ~
+
+src/pages/Dashboard.tsx:277:9 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+277         } catch (error) {
+            ~
+
+src/pages/Dashboard.tsx:279:11 - error TS1005: '}' expected.
+
+279           throw error
+              ~~~~~
+
+src/pages/Dashboard.tsx:280:9 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+280         }
+            ~
+
+src/pages/Dashboard.tsx:281:7 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+281       }
+          ~
+
+src/pages/Dashboard.tsx:289:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+289     } catch (err) {
+        ~
+
+src/pages/Dashboard.tsx:290:7 - error TS1109: Expression expected.
+
+290       if (mountedRef.current && !signal.aborted) {
+          ~~
+
+src/pages/Dashboard.tsx:291:9 - error TS1109: Expression expected.
+
+291         const errorState = createErrorState(err, error?.retryCount || 0)
+            ~~~~~
+
+src/pages/Dashboard.tsx:301:7 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+301       }
+          ~
+
+src/pages/Dashboard.tsx:302:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+302     } finally {
+        ~
+
+src/pages/Dashboard.tsx:303:7 - error TS1109: Expression expected.
+
+303       if (mountedRef.current) {
+          ~~
+
+src/pages/Dashboard.tsx:305:9 - error TS1005: '}' expected.
+
+305         setRefreshing(false)
+            ~~~~~~~~~~~~~
+
+src/pages/Dashboard.tsx:306:7 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+306       }
+          ~
+
+src/pages/Dashboard.tsx:307:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+307     }
+        ~
+
+src/pages/Dashboard.tsx:308:3 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+308   }, [selectedCommunity, dateRange.start, dateRange.end, error?.retryCount])
+      ~
+
+src/pages/Dashboard.tsx:311:17 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+311   useEffect(() => {
+                    ~
+
+src/pages/Dashboard.tsx:316:17 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+316   useEffect(() => {
+                    ~
+
+src/pages/Dashboard.tsx:321:17 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+321   useEffect(() => {
+                    ~
+
+src/pages/Dashboard.tsx:322:5 - error TS1109: Expression expected.
+
+322     return () => {
+        ~~~~~~
+
+src/pages/Dashboard.tsx:322:16 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+322     return () => {
+                   ~
+
+src/pages/Dashboard.tsx:324:7 - error TS1005: '}' expected.
+
+324       abortControllerRef.current?.abort()
+          ~~~~~~~~~~~~~~~~~~
+
+src/pages/Dashboard.tsx:325:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+325     }
+        ~
+
+src/pages/Dashboard.tsx:326:3 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+326   }, [])
+      ~
+
+src/pages/Dashboard.tsx:328:41 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+328   const handleRefresh = useCallback(() => {
+                                            ~
+
+src/pages/Dashboard.tsx:332:68 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+332   const handleCommunityChange = useCallback((communityId: string) => {
+                                                                       ~
+
+src/pages/Dashboard.tsx:336:86 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+336   const handleDateRangeChange = useCallback((field: 'start' | 'end', value: string) => {
+                                                                                         ~
+
+src/pages/Dashboard.tsx:343:12 - error TS1005: '}' expected.
+
+343       title: 'Total Users',
+               ~
+
+src/pages/Dashboard.tsx:349:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+349     },
+        ~
+
+src/pages/Dashboard.tsx:351:12 - error TS1005: '}' expected.
+
+351       title: 'Content Items',
+               ~
+
+src/pages/Dashboard.tsx:357:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+357     },
+        ~
+
+src/pages/Dashboard.tsx:359:12 - error TS1005: '}' expected.
+
+359       title: 'Recent Activities',
+               ~
+
+src/pages/Dashboard.tsx:365:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+365     },
+        ~
+
+src/pages/Dashboard.tsx:367:12 - error TS1005: '}' expected.
+
+367       title: 'Active Sessions',
+               ~
+
+src/pages/Dashboard.tsx:368:61 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+368       value: analyticsData.agentUsage?.reduce((sum, agent) => sum + agent.conversation_count, 0) || 0,
+                                                                ~
+
+src/pages/Dashboard.tsx:373:5 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+373     }
+        ~
+
+src/pages/Dashboard.tsx:377:93 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+377   const contentEngagementChartData = analyticsData.contentEngagement?.slice(0, 8).map(item => ({
+                                                                                                ~
+
+src/pages/Dashboard.tsx:378:9 - error TS1005: '}' expected.
+
+378     name: item.content_items.title.substring(0, 20) + '...',
+            ~
+
+src/pages/Dashboard.tsx:381:3 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+381   })) || []
+      ~
+
+src/pages/Dashboard.tsx:383:89 - error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+383   const agentUsageChartData = analyticsData.agentUsage?.slice(0, 6).map((agent, index) => ({
+                                                                                            ~
+
+src/pages/Dashboard.tsx:384:9 - error TS1005: '}' expected.
+
+384     name: agent.content_items.title.substring(0, 15) + '...',
+            ~
+
+src/pages/Dashboard.tsx:388:3 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+388   })) || []
+      ~
+
+src/pages/Dashboard.tsx:391:5 - error TS1109: Expression expected.
+
+391     return (
+        ~~~~~~
+
+src/pages/Dashboard.tsx:416:3 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+416   }
+      ~
+
+src/pages/Dashboard.tsx:757:1 - error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+757 }
+    ~
+
+src/pages/Dashboard.tsx:758:1 - error TS1005: '</' expected.
+
+758 
+    
+
+
+Found 108 errors.
+

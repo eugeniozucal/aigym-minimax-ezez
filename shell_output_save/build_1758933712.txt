@@ -1,0 +1,231 @@
+
+> react_repo@0.0.0 build
+> yes | pnpm install && rm -rf node_modules/.vite-temp && tsc -b && vite build
+
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 1.6s using pnpm v10.12.4
+src/App.tsx:79:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+79               <ProtectedRoute requireAdmin>
+                  ~~~~~~~~~~~~~~
+
+src/App.tsx:81:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+81               </ProtectedRoute>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:85:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+85               <ProtectedRoute requireAdmin>
+                  ~~~~~~~~~~~~~~
+
+src/App.tsx:87:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+87               </ProtectedRoute>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:92:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+92               <ProtectedRoute requireAdmin>
+                  ~~~~~~~~~~~~~~
+
+src/App.tsx:94:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+94               </ProtectedRoute>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:98:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+98               <ProtectedRoute requireAdmin>
+                  ~~~~~~~~~~~~~~
+
+src/App.tsx:100:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+100               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:107:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+107               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:109:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+109               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:113:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+113               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:115:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+115               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:119:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+119               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:121:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+121               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:126:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+126               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:128:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+128               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:139:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+139               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:141:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+141               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:145:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+145               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:147:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+147               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:152:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+152               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:154:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+154               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:159:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+159               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:161:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+161               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:165:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+165               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:167:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+167               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:171:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+171               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:173:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+173               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:177:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+177               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:179:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+179               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:183:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+183               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:185:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+185               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:189:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+189               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:191:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+191               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:195:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+195               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:197:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+197               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:201:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+201               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:203:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+203               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:304:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+304               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:311:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+311               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:315:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+315               <ProtectedRoute requireAdmin>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:317:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+317               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+src/App.tsx:322:16 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+322               <ProtectedRoute>
+                   ~~~~~~~~~~~~~~
+
+src/App.tsx:324:17 - error TS2304: Cannot find name 'ProtectedRoute'.
+
+324               </ProtectedRoute>
+                    ~~~~~~~~~~~~~~
+
+
+Found 44 errors.
+

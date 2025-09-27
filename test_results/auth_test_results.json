@@ -1,0 +1,103 @@
+{
+  "total_tests": 12,
+  "passed_tests": 6,
+  "success_rate": 50.0,
+  "detailed_results": {
+    "ez@aiworkify.com": {
+      "email": "ez@aiworkify.com",
+      "user_type": "superadmin",
+      "timestamp": "2025-09-27 16:52:34",
+      "tests": {
+        "login_page_access": {
+          "status": "PASS",
+          "status_code": 200,
+          "response_size": 5377,
+          "has_login_form": false
+        },
+        "route_protection_/dashboard": {
+          "status": "FAIL",
+          "status_code": 200,
+          "shows_login_form": false,
+          "response_size": 5377
+        },
+        "route_protection_/user/community": {
+          "status": "FAIL",
+          "status_code": 200,
+          "shows_login_form": false,
+          "response_size": 5377
+        },
+        "credentials_ready": {
+          "status": "PASS",
+          "email": "ez@aiworkify.com",
+          "password_length": 8,
+          "has_special_chars": true,
+          "note": "Credentials validated against database records"
+        }
+      }
+    },
+    "dlocal@aiworkify.com": {
+      "email": "dlocal@aiworkify.com",
+      "user_type": "community_user",
+      "timestamp": "2025-09-27 16:52:35",
+      "tests": {
+        "login_page_access": {
+          "status": "PASS",
+          "status_code": 200,
+          "response_size": 5377,
+          "has_login_form": false
+        },
+        "route_protection_/dashboard": {
+          "status": "FAIL",
+          "status_code": 200,
+          "shows_login_form": false,
+          "response_size": 5377
+        },
+        "route_protection_/user/community": {
+          "status": "FAIL",
+          "status_code": 200,
+          "shows_login_form": false,
+          "response_size": 5377
+        },
+        "credentials_ready": {
+          "status": "PASS",
+          "email": "dlocal@aiworkify.com",
+          "password_length": 11,
+          "has_special_chars": true,
+          "note": "Credentials validated against database records"
+        }
+      }
+    },
+    "byntoxxx@minimax.com": {
+      "email": "byntoxxx@minimax.com",
+      "user_type": "test_community_user",
+      "timestamp": "2025-09-27 16:52:36",
+      "tests": {
+        "login_page_access": {
+          "status": "PASS",
+          "status_code": 200,
+          "response_size": 5377,
+          "has_login_form": false
+        },
+        "route_protection_/dashboard": {
+          "status": "FAIL",
+          "status_code": 200,
+          "shows_login_form": false,
+          "response_size": 5377
+        },
+        "route_protection_/user/community": {
+          "status": "FAIL",
+          "status_code": 200,
+          "shows_login_form": false,
+          "response_size": 5377
+        },
+        "credentials_ready": {
+          "status": "PASS",
+          "email": "byntoxxx@minimax.com",
+          "password_length": 10,
+          "has_special_chars": false,
+          "note": "Credentials validated against database records"
+        }
+      }
+    }
+  }
+}
