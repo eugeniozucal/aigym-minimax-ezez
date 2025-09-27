@@ -98,7 +98,7 @@ Deno.serve(async (req) => {
                 throw new Error('User ID and Community ID are required');
             }
 
-            // Update user's profile with community assignment
+            // Create or update user's profile
             const profileResponse = await fetch(`${supabaseUrl}/rest/v1/profiles`, {
                 method: 'POST',
                 headers: {
@@ -109,7 +109,7 @@ Deno.serve(async (req) => {
                 },
                 body: JSON.stringify({
                     id: user_data.user_id,
-                    community_id: user_data.community_id,
+                    community_id: user_data.community_id, // Keep for backward compatibility
                     email: user_data.email || null,
                     first_name: user_data.first_name || null,
                     last_name: user_data.last_name || null,
@@ -123,7 +123,29 @@ Deno.serve(async (req) => {
                 // Continue even if profile creation fails
             }
 
-            // Also update the users table if it exists
+            // Add user to community using the new junction table
+            const membershipResponse = await fetch(`${supabaseUrl}/rest/v1/rpc/add_user_to_community`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${serviceRoleKey}`,
+                    'apikey': serviceRoleKey,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    p_user_id: user_data.user_id,
+                    p_community_id: user_data.community_id,
+                    p_role: 'member',
+                    p_signup_token: user_data.signup_token || null
+                })
+            });
+
+            if (!membershipResponse.ok) {
+                const errorText = await membershipResponse.text();
+                console.error('Community membership creation error:', errorText);
+                // Continue even if membership creation fails
+            }
+
+            // Also update the users table for backward compatibility if it exists
             const userResponse = await fetch(`${supabaseUrl}/rest/v1/users`, {
                 method: 'POST',
                 headers: {
