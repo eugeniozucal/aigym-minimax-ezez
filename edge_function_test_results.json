@@ -1,0 +1,122 @@
+{
+  "test_timestamp": "2025-09-28T06:22:26+08:00",
+  "functions_tested": [
+    {
+      "function_name": "system-health-api",
+      "method": "POST",
+      "http_status": 401,
+      "test_result": "SUCCESS_AUTH_REQUIRED",
+      "response_time": "0.086326",
+      "expected_auth": false,
+      "body_preview": "{\"code\":401,\"message\":\"Missing authorization header\"}"
+    },
+    {
+      "function_name": "courses-api",
+      "method": "GET",
+      "http_status": 401,
+      "test_result": "SUCCESS_AUTH_REQUIRED",
+      "response_time": "0.094471",
+      "expected_auth": false,
+      "body_preview": "{\"code\":401,\"message\":\"Missing authorization header\"}"
+    },
+    {
+      "function_name": "ai-chat",
+      "method": "POST",
+      "http_status": 401,
+      "test_result": "SUCCESS_AUTH_REQUIRED",
+      "response_time": "0.148782",
+      "expected_auth": false,
+      "body_preview": "{\"code\":401,\"message\":\"Missing authorization header\"}"
+    },
+    {
+      "function_name": "admin-dashboard-api",
+      "method": "POST",
+      "http_status": 500,
+      "test_result": "INTERNAL_ERROR",
+      "response_time": "0.242260",
+      "expected_auth": true,
+      "body_preview": "{\"error\":{\"code\":\"DASHBOARD_ERROR\",\"message\":\"Invalid authentication token\",\"timestamp\":\"2025-09-27T22:22:27.112Z\"}}"
+    },
+    {
+      "function_name": "auth-validation-api",
+      "method": "POST",
+      "http_status": 500,
+      "test_result": "INTERNAL_ERROR",
+      "response_time": "0.231644",
+      "expected_auth": true,
+      "body_preview": "{\"error\":{\"code\":\"AUTH_VALIDATION_ERROR\",\"message\":\"Invalid authentication token\",\"timestamp\":\"2025-09-27T22:22:27.404Z\"}}"
+    },
+    {
+      "function_name": "enhanced-progress-tracking",
+      "method": "GET",
+      "http_status": 500,
+      "test_result": "INTERNAL_ERROR",
+      "response_time": "0.207710",
+      "expected_auth": true,
+      "body_preview": "{\"error\":{\"code\":\"ENHANCED_PROGRESS_TRACKING_ERROR\",\"message\":\"Invalid token\"}}"
+    },
+    {
+      "function_name": "achievements-api",
+      "method": "GET",
+      "http_status": 200,
+      "test_result": "SUCCESS",
+      "response_time": "0.318002",
+      "expected_auth": true,
+      "body_preview": "{\"data\":[{\"id\":\"770e8400-e29b-41d4-a716-446655440002\",\"title\":\"Learning Streak\",\"description\":\"Learn for 7 consecutive days\",\"icon_url\":null,\"badge_color\":\"#3B82F6\",\"achievement_type\":\"streak\",\"catego"
+    },
+    {
+      "function_name": "analytics-dashboard",
+      "method": "GET",
+      "http_status": 500,
+      "test_result": "INTERNAL_ERROR",
+      "response_time": "0.227949",
+      "expected_auth": true,
+      "body_preview": "{\"error\":{\"code\":\"ADVANCED_ANALYTICS_ERROR\",\"message\":\"Unexpected end of JSON input\"}}"
+    },
+    {
+      "function_name": "community-management",
+      "method": "POST",
+      "http_status": 400,
+      "test_result": "FAILED",
+      "response_time": "0.192781",
+      "expected_auth": true,
+      "body_preview": "{\"error\":{\"code\":\"COMMUNITY_MANAGEMENT_FAILED\",\"message\":\"Invalid authentication token\"}}"
+    },
+    {
+      "function_name": "automated-reports",
+      "method": "POST",
+      "http_status": 200,
+      "test_result": "SUCCESS",
+      "response_time": "0.327993",
+      "expected_auth": true,
+      "body_preview": "{\"report\":{\"title\":\"Comprehensive Progress Report\",\"audience\":\"individual\",\"dateRange\":{\"start\":\"2025-09-01T00:00:00Z\",\"end\":\"2025-09-27T23:59:59Z\"},\"sections\":{\"totalUsers\":3,\"avgLearningTime\":300,\"a"
+    },
+    {
+      "function_name": "create-admin-user",
+      "method": "POST",
+      "http_status": 401,
+      "test_result": "SUCCESS_AUTH_REQUIRED",
+      "response_time": "0.206356",
+      "expected_auth": false,
+      "body_preview": "{\"code\":401,\"message\":\"Missing authorization header\"}"
+    },
+    {
+      "function_name": "bulk-upload-users",
+      "method": "POST",
+      "http_status": 500,
+      "test_result": "INTERNAL_ERROR",
+      "response_time": "0.160150",
+      "expected_auth": true,
+      "body_preview": "{\"error\":{\"code\":\"BULK_UPLOAD_ERROR\",\"message\":\"Cannot read properties of undefined (reading 'trim')\"}}"
+    },
+    {
+      "function_name": "enhanced-file-upload",
+      "method": "POST",
+      "http_status": 500,
+      "test_result": "INTERNAL_ERROR",
+      "response_time": "0.162395",
+      "expected_auth": true,
+      "body_preview": "{\"error\":{\"code\":\"FILE_UPLOAD_FAILED\",\"message\":\"File data and filename are required\"}}"
+    }
+  ]
+}
