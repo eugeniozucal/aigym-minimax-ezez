@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState, useRef } from 'react'
 import { supabase } from '../lib/supabase'
 import { User } from '@supabase/supabase-js'
 
@@ -22,23 +22,76 @@ export function useAuth() {
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
+  const mountedRef = useRef(true)
+
+  // Session validation with timeout and error handling
+  const validateSession = async () => {
+    try {
+      // Create timeout promise (5 seconds max)
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Session validation timeout')), 5000)
+      )
+      
+      // Race between getSession and timeout
+      const sessionPromise = supabase.auth.getSession()
+      const result = await Promise.race([sessionPromise, timeoutPromise])
+      
+      if (!mountedRef.current) return
+      
+      const { data: { session }, error } = result as any
+      
+      if (error) {
+        console.warn('Session validation error:', error)
+        // Clear corrupted session data
+        await supabase.auth.signOut()
+        setUser(null)
+      } else {
+        setUser(session?.user ?? null)
+      }
+      
+    } catch (error) {
+      console.warn('Session validation failed:', error)
+      
+      if (!mountedRef.current) return
+      
+      // Clear corrupted session on timeout/error
+      try {
+        await supabase.auth.signOut()
+        // Clear localStorage manually as fallback
+        localStorage.removeItem('supabase.auth.token')
+        localStorage.removeItem('sb-qlxgpvezqotdwghjzjpx-auth-token')
+      } catch (cleanupError) {
+        console.warn('Session cleanup error:', cleanupError)
+      }
+      
+      setUser(null)
+    } finally {
+      if (mountedRef.current) {
+        setLoading(false)
+      }
+    }
+  }
 
   useEffect(() => {
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null)
-      setLoading(false)
-    })
+    // Initial session validation
+    validateSession()
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
+        if (!mountedRef.current) return
+        
+        console.log('Auth state change:', event)
         setUser(session?.user ?? null)
         setLoading(false)
       }
     )
 
-    return () => subscription.unsubscribe()
+    // Cleanup
+    return () => {
+      mountedRef.current = false
+      subscription.unsubscribe()
+    }
   }, [])
 
   const signIn = async (email: string, password: string) => {
