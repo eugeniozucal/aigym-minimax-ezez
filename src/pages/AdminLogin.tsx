@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import { Navigate, useLocation } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Navigate, useLocation, useSearchParams } from 'react-router-dom'
 import { useAuth } from '@/contexts/BulletproofAuthContext'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
-import { Eye, EyeOff, Building2 } from 'lucide-react'
+import { Eye, EyeOff, Building2, RotateCcw } from 'lucide-react'
 import { isValidEmail } from '@/lib/auth-utils'
 
 /**
  * Admin Login Component
- * Dedicated login interface for administrators
+ * Enhanced with session recovery and return URL handling
  */
 export function AdminLogin() {
   const [email, setEmail] = useState('')
@@ -16,11 +16,26 @@ export function AdminLogin() {
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   
-  const { user, signIn } = useAuth()
+  const { user, signIn, sessionExpired, clearSessionExpired } = useAuth()
   const location = useLocation()
+  const [searchParams] = useSearchParams()
+  
+  const returnUrl = searchParams.get('returnUrl')
+  const isSessionRecovery = sessionExpired || returnUrl
+  
+  // Clear session expired flag when component mounts
+  useEffect(() => {
+    if (sessionExpired) {
+      clearSessionExpired()
+    }
+  }, [sessionExpired, clearSessionExpired])
   
   // Redirect authenticated users based on their role
-  if (user) {
+  if (user && !sessionExpired) {
+    if (returnUrl) {
+      return <Navigate to={decodeURIComponent(returnUrl)} replace />
+    }
+    
     if (user.role === 'admin') {
       return <Navigate to="/admin/dashboard" replace />
     } else {
@@ -50,8 +65,14 @@ export function AdminLogin() {
       
       if (!result.success) {
         setError(result.error || 'Login failed')
+      } else {
+        // Success - redirect will be handled by useEffect above
+        if (returnUrl) {
+          setTimeout(() => {
+            window.location.href = decodeURIComponent(returnUrl)
+          }, 100)
+        }
       }
-      // Success will be handled by auth state change and redirects
     } catch (error) {
       console.error('Login error:', error)
       setError('An unexpected error occurred. Please try again.')
@@ -65,12 +86,39 @@ export function AdminLogin() {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <div className="mx-auto h-16 w-16 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
-            <Building2 className="h-8 w-8 text-white" />
+            {isSessionRecovery ? (
+              <RotateCcw className="h-8 w-8 text-white" />
+            ) : (
+              <Building2 className="h-8 w-8 text-white" />
+            )}
           </div>
           <h2 className="text-3xl font-bold text-gray-900">AI GYM Platform</h2>
-          <p className="mt-2 text-gray-600">Administrator Access Portal</p>
-          <p className="text-sm text-blue-600 mt-1">Admin & Super Admin Login</p>
+          {isSessionRecovery ? (
+            <>
+              <p className="mt-2 text-gray-600">Administrator Session Recovery</p>
+              <p className="text-sm text-orange-600 mt-1">Please sign in again to continue</p>
+            </>
+          ) : (
+            <>
+              <p className="mt-2 text-gray-600">Administrator Access Portal</p>
+              <p className="text-sm text-blue-600 mt-1">Admin & Super Admin Login</p>
+            </>
+          )}
         </div>
+        
+        {isSessionRecovery && (
+          <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+            <div className="flex items-center">
+              <RotateCcw className="h-5 w-5 text-orange-500 mr-2" />
+              <div>
+                <p className="text-sm font-medium text-orange-800">Administrator Session Recovered</p>
+                <p className="text-xs text-orange-600 mt-1">
+                  Your admin session expired. Please sign in again to continue managing the platform.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
         
         <div className="bg-white shadow-lg rounded-xl border border-gray-200 p-8">
           <form className="space-y-6" onSubmit={handleSubmit}>
@@ -138,10 +186,10 @@ export function AdminLogin() {
               {isLoading ? (
                 <>
                   <LoadingSpinner size="sm" className="mr-2" />
-                  Signing in...
+                  {isSessionRecovery ? 'Recovering admin session...' : 'Signing in...'}
                 </>
               ) : (
-                'Sign In as Administrator'
+                isSessionRecovery ? 'Continue Admin Session' : 'Sign In as Administrator'
               )}
             </button>
           </form>

@@ -1,0 +1,279 @@
+{
+  "timestamp": "2025-09-28 06:37:36",
+  "tests": [
+    {
+      "test_name": "CORS Configuration",
+      "status": "WARNING",
+      "details": {
+        "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+          "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, PATCH",
+          "Access-Control-Allow-Credentials": "false"
+        },
+        "issues": [
+          "Wildcard origin allowed - potential security risk"
+        ],
+        "response_code": 200
+      },
+      "timestamp": "2025-09-28 06:37:37"
+    },
+    {
+      "test_name": "Auth Bypass - No Authorization Header",
+      "status": "PASS",
+      "details": {
+        "expected_status": [
+          401,
+          403,
+          500
+        ],
+        "actual_status": 401,
+        "response_body": "{\"code\":401,\"message\":\"Missing authorization header\"}"
+      },
+      "timestamp": "2025-09-28 06:37:37"
+    },
+    {
+      "test_name": "Auth Bypass - Invalid Token Format",
+      "status": "PASS",
+      "details": {
+        "expected_status": [
+          401,
+          403,
+          500
+        ],
+        "actual_status": 401,
+        "response_body": "{\"code\":401,\"message\":\"Invalid JWT\"}"
+      },
+      "timestamp": "2025-09-28 06:37:37"
+    },
+    {
+      "test_name": "Auth Bypass - Empty Authorization",
+      "status": "PASS",
+      "details": {
+        "expected_status": [
+          401,
+          403,
+          500
+        ],
+        "actual_status": 401,
+        "response_body": "{\"code\":401,\"message\":\"Missing authorization header\"}"
+      },
+      "timestamp": "2025-09-28 06:37:37"
+    },
+    {
+      "test_name": "Auth Bypass - Malformed Bearer Token",
+      "status": "PASS",
+      "details": {
+        "expected_status": [
+          401,
+          403,
+          500
+        ],
+        "actual_status": 401,
+        "response_body": "{\"code\":401,\"message\":\"Auth header is not 'Bearer {token}'\"}"
+      },
+      "timestamp": "2025-09-28 06:37:37"
+    },
+    {
+      "test_name": "Input Validation - '; DROP TABLE users;...",
+      "status": "PASS",
+      "details": {
+        "payload": "'; DROP TABLE users; --",
+        "reflected": false,
+        "response_code": 403,
+        "response_snippet": "<!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-"
+      },
+      "timestamp": "2025-09-28 06:37:37"
+    },
+    {
+      "test_name": "Input Validation - <script>alert('XSS')...",
+      "status": "PASS",
+      "details": {
+        "payload": "<script>alert('XSS')</script>",
+        "reflected": false,
+        "response_code": 401,
+        "response_snippet": "{\"code\":401,\"message\":\"Invalid JWT\"}"
+      },
+      "timestamp": "2025-09-28 06:37:37"
+    },
+    {
+      "test_name": "Input Validation - ../../etc/passwd...",
+      "status": "PASS",
+      "details": {
+        "payload": "../../etc/passwd",
+        "reflected": false,
+        "response_code": 401,
+        "response_snippet": "{\"code\":401,\"message\":\"Invalid JWT\"}"
+      },
+      "timestamp": "2025-09-28 06:37:37"
+    },
+    {
+      "test_name": "Input Validation - {{7*7}}...",
+      "status": "PASS",
+      "details": {
+        "payload": "{{7*7}}",
+        "reflected": false,
+        "response_code": 401,
+        "response_snippet": "{\"code\":401,\"message\":\"Invalid JWT\"}"
+      },
+      "timestamp": "2025-09-28 06:37:37"
+    },
+    {
+      "test_name": "Input Validation - ${7*7}...",
+      "status": "PASS",
+      "details": {
+        "payload": "${7*7}",
+        "reflected": false,
+        "response_code": 401,
+        "response_snippet": "{\"code\":401,\"message\":\"Invalid JWT\"}"
+      },
+      "timestamp": "2025-09-28 06:37:37"
+    },
+    {
+      "test_name": "Input Validation - ' OR '1'='1...",
+      "status": "PASS",
+      "details": {
+        "payload": "' OR '1'='1",
+        "reflected": false,
+        "response_code": 401,
+        "response_snippet": "{\"code\":401,\"message\":\"Invalid JWT\"}"
+      },
+      "timestamp": "2025-09-28 06:37:37"
+    },
+    {
+      "test_name": "Input Validation - \u0000\u0001\u0002...",
+      "status": "PASS",
+      "details": {
+        "payload": "\u0000\u0001\u0002",
+        "reflected": false,
+        "response_code": 401,
+        "response_snippet": "{\"code\":401,\"message\":\"Invalid JWT\"}"
+      },
+      "timestamp": "2025-09-28 06:37:38"
+    },
+    {
+      "test_name": "Input Validation - ../../../windows/sys...",
+      "status": "PASS",
+      "details": {
+        "payload": "../../../windows/system32/drivers/etc/hosts",
+        "reflected": false,
+        "response_code": 401,
+        "response_snippet": "{\"code\":401,\"message\":\"Invalid JWT\"}"
+      },
+      "timestamp": "2025-09-28 06:37:38"
+    },
+    {
+      "test_name": "Rate Limiting",
+      "status": "WARNING",
+      "details": {
+        "total_requests": 20,
+        "elapsed_time": 1.94,
+        "avg_response_time": 96.95,
+        "status_codes": [
+          401
+        ],
+        "rate_limited": false
+      },
+      "timestamp": "2025-09-28 06:37:40"
+    },
+    {
+      "test_name": "Error Disclosure - Invalid JSON",
+      "status": "PASS",
+      "details": {
+        "response_code": 401,
+        "disclosed_patterns": [],
+        "response_snippet": "{\"code\":401,\"message\":\"Invalid JWT\"}"
+      },
+      "timestamp": "2025-09-28 06:37:40"
+    },
+    {
+      "test_name": "Error Disclosure - Missing Required Fields",
+      "status": "PASS",
+      "details": {
+        "response_code": 401,
+        "disclosed_patterns": [],
+        "response_snippet": "{\"code\":401,\"message\":\"Invalid JWT\"}"
+      },
+      "timestamp": "2025-09-28 06:37:40"
+    },
+    {
+      "test_name": "Error Disclosure - Oversized Payload",
+      "status": "PASS",
+      "details": {
+        "response_code": 401,
+        "disclosed_patterns": [],
+        "response_snippet": "{\"code\":401,\"message\":\"Invalid JWT\"}"
+      },
+      "timestamp": "2025-09-28 06:37:40"
+    },
+    {
+      "test_name": "Source Code Analysis - src/lib/auth-service.ts",
+      "status": "PASS",
+      "details": {
+        "file": "src/lib/auth-service.ts",
+        "findings": {}
+      },
+      "timestamp": "2025-09-28 06:37:40"
+    },
+    {
+      "test_name": "Source Code Analysis - src/lib/auth-utils.ts",
+      "status": "WARNING",
+      "details": {
+        "file": "src/lib/auth-utils.ts",
+        "findings": {
+          "insecure_randomness": [
+            {
+              "line": 150,
+              "match": "Math.random()"
+            }
+          ]
+        }
+      },
+      "timestamp": "2025-09-28 06:37:40"
+    },
+    {
+      "test_name": "Source Code Analysis - src/contexts/BulletproofAuthContext.tsx",
+      "status": "PASS",
+      "details": {
+        "file": "src/contexts/BulletproofAuthContext.tsx",
+        "findings": {}
+      },
+      "timestamp": "2025-09-28 06:37:40"
+    },
+    {
+      "test_name": "Source Code Analysis - src/pages/CommunityLogin.tsx",
+      "status": "PASS",
+      "details": {
+        "file": "src/pages/CommunityLogin.tsx",
+        "findings": {}
+      },
+      "timestamp": "2025-09-28 06:37:40"
+    },
+    {
+      "test_name": "Source Code Analysis - supabase/functions/auth-validation-api/index.ts",
+      "status": "PASS",
+      "details": {
+        "file": "supabase/functions/auth-validation-api/index.ts",
+        "findings": {}
+      },
+      "timestamp": "2025-09-28 06:37:40"
+    },
+    {
+      "test_name": "Source Code Analysis - supabase/functions/ai-chat/index.ts",
+      "status": "PASS",
+      "details": {
+        "file": "supabase/functions/ai-chat/index.ts",
+        "findings": {}
+      },
+      "timestamp": "2025-09-28 06:37:40"
+    }
+  ],
+  "summary": {
+    "total_tests": 23,
+    "passed": 20,
+    "warnings": 3,
+    "failed": 0,
+    "errors": 0,
+    "security_score": 87.0
+  }
+}
