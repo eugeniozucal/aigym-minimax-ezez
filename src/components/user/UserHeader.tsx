@@ -1,17 +1,55 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { useAuth } from '@/contexts/BulletproofAuthContext'
-import { Bell, Settings, Search } from 'lucide-react'
+import { Bell, Settings, Search, LogOut, User, Palette } from 'lucide-react'
 import { UserAvatar } from './UserAvatar'
 
 export function UserHeader() {
-  const { user } = useAuth()
+  const { user, signOut } = useAuth()
   const [searchQuery, setSearchQuery] = useState('')
+  const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     // TODO: Implement search functionality
     console.log('Search:', searchQuery)
   }
+
+  const handleSignOut = async () => {
+    try {
+      await signOut()
+      setIsSettingsDropdownOpen(false)
+    } catch (error) {
+      console.error('Sign out error:', error)
+    }
+  }
+
+  const toggleSettingsDropdown = () => {
+    setIsSettingsDropdownOpen(!isSettingsDropdownOpen)
+  }
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current && 
+        !dropdownRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setIsSettingsDropdownOpen(false)
+      }
+    }
+
+    if (isSettingsDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isSettingsDropdownOpen])
 
   return (
     <header className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8">
@@ -53,9 +91,84 @@ export function UserHeader() {
           {/* User Configuration Zone */}
           <div className="flex items-center space-x-2">
             <UserAvatar user={user} />
-            <button className="p-2 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-lg">
-              <Settings className="h-5 w-5" />
-            </button>
+            
+            {/* Settings Dropdown */}
+            <div className="relative">
+              <button 
+                ref={buttonRef}
+                onClick={toggleSettingsDropdown}
+                className="p-2 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-lg transition-colors"
+              >
+                <Settings className="h-5 w-5" />
+              </button>
+
+              {/* Dropdown Menu */}
+              {isSettingsDropdownOpen && (
+                <>
+                  <div 
+                    className="fixed inset-0 z-10" 
+                    onClick={() => setIsSettingsDropdownOpen(false)}
+                  />
+                  <div 
+                    ref={dropdownRef}
+                    className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 z-20 divide-y divide-gray-100"
+                  >
+                    {/* User Info Section */}
+                    <div className="px-4 py-3">
+                      <div className="flex items-center space-x-3">
+                        <UserAvatar user={user} size="md" />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium text-gray-900 truncate">
+                            {user?.email}
+                          </p>
+                          <p className="text-xs text-gray-500 capitalize">
+                            Community Member
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Menu Items */}
+                    <div className="py-1">
+                      <button
+                        onClick={() => {
+                          setIsSettingsDropdownOpen(false)
+                          // TODO: Navigate to profile page
+                          console.log('Navigate to profile')
+                        }}
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                      >
+                        <User className="mr-3 h-4 w-4" />
+                        Profile
+                      </button>
+                      
+                      <button
+                        onClick={() => {
+                          setIsSettingsDropdownOpen(false)
+                          // TODO: Navigate to preferences/settings page
+                          console.log('Navigate to preferences')
+                        }}
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                      >
+                        <Palette className="mr-3 h-4 w-4" />
+                        Preferences
+                      </button>
+                    </div>
+
+                    {/* Sign Out Section */}
+                    <div className="py-1">
+                      <button
+                        onClick={handleSignOut}
+                        className="flex items-center w-full px-4 py-2 text-sm text-red-700 hover:bg-red-50 transition-colors"
+                      >
+                        <LogOut className="mr-3 h-4 w-4" />
+                        Sign Out
+                      </button>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
