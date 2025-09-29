@@ -3,6 +3,7 @@ import { Layout } from '@/components/layout/Layout'
 import { supabase, User, Client, UserTag } from '@/lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Plus, Users, Search, Building2, Tag, MoreHorizontal, UserPlus, Crown, Shield, ChevronDown, ChevronRight } from 'lucide-react'
+import CommunityAssignmentPanel from '@/components/user/CommunityAssignmentPanel'
 
 interface Community {
   id: string;
@@ -31,12 +32,15 @@ interface EnhancedUser {
 
 function UsersPage() {
   const [users, setUsers] = useState<EnhancedUser[]>([])
-  const [communities, setCommunities] = useState<Community[]>([])
+  const [communities, setCommunities] = useState<Community[]>([])  
   const [userTags, setUserTags] = useState<UserTag[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCommunity, setSelectedCommunity] = useState<string>('')
   const [expandedUsers, setExpandedUsers] = useState<{[key: string]: boolean}>({})
+  const [selectedUser, setSelectedUser] = useState<EnhancedUser | null>(null)
+  const [rightPanelOpen, setRightPanelOpen] = useState(false)
+
 
   useEffect(() => {
     fetchData()
@@ -52,8 +56,7 @@ function UsersPage() {
         supabase.from('user_tags').select('*').order('name')
       ])
       
-      // Optimized query: Get users with their communities in a single query
-      // This eliminates the N+1 query problem
+      // Optimized single query: Get users with their communities in one efficient query
       const { data: usersWithCommunities, error: usersError } = await supabase
         .from('profiles')
         .select(`
@@ -82,10 +85,10 @@ function UsersPage() {
       }
       
       if (usersWithCommunities) {
-        // Transform the data to match the expected format
-        const transformedUsers = usersWithCommunities.map(user => ({
-          ...user,
-          communities: user.user_communities?.map(uc => {
+        // Transform the data to handle potential array returns from Supabase joins
+        const transformedUsers = usersWithCommunities.map(user => {
+          const communities = user.user_communities?.map(uc => {
+            // Handle both single object and array returns from Supabase joins
             const community = Array.isArray(uc.communities) ? uc.communities[0] : uc.communities
             return {
               community_id: uc.community_id,
@@ -96,7 +99,12 @@ function UsersPage() {
               logo_url: community?.logo_url
             }
           }) || []
-        }))
+          
+          return {
+            ...user,
+            communities
+          }
+        })
         
         setUsers(transformedUsers)
       }
@@ -105,7 +113,6 @@ function UsersPage() {
       if (tagsRes.data) setUserTags(tagsRes.data)
     } catch (error) {
       console.error('Error fetching data:', error)
-      // Add user-friendly error handling
       setUsers([])
     } finally {
       setLoading(false)
@@ -159,6 +166,20 @@ function UsersPage() {
     }));
   };
 
+  const handleManageCommunities = (user: EnhancedUser) => {
+    setSelectedUser(user)
+    setRightPanelOpen(true)
+  }
+
+  const handleCloseRightPanel = () => {
+    setRightPanelOpen(false)
+    setSelectedUser(null)
+    // Refresh data to show updated assignments
+    fetchData()
+  }
+
+
+
   const getFullName = (user: EnhancedUser) => {
     if (user.first_name && user.last_name) {
       return `${user.first_name} ${user.last_name}`
@@ -178,18 +199,21 @@ function UsersPage() {
 
   return (
     <Layout>
-      <div className="space-y-8">
-        {/* Header */}
-        <div className="flex justify-between items-center">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">Users</h1>
-            <p className="mt-2 text-gray-600">Manage users across all community organizations</p>
-          </div>
-          <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
-            <Plus className="-ml-1 mr-2 h-4 w-4" />
-            Add User
-          </button>
-        </div>
+      <div className="flex h-full">
+        {/* Main Content */}
+        <div className={`flex-1 transition-all duration-300 ${rightPanelOpen ? 'mr-96' : ''}`}>
+          <div className="space-y-8 p-6">
+            {/* Header */}
+            <div className="flex justify-between items-center">
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">Users</h1>
+                <p className="mt-2 text-gray-600">Manage users across all community organizations</p>
+              </div>
+              <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                <Plus className="-ml-1 mr-2 h-4 w-4" />
+                Add User
+              </button>
+            </div>
 
         {/* Filters */}
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
@@ -271,7 +295,11 @@ function UsersPage() {
                             <span className="text-sm">Communities</span>
                           </button>
                         )}
-                        <button className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                        <button 
+                          onClick={() => handleManageCommunities(user)}
+                          className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+                          title="Manage Community Assignments"
+                        >
                           <MoreHorizontal className="h-4 w-4" />
                         </button>
                       </div>
@@ -335,8 +363,17 @@ function UsersPage() {
                 }
               </p>
             </div>
-          )}
+            )}
+          </div>
         </div>
+        </div>
+        
+        {/* Community Assignment Panel */}
+        <CommunityAssignmentPanel
+          user={selectedUser}
+          isOpen={rightPanelOpen}
+          onClose={handleCloseRightPanel}
+        />
       </div>
     </Layout>
   )
