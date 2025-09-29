@@ -7,6 +7,8 @@ export function Header() {
   const { admin, signOut } = useAuth()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isContentDropdownOpen, setIsContentDropdownOpen] = useState(false)
+  const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false)
+  const [isSigningOut, setIsSigningOut] = useState(false)
   const location = useLocation()
 
   const navigation = [
@@ -28,7 +30,16 @@ export function Header() {
   ]
 
   const handleSignOut = async () => {
-    await signOut()
+    try {
+      setIsSigningOut(true)
+      setIsDropdownOpen(false)
+      setIsSettingsDropdownOpen(false)
+      await signOut()
+    } catch (error) {
+      console.error('Error signing out:', error)
+    } finally {
+      setIsSigningOut(false)
+    }
   }
 
   const isContentActive = location.pathname.startsWith('/content')
@@ -40,7 +51,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/dashboard" className="flex items-center space-x-3">
-              <div className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <div className="h-8 w-8 bg-green-600 rounded-lg flex items-center justify-center">
                 <Building2 className="h-5 w-5 text-white" />
               </div>
               <div>
@@ -61,7 +72,7 @@ export function Header() {
                   to={item.href}
                   className={`inline-flex items-center space-x-1 px-1 pt-1 text-sm font-medium transition-colors ${
                     isActive
-                      ? 'text-blue-600 border-b-2 border-blue-600'
+                      ? 'text-green-600 border-b-2 border-green-600'
                       : 'text-gray-500 hover:text-gray-700'
                   }`}
                 >
@@ -77,7 +88,7 @@ export function Header() {
                 onClick={() => setIsContentDropdownOpen(!isContentDropdownOpen)}
                 className={`inline-flex items-center space-x-1 px-1 pt-1 text-sm font-medium transition-colors ${
                   isContentActive
-                    ? 'text-blue-600 border-b-2 border-blue-600'
+                    ? 'text-green-600 border-b-2 border-green-600'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
@@ -106,7 +117,7 @@ export function Header() {
                             to={repo.href}
                             className={`flex items-center px-3 py-2 text-sm transition-colors ${
                               isActive
-                                ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-600'
+                                ? 'bg-green-50 text-green-700 border-r-2 border-green-600'
                                 : 'text-gray-700 hover:bg-gray-50'
                             }`}
                             onClick={() => setIsContentDropdownOpen(false)}
@@ -124,52 +135,81 @@ export function Header() {
           </nav>
 
           {/* User Menu */}
-          <div className="relative">
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center space-x-3 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              <div className="flex items-center space-x-2">
-                <div className="h-8 w-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-medium">
-                    {admin?.email.charAt(0).toUpperCase()}
-                  </span>
-                </div>
-                <div className="hidden md:block text-left">
-                  <p className="text-sm font-medium text-gray-900">{admin?.email}</p>
-                  <p className="text-xs text-gray-500 capitalize">{admin?.role?.replace('_', ' ')}</p>
-                </div>
-                <ChevronDown className="h-4 w-4 text-gray-400" />
-              </div>
-            </button>
+          <div className="relative flex items-center space-x-4">
+            {/* Settings Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsSettingsDropdownOpen(!isSettingsDropdownOpen)}
+                className="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              >
+                <Settings className="h-5 w-5" />
+              </button>
 
-            {isDropdownOpen && (
-              <>
-                <div 
-                  className="fixed inset-0 z-10" 
-                  onClick={() => setIsDropdownOpen(false)}
-                />
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-20">
-                  <div className="py-1">
-                    <Link
-                      to="/settings"
-                      className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      onClick={() => setIsDropdownOpen(false)}
-                    >
-                      <Settings className="mr-3 h-4 w-4" />
-                      Settings
-                    </Link>
-                    <button
-                      onClick={handleSignOut}
-                      className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      <LogOut className="mr-3 h-4 w-4" />
-                      Sign Out
-                    </button>
+              {isSettingsDropdownOpen && (
+                <>
+                  <div 
+                    className="fixed inset-0 z-10" 
+                    onClick={() => setIsSettingsDropdownOpen(false)}
+                  />
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-20">
+                    <div className="py-1">
+                      <div className="px-4 py-2 text-sm text-gray-500 font-medium border-b border-gray-100">
+                        Settings
+                      </div>
+                      <button
+                        onClick={handleSignOut}
+                        disabled={isSigningOut}
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <LogOut className="mr-3 h-4 w-4" />
+                        <span>{isSigningOut ? 'Signing Out...' : 'Sign Out'}</span>
+                        {isSigningOut && (
+                          <div className="ml-2 h-3 w-3 animate-spin rounded-full border border-gray-400 border-t-transparent" />
+                        )}
+                      </button>
+                    </div>
                   </div>
+                </>
+              )}
+            </div>
+
+            {/* User Menu */}
+            <div className="relative">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center space-x-3 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              >
+                <div className="flex items-center space-x-2">
+                  <div className="h-8 w-8 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-medium">
+                      {admin?.email.charAt(0).toUpperCase()}
+                    </span>
+                  </div>
+                  <div className="hidden md:block text-left">
+                    <p className="text-sm font-medium text-gray-900">{admin?.email}</p>
+                    <p className="text-xs text-gray-500 capitalize">{admin?.role?.replace('_', ' ')}</p>
+                  </div>
+                  <ChevronDown className="h-4 w-4 text-gray-400" />
                 </div>
-              </>
-            )}
+              </button>
+
+              {isDropdownOpen && (
+                <>
+                  <div 
+                    className="fixed inset-0 z-10" 
+                    onClick={() => setIsDropdownOpen(false)}
+                  />
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-20">
+                    <div className="py-1">
+                      <div className="px-4 py-3 border-b border-gray-100">
+                        <p className="text-sm font-medium text-gray-900">{admin?.email}</p>
+                        <p className="text-xs text-gray-500 capitalize">{admin?.role?.replace('_', ' ')}</p>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>

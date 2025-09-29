@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { Navigate, useLocation, useSearchParams } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from '@/contexts/BulletproofAuthContext'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
-import { Eye, EyeOff, Building2, RotateCcw } from 'lucide-react'
+import { Eye, EyeOff, Building2 } from 'lucide-react'
 import { isValidEmail } from '@/lib/auth-utils'
 
 /**
  * Admin Login Component
- * Enhanced with session recovery and return URL handling
+ * Dedicated login interface for administrators
  */
 export function AdminLogin() {
   const [email, setEmail] = useState('')
@@ -16,31 +16,15 @@ export function AdminLogin() {
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   
-  const { user, signIn, sessionExpired, clearSessionExpired } = useAuth()
+  const { user, signIn } = useAuth()
   const location = useLocation()
-  const [searchParams] = useSearchParams()
   
-  const returnUrl = searchParams.get('returnUrl')
-  const isSessionRecovery = sessionExpired || returnUrl
-  
-  // Clear session expired flag when component mounts
-  useEffect(() => {
-    if (sessionExpired) {
-      clearSessionExpired()
-    }
-  }, [sessionExpired, clearSessionExpired])
-  
-  // Redirect authenticated users based on their role
-  if (user && !sessionExpired) {
-    if (returnUrl) {
-      return <Navigate to={decodeURIComponent(returnUrl)} replace />
-    }
-    
-    if (user.role === 'admin') {
-      return <Navigate to="/admin/dashboard" replace />
-    } else {
-      return <Navigate to="/user/community" replace />
-    }
+  // Redirect authenticated admin users to admin dashboard
+  if (user) {
+    console.log('AdminLogin: User authenticated, role:', user.role)
+    // Always redirect to admin dashboard from admin login page, regardless of role
+    // If user is not admin, the AdminRoute will handle the redirection
+    return <Navigate to="/admin/dashboard" replace />
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -66,12 +50,11 @@ export function AdminLogin() {
       if (!result.success) {
         setError(result.error || 'Login failed')
       } else {
-        // Success - redirect will be handled by useEffect above
-        if (returnUrl) {
-          setTimeout(() => {
-            window.location.href = decodeURIComponent(returnUrl)
-          }, 100)
-        }
+        // Wait a moment for auth context to update, then navigate
+        setTimeout(() => {
+          window.location.href = '/admin/dashboard'
+        }, 500)
+        return
       }
     } catch (error) {
       console.error('Login error:', error)
@@ -82,43 +65,16 @@ export function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 flex items-center justify-center px-4">
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
-          <div className="mx-auto h-16 w-16 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
-            {isSessionRecovery ? (
-              <RotateCcw className="h-8 w-8 text-white" />
-            ) : (
-              <Building2 className="h-8 w-8 text-white" />
-            )}
+          <div className="mx-auto h-16 w-16 bg-green-600 rounded-xl flex items-center justify-center mb-4">
+            <Building2 className="h-8 w-8 text-white" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900">AI GYM Platform</h2>
-          {isSessionRecovery ? (
-            <>
-              <p className="mt-2 text-gray-600">Administrator Session Recovery</p>
-              <p className="text-sm text-orange-600 mt-1">Please sign in again to continue</p>
-            </>
-          ) : (
-            <>
-              <p className="mt-2 text-gray-600">Administrator Access Portal</p>
-              <p className="text-sm text-blue-600 mt-1">Admin & Super Admin Login</p>
-            </>
-          )}
+          <p className="mt-2 text-gray-600">Administrator Access Portal</p>
+          <p className="text-sm text-green-600 mt-1">Admin & Super Admin Login</p>
         </div>
-        
-        {isSessionRecovery && (
-          <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
-            <div className="flex items-center">
-              <RotateCcw className="h-5 w-5 text-orange-500 mr-2" />
-              <div>
-                <p className="text-sm font-medium text-orange-800">Administrator Session Recovered</p>
-                <p className="text-xs text-orange-600 mt-1">
-                  Your admin session expired. Please sign in again to continue managing the platform.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
         
         <div className="bg-white shadow-lg rounded-xl border border-gray-200 p-8">
           <form className="space-y-6" onSubmit={handleSubmit}>
@@ -134,7 +90,7 @@ export function AdminLogin() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                className="w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
                 placeholder="admin@example.com"
                 disabled={isLoading}
               />
@@ -153,7 +109,7 @@ export function AdminLogin() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-3 py-2.5 pr-10 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                  className="w-full px-3 py-2.5 pr-10 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
                   placeholder="Enter your admin password"
                   disabled={isLoading}
                 />
@@ -181,15 +137,15 @@ export function AdminLogin() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex justify-center items-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="w-full flex justify-center items-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {isLoading ? (
                 <>
                   <LoadingSpinner size="sm" className="mr-2" />
-                  {isSessionRecovery ? 'Recovering admin session...' : 'Signing in...'}
+                  Signing in...
                 </>
               ) : (
-                isSessionRecovery ? 'Continue Admin Session' : 'Sign In as Administrator'
+                'Sign In as Administrator'
               )}
             </button>
           </form>
@@ -197,13 +153,13 @@ export function AdminLogin() {
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-xs text-gray-600 font-medium mb-1">Demo Admin Credentials:</p>
             <p className="text-xs text-gray-500">Email: ez@aiworkify.com</p>
-            <p className="text-xs text-gray-500">Password: 12345678</p>
+            <p className="text-xs text-gray-500">Password: EzU8264!</p>
           </div>
           
           <div className="mt-4 text-center">
             <p className="text-xs text-gray-500">
               Community member?{' '}
-              <a href="/login" className="text-blue-600 hover:text-blue-500">
+              <a href="/login" className="text-green-600 hover:text-green-500">
                 Access Community Portal
               </a>
             </p>

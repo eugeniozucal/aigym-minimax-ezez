@@ -23,8 +23,15 @@ export function SmartRedirect() {
 
   // If user is authenticated, redirect to appropriate dashboard
   if (user) {
-    const redirectPath = user.role === 'admin' ? '/admin/dashboard' : '/user/community'
-    return <Navigate to={redirectPath} replace />
+    console.log('SmartRedirect: User found:', user.email, 'Role:', user.role)
+    
+    if (user.role === 'admin') {
+      console.log('SmartRedirect: Admin user - redirecting to admin dashboard')
+      return <Navigate to="/admin/dashboard" replace />
+    } else {
+      console.log('SmartRedirect: Community user - redirecting to user community')
+      return <Navigate to="/user/community" replace />
+    }
   }
 
   // If user is not authenticated, redirect to community login

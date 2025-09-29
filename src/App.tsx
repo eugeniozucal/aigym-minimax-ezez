@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './contexts/BulletproofAuthContext'
+import { CommunityProvider } from './contexts/CommunityContext'
 import { ErrorBoundary } from './components/ErrorBoundary'
 import { BulletproofProtectedRoute, AdminRoute, CommunityRoute, PublicRoute } from './components/BulletproofProtectedRoute'
 import { AuthMiddleware } from './components/AuthMiddleware'
@@ -10,6 +11,7 @@ import { AdminLogin } from './pages/AdminLogin'
 import { CommunityLogin } from './pages/CommunityLogin'
 import { UserRoleManagement } from './pages/admin/UserRoleManagement'
 import { Dashboard } from './pages/Dashboard'
+import { SimpleDashboard } from './pages/SimpleDashboard'
 import { Communities } from './pages/Communities'
 import UsersPage from './pages/Users'
 import Tags from './pages/Tags'
@@ -23,6 +25,8 @@ import { Dashboard as TrainingZoneDashboard } from './components/training-zone/D
 import { WodsRepository } from './components/training-zone/WodsRepository'
 import { BlocksRepository } from './components/training-zone/BlocksRepository'
 import { ProgramsRepository } from './components/training-zone/ProgramsRepository'
+import { AdminProgramsGallery } from './components/training-zone/AdminProgramsGallery'
+import { ProgramConfiguration } from './pages/admin/ProgramConfiguration'
 import { ProgramBuilder } from './components/training-zone/ProgramBuilder'
 import { WODEditor } from './components/training-zone/WODEditor'
 import { PageBuilder } from './components/shared/PageBuilder'
@@ -68,12 +72,13 @@ function App() {
       }}
     >
       <AuthProvider>
+        <CommunityProvider>
           <Router>
           <div className="App">
             <ErrorBoundary>
               <Routes>
             {/* Public Routes */}
-            <Route path="/login" element={<CommunityLogin />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/community/login" element={<CommunityLogin />} />
             
@@ -86,13 +91,13 @@ function App() {
             
             <Route path="/dashboard" element={
               <AdminRoute>
-                <Dashboard />
+                <SimpleDashboard />
               </AdminRoute>
             } />
             
             <Route path="/admin/dashboard" element={
               <AdminRoute>
-                <Dashboard />
+                <SimpleDashboard />
               </AdminRoute>
             } />
             
@@ -134,6 +139,19 @@ function App() {
               </AdminRoute>
             } />
             
+            {/* Admin Programs Routes */}
+            <Route path="/admin/programs" element={
+              <AdminRoute>
+                <AdminProgramsGallery />
+              </AdminRoute>
+            } />
+            
+            <Route path="/admin/programs/:programId" element={
+              <AdminRoute>
+                <ProgramConfiguration />
+              </AdminRoute>
+            } />
+            
             {/* Training Zone Routes */}
             <Route path="/training-zone" element={
               <AdminRoute>
@@ -145,7 +163,7 @@ function App() {
               <Route path="wods" element={<WodsRepository />} />
               <Route path="wods/:id/edit" element={<WODEditor />} />
               <Route path="blocks" element={<BlocksRepository />} />
-              <Route path="programs" element={<ProgramsRepository />} />
+              <Route path="programs" element={<AdminProgramsGallery />} />
             </Route>
             
             <Route path="/program-builder" element={
@@ -356,6 +374,7 @@ function App() {
             </ErrorBoundary>
           </div>
           </Router>
+        </CommunityProvider>
       </AuthProvider>
     </ErrorBoundary>
   )

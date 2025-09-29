@@ -49,24 +49,25 @@ Deno.serve(async (req) => {
                     throw new Error('Route is required for access validation');
                 }
 
-                // Get user role
-                const roleResponse = await fetch(`${supabaseUrl}/rest/v1/rpc/get_user_role`, {
-                    method: 'POST',
+                // Get user role from database directly
+                const roleResponse = await fetch(`${supabaseUrl}/rest/v1/user_roles?user_id=eq.${userId}&is_active=eq.true&select=role,community_id&order=assigned_at.desc&limit=1`, {
                     headers: {
                         'Authorization': `Bearer ${serviceRoleKey}`,
                         'apikey': serviceRoleKey,
                         'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ p_user_id: userId })
+                    }
                 });
 
-                if (!roleResponse.ok) {
-                    throw new Error('Failed to get user role');
+                let userRole = 'community_user';
+                let communityId = null;
+                
+                if (roleResponse.ok) {
+                    const roleData = await roleResponse.json();
+                    if (roleData && roleData.length > 0) {
+                        userRole = roleData[0].role;
+                        communityId = roleData[0].community_id;
+                    }
                 }
-
-                const roleData = await roleResponse.json();
-                const userRole = roleData[0]?.role || 'community_user';
-                const communityId = roleData[0]?.community_id;
 
                 // Route access validation logic
                 let hasAccess = false;

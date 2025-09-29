@@ -305,7 +305,7 @@ export function Dashboard() {
         setRefreshing(false)
       }
     }
-  }, [selectedCommunity, dateRange.start, dateRange.end])
+  }, [selectedCommunity, dateRange.start, dateRange.end, error?.retryCount])
 
   // Fetch communities once on mount
   useEffect(() => {
