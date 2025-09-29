@@ -31,6 +31,11 @@ jobs:
 
     - name: Build application
       run: npm run build
+      env:
+        VITE_ENVIRONMENT: production
+        VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+        VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        VITE_SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.VITE_SUPABASE_SERVICE_ROLE_KEY }}
 
     - name: Deploy to Cloudflare Pages
       uses: cloudflare/pages-action@v1
