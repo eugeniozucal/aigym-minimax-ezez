@@ -35,7 +35,7 @@ export function Login() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 flex items-center justify-center px-4">
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <div className="mx-auto h-16 w-16 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
@@ -122,7 +122,7 @@ export function Login() {
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-xs text-gray-600 font-medium mb-1">Demo Credentials:</p>
             <p className="text-xs text-gray-500">Email: ez@aiworkify.com</p>
-            <p className="text-xs text-gray-500">Password: 12345678</p>
+            <p className="text-xs text-gray-500">Password: EzU8264!</p>
           </div>
         </div>
       </div>

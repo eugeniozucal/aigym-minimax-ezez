@@ -7,6 +7,8 @@ export function ModernHeader() {
   const { admin, signOut } = useAuth()
   const location = useLocation()
   const [userMenuOpen, setUserMenuOpen] = useState(false)
+  const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false)
+  const [isSigningOut, setIsSigningOut] = useState(false)
 
   const navigationSections = [
     {
@@ -46,6 +48,19 @@ export function ModernHeader() {
   }
 
   const currentSection = getCurrentSection()
+
+  const handleSignOut = async () => {
+    try {
+      setIsSigningOut(true)
+      setUserMenuOpen(false)
+      setIsSettingsDropdownOpen(false)
+      await signOut()
+    } catch (error) {
+      console.error('Error signing out:', error)
+    } finally {
+      setIsSigningOut(false)
+    }
+  }
 
   return (
     <header className="bg-white border-b border-gray-200 shadow-sm">
@@ -93,53 +108,85 @@ export function ModernHeader() {
           </nav>
 
           {/* User Menu */}
-          <div className="relative">
-            <button
-              onClick={() => setUserMenuOpen(!userMenuOpen)}
-              className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            >
-              <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center">
-                <User className="h-4 w-4 text-white" />
-              </div>
-              <div className="hidden sm:block text-left">
-                <p className="text-sm font-medium text-gray-900">
-                  {admin?.email?.split('@')[0] || 'Admin'}
-                </p>
-                <p className="text-xs text-gray-500">Super Admin</p>
-              </div>
-              <ChevronDown className="h-4 w-4 text-gray-500" />
-            </button>
+          <div className="relative flex items-center space-x-4">
+            {/* Settings Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsSettingsDropdownOpen(!isSettingsDropdownOpen)}
+                className="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                <Settings className="h-5 w-5" />
+              </button>
 
-            {userMenuOpen && (
-              <div className="absolute right-0 mt-2 w-56 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                <div className="py-1">
-                  <div className="px-4 py-3 border-b border-gray-100">
-                    <p className="text-sm font-medium text-gray-900">
-                      {admin?.email}
-                    </p>
-                    <p className="text-xs text-gray-500">Super Admin</p>
+              {isSettingsDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-56 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                  <div className="py-1">
+                    <div className="px-4 py-2 text-sm text-gray-500 font-medium border-b border-gray-100">
+                      Settings
+                    </div>
+                    <button
+                      onClick={handleSignOut}
+                      disabled={isSigningOut}
+                      className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <LogOut className="h-4 w-4 mr-3 text-gray-400" />
+                      <span>{isSigningOut ? 'Signing Out...' : 'Sign Out'}</span>
+                      {isSigningOut && (
+                        <div className="ml-auto h-3 w-3 animate-spin rounded-full border border-gray-400 border-t-transparent" />
+                      )}
+                    </button>
                   </div>
-                  <Link
-                    to="/settings"
-                    className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                    onClick={() => setUserMenuOpen(false)}
-                  >
-                    <Settings className="h-4 w-4 mr-3 text-gray-400" />
-                    Settings
-                  </Link>
-                  <button
-                    onClick={() => {
-                      setUserMenuOpen(false)
-                      signOut()
-                    }}
-                    className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                  >
-                    <LogOut className="h-4 w-4 mr-3 text-gray-400" />
-                    Sign Out
-                  </button>
                 </div>
-              </div>
-            )}
+              )}
+
+              {/* Overlay to close dropdown when clicking outside */}
+              {isSettingsDropdownOpen && (
+                <div 
+                  className="fixed inset-0 z-40" 
+                  onClick={() => setIsSettingsDropdownOpen(false)}
+                />
+              )}
+            </div>
+
+            {/* User Menu */}
+            <div className="relative">
+              <button
+                onClick={() => setUserMenuOpen(!userMenuOpen)}
+                className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center">
+                  <User className="h-4 w-4 text-white" />
+                </div>
+                <div className="hidden sm:block text-left">
+                  <p className="text-sm font-medium text-gray-900">
+                    {admin?.email?.split('@')[0] || 'Admin'}
+                  </p>
+                  <p className="text-xs text-gray-500">Super Admin</p>
+                </div>
+                <ChevronDown className="h-4 w-4 text-gray-500" />
+              </button>
+
+              {userMenuOpen && (
+                <div className="absolute right-0 mt-2 w-56 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                  <div className="py-1">
+                    <div className="px-4 py-3 border-b border-gray-100">
+                      <p className="text-sm font-medium text-gray-900">
+                        {admin?.email}
+                      </p>
+                      <p className="text-xs text-gray-500">Super Admin</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Overlay to close dropdown when clicking outside */}
+              {userMenuOpen && (
+                <div 
+                  className="fixed inset-0 z-40" 
+                  onClick={() => setUserMenuOpen(false)}
+                />
+              )}
+            </div>
           </div>
         </div>
 
