@@ -1,6 +1,6 @@
 [build]
-command = "./build.sh"
-publish = "ai-gym-frontend/dist"
+command = "npm run build"
+publish = "dist"
 
 [build.environment]
 NODE_VERSION = "18"
