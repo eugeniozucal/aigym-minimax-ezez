@@ -15,3 +15,5 @@ NODE_VERSION = "18"
 
 [site]
 bucket = "./dist"
+include = ["*"]
+exclude = []

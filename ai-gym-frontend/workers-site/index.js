@@ -1,65 +1,63 @@
+import { getAssetFromKV } from '@cloudflare/kv-asset-handler';
+
 export default {
   async fetch(request, env, ctx) {
-    const url = new URL(request.url);
-
     try {
-      // Check if we have KV storage available (production)
-      if (env.__STATIC_CONTENT) {
-        // Production environment - serve from KV
-        let asset = await env.__STATIC_CONTENT.get(url.pathname);
+      const page = await getAssetFromKV(
+        {
+          request,
+          waitUntil: ctx.waitUntil.bind(ctx),
+        },
+        {
+          ASSET_NAMESPACE: env.__STATIC_CONTENT,
+          ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
+          cacheControl: {
+            browserTTL: 60 * 60 * 24 * 30, // 30 days
+            edgeTTL: 60 * 60 * 24 * 30, // 30 days
+            bypassCache: false,
+          },
+        }
+      );
 
-        if (!asset) {
-          // For SPA routing - serve index.html for non-asset routes
-          if (!url.pathname.startsWith('/assets/') &&
-              url.pathname !== '/' &&
-              !url.pathname.includes('.')) {
-            asset = await env.__STATIC_CONTENT.get('/index.html');
+      // Handle SPA routing
+      const url = new URL(request.url);
+      if (url.pathname !== '/' && !url.pathname.includes('.') && !url.pathname.startsWith('/assets/')) {
+        // This is likely a route, serve index.html
+        const indexPage = await getAssetFromKV(
+          {
+            request: new Request(`${url.origin}/index.html`, request),
+            waitUntil: ctx.waitUntil.bind(ctx),
+          },
+          {
+            ASSET_NAMESPACE: env.__STATIC_CONTENT,
+            ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
           }
-        }
-
-        if (asset && asset.body) {
-          const contentType = getContentType(url.pathname);
-          const isLargeFile = asset.body.length > 1024;
-
-          return new Response(asset.body, {
-            headers: {
-              'Content-Type': contentType,
-              'Cache-Control': isLargeFile
-                ? 'public, max-age=31536000, immutable'
-                : 'public, max-age=0, must-revalidate',
-            },
-          });
-        }
-
-        return new Response('Not Found', { status: 404 });
-      } else {
-        // Development environment - simple response
-        return new Response('Worker is running in development mode', {
-          headers: { 'Content-Type': 'text/plain' }
-        });
+        );
+        return new Response(indexPage.body, indexPage);
       }
+
+      return new Response(page.body, page);
     } catch (e) {
-      console.error('Worker error:', e);
-      return new Response('Internal Server Error: ' + e.message, { status: 500 });
+      // If asset not found or other error, try to serve index.html for SPA
+      try {
+        const notFoundResponse = await getAssetFromKV(
+          {
+            request: new Request(`${new URL(request.url).origin}/index.html`, request),
+            waitUntil: ctx.waitUntil.bind(ctx),
+          },
+          {
+            ASSET_NAMESPACE: env.__STATIC_CONTENT,
+            ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
+          }
+        );
+        return new Response(notFoundResponse.body, {
+          ...notFoundResponse,
+          status: 200,
+        });
+      } catch (e2) {
+        // Really not found
+        return new Response('Not Found', { status: 404 });
+      }
     }
   },
 };
-
-function getContentType(pathname) {
-  const ext = pathname.split('.').pop()?.toLowerCase();
-  const types = {
-    'html': 'text/html',
-    'css': 'text/css',
-    'js': 'application/javascript',
-    'json': 'application/json',
-    'png': 'image/png',
-    'jpg': 'image/jpeg',
-    'jpeg': 'image/jpeg',
-    'gif': 'image/gif',
-    'svg': 'image/svg+xml',
-    'ico': 'image/x-icon',
-    'woff': 'font/woff',
-    'woff2': 'font/woff2',
-  };
-  return types[ext] || 'text/plain';
-}
