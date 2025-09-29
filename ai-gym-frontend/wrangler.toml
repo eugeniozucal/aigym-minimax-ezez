@@ -1,19 +1,8 @@
+# Configuración para Cloudflare Pages (no Workers)
+# Este archivo se mantiene por compatibilidad pero no se usa
+
 name = "aigym-minimax-ezez"
-main = "workers-site/index.js"
 compatibility_date = "2024-01-01"
-compatibility_flags = ["nodejs_compat"]
 
 [env.production]
 name = "aigym-minimax-ezez-prod"
-
-[build]
-command = "npm run build"
-cwd = "."
-
-[build.environment_variables]
-NODE_VERSION = "18"
-
-[site]
-bucket = "./dist"
-include = ["*"]
-exclude = []

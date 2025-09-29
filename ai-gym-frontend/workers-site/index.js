@@ -1,8 +1,11 @@
-import { getAssetFromKV } from '@cloudflare/kv-asset-handler';
+import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler';
 
 export default {
   async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+    
     try {
+      // First try to get the asset directly
       const page = await getAssetFromKV(
         {
           request,
@@ -11,53 +14,51 @@ export default {
         {
           ASSET_NAMESPACE: env.__STATIC_CONTENT,
           ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
+          mapRequestToAsset: mapRequestToAsset,
           cacheControl: {
-            browserTTL: 60 * 60 * 24 * 30, // 30 days
-            edgeTTL: 60 * 60 * 24 * 30, // 30 days
+            browserTTL: null,
+            edgeTTL: 2 * 60 * 60 * 24, // 2 days
             bypassCache: false,
           },
         }
       );
 
-      // Handle SPA routing
-      const url = new URL(request.url);
-      if (url.pathname !== '/' && !url.pathname.includes('.') && !url.pathname.startsWith('/assets/')) {
-        // This is likely a route, serve index.html
-        const indexPage = await getAssetFromKV(
-          {
-            request: new Request(`${url.origin}/index.html`, request),
-            waitUntil: ctx.waitUntil.bind(ctx),
-          },
-          {
-            ASSET_NAMESPACE: env.__STATIC_CONTENT,
-            ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
-          }
-        );
-        return new Response(indexPage.body, indexPage);
-      }
-
       return new Response(page.body, page);
     } catch (e) {
-      // If asset not found or other error, try to serve index.html for SPA
-      try {
-        const notFoundResponse = await getAssetFromKV(
-          {
-            request: new Request(`${new URL(request.url).origin}/index.html`, request),
-            waitUntil: ctx.waitUntil.bind(ctx),
-          },
-          {
-            ASSET_NAMESPACE: env.__STATIC_CONTENT,
-            ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
-          }
-        );
-        return new Response(notFoundResponse.body, {
-          ...notFoundResponse,
-          status: 200,
-        });
-      } catch (e2) {
-        // Really not found
-        return new Response('Not Found', { status: 404 });
+      // Asset not found, try to serve index.html for SPA routing
+      console.log('Asset not found:', url.pathname, 'Error:', e.message);
+      
+      // For SPA routes (not assets), serve index.html
+      if (!url.pathname.includes('.') || url.pathname === '/') {
+        try {
+          const indexPage = await getAssetFromKV(
+            {
+              request: new Request(`${url.origin}/index.html`, request),
+              waitUntil: ctx.waitUntil.bind(ctx),
+            },
+            {
+              ASSET_NAMESPACE: env.__STATIC_CONTENT,
+              ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
+              mapRequestToAsset: mapRequestToAsset,
+            }
+          );
+          
+          return new Response(indexPage.body, {
+            ...indexPage,
+            status: 200,
+            headers: {
+              ...indexPage.headers,
+              'Content-Type': 'text/html; charset=utf-8',
+            },
+          });
+        } catch (indexError) {
+          console.log('Index.html not found either:', indexError.message);
+          return new Response('Application not found', { status: 404 });
+        }
       }
+
+      // For other assets that are really not found
+      return new Response('Asset not found: ' + url.pathname, { status: 404 });
     }
   },
 };

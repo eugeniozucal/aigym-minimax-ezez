@@ -5,14 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm install && rm -rf node_modules/.vite-temp && npx tsc -b --skipLibCheck || true && vite build",
-    "build:prod": "npm install && rm -rf node_modules/.vite-temp && npx tsc -b --skipLibCheck || true && BUILD_MODE=prod vite build",
+    "build": "npm install && rm -rf node_modules/.vite-temp && npx tsc -b --skipLibCheck || true && vite build && cp _redirects dist/",
+    "build:prod": "npm install && rm -rf node_modules/.vite-temp && npx tsc -b --skipLibCheck || true && BUILD_MODE=prod vite build && cp _redirects dist/",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "node --test src/test/*.mjs",
-    "test:watch": "node --test --watch src/test/*.mjs",
-    "deploy": "npm run build && wrangler deploy",
-    "deploy:prod": "npm run build:prod && wrangler deploy --env production"
+    "test:watch": "node --test --watch src/test/*.mjs"
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.4.0",
