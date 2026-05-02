@@ -19,7 +19,7 @@ import { UserDashboard } from './pages/user/UserDashboard'
 
 // Training Zone
 import TrainingZoneLayout from './components/layout/TrainingZoneLayout'
-import TrainingDashboard from './components/training-zone/Dashboard'
+import TrainingDashboard from './components/training-zone/Dashboard.tsx'
 import WodsRepository from './components/training-zone/EnhancedWodsRepository'
 import BlocksRepository from './components/training-zone/EnhancedBlocksRepository'
 import ProgramsRepository from './components/training-zone/ProgramsRepository'

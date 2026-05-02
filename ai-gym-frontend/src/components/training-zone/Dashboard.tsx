@@ -12,7 +12,7 @@ import {
   BarChart3,
   TrendingUp
 } from 'lucide-react'
-import { supabase } from '../../../lib/supabase'
+import { supabase } from '@/lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 
 interface TrainingStats {
@@ -175,14 +175,14 @@ export function Dashboard() {
     <div className="h-full overflow-y-auto">
       <div className="p-8 space-y-8">
         {/* Header */}
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Training Zone Dashboard</h1>
             <p className="mt-2 text-gray-600">
               Monitor and manage your training content across all modules
             </p>
           </div>
-          <div className="flex items-center space-x-3">
+          <div className="flex flex-wrap items-center gap-3">
             <Link
               to="/page-builder"
               className="inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-all"
@@ -201,14 +201,14 @@ export function Dashboard() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
-          <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex items-center">
-              <div className="bg-orange-500 rounded-lg p-3 mr-4">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-4">
+          <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm min-w-0">
+            <div className="flex min-h-[112px] flex-col justify-between gap-4">
+              <div className="bg-orange-500 rounded-lg p-3 w-12 h-12 flex items-center justify-center">
                 <Target className="h-6 w-6 text-white" />
               </div>
-              <div>
-                <p className="text-sm font-medium text-gray-600">Total WODs</p>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold leading-snug text-gray-600 break-words">Total WODs</p>
                 <p className="text-2xl font-bold text-orange-600">
                   {stats.totalWods.toLocaleString()}
                 </p>
@@ -216,13 +216,13 @@ export function Dashboard() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex items-center">
-              <div className="bg-green-500 rounded-lg p-3 mr-4">
+          <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm min-w-0">
+            <div className="flex min-h-[112px] flex-col justify-between gap-4">
+              <div className="bg-green-500 rounded-lg p-3 w-12 h-12 flex items-center justify-center">
                 <Eye className="h-6 w-6 text-white" />
               </div>
-              <div>
-                <p className="text-sm font-medium text-gray-600">Published</p>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold leading-snug text-gray-600 break-words">Published</p>
                 <p className="text-2xl font-bold text-green-600">
                   {stats.publishedWods.toLocaleString()}
                 </p>
@@ -230,13 +230,13 @@ export function Dashboard() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex items-center">
-              <div className="bg-yellow-500 rounded-lg p-3 mr-4">
+          <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm min-w-0">
+            <div className="flex min-h-[112px] flex-col justify-between gap-4">
+              <div className="bg-yellow-500 rounded-lg p-3 w-12 h-12 flex items-center justify-center">
                 <Search className="h-6 w-6 text-white" />
               </div>
-              <div>
-                <p className="text-sm font-medium text-gray-600">Drafts</p>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold leading-snug text-gray-600 break-words">Drafts</p>
                 <p className="text-2xl font-bold text-yellow-600">
                   {stats.draftWods.toLocaleString()}
                 </p>
@@ -244,13 +244,13 @@ export function Dashboard() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex items-center">
-              <div className="bg-blue-500 rounded-lg p-3 mr-4">
+          <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm min-w-0">
+            <div className="flex min-h-[112px] flex-col justify-between gap-4">
+              <div className="bg-blue-500 rounded-lg p-3 w-12 h-12 flex items-center justify-center">
                 <Package className="h-6 w-6 text-white" />
               </div>
-              <div>
-                <p className="text-sm font-medium text-gray-600">BLOCKS</p>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold leading-snug text-gray-600 break-words">BLOCKS</p>
                 <p className="text-2xl font-bold text-blue-600">
                   {stats.totalBlocks.toLocaleString()}
                 </p>
@@ -258,13 +258,13 @@ export function Dashboard() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex items-center">
-              <div className="bg-purple-500 rounded-lg p-3 mr-4">
+          <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm min-w-0">
+            <div className="flex min-h-[112px] flex-col justify-between gap-4">
+              <div className="bg-purple-500 rounded-lg p-3 w-12 h-12 flex items-center justify-center">
                 <Calendar className="h-6 w-6 text-white" />
               </div>
-              <div>
-                <p className="text-sm font-medium text-gray-600">Programs</p>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold leading-snug text-gray-600 break-words">Programs</p>
                 <p className="text-2xl font-bold text-purple-600">
                   {stats.totalPrograms.toLocaleString()}
                 </p>
@@ -272,13 +272,13 @@ export function Dashboard() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex items-center">
-              <div className="bg-indigo-500 rounded-lg p-3 mr-4">
+          <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm min-w-0">
+            <div className="flex min-h-[112px] flex-col justify-between gap-4">
+              <div className="bg-indigo-500 rounded-lg p-3 w-12 h-12 flex items-center justify-center">
                 <Users className="h-6 w-6 text-white" />
               </div>
-              <div>
-                <p className="text-sm font-medium text-gray-600">Active Users</p>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold leading-snug text-gray-600 break-words">Active Users</p>
                 <p className="text-2xl font-bold text-indigo-600">
                   {stats.activeUsers.toLocaleString()}
                 </p>
@@ -290,82 +290,82 @@ export function Dashboard() {
         {/* Quick Actions */}
         <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Quick Actions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4">
             <Link
               to="/training-zone/wods"
-              className="flex items-center space-x-3 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
+              className="flex min-h-[128px] items-start gap-4 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
             >
-              <div className="bg-orange-100 p-3 rounded-lg group-hover:bg-orange-200 transition-colors">
+              <div className="bg-orange-100 p-3 rounded-lg group-hover:bg-orange-200 transition-colors shrink-0">
                 <Dumbbell className="h-5 w-5 text-orange-600" />
               </div>
-              <div>
-                <p className="font-medium text-gray-900">Browse WODs</p>
-                <p className="text-sm text-gray-500">View all workouts</p>
+              <div className="min-w-0">
+                <p className="font-semibold leading-snug text-gray-900 break-words">Browse WODs</p>
+                <p className="text-sm leading-snug text-gray-500 break-words">View all workouts</p>
               </div>
             </Link>
             
             <Link
               to="/page-builder?repo=wods"
-              className="flex items-center space-x-3 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
+              className="flex min-h-[128px] items-start gap-4 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
             >
-              <div className="bg-green-100 p-3 rounded-lg group-hover:bg-green-200 transition-colors">
+              <div className="bg-green-100 p-3 rounded-lg group-hover:bg-green-200 transition-colors shrink-0">
                 <Plus className="h-5 w-5 text-green-600" />
               </div>
-              <div>
-                <p className="font-medium text-gray-900">Create WOD</p>
-                <p className="text-sm text-gray-500">Design new workout</p>
+              <div className="min-w-0">
+                <p className="font-semibold leading-snug text-gray-900 break-words">Create WOD</p>
+                <p className="text-sm leading-snug text-gray-500 break-words">Design new workout</p>
               </div>
             </Link>
 
             <Link
               to="/training-zone/blocks"
-              className="flex items-center space-x-3 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
+              className="flex min-h-[128px] items-start gap-4 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
             >
-              <div className="bg-blue-100 p-3 rounded-lg group-hover:bg-blue-200 transition-colors">
+              <div className="bg-blue-100 p-3 rounded-lg group-hover:bg-blue-200 transition-colors shrink-0">
                 <Package className="h-5 w-5 text-blue-600" />
               </div>
-              <div>
-                <p className="font-medium text-gray-900">Browse BLOCKS</p>
-                <p className="text-sm text-gray-500">Modular components</p>
+              <div className="min-w-0">
+                <p className="font-semibold leading-snug text-gray-900 break-words">Browse BLOCKS</p>
+                <p className="text-sm leading-snug text-gray-500 break-words">Modular components</p>
               </div>
             </Link>
             
             <Link
               to="/page-builder?repo=blocks"
-              className="flex items-center space-x-3 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
+              className="flex min-h-[128px] items-start gap-4 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
             >
-              <div className="bg-cyan-100 p-3 rounded-lg group-hover:bg-cyan-200 transition-colors">
+              <div className="bg-cyan-100 p-3 rounded-lg group-hover:bg-cyan-200 transition-colors shrink-0">
                 <Plus className="h-5 w-5 text-cyan-600" />
               </div>
-              <div>
-                <p className="font-medium text-gray-900">Create BLOCK</p>
-                <p className="text-sm text-gray-500">Build new component</p>
+              <div className="min-w-0">
+                <p className="font-semibold leading-snug text-gray-900 break-words">Create BLOCK</p>
+                <p className="text-sm leading-snug text-gray-500 break-words">Build new component</p>
               </div>
             </Link>
             
             <Link
               to="/training-zone/programs"
-              className="flex items-center space-x-3 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
+              className="flex min-h-[128px] items-start gap-4 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
             >
-              <div className="bg-purple-100 p-3 rounded-lg group-hover:bg-purple-200 transition-colors">
+              <div className="bg-purple-100 p-3 rounded-lg group-hover:bg-purple-200 transition-colors shrink-0">
                 <Calendar className="h-5 w-5 text-purple-600" />
               </div>
-              <div>
-                <p className="font-medium text-gray-900">Browse Programs</p>
-                <p className="text-sm text-gray-500">Training programs</p>
+              <div className="min-w-0">
+                <p className="font-semibold leading-snug text-gray-900 break-words">Browse Programs</p>
+                <p className="text-sm leading-snug text-gray-500 break-words">Training programs</p>
               </div>
             </Link>
             
             <Link
               to="/program-builder"
-              className="flex items-center space-x-3 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
+              className="flex min-h-[128px] items-start gap-4 p-4 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
             >
-              <div className="bg-violet-100 p-3 rounded-lg group-hover:bg-violet-200 transition-colors">
+              <div className="bg-violet-100 p-3 rounded-lg group-hover:bg-violet-200 transition-colors shrink-0">
                 <Plus className="h-5 w-5 text-violet-600" />
               </div>
-              <div>
-                <p className="font-medium text-gray-900">Create Program</p>
-                <p className="text-sm text-gray-500">Build training program</p>
+              <div className="min-w-0">
+                <p className="font-semibold leading-snug text-gray-900 break-words">Create Program</p>
+                <p className="text-sm leading-snug text-gray-500 break-words">Build training program</p>
               </div>
             </Link>
           </div>
