@@ -6,6 +6,64 @@ import { Users, TrendingUp, Activity, MessageSquare, BookOpen, RefreshCw, BarCha
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart as RechartsPieChart, Pie, Cell } from 'recharts';
 import { format, subDays, startOfDay, endOfDay } from 'date-fns';
 const CHART_COLORS = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899', '#06B6D4', '#84CC16'];
+const EMPTY_ANALYTICS = {
+    userActivity: [],
+    recentActivity: [],
+    contentEngagement: [],
+    agentUsage: [],
+    summaryStats: {
+        totalUsers: 0,
+        totalContent: 0,
+        recentActivities: 0
+    }
+};
+const normalizeAnalyticsData = (data) => ({
+    ...EMPTY_ANALYTICS,
+    ...(data || {}),
+    userActivity: Array.isArray(data?.userActivity) ? data.userActivity : [],
+    recentActivity: Array.isArray(data?.recentActivity) ? data.recentActivity : [],
+    contentEngagement: Array.isArray(data?.contentEngagement) ? data.contentEngagement : [],
+    agentUsage: Array.isArray(data?.agentUsage) ? data.agentUsage : [],
+    summaryStats: {
+        ...EMPTY_ANALYTICS.summaryStats,
+        ...(data?.summaryStats || {})
+    }
+});
+const fetchAnalyticsDashboard = async (body) => {
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+    const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+    if (!supabaseUrl || !supabaseAnonKey) {
+        throw new Error('Missing Supabase environment variables');
+    }
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 10000);
+    try {
+        const response = await fetch(`${supabaseUrl}/functions/v1/analytics-dashboard`, {
+            method: 'POST',
+            headers: {
+                apikey: supabaseAnonKey,
+                authorization: `Bearer ${supabaseAnonKey}`,
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(body),
+            signal: controller.signal
+        });
+        if (!response.ok) {
+            const message = await response.text();
+            throw new Error(message || `Analytics request failed with status ${response.status}`);
+        }
+        return normalizeAnalyticsData(await response.json());
+    }
+    catch (err) {
+        if (err instanceof DOMException && err.name === 'AbortError') {
+            throw new Error('Analytics request timed out');
+        }
+        throw err;
+    }
+    finally {
+        window.clearTimeout(timeoutId);
+    }
+};
 // Skeleton Components
 const SkeletonCard = () => (_jsx("div", { className: "bg-white rounded-xl p-6 border border-gray-200 animate-pulse", children: _jsxs("div", { className: "flex items-center space-x-4", children: [_jsx("div", { className: "w-12 h-12 bg-gray-200 rounded-lg" }), _jsxs("div", { className: "flex-1", children: [_jsx("div", { className: "h-4 bg-gray-200 rounded w-24 mb-2" }), _jsx("div", { className: "h-6 bg-gray-200 rounded w-16" })] })] }) }));
 const SkeletonWidget = ({ height = "h-80" }) => (_jsxs("div", { className: `bg-white rounded-xl border border-gray-200 ${height} animate-pulse`, children: [_jsx("div", { className: "p-6 border-b border-gray-200", children: _jsx("div", { className: "h-6 bg-gray-200 rounded w-32" }) }), _jsx("div", { className: "p-6 space-y-4", children: [...Array(5)].map((_, i) => (_jsxs("div", { className: "flex items-center space-x-4", children: [_jsx("div", { className: "w-8 h-4 bg-gray-200 rounded" }), _jsx("div", { className: "flex-1 h-4 bg-gray-200 rounded" }), _jsx("div", { className: "w-12 h-4 bg-gray-200 rounded" })] }, i))) })] }));
@@ -59,27 +117,24 @@ export function Dashboard() {
             }
             setError(null);
             lastFetchRef.current = fetchKey;
-            const { data, error: functionError } = await supabase.functions.invoke('analytics-dashboard', {
-                body: {
-                    communityId: selectedCommunity,
-                    dateRange: {
-                        start: format(startOfDay(new Date(dateRange.start)), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx"),
-                        end: format(endOfDay(new Date(dateRange.end)), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")
-                    },
-                    metrics: ['user_activity', 'recent_activity', 'content_engagement', 'agent_usage', 'summary_stats']
+            const data = await fetchAnalyticsDashboard({
+                communityId: selectedCommunity,
+                dateRange: {
+                    start: format(startOfDay(new Date(dateRange.start)), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx"),
+                    end: format(endOfDay(new Date(dateRange.end)), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")
                 }
+                ,
+                metrics: ['user_activity', 'recent_activity', 'content_engagement', 'agent_usage', 'summary_stats']
             });
-            if (functionError) {
-                throw new Error(functionError.message || 'Failed to fetch analytics data');
-            }
             if (mountedRef.current) {
-                setAnalyticsData(data || {});
+                setAnalyticsData(data);
             }
         }
         catch (err) {
             const errorMessage = err instanceof Error ? err.message : 'Failed to load analytics data';
             if (mountedRef.current) {
-                setError(errorMessage);
+                setAnalyticsData(EMPTY_ANALYTICS);
+                setError(`${errorMessage}. Showing an empty dashboard instead.`);
                 console.error('Analytics fetch error:', err);
             }
         }
@@ -92,10 +147,12 @@ export function Dashboard() {
     }, [selectedCommunity, dateRange.start, dateRange.end]);
     // Fetch communities once on mount
     useEffect(() => {
+        mountedRef.current = true;
         fetchCommunities();
     }, [fetchCommunities]);
     // Fetch analytics data when dependencies change
     useEffect(() => {
+        mountedRef.current = true;
         fetchAnalyticsData();
     }, [fetchAnalyticsData]);
     // Cleanup on unmount

@@ -76,6 +76,70 @@ interface AnalyticsData {
 
 const CHART_COLORS = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899', '#06B6D4', '#84CC16']
 
+const EMPTY_ANALYTICS: AnalyticsData = {
+  userActivity: [],
+  recentActivity: [],
+  contentEngagement: [],
+  agentUsage: [],
+  summaryStats: {
+    totalUsers: 0,
+    totalContent: 0,
+    recentActivities: 0
+  }
+}
+
+const normalizeAnalyticsData = (data?: AnalyticsData | null): AnalyticsData => ({
+  ...EMPTY_ANALYTICS,
+  ...(data || {}),
+  userActivity: Array.isArray(data?.userActivity) ? data.userActivity : [],
+  recentActivity: Array.isArray(data?.recentActivity) ? data.recentActivity : [],
+  contentEngagement: Array.isArray(data?.contentEngagement) ? data.contentEngagement : [],
+  agentUsage: Array.isArray(data?.agentUsage) ? data.agentUsage : [],
+  summaryStats: {
+    ...EMPTY_ANALYTICS.summaryStats,
+    ...(data?.summaryStats || {})
+  }
+})
+
+const fetchAnalyticsDashboard = async (body: unknown): Promise<AnalyticsData> => {
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error('Missing Supabase environment variables')
+  }
+
+  const controller = new AbortController()
+  const timeoutId = window.setTimeout(() => controller.abort(), 10000)
+
+  try {
+    const response = await fetch(`${supabaseUrl}/functions/v1/analytics-dashboard`, {
+      method: 'POST',
+      headers: {
+        apikey: supabaseAnonKey,
+        authorization: `Bearer ${supabaseAnonKey}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(body),
+      signal: controller.signal
+    })
+
+    if (!response.ok) {
+      const message = await response.text()
+      throw new Error(message || `Analytics request failed with status ${response.status}`)
+    }
+
+    return normalizeAnalyticsData(await response.json())
+  } catch (err) {
+    if (err instanceof DOMException && err.name === 'AbortError') {
+      throw new Error('Analytics request timed out')
+    }
+    throw err
+  } finally {
+    window.clearTimeout(timeoutId)
+  }
+}
+
 // Skeleton Components
 const SkeletonCard = () => (
   <div className="bg-white rounded-xl p-6 border border-gray-200 animate-pulse">
@@ -166,28 +230,23 @@ export function Dashboard() {
       setError(null)
       lastFetchRef.current = fetchKey
 
-      const { data, error: functionError } = await supabase.functions.invoke('analytics-dashboard', {
-        body: {
-          communityId: selectedCommunity,
-          dateRange: {
-            start: format(startOfDay(new Date(dateRange.start)), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx"),
-            end: format(endOfDay(new Date(dateRange.end)), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")
-          },
-          metrics: ['user_activity', 'recent_activity', 'content_engagement', 'agent_usage', 'summary_stats']
-        }
+      const data = await fetchAnalyticsDashboard({
+        communityId: selectedCommunity,
+        dateRange: {
+          start: format(startOfDay(new Date(dateRange.start)), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx"),
+          end: format(endOfDay(new Date(dateRange.end)), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")
+        },
+        metrics: ['user_activity', 'recent_activity', 'content_engagement', 'agent_usage', 'summary_stats']
       })
 
-      if (functionError) {
-        throw new Error(functionError.message || 'Failed to fetch analytics data')
-      }
-
       if (mountedRef.current) {
-        setAnalyticsData(data || {})
+        setAnalyticsData(data)
       }
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to load analytics data'
       if (mountedRef.current) {
-        setError(errorMessage)
+        setAnalyticsData(EMPTY_ANALYTICS)
+        setError(`${errorMessage}. Showing an empty dashboard instead.`)
         console.error('Analytics fetch error:', err)
       }
     } finally {
@@ -200,11 +259,13 @@ export function Dashboard() {
 
   // Fetch communities once on mount
   useEffect(() => {
+    mountedRef.current = true
     fetchCommunities()
   }, [fetchCommunities])
 
   // Fetch analytics data when dependencies change
   useEffect(() => {
+    mountedRef.current = true
     fetchAnalyticsData()
   }, [fetchAnalyticsData])
 
