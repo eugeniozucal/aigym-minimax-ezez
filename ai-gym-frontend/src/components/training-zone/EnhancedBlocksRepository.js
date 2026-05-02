@@ -41,6 +41,16 @@ export function BlocksRepository() {
         folderId: null
     });
     const [showFilters, setShowFilters] = useState(false);
+    // React StrictMode replays effect cleanup/setup in development. Keep this
+    // flag reset before data-loading effects so the repository cannot stay stuck
+    // in its initial loading state.
+    useEffect(() => {
+        mountedRef.current = true;
+        lastFetchRef.current = '';
+        return () => {
+            mountedRef.current = false;
+        };
+    }, []);
     // Memoized filter key to prevent unnecessary re-renders
     const filterKey = useMemo(() => {
         return JSON.stringify({
@@ -109,50 +119,68 @@ export function BlocksRepository() {
             return;
         const currentFilterKey = filterKey;
         // Prevent duplicate requests
-        if (lastFetchRef.current === currentFilterKey) {
+        if (lastFetchRef.current === currentFilterKey && !loading) {
             return;
         }
         try {
             setLoading(true);
             setError(null);
             lastFetchRef.current = currentFilterKey;
-            // Build query parameters
-            const params = new URLSearchParams();
-            if (filters.search.trim()) {
-                params.append('search', filters.search);
-            }
-            if (filters.status !== 'all') {
-                params.append('status', filters.status);
-            }
-            if (filters.difficulty !== 'all') {
-                params.append('difficulty', filters.difficulty);
-            }
+            // Use the same direct table source as the Program Builder repository popup.
+            let query = supabase
+                .from('workout_blocks')
+                .select(`
+          id,
+          title,
+          description,
+          thumbnail_url,
+          status,
+          estimated_duration_minutes,
+          difficulty_level,
+          tags,
+          block_category,
+          equipment_needed,
+          instructions,
+          created_by,
+          created_at,
+          updated_at,
+          folder_id,
+          is_favorite
+        `);
+            // Apply folder filter only after navigating into a folder. The default
+            // repository view mirrors the Program Builder popup and lists all blocks.
             if (filters.folderId !== null) {
-                params.append('folder_id', filters.folderId);
+                query = query.eq('folder_id', filters.folderId);
             }
-            else {
-                params.append('folder_id', 'null');
+            // Apply search filter
+            if (filters.search.trim()) {
+                query = query.or(`title.ilike.%${filters.search}%,description.ilike.%${filters.search}%`);
             }
+            // Apply status filter
+            if (filters.status !== 'all') {
+                query = query.eq('status', filters.status);
+            }
+            // Apply difficulty filter
+            if (filters.difficulty !== 'all') {
+                query = query.eq('difficulty_level', filters.difficulty);
+            }
+            // Apply favorites filter
             if (filters.showFavorites) {
-                params.append('is_favorite', 'true');
+                query = query.eq('is_favorite', true);
             }
-            const queryString = params.toString();
-            const url = queryString ? `workout-blocks-api?${queryString}` : 'workout-blocks-api';
-            const { data, error } = await supabase.functions.invoke(url, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+            // Apply sorting
+            query = query.order(filters.sortBy, { ascending: filters.sortOrder === 'asc' });
+            query = query.limit(50);
+            const { data: blocksData, error: blocksError } = await query;
             if (!mountedRef.current)
                 return;
-            if (error) {
-                console.error('Error fetching workout blocks:', error);
+            if (blocksError) {
+                console.error('Error fetching workout blocks:', blocksError);
                 setError('Failed to load BLOCKS');
                 setBlocks([]);
                 return;
             }
-            let filteredBlocks = data?.data || [];
+            let filteredBlocks = blocksData || [];
             // Filter by community assignments if specified
             if (filters.communities.length > 0) {
                 const { data: assignments, error: assignError } = await supabase
@@ -167,36 +195,9 @@ export function BlocksRepository() {
                     filteredBlocks = filteredBlocks.filter((block) => assignedBlockIds.includes(block.id));
                 }
             }
-            // Apply client-side sorting
-            filteredBlocks.sort((a, b) => {
-                const aValue = a[filters.sortBy];
-                const bValue = b[filters.sortBy];
-                if (filters.sortOrder === 'asc') {
-                    return aValue.localeCompare(bValue);
-                }
-                else {
-                    return bValue.localeCompare(aValue);
-                }
-            });
             if (!mountedRef.current)
                 return;
             setBlocks(filteredBlocks);
-            // Fetch assignment counts for each block
-            if (filteredBlocks.length > 0) {
-                const blockIds = filteredBlocks.map((block) => block.id);
-                const communityAssignments = await supabase
-                    .from('workout_block_community_assignments')
-                    .select('workout_block_id')
-                    .in('workout_block_id', blockIds);
-                const counts = {};
-                blockIds.forEach(id => {
-                    const communityCount = communityAssignments.data?.filter(a => a.workout_block_id === id).length || 0;
-                    counts[id] = communityCount;
-                });
-                if (mountedRef.current) {
-                    setAssignmentCounts(counts);
-                }
-            }
         }
         catch (error) {
             console.error('Error in fetchData:', error);
@@ -210,7 +211,7 @@ export function BlocksRepository() {
                 setLoading(false);
             }
         }
-    }, [filterKey, filters.search, filters.communities, filters.status, filters.difficulty, filters.sortBy, filters.sortOrder, filters.showFavorites, filters.folderId]);
+    }, [filterKey, filters.search, filters.communities, filters.status, filters.difficulty, filters.sortBy, filters.sortOrder, filters.showFavorites, filters.folderId, loading]);
     // Fetch communities once on mount
     const fetchCommunities = useCallback(async () => {
         try {
@@ -246,12 +247,6 @@ export function BlocksRepository() {
     useEffect(() => {
         fetchCommunities();
     }, [fetchCommunities]);
-    // Cleanup on unmount
-    useEffect(() => {
-        return () => {
-            mountedRef.current = false;
-        };
-    }, []);
     // Selection handlers
     const handleSelectItem = useCallback((itemId, selected) => {
         setSelectedItems(prev => {

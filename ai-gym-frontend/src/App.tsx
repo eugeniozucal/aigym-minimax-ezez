@@ -1,10 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './contexts/SimpleAuthContext'
+import { CommunityProvider } from './contexts/CommunityContext'
 import { QueryProvider } from './lib/providers/QueryProvider'
 import { ErrorBoundary } from './components/ErrorBoundary'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import { Login } from './pages/Login'
+import { CommunityLogin } from './pages/CommunityLogin'
 import { Dashboard } from './pages/Dashboard'
 import { Communities } from './pages/Communities'
 import UsersPage from './pages/Users'
@@ -13,6 +15,7 @@ import CommunityConfig from './pages/CommunityConfig'
 import UserDetailReport from './pages/UserDetailReport'
 import { SmartRedirect } from './components/SmartRedirect'
 import { LogoutPage } from './pages/Logout'
+import { UserDashboard } from './pages/user/UserDashboard'
 
 // Training Zone
 import TrainingZoneLayout from './components/layout/TrainingZoneLayout'
@@ -71,6 +74,7 @@ function App() {
               <Routes>
             {/* Public Routes */}
             <Route path="/login" element={<Login />} />
+            <Route path="/community/login" element={<CommunityLogin />} />
             
             {/* Protected Routes */}
             <Route path="/" element={<SmartRedirect />} />
@@ -319,6 +323,14 @@ function App() {
             <Route path="/logout" element={
               <ProtectedRoute requireAuth>
                 <LogoutPage />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/user/*" element={
+              <ProtectedRoute requireAuth redirectTo="/community/login">
+                <CommunityProvider>
+                  <UserDashboard />
+                </CommunityProvider>
               </ProtectedRoute>
             } />
             

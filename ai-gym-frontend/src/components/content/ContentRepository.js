@@ -5,6 +5,18 @@ import { supabase } from '@/lib/supabase';
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
 import { Search, Filter, Grid, List, Plus, Eye, EyeOff, Calendar, Users as UsersIcon } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
+const generateVideoThumbnail = (video) => {
+    const videoData = Array.isArray(video) ? video[0] : video;
+    if (!videoData)
+        return null;
+    if (videoData.video_platform === 'youtube' && videoData.video_id) {
+        return `https://img.youtube.com/vi/${videoData.video_id}/maxresdefault.jpg`;
+    }
+    if (videoData.video_platform === 'vimeo' && videoData.video_id) {
+        return `https://vumbnail.com/${videoData.video_id}.jpg`;
+    }
+    return null;
+};
 export function ContentRepository({ contentType, title, description, icon: Icon, color }) {
     const navigate = useNavigate();
     const [contentItems, setContentItems] = useState([]);
@@ -23,12 +35,22 @@ export function ContentRepository({ contentType, title, description, icon: Icon,
         viewMode: 'cards'
     });
     const [showFilters, setShowFilters] = useState(false);
+    // React StrictMode replays effect cleanup/setup in development. Keep this
+    // flag reset before data-loading effects so repositories cannot stay stuck
+    // in their initial loading state.
+    useEffect(() => {
+        mountedRef.current = true;
+        lastFetchRef.current = '';
+        return () => {
+            mountedRef.current = false;
+        };
+    }, []);
     // Memoized filter key to prevent unnecessary re-renders
     const filterKey = useMemo(() => {
         return JSON.stringify({
             contentType,
             search: filters.search,
-            communities: filters.communities.sort(),
+            communities: [...filters.communities].sort(),
             status: filters.status,
             sortBy: filters.sortBy,
             sortOrder: filters.sortOrder
@@ -40,17 +62,33 @@ export function ContentRepository({ contentType, title, description, icon: Icon,
             return;
         const currentFilterKey = filterKey;
         // Prevent duplicate requests
-        if (lastFetchRef.current === currentFilterKey) {
+        if (lastFetchRef.current === currentFilterKey && !loading) {
             return;
         }
         try {
             setLoading(true);
             setError(null);
             lastFetchRef.current = currentFilterKey;
-            // Build query with filters
+            // Build query with filters. Videos need their companion table for generated
+            // thumbnails, matching the Page Builder repository popup.
+            const contentSelect = contentType === 'video'
+                ? `
+          *,
+          videos (
+            id,
+            video_url,
+            video_platform,
+            video_id,
+            duration_seconds,
+            transcription,
+            auto_title,
+            auto_description
+          )
+        `
+                : '*';
             let query = supabase
                 .from('content_items')
-                .select('*')
+                .select(contentSelect)
                 .eq('content_type', contentType);
             // Apply search filter
             if (filters.search.trim()) {
@@ -71,7 +109,12 @@ export function ContentRepository({ contentType, title, description, icon: Icon,
                 setContentItems([]);
                 return;
             }
-            let filteredItems = items || [];
+            let filteredItems = contentType === 'video'
+                ? ((items || [])).map(item => ({
+                    ...item,
+                    thumbnail_url: item.thumbnail_url || generateVideoThumbnail(item.videos) || undefined
+                }))
+                : items || [];
             // Filter by client assignments if specified
             if (filters.communities.length > 0) {
                 const { data: assignments, error: assignError } = await supabase
@@ -89,22 +132,31 @@ export function ContentRepository({ contentType, title, description, icon: Icon,
             if (!mountedRef.current)
                 return;
             setContentItems(filteredItems);
-            // Fetch assignment counts for each item
+            setLoading(false);
+            // Fetch assignment counts for each item without blocking the repository list.
             if (filteredItems.length > 0) {
-                const itemIds = filteredItems.map(item => item.id);
-                const [communityAssignments, userAssignments] = await Promise.all([
-                    supabase.from('content_community_assignments').select('content_item_id').in('content_item_id', itemIds),
-                    supabase.from('content_user_assignments').select('content_item_id').in('content_item_id', itemIds)
-                ]);
-                const counts = {};
-                itemIds.forEach(id => {
-                    const communityCount = communityAssignments.data?.filter(a => a.content_item_id === id).length || 0;
-                    const userCount = userAssignments.data?.filter(a => a.content_item_id === id).length || 0;
-                    counts[id] = communityCount + userCount;
-                });
-                if (mountedRef.current) {
-                    setItemCounts(counts);
+                try {
+                    const itemIds = filteredItems.map(item => item.id);
+                    const [communityAssignments, userAssignments] = await Promise.all([
+                        supabase.from('content_community_assignments').select('content_item_id').in('content_item_id', itemIds),
+                        supabase.from('content_user_assignments').select('content_item_id').in('content_item_id', itemIds)
+                    ]);
+                    const counts = {};
+                    itemIds.forEach(id => {
+                        const communityCount = communityAssignments.data?.filter(a => a.content_item_id === id).length || 0;
+                        const userCount = userAssignments.data?.filter(a => a.content_item_id === id).length || 0;
+                        counts[id] = communityCount + userCount;
+                    });
+                    if (mountedRef.current) {
+                        setItemCounts(counts);
+                    }
                 }
+                catch (countError) {
+                    console.error('Error fetching content assignment counts:', countError);
+                }
+            }
+            else {
+                setItemCounts({});
             }
         }
         catch (error) {
@@ -119,7 +171,7 @@ export function ContentRepository({ contentType, title, description, icon: Icon,
                 setLoading(false);
             }
         }
-    }, [contentType, filterKey, filters.search, filters.communities, filters.status, filters.sortBy, filters.sortOrder]);
+    }, [contentType, filterKey, filters.search, filters.communities, filters.status, filters.sortBy, filters.sortOrder, loading]);
     // Fetch communities once on mount
     const fetchCommunities = useCallback(async () => {
         try {
@@ -147,12 +199,6 @@ export function ContentRepository({ contentType, title, description, icon: Icon,
     useEffect(() => {
         fetchCommunities();
     }, [fetchCommunities]);
-    // Cleanup on unmount
-    useEffect(() => {
-        return () => {
-            mountedRef.current = false;
-        };
-    }, []);
     const getRoutePrefix = useCallback(() => {
         const routeMap = {
             'ai_agent': 'ai-agents',

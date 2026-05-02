@@ -41,6 +41,15 @@ export function WodsRepository() {
         folderId: null
     });
     const [showFilters, setShowFilters] = useState(false);
+    // React StrictMode replays effect cleanup/setup in development. Keep this
+    // flag reset before data-loading effects so the repository cannot stay stuck
+    // in its initial loading state.
+    useEffect(() => {
+        mountedRef.current = true;
+        return () => {
+            mountedRef.current = false;
+        };
+    }, []);
     // Memoized filter key to prevent unnecessary re-renders
     const filterKey = useMemo(() => {
         return JSON.stringify({
@@ -238,12 +247,6 @@ export function WodsRepository() {
     useEffect(() => {
         fetchCommunities();
     }, [fetchCommunities]);
-    // Cleanup on unmount
-    useEffect(() => {
-        return () => {
-            mountedRef.current = false;
-        };
-    }, []);
     // Selection handlers
     const handleSelectItem = useCallback((itemId, selected) => {
         setSelectedItems(prev => {

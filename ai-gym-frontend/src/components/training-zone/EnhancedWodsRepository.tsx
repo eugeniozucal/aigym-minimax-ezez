@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { supabase } from '../../../lib/supabase'
+import { supabase } from '@/lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { Search, Filter, Grid, List, Plus, Eye, EyeOff, Calendar, Target, Dumbbell, Star, StarOff, FolderPlus, Home, ChevronRight, Folder, CheckSquare, Square } from 'lucide-react'
 import { ItemContextMenu } from './components/ItemContextMenu'
@@ -88,6 +88,17 @@ export function WodsRepository() {
     folderId: null
   })
   const [showFilters, setShowFilters] = useState(false)
+
+  // React StrictMode replays effect cleanup/setup in development. Keep this
+  // flag reset before data-loading effects so the repository cannot stay stuck
+  // in its initial loading state.
+  useEffect(() => {
+    mountedRef.current = true
+
+    return () => {
+      mountedRef.current = false
+    }
+  }, [])
 
   // Memoized filter key to prevent unnecessary re-renders
   const filterKey = useMemo(() => {
@@ -312,13 +323,6 @@ export function WodsRepository() {
   useEffect(() => {
     fetchCommunities()
   }, [fetchCommunities])
-
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      mountedRef.current = false
-    }
-  }, [])
 
   // Selection handlers
   const handleSelectItem = useCallback((itemId: string, selected: boolean) => {

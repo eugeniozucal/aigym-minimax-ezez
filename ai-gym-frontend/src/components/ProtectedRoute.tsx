@@ -7,9 +7,10 @@ interface ProtectedRouteProps {
   children: React.ReactNode
   requireAdmin?: boolean
   requireAuth?: boolean
+  redirectTo?: string
 }
 
-export function ProtectedRoute({ children, requireAdmin = false, requireAuth = false }: ProtectedRouteProps) {
+export function ProtectedRoute({ children, requireAdmin = false, requireAuth = false, redirectTo = '/login' }: ProtectedRouteProps) {
   const { user, loading } = useAuth()
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const mountedRef = useRef(true)
@@ -59,18 +60,18 @@ export function ProtectedRoute({ children, requireAdmin = false, requireAuth = f
 
   // For auth-required routes, check if user is authenticated
   if (requireAuth && !user) {
-    return <Navigate to="/login" replace />
+    return <Navigate to={redirectTo} replace />
   }
 
   // Redirect to login if no user is authenticated (legacy behavior)
   if (!requireAuth && !requireAdmin && !user) {
-    return <Navigate to="/login" replace />
+    return <Navigate to={redirectTo} replace />
   }
 
   // For admin-required routes, for now just require authentication
   // TODO: Implement proper admin checking later
   if (requireAdmin && !user) {
-    return <Navigate to="/login" replace />
+    return <Navigate to={redirectTo} replace />
   }
 
   return <>{children}</>
