@@ -900,3 +900,27 @@ browser/extracted_content/
 ai-gym-frontend/browser/
 ai-gym-frontend/shell_output_save/
 ai-gym-frontend/extract/
+
+# Root-level AI builder memory, research, screenshots, and reports.
+/analysis/
+/browser/
+/charts/
+/debugging/
+/development_fixes/
+/develpment_fixes/
+/docs/
+/emergency_investigation/
+/imgs/
+/investigation/
+/qa_strategy/
+/reports/
+/user_input_files/
+
+# Root-level generated documentation moved to:
+# /Users/eugeniozucal/Repos/backups/aigym/archivos_generales
+/*.md
+/*.pdf
+/*.docx
+!README.md
+!CHANGELOG.md
+!LICENSE.md
