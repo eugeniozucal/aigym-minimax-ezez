@@ -889,9 +889,14 @@
 # ==============================================================================
 # PROJECT SPECIFIC
 # ==============================================================================
-# Add your project-specific ignores here
-# workspace/
-# data/
-# uploads/
-# downloads/
-
+# Historical/generated artifacts kept outside this repo in:
+# /Users/eugeniozucal/Repos/backups/aigym
+clean_repo/
+.browser_screenshots/
+browser_screenshots/
+shell_output_save/
+browser/screenshots/
+browser/extracted_content/
+ai-gym-frontend/browser/
+ai-gym-frontend/shell_output_save/
+ai-gym-frontend/extract/
