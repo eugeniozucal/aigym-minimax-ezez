@@ -34,7 +34,7 @@ Since git permissions are restricted in this environment, please run these comma
 cd /path/to/your/local/aigym-project
 
 # Configure the remote (if not already done)
-git remote add origin https://eugeniozucal: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@github.com/eugeniozucal/aigym-minimax-ezez.git
+git remote add origin https://github.com/eugeniozucal/aigym-minimax-ezez.git
 
 # Add all changes
 git add .
